@@ -30,11 +30,9 @@ Begin Form
     Right =16995
     Bottom =10320
     TimerInterval =2500
-    OrderBy ="strVersion DESC"
     RecSrcDt = Begin
-        0xdf4312ec4fece540
+        0x7c26ac2350ede540
     End
-    RecordSource ="zstblInstanceVersion"
     Caption ="Loading"
     DatasheetFontName ="Calibri"
     OnTimer ="[Event Procedure]"
