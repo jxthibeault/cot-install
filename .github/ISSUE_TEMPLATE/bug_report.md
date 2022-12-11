@@ -2,7 +2,7 @@
 name: Bug report
 about: Report a bug to help the database developer fix issues.
 title: ''
-labels: ''
+labels: bug
 assignees: jxthibeault
 
 ---
