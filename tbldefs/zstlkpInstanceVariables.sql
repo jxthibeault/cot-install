@@ -1,0 +1,5 @@
+﻿CREATE TABLE [zstlkpInstanceVariables] (
+  [ID] AUTOINCREMENT CONSTRAINT [PrimaryKey] PRIMARY KEY UNIQUE NOT NULL,
+  [strKey] VARCHAR (255) CONSTRAINT [strKey] UNIQUE,
+  [strValue] VARCHAR (255)
+)

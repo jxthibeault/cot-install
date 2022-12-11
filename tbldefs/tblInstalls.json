@@ -1,0 +1,13 @@
+﻿{
+  "Info": {
+    "Class": "clsDbTableDef",
+    "Description": "Linked Table"
+  },
+  "Items": {
+    "Name": "tblInstalls",
+    "Connect": ";DATABASE=rel:InstallsDatabase_Backend_sampleSnapshot.accdb",
+    "SourceTableName": "tblInstalls",
+    "Attributes": 1073741824,
+    "PrimaryKey": "[lngID]"
+  }
+}

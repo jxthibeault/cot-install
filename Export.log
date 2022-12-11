@@ -1,0 +1,277 @@
+﻿-------------------------------------
+Beginning Export of all Source
+Install Dashboard_dev.accdb
+VCS Version 3.4.23
+Performing Full Export
+12/11/2022 11:01:58 AM
+-------------------------------------
+-------------------------------------
+Exporting project...          
+  Install Dashboard_dev.accdb
+[1]
+-------------------------------------
+Exporting vb project...       
+  InstallsDatabaseFrontend
+[1]
+-------------------------------------
+Exporting vbe references...   
+  stdole
+[3]
+-------------------------------------
+No vbe forms found in this database.
+-------------------------------------
+Exporting proj properties...  
+  Current Project Properties (Access)
+[2]
+-------------------------------------
+No saved specs found in this database.
+-------------------------------------
+Exporting db properties...    
+  Database Properties (DAO)
+[54]
+-------------------------------------
+Exporting shared images...    
+  System Clear All Filters
+  OutlookSearchMagnifyingGlassHS
+  COT logo with motto
+[3]
+-------------------------------------
+Exporting themes...           
+  Office Theme
+  1_Office Theme
+  2_Office Theme
+  ThemeCOT
+[4]
+-------------------------------------
+No imex specs found in this database.
+-------------------------------------
+Exporting tables...           
+  tblConstants
+  tblConstants (SQL)
+  tblInstallEquipment
+  tblInstallEquipment (SQL)
+  tblInstalls
+  tblInstalls (SQL)
+  tblLabelPrints
+  tblLabelPrints (SQL)
+  tblUsers
+  tblUsers (SQL)
+  USysRibbons
+    Sanitized in 0.008 seconds.
+  USysRibbons (SQL)
+  zstblInstanceVersion
+    Sanitized in 0.007 seconds.
+  zstblInstanceVersion (SQL)
+  zstlkpInstanceVariables
+    Sanitized in 0.005 seconds.
+  zstlkpInstanceVariables (SQL)
+  zstlkpReportTypes
+    Sanitized in 0.004 seconds.
+  zstlkpReportTypes (SQL)
+[9]
+-------------------------------------
+Exporting queries...          
+  qryClosedInstalls
+    Sanitized in 0.006 seconds.
+  qryClosedInstalls (SQL)
+  qryEquipTypeAccessoriesAndStartup
+    Sanitized in 0.007 seconds.
+  qryEquipTypeAccessoriesAndStartup (SQL)
+  qryEquipTypeCustomerEquipment
+    Sanitized in 0.004 seconds.
+  qryEquipTypeCustomerEquipment (SQL)
+  qryEquipTypeSupplies
+    Sanitized in 0.005 seconds.
+  qryEquipTypeSupplies (SQL)
+  qryITContacts
+    Sanitized in 0.004 seconds.
+  qryITContacts (SQL)
+  qryOpenInstallEquipment
+    Sanitized in 0.004 seconds.
+  qryOpenInstallEquipment (SQL)
+  qryOpenInstalls
+    Sanitized in 0.006 seconds.
+  qryOpenInstalls (SQL)
+  qryOpenOutOfStockEquipment
+    Sanitized in 0.004 seconds.
+  qryOpenOutOfStockEquipment (SQL)
+  qryPendingWorkInstalls
+    Sanitized in 0.005 seconds.
+  qryPendingWorkInstalls (SQL)
+  qryPrimaryContacts
+    Sanitized in 0.004 seconds.
+  qryPrimaryContacts (SQL)
+  qryReadyToShipInstalls
+    Sanitized in 0.006 seconds.
+  qryReadyToShipInstalls (SQL)
+  qryScheduledInstalls
+    Sanitized in 0.004 seconds.
+  qryScheduledInstalls (SQL)
+[12]
+-------------------------------------
+Exporting forms...            
+  fsubExistingInstallSubCustomerEquipment
+    Sanitized in 0.021 seconds.
+  fsubNewInstallSubSecondaryEquipment
+    Sanitized in 0.017 seconds.
+  fsubNewInstallSubPrimaryEquipment
+    Sanitized in 0.013 seconds.
+  frmClosedInstall
+    Sanitized in 0.034 seconds.
+  frmNewInstall
+    Sanitized in 0.029 seconds.
+  fdlgChangelog
+    Sanitized in 0.015 seconds.
+  fdlgLogIn
+    Sanitized in 0.017 seconds.
+  fsubNavigationSubPendingInstalls
+    Sanitized in 0.016 seconds.
+  fsubNavigationSubClosedInstalls
+    Sanitized in 0.013 seconds.
+  frmNavigation
+    Sanitized in 0.029 seconds.
+  frmOpenInstall
+    Sanitized in 0.041 seconds.
+  frmEditInstall
+    Sanitized in 0.033 seconds.
+  fsubNavigationSubEditOpenInstall
+    Sanitized in 0.012 seconds.
+  fsubExistingInstallSubSupplyEquipment
+    Sanitized in 0.007 seconds.
+  fsubExistingInstallSubAccessoryEquipment
+    Sanitized in 0.019 seconds.
+  fsubNavigationSubManagement
+    Sanitized in 0.007 seconds.
+  fsubNavigationSubReadyInstalls
+    Sanitized in 0.013 seconds.
+  fsubNavigationSubReports
+    Sanitized in 0.009 seconds.
+  fdlgUserControl
+    Sanitized in 0.018 seconds.
+  fdlgSplashScreen
+    Sanitized in 0.017 seconds.
+  fsubNavigationSubDeveloper
+    Sanitized in 0.006 seconds.
+  fdlgChangePassword
+    Sanitized in 0.009 seconds.
+[22]
+-------------------------------------
+No macros found in this database.
+-------------------------------------
+Exporting reports...          
+  rsubShopTicketSubCustomerEquipment
+    Sanitized in 0.009 seconds.
+  rsubInstallTicketSubCustomerEquipment
+    Sanitized in 0.012 seconds.
+  rptPendingArrivalEquipment
+    Sanitized in 0.029 seconds.
+  rptAllocatedEquipment
+    Sanitized in 0.019 seconds.
+  rptScheduledInstalls
+    Sanitized in 0.020 seconds.
+  rptContactsITSupport
+    Sanitized in 0.019 seconds.
+  rsubShopTicketSubAccessoryEquipment
+    Sanitized in 0.008 seconds.
+  rsubInstallTicketSubSupplyEquipment
+    Sanitized in 0.009 seconds.
+  rsubInstallTicketSubAccessoryEquipment
+    Sanitized in 0.008 seconds.
+  rptReadyForInstallTag
+    Sanitized in 0.015 seconds.
+  rptContactsPrimary
+    Sanitized in 0.022 seconds.
+  rsubInstallTicketSubCDA
+    Sanitized in 0.011 seconds.
+  rptInstallTicket
+    Sanitized in 0.030 seconds.
+  rsubInstallTicketSubOnsiteWorksheetChecklist
+    Sanitized in 0.009 seconds.
+  rptAllOpenInstalls
+    Sanitized in 0.019 seconds.
+  rptShopTicket
+    Sanitized in 0.025 seconds.
+[16]
+-------------------------------------
+Exporting table data...       
+  USysRibbons
+    Sanitized in 0.003 seconds.
+  zstblInstanceVersion
+    Sanitized in 0.004 seconds.
+  zstlkpInstanceVariables
+    Sanitized in 0.004 seconds.
+  zstlkpReportTypes
+    Sanitized in 0.003 seconds.
+[4]
+-------------------------------------
+No modules found in this database.
+-------------------------------------
+No table data macros found in this database.
+-------------------------------------
+No relations found in this database.
+-------------------------------------
+Exporting doc properties...   
+  Database Documents
+[2]
+-------------------------------------
+Exporting nav pane groups...  
+  Groups
+[2]
+-------------------------------------
+No hidden attributes found in this database.
+-------------------------------------
+Done. (6.05 seconds)
+
+--------------------------------------------------
+                PERFORMANCE REPORTS
+--------------------------------------------------
+Object Type                   Count     Seconds
+--------------------------------------------------
+Project                       1         0.01
+VB Project                    1         0.01
+VBE References                3         0.02
+Proj Properties               2         0.01
+DB Properties                 54        0.08
+Shared Images                 3         0.03
+Themes                        4         0.02
+Tables                        9         1.33
+Queries                       12        1.44
+Forms                         22        1.66
+Reports                       16        1.12
+Table Data                    4         0.09
+Doc Properties                2         0.01
+Nav Pane Groups               2         0.01
+--------------------------------------------------
+TOTALS:                       135       5.86
+--------------------------------------------------
+
+--------------------------------------------------
+Operations                    Count     Seconds
+--------------------------------------------------
+Convert to JSON               1308      0.39
+Compute SHA256                132       0.01
+Console Updates               6         0.11
+Write File                    105       0.45
+Verify Path                   170       0.03
+Get Modified Date             62        0.02
+Get File Property Hash        62        0.04
+Create Folder                 7         0.01
+Write to Disk                 3         0.01
+Export Theme                  4         0.01
+Save Table SQL                9         0.64
+Increment Progress            4         0.07
+App.ExportXML()               8         0.13
+Read File Bytes               96        0.16
+Read File                     96        0.19
+Sanitize XML                  8         0.01
+Format XML                    8         0.00
+App.SaveAsText()              50        2.13
+Sanitize File                 50        0.50
+Save Query SQL                12        0.02
+Read File DevMode             38        0.06
+Get VBA Hash                  38        0.02
+--------------------------------------------------
+Other Operations                        1.07
+--------------------------------------------------
+
+

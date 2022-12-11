@@ -1,0 +1,370 @@
+﻿{
+  "Info": {
+    "Class": "clsVCSIndex",
+    "Description": "Version Control System Index"
+  },
+  "Items": {
+    "MergeBuildDate": null,
+    "FullBuildDate": null,
+    "ExportDate": "12/11/2022 11:02:04 AM",
+    "FullExportDate": "12/11/2022 11:02:04 AM",
+    "OptionsHash": "1322e9c",
+    "LastMergedCommit": "",
+    "Components": {
+      "Forms": {
+        "fdlgChangelog.bas": {
+          "Hash": "4f07f79",
+          "ExportDate": "12/11/2022 11:02:02 AM",
+          "SourceModified": "12/11/2022 11:02:02 AM",
+          "FilePropertiesHash": "89db807"
+        },
+        "fdlgChangePassword.bas": {
+          "Hash": "fb0a1e7",
+          "ExportDate": "12/11/2022 11:02:03 AM",
+          "SourceModified": "12/11/2022 11:02:03 AM",
+          "FilePropertiesHash": "e2d3fee"
+        },
+        "fdlgLogIn.bas": {
+          "Hash": "6e963ae",
+          "ExportDate": "12/11/2022 11:02:02 AM",
+          "SourceModified": "12/11/2022 11:02:02 AM",
+          "FilePropertiesHash": "58f3245"
+        },
+        "fdlgSplashScreen.bas": {
+          "Hash": "10c49d7",
+          "ExportDate": "12/11/2022 11:02:03 AM",
+          "SourceModified": "12/11/2022 11:02:03 AM",
+          "FilePropertiesHash": "f37a14e"
+        },
+        "fdlgUserControl.bas": {
+          "Hash": "f227ba9",
+          "ExportDate": "12/11/2022 11:02:03 AM",
+          "SourceModified": "12/11/2022 11:02:03 AM",
+          "FilePropertiesHash": "84a37a7"
+        },
+        "frmClosedInstall.bas": {
+          "Hash": "4f07f79",
+          "ExportDate": "12/11/2022 11:02:02 AM",
+          "SourceModified": "12/11/2022 11:02:02 AM",
+          "FilePropertiesHash": "8275cc5"
+        },
+        "frmEditInstall.bas": {
+          "Hash": "dbe7aec",
+          "ExportDate": "12/11/2022 11:02:02 AM",
+          "SourceModified": "12/11/2022 11:02:02 AM",
+          "FilePropertiesHash": "32949e4"
+        },
+        "frmNavigation.bas": {
+          "Hash": "54bb035",
+          "ExportDate": "12/11/2022 11:02:02 AM",
+          "SourceModified": "12/11/2022 11:02:02 AM",
+          "FilePropertiesHash": "edcdb2c"
+        },
+        "frmNewInstall.bas": {
+          "Hash": "dbe7aec",
+          "ExportDate": "12/11/2022 11:02:02 AM",
+          "SourceModified": "12/11/2022 11:02:02 AM",
+          "FilePropertiesHash": "d401863"
+        },
+        "frmOpenInstall.bas": {
+          "Hash": "11b84b2",
+          "ExportDate": "12/11/2022 11:02:02 AM",
+          "SourceModified": "12/11/2022 11:02:02 AM",
+          "FilePropertiesHash": "a4e13f4"
+        },
+        "fsubExistingInstallSubAccessoryEquipment.bas": {
+          "Hash": "4f07f79",
+          "ExportDate": "12/11/2022 11:02:02 AM",
+          "SourceModified": "12/11/2022 11:02:02 AM",
+          "FilePropertiesHash": "fda3f72"
+        },
+        "fsubExistingInstallSubCustomerEquipment.bas": {
+          "Hash": "4f07f79",
+          "ExportDate": "12/11/2022 11:02:01 AM",
+          "SourceModified": "12/11/2022 11:02:01 AM",
+          "FilePropertiesHash": "7884f5a"
+        },
+        "fsubExistingInstallSubSupplyEquipment.bas": {
+          "Hash": "4f07f79",
+          "ExportDate": "12/11/2022 11:02:02 AM",
+          "SourceModified": "12/11/2022 11:02:02 AM",
+          "FilePropertiesHash": "fe55901"
+        },
+        "fsubNavigationSubClosedInstalls.bas": {
+          "Hash": "5d213a7",
+          "ExportDate": "12/11/2022 11:02:02 AM",
+          "SourceModified": "12/11/2022 11:02:02 AM",
+          "FilePropertiesHash": "f727153"
+        },
+        "fsubNavigationSubDeveloper.bas": {
+          "Hash": "9c2d754",
+          "ExportDate": "12/11/2022 11:02:03 AM",
+          "SourceModified": "12/11/2022 11:02:03 AM",
+          "FilePropertiesHash": "92b5ea7"
+        },
+        "fsubNavigationSubEditOpenInstall.bas": {
+          "Hash": "5634655",
+          "ExportDate": "12/11/2022 11:02:02 AM",
+          "SourceModified": "12/11/2022 11:02:02 AM",
+          "FilePropertiesHash": "cec8a07"
+        },
+        "fsubNavigationSubManagement.bas": {
+          "Hash": "9c2d754",
+          "ExportDate": "12/11/2022 11:02:02 AM",
+          "SourceModified": "12/11/2022 11:02:02 AM",
+          "FilePropertiesHash": "596d77b"
+        },
+        "fsubNavigationSubPendingInstalls.bas": {
+          "Hash": "503c200",
+          "ExportDate": "12/11/2022 11:02:02 AM",
+          "SourceModified": "12/11/2022 11:02:02 AM",
+          "FilePropertiesHash": "04d1531"
+        },
+        "fsubNavigationSubReadyInstalls.bas": {
+          "Hash": "f289758",
+          "ExportDate": "12/11/2022 11:02:03 AM",
+          "SourceModified": "12/11/2022 11:02:03 AM",
+          "FilePropertiesHash": "9add73d"
+        },
+        "fsubNavigationSubReports.bas": {
+          "Hash": "c253aba",
+          "ExportDate": "12/11/2022 11:02:03 AM",
+          "SourceModified": "12/11/2022 11:02:03 AM",
+          "FilePropertiesHash": "07371c4"
+        },
+        "fsubNewInstallSubPrimaryEquipment.bas": {
+          "Hash": "4f07f79",
+          "ExportDate": "12/11/2022 11:02:01 AM",
+          "SourceModified": "12/11/2022 11:02:01 AM",
+          "FilePropertiesHash": "65d0e85"
+        },
+        "fsubNewInstallSubSecondaryEquipment.bas": {
+          "Hash": "4f07f79",
+          "ExportDate": "12/11/2022 11:02:01 AM",
+          "SourceModified": "12/11/2022 11:02:01 AM",
+          "FilePropertiesHash": "ee94641"
+        }
+      },
+      "Project": {
+        "project.json": {
+          "Hash": "19c3478",
+          "ExportDate": "12/11/2022 11:01:58 AM",
+          "SourceModified": "12/11/2022 11:01:58 AM",
+          "FilePropertiesHash": "8ed4a3a"
+        }
+      },
+      "Queries": {
+        "qryClosedInstalls.bas": {
+          "ExportDate": "12/11/2022 11:02:00 AM",
+          "SourceModified": "12/11/2022 11:02:00 AM",
+          "FilePropertiesHash": "aec9108"
+        },
+        "qryEquipTypeAccessoriesAndStartup.bas": {
+          "ExportDate": "12/11/2022 11:02:00 AM",
+          "SourceModified": "12/11/2022 11:02:00 AM",
+          "FilePropertiesHash": "1888780"
+        },
+        "qryEquipTypeCustomerEquipment.bas": {
+          "ExportDate": "12/11/2022 11:02:00 AM",
+          "SourceModified": "12/11/2022 11:02:00 AM",
+          "FilePropertiesHash": "d7a5e50"
+        },
+        "qryEquipTypeSupplies.bas": {
+          "ExportDate": "12/11/2022 11:02:00 AM",
+          "SourceModified": "12/11/2022 11:02:00 AM",
+          "FilePropertiesHash": "595de1b"
+        },
+        "qryITContacts.bas": {
+          "ExportDate": "12/11/2022 11:02:00 AM",
+          "SourceModified": "12/11/2022 11:02:00 AM",
+          "FilePropertiesHash": "ae9bc73"
+        },
+        "qryOpenInstallEquipment.bas": {
+          "ExportDate": "12/11/2022 11:02:00 AM",
+          "SourceModified": "12/11/2022 11:02:00 AM",
+          "FilePropertiesHash": "de0164d"
+        },
+        "qryOpenInstalls.bas": {
+          "ExportDate": "12/11/2022 11:02:01 AM",
+          "SourceModified": "12/11/2022 11:02:01 AM",
+          "FilePropertiesHash": "dfc2cdf"
+        },
+        "qryOpenOutOfStockEquipment.bas": {
+          "ExportDate": "12/11/2022 11:02:01 AM",
+          "SourceModified": "12/11/2022 11:02:01 AM",
+          "FilePropertiesHash": "54df30a"
+        },
+        "qryPendingWorkInstalls.bas": {
+          "ExportDate": "12/11/2022 11:02:01 AM",
+          "SourceModified": "12/11/2022 11:02:01 AM",
+          "FilePropertiesHash": "5a1c20f"
+        },
+        "qryPrimaryContacts.bas": {
+          "ExportDate": "12/11/2022 11:02:01 AM",
+          "SourceModified": "12/11/2022 11:02:01 AM",
+          "FilePropertiesHash": "5f1ca54"
+        },
+        "qryReadyToShipInstalls.bas": {
+          "ExportDate": "12/11/2022 11:02:01 AM",
+          "SourceModified": "12/11/2022 11:02:01 AM",
+          "FilePropertiesHash": "84dd48a"
+        },
+        "qryScheduledInstalls.bas": {
+          "ExportDate": "12/11/2022 11:02:01 AM",
+          "SourceModified": "12/11/2022 11:02:01 AM",
+          "FilePropertiesHash": "d495b66"
+        }
+      },
+      "Reports": {
+        "rptAllocatedEquipment.bas": {
+          "Hash": "4f07f79",
+          "ExportDate": "12/11/2022 11:02:03 AM",
+          "SourceModified": "12/11/2022 11:02:03 AM",
+          "FilePropertiesHash": "92e29d3"
+        },
+        "rptAllOpenInstalls.bas": {
+          "ExportDate": "12/11/2022 11:02:04 AM",
+          "SourceModified": "12/11/2022 11:02:04 AM",
+          "FilePropertiesHash": "0876801"
+        },
+        "rptContactsITSupport.bas": {
+          "ExportDate": "12/11/2022 11:02:03 AM",
+          "SourceModified": "12/11/2022 11:02:03 AM",
+          "FilePropertiesHash": "2eb6dae"
+        },
+        "rptContactsPrimary.bas": {
+          "ExportDate": "12/11/2022 11:02:04 AM",
+          "SourceModified": "12/11/2022 11:02:04 AM",
+          "FilePropertiesHash": "9c3ff78"
+        },
+        "rptInstallTicket.bas": {
+          "Hash": "32d3a99",
+          "ExportDate": "12/11/2022 11:02:04 AM",
+          "SourceModified": "12/11/2022 11:02:04 AM",
+          "FilePropertiesHash": "b5edb44"
+        },
+        "rptPendingArrivalEquipment.bas": {
+          "ExportDate": "12/11/2022 11:02:03 AM",
+          "SourceModified": "12/11/2022 11:02:03 AM",
+          "FilePropertiesHash": "16d3f9e"
+        },
+        "rptReadyForInstallTag.bas": {
+          "ExportDate": "12/11/2022 11:02:03 AM",
+          "SourceModified": "12/11/2022 11:02:03 AM",
+          "FilePropertiesHash": "fa0c1da"
+        },
+        "rptScheduledInstalls.bas": {
+          "ExportDate": "12/11/2022 11:02:03 AM",
+          "SourceModified": "12/11/2022 11:02:03 AM",
+          "FilePropertiesHash": "8e203cf"
+        },
+        "rptShopTicket.bas": {
+          "Hash": "32d3a99",
+          "ExportDate": "12/11/2022 11:02:04 AM",
+          "SourceModified": "12/11/2022 11:02:04 AM",
+          "FilePropertiesHash": "71ae3c7"
+        },
+        "rsubInstallTicketSubAccessoryEquipment.bas": {
+          "ExportDate": "12/11/2022 11:02:03 AM",
+          "SourceModified": "12/11/2022 11:02:03 AM",
+          "FilePropertiesHash": "a4ad81e"
+        },
+        "rsubInstallTicketSubCDA.bas": {
+          "Hash": "32d3a99",
+          "ExportDate": "12/11/2022 11:02:04 AM",
+          "SourceModified": "12/11/2022 11:02:04 AM",
+          "FilePropertiesHash": "fe910e6"
+        },
+        "rsubInstallTicketSubCustomerEquipment.bas": {
+          "ExportDate": "12/11/2022 11:02:03 AM",
+          "SourceModified": "12/11/2022 11:02:03 AM",
+          "FilePropertiesHash": "73c09ac"
+        },
+        "rsubInstallTicketSubOnsiteWorksheetChecklist.bas": {
+          "ExportDate": "12/11/2022 11:02:04 AM",
+          "SourceModified": "12/11/2022 11:02:04 AM",
+          "FilePropertiesHash": "8b97b04"
+        },
+        "rsubInstallTicketSubSupplyEquipment.bas": {
+          "Hash": "4f07f79",
+          "ExportDate": "12/11/2022 11:02:03 AM",
+          "SourceModified": "12/11/2022 11:02:03 AM",
+          "FilePropertiesHash": "1f40ecd"
+        },
+        "rsubShopTicketSubAccessoryEquipment.bas": {
+          "ExportDate": "12/11/2022 11:02:03 AM",
+          "SourceModified": "12/11/2022 11:02:03 AM",
+          "FilePropertiesHash": "e016313"
+        },
+        "rsubShopTicketSubCustomerEquipment.bas": {
+          "ExportDate": "12/11/2022 11:02:03 AM",
+          "SourceModified": "12/11/2022 11:02:03 AM",
+          "FilePropertiesHash": "3105f04"
+        }
+      },
+      "Tables": {
+        "tblConstants.json": {
+          "ExportDate": "12/11/2022 11:01:59 AM",
+          "SourceModified": "12/11/2022 11:01:59 AM",
+          "FilePropertiesHash": "4618eba"
+        },
+        "tblInstallEquipment.json": {
+          "ExportDate": "12/11/2022 11:01:59 AM",
+          "SourceModified": "12/11/2022 11:01:59 AM",
+          "FilePropertiesHash": "2e46d49"
+        },
+        "tblInstalls.json": {
+          "ExportDate": "12/11/2022 11:01:59 AM",
+          "SourceModified": "12/11/2022 11:01:59 AM",
+          "FilePropertiesHash": "65a7e2d"
+        },
+        "tblLabelPrints.json": {
+          "ExportDate": "12/11/2022 11:01:59 AM",
+          "SourceModified": "12/11/2022 11:01:59 AM",
+          "FilePropertiesHash": "d2bc861"
+        },
+        "tblUsers.json": {
+          "ExportDate": "12/11/2022 11:02:00 AM",
+          "SourceModified": "12/11/2022 11:01:59 AM",
+          "FilePropertiesHash": "aefb834"
+        },
+        "USysRibbons.xml": {
+          "ExportDate": "12/11/2022 11:02:00 AM",
+          "SourceModified": "12/11/2022 11:02:00 AM",
+          "FilePropertiesHash": "9fe338f"
+        },
+        "zstblInstanceVersion.xml": {
+          "ExportDate": "12/11/2022 11:02:00 AM",
+          "SourceModified": "12/11/2022 11:02:00 AM",
+          "FilePropertiesHash": "be788b3"
+        },
+        "zstlkpInstanceVariables.xml": {
+          "ExportDate": "12/11/2022 11:02:00 AM",
+          "SourceModified": "12/11/2022 11:02:00 AM",
+          "FilePropertiesHash": "e4c81aa"
+        },
+        "zstlkpReportTypes.xml": {
+          "ExportDate": "12/11/2022 11:02:00 AM",
+          "SourceModified": "12/11/2022 11:02:00 AM",
+          "FilePropertiesHash": "86f4128"
+        }
+      },
+      "VB Project": {
+        "vbe-project.json": {
+          "Hash": "9f7006e",
+          "ExportDate": "12/11/2022 11:01:58 AM",
+          "SourceModified": "12/11/2022 11:01:58 AM",
+          "FilePropertiesHash": "2a95456"
+        }
+      },
+      "VBE References": {
+        "vbe-references.json": {
+          "Hash": "49a5862",
+          "ExportDate": "12/11/2022 11:01:58 AM",
+          "SourceModified": "12/11/2022 11:01:58 AM",
+          "FilePropertiesHash": "c1d6f9e"
+        }
+      }
+    }
+  }
+}

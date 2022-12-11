@@ -1,0 +1,13 @@
+﻿{
+  "Info": {
+    "Class": "clsDbTableDef",
+    "Description": "Linked Table"
+  },
+  "Items": {
+    "Name": "tblUsers",
+    "Connect": "MS Access;PWD=Thepassword2;DATABASE=rel:InstallsDatabase_BackendGlobalConstants.accdb",
+    "SourceTableName": "tblUsers",
+    "Attributes": 1073741824,
+    "PrimaryKey": "[ID]"
+  }
+}

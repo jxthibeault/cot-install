@@ -1,0 +1,87 @@
+﻿<dataroot xmlns:od="urn:schemas-microsoft-com:officedata">
+<zstblInstanceVersion>
+<ID>1</ID>
+<strVersion>1.1.0.0</strVersion>
+<strDatePublished>11/29/2022</strDatePublished>
+<strChangelog>- Added Management Console and ability to create installation orders through frontend app
+- Added new report &amp;quot;Upcoming Installation Schedule by Date&amp;quot;
+- Added new report &amp;quot;Primary Contacts by Customer&amp;quot;
+- Added new report &amp;quot;IT Contacts by Customer&amp;quot;
+- Fixed issue that made serial number and EQID unable to be selected when viewing details from past installs.
+- Fixed issue that was causing section lines to display incorrectly when viewing details from past installs.
+- Updated Past Installs tab so that installs appear in reverse-chronological order for easy access to recently completed installs.
+- Added onsite information collection template to printed install tickets.
+- Fixed issue that was causing some longer customer names to appear truncated on printed install tickets.
+- Fixed issue that was causing meters to not appear centered on install detail views.
+- Separated &amp;apos;Open Installs&amp;apos; tab into &amp;apos;Installs Pending Work&amp;apos; and &amp;apos;Installs Ready to Ship&amp;apos; for ease of use in multiple use cases.
+- Added version identifier to main navigation.
+- Changed font weight of main navigation title from normal to bold for ease of vision.
+- Added version history viewer to alert users to newly added features.</strChangelog>
+</zstblInstanceVersion>
+<zstblInstanceVersion>
+<ID>2</ID>
+<strVersion>1.2.0.0</strVersion>
+<strDatePublished>12/03/2022</strDatePublished>
+<strChangelog>- Implemented users and authentication; per-account permissions
+- Moved changelog to instance-local table
+- Created instance-local global variables table
+- Created global constants at backend for all instances
+- Renamed all internal objects to comply with Reddick guidelines
+- Migrated all macros and dynamic expressions to VBA, cleaned up code
+- Fixed tab order on all forms
+- Fixed issue that caused &amp;quot;Save and Close&amp;quot; button to display partially cut-off on install detail forms
+- Removed reference ID info on footer of New Install entry form (doesn&amp;apos;t refer to anything since record is new)</strChangelog>
+</zstblInstanceVersion>
+<zstblInstanceVersion>
+<ID>3</ID>
+<strVersion>1.2.1.0</strVersion>
+<strDatePublished>12/03/2022</strDatePublished>
+<strChangelog>- Redesigned how reports are selected on the backend for fsubNavigationSubReports to make it easier to edit the listing of reports (now contained in internal table) and objects they map to
+- Fixed an issue on Create New Install form that caused primary equipment to appear as a duplicate under secondary equipment
+- Implemented user authentication and permissions-based access</strChangelog>
+</zstblInstanceVersion>
+<zstblInstanceVersion>
+<ID>4</ID>
+<strVersion>1.2.1.1</strVersion>
+<strDatePublished>12/03/2022</strDatePublished>
+<strChangelog>- Certificate of installation will now print off with printed install ticket
+- Delivery sequence number box added to printed install ticket
+- Built new report: All Pending Installs by Date Received
+- Fixed &amp;quot;Ready for Install&amp;quot; tags appearing faded when printed
+- Rebranded app with COT branding, colors
+- Fixed an issue that caused report &amp;quot;IT Support
+Contacts&amp;quot; to fail to load
+- Fixed issue that caused Create New Install dialog to fail to load correctly
+- Fixed issue that caused rptPendingArrivalEquipmentto fail to load correctly
+- Built logout button to allow user switching without closing app</strChangelog>
+</zstblInstanceVersion>
+<zstblInstanceVersion>
+<ID>5</ID>
+<strVersion>1.2.2.0</strVersion>
+<strDatePublished>12/04/2022</strDatePublished>
+<strChangelog>- Built splash screen to display at loading
+- Fixed issue that caused Microsoft Office ribbon and navigation to appear sometimes after loading
+- Fixed issue that caused Version History dialog to fail to display when What&amp;apos;s New is clicked</strChangelog>
+</zstblInstanceVersion>
+<zstblInstanceVersion>
+<ID>6</ID>
+<strVersion>1.2.2.1</strVersion>
+<strDatePublished>12/04/2022</strDatePublished>
+<strChangelog>- Built developer mode
+- Fixed issue that caused Development account to appear in User Control
+- Added ability for users to change their own passwords from main navigation
+- Added ability for management accounts to modify orders</strChangelog>
+</zstblInstanceVersion>
+<zstblInstanceVersion>
+<ID>7</ID>
+<strVersion>1.2.2.2</strVersion>
+<strDatePublished>12/04/2022</strDatePublished>
+<strChangelog>- Built context-specific print tickets for pending versus ready installation orders</strChangelog>
+</zstblInstanceVersion>
+<zstblInstanceVersion>
+<ID>8</ID>
+<strVersion>1.2.2.3</strVersion>
+<strDatePublished>12/09/2022</strDatePublished>
+<strChangelog>- Fixed an issue that caused pending installs to appear in reverse order</strChangelog>
+</zstblInstanceVersion>
+</dataroot>

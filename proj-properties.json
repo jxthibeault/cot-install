@@ -1,0 +1,10 @@
+﻿{
+  "Info": {
+    "Class": "clsDbProjProperty",
+    "Description": "Project Properties (Access)"
+  },
+  "Items": {
+    "VCS Build Path": "C:\\Users\\Connected Office\\OneDrive - Connected Office Technologies\\Internal Documents\\Installs Database",
+    "VCS Source Path": "C:\\Users\\Connected Office\\OneDrive - Connected Office Technologies\\Internal Documents\\Installs Database\\cot-install"
+  }
+}

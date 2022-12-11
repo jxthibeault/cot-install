@@ -1,0 +1,11 @@
+﻿{
+  "Info": {
+    "Class": "clsDbSharedImage",
+    "Description": "Shared Image Gallery Item"
+  },
+  "Items": {
+    "Name": "System Clear All Filters",
+    "FileName": "Resource.png",
+    "Extension": "png"
+  }
+}
