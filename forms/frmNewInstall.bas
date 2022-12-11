@@ -18,9 +18,9 @@ Begin Form
     Width =22980
     DatasheetFontHeight =11
     ItemSuffix =83
-    Left =5325
+    Left =5565
     Top =3105
-    Right =20430
+    Right =20670
     Bottom =12225
     RecSrcDt = Begin
         0x830b02b29eebe540
@@ -4019,7 +4019,6 @@ Option Compare Database
 
 Private Sub cmdSaveAndClose_Click()
 
-    DoCmd.Save
     DoCmd.Close
     
 End Sub
