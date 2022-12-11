@@ -17,9 +17,10 @@ Begin Form
     Width =4860
     DatasheetFontHeight =11
     ItemSuffix =12
-    Top =390
-    Right =14370
-    Bottom =11730
+    Left =15210
+    Top =4605
+    Right =20055
+    Bottom =11610
     RecSrcDt = Begin
         0x06e3e1f29debe540
     End
@@ -218,11 +219,10 @@ Begin Form
                     LayoutCachedHeight =359
                 End
                 Begin TextBox
-                    Enabled = NotDefault
+                    Locked = NotDefault
                     OldBorderStyle =0
                     OverlapFlags =85
                     TextAlign =2
-                    BackStyle =0
                     IMESentenceMode =3
                     Left =240
                     Top =60

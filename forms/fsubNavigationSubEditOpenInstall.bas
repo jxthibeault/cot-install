@@ -17,9 +17,10 @@ Begin Form
     Width =16344
     DatasheetFontHeight =11
     ItemSuffix =103
-    Top =825
-    Right =14265
-    Bottom =8415
+    Left =585
+    Top =3420
+    Right =17805
+    Bottom =11010
     OrderBy ="strCustomer"
     RecSrcDt = Begin
         0x2579385d79ece540
@@ -283,7 +284,7 @@ Begin Form
                     FontWeight =500
                     ForeColor =16777215
                     Name ="lblFormTitle"
-                    Caption ="Modify an Open Installation Order"
+                    Caption ="Modify an Open Install Order"
                     FontName ="Verdana"
                     GroupTable =2
                     GridlineColor =10921638

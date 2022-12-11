@@ -17,8 +17,10 @@ Begin Form
     Width =16344
     DatasheetFontHeight =11
     ItemSuffix =103
-    Right =15135
-    Bottom =11730
+    Left =585
+    Top =3420
+    Right =17805
+    Bottom =11010
     OrderBy ="dtmInstallScheduled, dtmDateReceived, strCustomer"
     RecSrcDt = Begin
         0x3d57a9c5d9ebe540
@@ -282,7 +284,7 @@ Begin Form
                     FontWeight =500
                     ForeColor =16777215
                     Name ="lblFormTitle"
-                    Caption ="In-Progress Installs - Ready to Ship"
+                    Caption ="In-Progress Install Orders - Ready to Ship"
                     FontName ="Verdana"
                     GroupTable =2
                     GridlineColor =10921638

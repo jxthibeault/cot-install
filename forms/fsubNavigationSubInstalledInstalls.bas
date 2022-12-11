@@ -17,15 +17,18 @@ Begin Form
     Width =16344
     DatasheetFontHeight =11
     ItemSuffix =104
-    Right =15135
-    Bottom =11730
-    OrderBy ="dtmInstallScheduled DESC, strInstallStatus, strCustomer"
+    Left =-210
+    Top =1005
+    Right =16755
+    Bottom =8595
+    OrderBy ="dtmInstallScheduled"
     RecSrcDt = Begin
-        0xba9879959eebe540
+        0x1d22338d52ede540
     End
-    RecordSource ="qryClosedInstalls"
+    RecordSource ="qryInstalledInstalls"
     Caption ="frmOpenInstalls"
     DatasheetFontName ="Calibri"
+    OnLoad ="[Event Procedure]"
     AllowDatasheetView =0
     FilterOnLoad =0
     ShowPageMargins =0
@@ -282,7 +285,7 @@ Begin Form
                     FontWeight =500
                     ForeColor =16777215
                     Name ="lblFormTitle"
-                    Caption ="Closed Installs"
+                    Caption ="Fulfilled Install Orders Pending Backend Processing"
                     FontName ="Verdana"
                     GroupTable =2
                     GridlineColor =10921638
@@ -607,6 +610,21 @@ Option Compare Database
 
 Private Sub cmdOpenInstallDetails_Click()
 
-    DoCmd.OpenForm "frmClosedInstall", acNormal, "", "[lngID]=" & txtRecordID, , acNormal
+    DoCmd.OpenForm "frmInstalledInstall", acNormal, "", "[lngID]=" & txtRecordID, , acNormal
+
+End Sub
+
+
+Private Sub Form_Load()
+
+    Dim strCurrentUser As String
+    Dim strUserLevel As String
+
+    strCurrentUser = Form_fdlgUserControl.GetCurrentUser()
+    strUserLevel = Form_fdlgUserControl.GetUserAccountType(strCurrentUser)
+    
+    If Not strUserLevel = "Administrator" Then
+        cmdOpenInstallDetails.Visible = False
+    End If
 
 End Sub

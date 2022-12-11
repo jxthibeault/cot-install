@@ -27,6 +27,7 @@ Begin Form
     RecordSource ="SELECT tblInstalls.*, tblInstalls.attAttachments FROM tblInstalls; "
     Caption ="Installation Detail"
     DatasheetFontName ="Calibri"
+    OnLoad ="[Event Procedure]"
     FilterOnLoad =0
     ShowPageMargins =0
     DisplayOnSharePointSite =1
@@ -919,10 +920,11 @@ Begin Form
                     Name ="txtInstallStatus"
                     ControlSource ="strInstallStatus"
                     RowSourceType ="Value List"
-                    RowSource ="\"Preparation\";\"Ready for Install\";\"Installed\";\"Cancelled\""
+                    RowSource ="\"Preparation\";\"Ready for Install\";\"Installed\""
                     StatusBarText ="Install status"
                     GridlineColor =10921638
                     AllowValueListEdits =0
+                    InheritValueList =0
 
                     LayoutCachedLeft =9000
                     LayoutCachedTop =840
@@ -4080,4 +4082,19 @@ Private Sub cmdPrintStagingTags_Click()
 
     DoCmd.OpenReport "rptReadyForInstallTag", acViewPreview, , "lngID = " & Me.lngID.Value, acWindowNormal
     
+End Sub
+
+Private Sub Form_Load()
+
+    Dim strCurrentUser As String
+    Dim strUserLevel As String
+
+    strCurrentUser = Form_fdlgUserControl.GetCurrentUser()
+    strUserLevel = Form_fdlgUserControl.GetUserAccountType(strCurrentUser)
+    
+    If strUserLevel = "Administrator" Then
+        txtInstallStatus.AddItem ("Completed")
+        txtInstallStatus.AddItem ("Cancelled")
+    End If
+
 End Sub

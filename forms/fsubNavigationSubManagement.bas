@@ -15,9 +15,9 @@ Begin Form
     DatasheetFontHeight =11
     ItemSuffix =6
     Left =585
-    Top =3480
-    Right =17985
-    Bottom =11325
+    Top =3420
+    Right =17805
+    Bottom =11010
     RecSrcDt = Begin
         0x326b8b37a1ebe540
     End
@@ -127,7 +127,7 @@ Begin Form
                     FontWeight =500
                     ForeColor =16777215
                     Name ="lblFormTitle"
-                    Caption ="Install Management"
+                    Caption ="Install Order Management"
                     FontName ="Verdana"
                     GroupTable =1
                     GridlineColor =10921638

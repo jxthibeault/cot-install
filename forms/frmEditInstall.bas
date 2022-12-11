@@ -852,7 +852,7 @@ Begin Form
                     Name ="txtInstallStatus"
                     ControlSource ="strInstallStatus"
                     RowSourceType ="Value List"
-                    RowSource ="\"Preparation\";\"Ready for Install\";\"Installed\";\"Cancelled\""
+                    RowSource ="\"Preparation\";\"Ready for Install\";\"Installed\";\"Completed\";\"Cancelled\""
                     StatusBarText ="Install status"
                     GridlineColor =10921638
                     AllowValueListEdits =0

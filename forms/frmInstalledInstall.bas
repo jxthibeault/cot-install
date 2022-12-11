@@ -6,10 +6,8 @@ Begin Form
     AutoCenter = NotDefault
     NavigationButtons = NotDefault
     DividingLines = NotDefault
-    DataEntry = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
-    ScrollBars =1
     RecordLocks =2
     PictureAlignment =2
     DatasheetGridlinesBehavior =3
@@ -17,17 +15,18 @@ Begin Form
     GridY =24
     Width =22980
     DatasheetFontHeight =11
-    ItemSuffix =83
+    ItemSuffix =73
     Left =5565
-    Top =3285
-    Right =28395
-    Bottom =14430
+    Top =2730
+    Right =20700
+    Bottom =13245
     RecSrcDt = Begin
-        0x830b02b29eebe540
+        0xd01332f191ebe540
     End
-    RecordSource ="SELECT tblInstalls.*, tblInstalls.attAttachments FROM tblInstalls; "
+    RecordSource ="tblInstalls"
     Caption ="Installation Detail"
     DatasheetFontName ="Calibri"
+    OnLoad ="[Event Procedure]"
     FilterOnLoad =0
     ShowPageMargins =0
     DisplayOnSharePointSite =1
@@ -71,32 +70,6 @@ Begin Form
             BorderShade =65.0
             GridlineThemeColorIndex =1
             GridlineShade =65.0
-        End
-        Begin CommandButton
-            FontSize =11
-            FontWeight =400
-            FontName ="Calibri"
-            ForeThemeColorIndex =0
-            ForeTint =75.0
-            GridlineThemeColorIndex =1
-            GridlineShade =65.0
-            UseTheme =1
-            Shape =1
-            Gradient =12
-            BackThemeColorIndex =4
-            BackTint =60.0
-            BorderLineStyle =0
-            BorderThemeColorIndex =4
-            BorderTint =60.0
-            ThemeFontIndex =1
-            HoverThemeColorIndex =4
-            HoverTint =40.0
-            PressedThemeColorIndex =4
-            PressedShade =75.0
-            HoverForeThemeColorIndex =0
-            HoverForeTint =75.0
-            PressedForeThemeColorIndex =0
-            PressedForeTint =75.0
         End
         Begin CheckBox
             BorderLineStyle =0
@@ -186,7 +159,7 @@ Begin Form
             GridlineShade =65.0
         End
         Begin FormHeader
-            Height =839
+            Height =840
             BackColor =1315470
             Name ="secFormHeader"
             AlternateBackThemeColorIndex =1
@@ -197,19 +170,19 @@ Begin Form
                     TextAlign =1
                     Left =180
                     Top =180
-                    Width =6000
+                    Width =17220
                     Height =480
                     FontSize =16
                     FontWeight =600
                     ForeColor =16777215
                     Name ="lblFormTitle"
-                    Caption ="Create New Installation Order"
+                    Caption ="Fulfilled Installation Details"
                     FontName ="Verdana"
                     GroupTable =1
                     GridlineColor =10921638
                     LayoutCachedLeft =180
                     LayoutCachedTop =180
-                    LayoutCachedWidth =6180
+                    LayoutCachedWidth =17400
                     LayoutCachedHeight =660
                     LayoutGroup =1
                     ThemeFontIndex =-1
@@ -223,14 +196,17 @@ Begin Form
         End
         Begin Section
             CanGrow = NotDefault
-            Height =12675
+            Height =12660
             Name ="secFormDetail"
             AlternateBackThemeColorIndex =1
             AlternateBackShade =95.0
             BackThemeColorIndex =1
             Begin
                 Begin TextBox
+                    Enabled = NotDefault
+                    OldBorderStyle =0
                     OverlapFlags =85
+                    BackStyle =0
                     IMESentenceMode =3
                     Left =2880
                     Top =840
@@ -250,7 +226,10 @@ Begin Form
                     LayoutCachedHeight =1155
                 End
                 Begin TextBox
-                    OverlapFlags =85
+                    Enabled = NotDefault
+                    OldBorderStyle =0
+                    OverlapFlags =93
+                    BackStyle =0
                     IMESentenceMode =3
                     Left =2880
                     Top =1260
@@ -271,10 +250,13 @@ Begin Form
                     LayoutCachedHeight =1575
                 End
                 Begin TextBox
-                    OverlapFlags =85
+                    Enabled = NotDefault
+                    OldBorderStyle =0
+                    OverlapFlags =247
+                    BackStyle =0
                     IMESentenceMode =3
                     Left =2880
-                    Top =1680
+                    Top =1560
                     Height =315
                     TabIndex =2
                     BorderColor =10921638
@@ -285,15 +267,18 @@ Begin Form
                     GridlineColor =10921638
 
                     LayoutCachedLeft =2880
-                    LayoutCachedTop =1680
+                    LayoutCachedTop =1560
                     LayoutCachedWidth =4320
-                    LayoutCachedHeight =1995
+                    LayoutCachedHeight =1875
                 End
                 Begin TextBox
-                    OverlapFlags =85
+                    Enabled = NotDefault
+                    OldBorderStyle =0
+                    OverlapFlags =255
+                    BackStyle =0
                     IMESentenceMode =3
-                    Left =4380
-                    Top =1680
+                    Left =4800
+                    Top =1560
                     Width =420
                     Height =315
                     TabIndex =3
@@ -304,18 +289,21 @@ Begin Form
                     StatusBarText ="Install address state"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =4380
-                    LayoutCachedTop =1680
-                    LayoutCachedWidth =4800
-                    LayoutCachedHeight =1995
+                    LayoutCachedLeft =4800
+                    LayoutCachedTop =1560
+                    LayoutCachedWidth =5220
+                    LayoutCachedHeight =1875
                 End
                 Begin TextBox
-                    OverlapFlags =85
+                    Enabled = NotDefault
+                    OldBorderStyle =0
+                    OverlapFlags =247
                     TextAlign =3
+                    BackStyle =0
                     IMESentenceMode =3
-                    Left =5160
-                    Top =1680
-                    Width =840
+                    Left =5220
+                    Top =1560
+                    Width =780
                     Height =315
                     TabIndex =4
                     BorderColor =10921638
@@ -325,13 +313,16 @@ Begin Form
                     StatusBarText ="Install address ZIP"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =5160
-                    LayoutCachedTop =1680
+                    LayoutCachedLeft =5220
+                    LayoutCachedTop =1560
                     LayoutCachedWidth =6000
-                    LayoutCachedHeight =1995
+                    LayoutCachedHeight =1875
                 End
                 Begin TextBox
+                    Enabled = NotDefault
+                    OldBorderStyle =0
                     OverlapFlags =85
+                    BackStyle =0
                     IMESentenceMode =3
                     Left =9000
                     Top =1680
@@ -351,8 +342,11 @@ Begin Form
                     LayoutCachedHeight =1995
                 End
                 Begin TextBox
+                    Enabled = NotDefault
+                    OldBorderStyle =0
                     OverlapFlags =85
                     TextAlign =1
+                    BackStyle =0
                     IMESentenceMode =3
                     Left =9000
                     Top =1260
@@ -373,10 +367,13 @@ Begin Form
                     LayoutCachedHeight =1575
                 End
                 Begin TextBox
-                    OverlapFlags =85
+                    Enabled = NotDefault
+                    OldBorderStyle =0
+                    OverlapFlags =93
+                    BackStyle =0
                     IMESentenceMode =3
                     Left =2880
-                    Top =2340
+                    Top =1980
                     Width =2880
                     Height =315
                     TabIndex =5
@@ -388,15 +385,18 @@ Begin Form
                     GridlineColor =10921638
 
                     LayoutCachedLeft =2880
-                    LayoutCachedTop =2340
+                    LayoutCachedTop =1980
                     LayoutCachedWidth =5760
-                    LayoutCachedHeight =2655
+                    LayoutCachedHeight =2295
                 End
                 Begin TextBox
-                    OverlapFlags =85
+                    Enabled = NotDefault
+                    OldBorderStyle =0
+                    OverlapFlags =255
+                    BackStyle =0
                     IMESentenceMode =3
                     Left =2880
-                    Top =2760
+                    Top =2280
                     Width =2880
                     Height =315
                     TabIndex =6
@@ -408,15 +408,18 @@ Begin Form
                     GridlineColor =10921638
 
                     LayoutCachedLeft =2880
-                    LayoutCachedTop =2760
+                    LayoutCachedTop =2280
                     LayoutCachedWidth =5760
-                    LayoutCachedHeight =3075
+                    LayoutCachedHeight =2595
                 End
                 Begin TextBox
-                    OverlapFlags =85
+                    Enabled = NotDefault
+                    OldBorderStyle =0
+                    OverlapFlags =247
+                    BackStyle =0
                     IMESentenceMode =3
                     Left =2880
-                    Top =3180
+                    Top =2580
                     Width =2880
                     Height =315
                     TabIndex =7
@@ -428,15 +431,15 @@ Begin Form
                     GridlineColor =10921638
 
                     LayoutCachedLeft =2880
-                    LayoutCachedTop =3180
+                    LayoutCachedTop =2580
                     LayoutCachedWidth =5760
-                    LayoutCachedHeight =3495
+                    LayoutCachedHeight =2895
                 End
                 Begin TextBox
                     OverlapFlags =85
                     IMESentenceMode =3
                     Left =2880
-                    Top =3840
+                    Top =3000
                     Width =2880
                     Height =315
                     TabIndex =8
@@ -448,15 +451,15 @@ Begin Form
                     GridlineColor =10921638
 
                     LayoutCachedLeft =2880
-                    LayoutCachedTop =3840
+                    LayoutCachedTop =3000
                     LayoutCachedWidth =5760
-                    LayoutCachedHeight =4155
+                    LayoutCachedHeight =3315
                 End
                 Begin TextBox
                     OverlapFlags =85
                     IMESentenceMode =3
                     Left =2880
-                    Top =4260
+                    Top =3420
                     Width =2880
                     Height =315
                     TabIndex =9
@@ -468,15 +471,15 @@ Begin Form
                     GridlineColor =10921638
 
                     LayoutCachedLeft =2880
-                    LayoutCachedTop =4260
+                    LayoutCachedTop =3420
                     LayoutCachedWidth =5760
-                    LayoutCachedHeight =4575
+                    LayoutCachedHeight =3735
                 End
                 Begin TextBox
                     OverlapFlags =85
                     IMESentenceMode =3
                     Left =2880
-                    Top =4680
+                    Top =3840
                     Width =2880
                     Height =315
                     TabIndex =11
@@ -488,9 +491,9 @@ Begin Form
                     GridlineColor =10921638
 
                     LayoutCachedLeft =2880
-                    LayoutCachedTop =4680
+                    LayoutCachedTop =3840
                     LayoutCachedWidth =5760
-                    LayoutCachedHeight =4995
+                    LayoutCachedHeight =4155
                 End
                 Begin TextBox
                     EnterKeyBehavior = NotDefault
@@ -515,6 +518,7 @@ Begin Form
                     LayoutCachedHeight =7983
                 End
                 Begin CheckBox
+                    Enabled = NotDefault
                     OverlapFlags =93
                     Left =6900
                     Top =4170
@@ -522,7 +526,7 @@ Begin Form
                     BorderColor =-2147483609
                     Name ="chkStairsRequired"
                     ControlSource ="ysnStairsRequired"
-                    StatusBarText ="Stairs required for delivery"
+                    StatusBarText ="Stairs required for delivery?"
                     GridlineColor =10921638
 
                     LayoutCachedLeft =6900
@@ -533,6 +537,7 @@ Begin Form
                     BorderShade =100.0
                 End
                 Begin CheckBox
+                    Enabled = NotDefault
                     OverlapFlags =93
                     Left =6900
                     Top =4530
@@ -540,7 +545,7 @@ Begin Form
                     BorderColor =-2147483609
                     Name ="chkElevatorRequired"
                     ControlSource ="ysnElevatorRequired"
-                    StatusBarText ="Elevator required for delivery"
+                    StatusBarText ="Elevator required for delivery?"
                     GridlineColor =10921638
 
                     LayoutCachedLeft =6900
@@ -551,6 +556,7 @@ Begin Form
                     BorderShade =100.0
                 End
                 Begin CheckBox
+                    Enabled = NotDefault
                     OverlapFlags =93
                     Left =6900
                     Top =4890
@@ -558,7 +564,7 @@ Begin Form
                     BorderColor =-2147483609
                     Name ="chkDockDelivery"
                     ControlSource ="ysnDockDelivery"
-                    StatusBarText ="Dock delivery requested"
+                    StatusBarText ="Dock delivery requested?"
                     GridlineColor =10921638
 
                     LayoutCachedLeft =6900
@@ -635,9 +641,12 @@ Begin Form
                     LayoutCachedHeight =11222
                 End
                 Begin TextBox
+                    Enabled = NotDefault
                     EnterKeyBehavior = NotDefault
                     ScrollBars =2
+                    OldBorderStyle =0
                     OverlapFlags =93
+                    BackStyle =0
                     IMESentenceMode =3
                     Left =300
                     Top =6240
@@ -646,7 +655,7 @@ Begin Form
                     TabIndex =20
                     BorderColor =10921638
                     ForeColor =4210752
-                    Name ="txtInternalNotes"
+                    Name ="txtInternal"
                     ControlSource ="memNotes"
                     StatusBarText ="Internal install notes"
                     GridlineColor =10921638
@@ -657,8 +666,11 @@ Begin Form
                     LayoutCachedHeight =6902
                 End
                 Begin TextBox
+                    Enabled = NotDefault
+                    OldBorderStyle =0
                     OverlapFlags =85
                     TextAlign =1
+                    BackStyle =0
                     IMESentenceMode =3
                     Left =9000
                     Top =2880
@@ -678,7 +690,10 @@ Begin Form
                     LayoutCachedHeight =3195
                 End
                 Begin TextBox
+                    Enabled = NotDefault
+                    OldBorderStyle =0
                     OverlapFlags =85
+                    BackStyle =0
                     IMESentenceMode =3
                     Left =9000
                     Top =3300
@@ -698,7 +713,10 @@ Begin Form
                     LayoutCachedHeight =3615
                 End
                 Begin TextBox
+                    Enabled = NotDefault
+                    OldBorderStyle =0
                     OverlapFlags =85
+                    BackStyle =0
                     IMESentenceMode =3
                     Left =9000
                     Top =3720
@@ -718,7 +736,7 @@ Begin Form
                     LayoutCachedHeight =4035
                 End
                 Begin Label
-                    OverlapFlags =93
+                    OverlapFlags =85
                     Left =300
                     Top =300
                     Width =2940
@@ -761,7 +779,7 @@ Begin Form
                     FontWeight =600
                     BorderColor =8355711
                     ForeColor =6710886
-                    Name ="lblInstallationAddressStreet"
+                    Name ="lblInstallationAddress"
                     Caption ="Installation Address:"
                     GridlineColor =10921638
                     LayoutCachedLeft =300
@@ -772,36 +790,19 @@ Begin Form
                 Begin Label
                     OverlapFlags =85
                     Left =300
-                    Top =2340
-                    Width =2520
+                    Top =1980
+                    Width =1860
                     Height =315
                     FontWeight =600
                     BorderColor =8355711
                     ForeColor =6710886
-                    Name ="lblPrimaryContactName"
-                    Caption ="Primary Contact Name:"
+                    Name ="lblPrimaryContact"
+                    Caption ="Primary Contact:"
                     GridlineColor =10921638
                     LayoutCachedLeft =300
-                    LayoutCachedTop =2340
-                    LayoutCachedWidth =2820
-                    LayoutCachedHeight =2655
-                End
-                Begin Label
-                    OverlapFlags =85
-                    Left =300
-                    Top =3840
-                    Width =2340
-                    Height =315
-                    FontWeight =600
-                    BorderColor =8355711
-                    ForeColor =6710886
-                    Name ="lblITContactName"
-                    Caption ="IT Contact Name:"
-                    GridlineColor =10921638
-                    LayoutCachedLeft =300
-                    LayoutCachedTop =3840
-                    LayoutCachedWidth =2640
-                    LayoutCachedHeight =4155
+                    LayoutCachedTop =1980
+                    LayoutCachedWidth =2160
+                    LayoutCachedHeight =2295
                 End
                 Begin Label
                     OverlapFlags =85
@@ -929,30 +930,11 @@ Begin Form
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
                 End
-                Begin Label
-                    OverlapFlags =247
-                    Left =7130
-                    Top =4860
-                    Width =2415
-                    Height =315
-                    LeftMargin =144
-                    BorderColor =8355711
-                    ForeColor =-2147483617
-                    Name ="lblDockDelivery"
-                    Caption ="Loading Dock Delivery"
-                    GridlineColor =10921638
-                    LayoutCachedLeft =7130
-                    LayoutCachedTop =4860
-                    LayoutCachedWidth =9545
-                    LayoutCachedHeight =5175
-                    ForeThemeColorIndex =-1
-                    ForeTint =100.0
-                End
                 Begin Line
                     OverlapFlags =93
                     Top =5280
                     Width =11880
-                    Name ="linHorizontalCenter"
+                    Name ="linHorizontalDivider"
                     GridlineColor =10921638
                     LayoutCachedTop =5280
                     LayoutCachedWidth =11880
@@ -964,7 +946,7 @@ Begin Form
                     Left =6600
                     Width =0
                     Height =5280
-                    Name ="linVerticalCenter"
+                    Name ="linCustomerInfoDivider"
                     GridlineColor =10921638
                     LayoutCachedLeft =6600
                     LayoutCachedWidth =6600
@@ -975,7 +957,7 @@ Begin Form
                     Left =6600
                     Top =2160
                     Width =5280
-                    Name ="linHorizontalTop"
+                    Name ="linInstallOrderInfoDivider"
                     GridlineColor =10921638
                     LayoutCachedLeft =6600
                     LayoutCachedTop =2160
@@ -1142,7 +1124,7 @@ Begin Form
                     Left =11880
                     Width =0
                     Height =11460
-                    Name ="linVerticalBillOfEquipment"
+                    Name ="linBillOfEquipmentDivider"
                     GridlineColor =10921638
                     LayoutCachedLeft =11880
                     LayoutCachedWidth =11880
@@ -1167,6 +1149,7 @@ Begin Form
                     LayoutCachedHeight =735
                 End
                 Begin Subform
+                    Locked = NotDefault
                     OverlapFlags =95
                     Left =11880
                     Top =840
@@ -1174,8 +1157,8 @@ Begin Form
                     Height =4680
                     TabIndex =26
                     BorderColor =-2147483617
-                    Name ="subPrimaryEquipment"
-                    SourceObject ="Form.fsubNewInstallSubPrimaryEquipment"
+                    Name ="subCustomerEquipment"
+                    SourceObject ="Form.fsubExistingInstallSubCustomerEquipment"
                     LinkChildFields ="intInstall"
                     LinkMasterFields ="lngID"
                     GridlineColor =10921638
@@ -1188,20 +1171,45 @@ Begin Form
                     BorderShade =100.0
                 End
                 Begin Subform
-                    OverlapFlags =87
+                    Enabled = NotDefault
+                    Locked = NotDefault
+                    OverlapFlags =95
                     Left =11880
                     Top =5520
-                    Width =10980
+                    Width =6120
                     Height =7020
                     TabIndex =27
                     BorderColor =-2147483617
-                    Name ="subSecondaryEquipment"
-                    SourceObject ="Form.fsubNewInstallSubSecondaryEquipment"
+                    Name ="subAccessoryEquipment"
+                    SourceObject ="Form.fsubExistingInstallSubAccessoryEquipment"
                     LinkChildFields ="intInstall"
                     LinkMasterFields ="lngID"
                     GridlineColor =10921638
 
                     LayoutCachedLeft =11880
+                    LayoutCachedTop =5520
+                    LayoutCachedWidth =18000
+                    LayoutCachedHeight =12540
+                    BorderThemeColorIndex =-1
+                    BorderShade =100.0
+                End
+                Begin Subform
+                    Enabled = NotDefault
+                    Locked = NotDefault
+                    OverlapFlags =87
+                    Left =18000
+                    Top =5520
+                    Width =4860
+                    Height =7020
+                    TabIndex =28
+                    BorderColor =-2147483617
+                    Name ="subSuppliesEquipment"
+                    SourceObject ="Form.fsubExistingInstallSubSupplyEquipment"
+                    LinkChildFields ="intInstall"
+                    LinkMasterFields ="lngID"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =18000
                     LayoutCachedTop =5520
                     LayoutCachedWidth =22860
                     LayoutCachedHeight =12540
@@ -1218,7 +1226,7 @@ Begin Form
                     BorderColor =8355711
                     ForeColor =6710886
                     Name ="lblAttachments"
-                    Caption ="Attached Files:"
+                    Caption ="Attachments:"
                     GridlineColor =10921638
                     LayoutCachedLeft =300
                     LayoutCachedTop =11340
@@ -1229,104 +1237,110 @@ Begin Form
                     Left =300
                     Top =11640
                     Width =11340
-                    Height =540
+                    Height =660
                     BorderColor =10921638
                     Name ="ctlAttachments"
-                    ControlSource ="tblInstalls.attAttachments"
+                    ControlSource ="attAttachments"
                     GridlineColor =10921638
                     TabIndex =25
 
                     LayoutCachedLeft =300
                     LayoutCachedTop =11640
                     LayoutCachedWidth =11640
-                    LayoutCachedHeight =12180
+                    LayoutCachedHeight =12300
+                    StatusBarText ="Related attachments"
                 End
                 Begin Line
-                    LineSlant = NotDefault
-                    OverlapFlags =93
-                    Top =12540
-                    Width =11880
-                    BorderColor =-2147483617
-                    Name ="linHorizontalBottom"
-                    GridlineColor =10921638
-                    LayoutCachedTop =12540
-                    LayoutCachedWidth =11880
-                    LayoutCachedHeight =12540
-                    BorderThemeColorIndex =-1
-                End
-                Begin Line
-                    LineSlant = NotDefault
                     OverlapFlags =93
                     Left =22860
                     Width =0
-                    Height =840
+                    Height =900
                     BorderColor =-2147483617
-                    Name ="linVerticalRight"
+                    Name ="linRightVertical"
                     GridlineColor =10921638
                     LayoutCachedLeft =22860
                     LayoutCachedWidth =22860
-                    LayoutCachedHeight =840
+                    LayoutCachedHeight =900
                     BorderThemeColorIndex =-1
                 End
+                Begin Line
+                    OverlapFlags =93
+                    Top =12540
+                    Width =22860
+                    Name ="linBottomHorizontal"
+                    GridlineColor =10921638
+                    LayoutCachedTop =12540
+                    LayoutCachedWidth =22860
+                    LayoutCachedHeight =12540
+                End
+                Begin Label
+                    OverlapFlags =247
+                    Left =7130
+                    Top =4860
+                    Width =2415
+                    Height =315
+                    LeftMargin =144
+                    BorderColor =8355711
+                    ForeColor =-2147483617
+                    Name ="lblLoadingDockDelivery"
+                    Caption ="Loading Dock Delivery"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =7130
+                    LayoutCachedTop =4860
+                    LayoutCachedWidth =9545
+                    LayoutCachedHeight =5175
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
+                End
+                Begin ComboBox
+                    LimitToList = NotDefault
+                    RowSourceTypeInt =1
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =9000
+                    Top =840
+                    Width =2640
+                    Height =315
+                    TabIndex =10
+                    BorderColor =10921638
+                    Name ="txtInstallStatus"
+                    ControlSource ="strInstallStatus"
+                    RowSourceType ="Value List"
+                    RowSource ="\"Preparation\";\"Ready for Install\";\"Installed\";\"Completed\";\"Cancelled\""
+                    StatusBarText ="Install status"
+                    GridlineColor =10921638
+                    AllowValueListEdits =0
+
+                    LayoutCachedLeft =9000
+                    LayoutCachedTop =840
+                    LayoutCachedWidth =11640
+                    LayoutCachedHeight =1155
+                    ForeThemeColorIndex =0
+                    ForeTint =75.0
+                    ForeShade =100.0
+                End
                 Begin Label
                     OverlapFlags =85
-                    TextAlign =1
                     Left =300
-                    Top =1680
-                    Width =2280
+                    Top =3000
+                    Width =2340
                     Height =315
-                    FontWeight =500
+                    FontWeight =600
                     BorderColor =8355711
                     ForeColor =6710886
-                    Name ="lblInstallationAddressCityStateZip"
-                    Caption ="City, State, ZIP:"
+                    Name ="lblITContactName"
+                    Caption ="IT Contact Name:"
                     GridlineColor =10921638
                     LayoutCachedLeft =300
-                    LayoutCachedTop =1680
-                    LayoutCachedWidth =2580
-                    LayoutCachedHeight =1995
+                    LayoutCachedTop =3000
+                    LayoutCachedWidth =2640
+                    LayoutCachedHeight =3315
                 End
                 Begin Label
                     OverlapFlags =85
                     TextAlign =1
                     Left =300
-                    Top =2760
-                    Width =2280
-                    Height =315
-                    FontWeight =500
-                    BorderColor =8355711
-                    ForeColor =6710886
-                    Name ="lblPrimaryContactPhone"
-                    Caption ="Phone Number:"
-                    GridlineColor =10921638
-                    LayoutCachedLeft =300
-                    LayoutCachedTop =2760
-                    LayoutCachedWidth =2580
-                    LayoutCachedHeight =3075
-                End
-                Begin Label
-                    OverlapFlags =85
-                    TextAlign =1
-                    Left =300
-                    Top =3195
-                    Width =2280
-                    Height =315
-                    FontWeight =500
-                    BorderColor =8355711
-                    ForeColor =6710886
-                    Name ="lblPrimaryContactEmail"
-                    Caption ="Email Address:"
-                    GridlineColor =10921638
-                    LayoutCachedLeft =300
-                    LayoutCachedTop =3195
-                    LayoutCachedWidth =2580
-                    LayoutCachedHeight =3510
-                End
-                Begin Label
-                    OverlapFlags =85
-                    TextAlign =1
-                    Left =300
-                    Top =4260
+                    Top =3420
                     Width =2280
                     Height =315
                     FontWeight =500
@@ -1336,15 +1350,15 @@ Begin Form
                     Caption ="Phone Number:"
                     GridlineColor =10921638
                     LayoutCachedLeft =300
-                    LayoutCachedTop =4260
+                    LayoutCachedTop =3420
                     LayoutCachedWidth =2580
-                    LayoutCachedHeight =4575
+                    LayoutCachedHeight =3735
                 End
                 Begin Label
                     OverlapFlags =85
                     TextAlign =1
                     Left =300
-                    Top =4680
+                    Top =3840
                     Width =2280
                     Height =315
                     FontWeight =500
@@ -1354,87 +1368,9 @@ Begin Form
                     Caption ="Email Address:"
                     GridlineColor =10921638
                     LayoutCachedLeft =300
-                    LayoutCachedTop =4680
+                    LayoutCachedTop =3840
                     LayoutCachedWidth =2580
-                    LayoutCachedHeight =4995
-                End
-                Begin CommandButton
-                    OverlapFlags =85
-                    Left =20340
-                    Top =240
-                    Width =2400
-                    Height =480
-                    FontWeight =500
-                    TabIndex =28
-                    ForeColor =4210752
-                    Name ="cmdSaveAndClose"
-                    Caption ="Save and Close"
-                    OnClick ="[Event Procedure]"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =20340
-                    LayoutCachedTop =240
-                    LayoutCachedWidth =22740
-                    LayoutCachedHeight =720
-                    Gradient =0
-                    BackColor =-2147483607
-                    BackThemeColorIndex =-1
-                    BackTint =100.0
-                    BorderColor =14461583
-                    HoverColor =15189940
-                    PressedColor =9917743
-                    HoverForeColor =4210752
-                    PressedForeColor =4210752
-                    WebImagePaddingLeft =2
-                    WebImagePaddingTop =2
-                    WebImagePaddingRight =1
-                    WebImagePaddingBottom =1
-                    Overlaps =1
-                End
-                Begin TextBox
-                    Visible = NotDefault
-                    OverlapFlags =215
-                    IMESentenceMode =3
-                    Left =300
-                    Top =60
-                    Height =315
-                    TabIndex =29
-                    BorderColor =10921638
-                    ForeColor =4210752
-                    Name ="txtID"
-                    ControlSource ="lngID"
-                    StatusBarText ="Primary key - install ID"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =300
-                    LayoutCachedTop =60
-                    LayoutCachedWidth =1740
-                    LayoutCachedHeight =375
-                End
-                Begin TextBox
-                    Enabled = NotDefault
-                    Locked = NotDefault
-                    OldBorderStyle =0
-                    OverlapFlags =85
-                    BackStyle =0
-                    IMESentenceMode =3
-                    Left =9000
-                    Top =840
-                    Width =2640
-                    Height =315
-                    TabIndex =10
-                    BorderColor =10921638
-                    ForeColor =4210752
-                    Name ="txtInstallStatus"
-                    ControlSource ="strInstallStatus"
-                    StatusBarText ="Install status"
-                    DefaultValue ="\"Preparation\""
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =9000
-                    LayoutCachedTop =840
-                    LayoutCachedWidth =11640
-                    LayoutCachedHeight =1155
+                    LayoutCachedHeight =4155
                 End
             End
         End
@@ -1445,8 +1381,50 @@ Begin Form
             AlternateBackShade =95.0
             BackThemeColorIndex =1
             Begin
+                Begin TextBox
+                    Enabled = NotDefault
+                    FontItalic = NotDefault
+                    OldBorderStyle =0
+                    OverlapFlags =93
+                    TextAlign =1
+                    BackStyle =0
+                    IMESentenceMode =3
+                    Left =1440
+                    Top =180
+                    Height =315
+                    FontSize =9
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="txtRecordID"
+                    ControlSource ="lngID"
+                    StatusBarText ="Primary key - install ID"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =1440
+                    LayoutCachedTop =180
+                    LayoutCachedWidth =2880
+                    LayoutCachedHeight =495
+                End
+                Begin Label
+                    FontItalic = NotDefault
+                    OverlapFlags =247
+                    Left =300
+                    Top =180
+                    Width =1260
+                    Height =315
+                    FontSize =9
+                    BorderColor =8355711
+                    ForeColor =6710886
+                    Name ="lblRecordId"
+                    Caption ="Ref. number"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =300
+                    LayoutCachedTop =180
+                    LayoutCachedWidth =1560
+                    LayoutCachedHeight =495
+                End
                 Begin Image
-                    Left =20580
+                    Left =20520
                     Width =2340
                     Height =720
                     BackColor =1315470
@@ -3999,9 +3977,10 @@ Begin Form
                         0x6082
                     End
 
-                    LayoutCachedLeft =20580
-                    LayoutCachedWidth =22920
+                    LayoutCachedLeft =20520
+                    LayoutCachedWidth =22860
                     LayoutCachedHeight =720
+                    TabIndex =1
                     BackThemeColorIndex =-1
                 End
             End
@@ -4015,8 +3994,6 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Compare Database
 
-Private Sub cmdSaveAndClose_Click()
+Private Sub Form_Load()
 
-    DoCmd.Close
-    
 End Sub

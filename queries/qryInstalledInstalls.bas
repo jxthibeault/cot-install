@@ -1,7 +1,6 @@
 ﻿Operation =1
 Option =0
-Where ="(((tblInstalls.strInstallStatus)=\"Completed\" Or (tblInstalls.strInstallStatus)"
-    "=\"Cancelled\"))"
+Where ="(((tblInstalls.strInstallStatus)=\"Installed\"))"
 Begin InputTables
     Name ="tblInstalls"
 End
@@ -174,7 +173,7 @@ Begin
     Left =-1
     Top =-1
     Right =1226
-    Bottom =410
+    Bottom =393
     Left =0
     Top =0
     ColumnsShown =539

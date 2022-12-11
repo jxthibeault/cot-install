@@ -16,10 +16,10 @@ Begin Form
     Width =22980
     DatasheetFontHeight =11
     ItemSuffix =73
-    Left =5040
-    Top =3660
-    Right =20175
-    Bottom =14175
+    Left =6720
+    Top =3480
+    Right =21855
+    Bottom =13995
     RecSrcDt = Begin
         0xd01332f191ebe540
     End
@@ -175,7 +175,7 @@ Begin Form
                     FontWeight =600
                     ForeColor =16777215
                     Name ="lblFormTitle"
-                    Caption ="Closed Installation - History Detail"
+                    Caption ="Completed Installation - History Detail"
                     FontName ="Verdana"
                     GroupTable =1
                     GridlineColor =10921638
@@ -490,7 +490,7 @@ Begin Form
                     Top =3600
                     Width =2880
                     Height =315
-                    TabIndex =10
+                    TabIndex =11
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="txtITContactEmail"
@@ -875,33 +875,6 @@ Begin Form
                     LayoutCachedTop =840
                     LayoutCachedWidth =8580
                     LayoutCachedHeight =1155
-                End
-                Begin ComboBox
-                    LimitToList = NotDefault
-                    RowSourceTypeInt =1
-                    OverlapFlags =85
-                    IMESentenceMode =3
-                    Left =9000
-                    Top =840
-                    Width =2640
-                    Height =315
-                    TabIndex =11
-                    BorderColor =10921638
-                    Name ="txtInstallStatus"
-                    ControlSource ="strInstallStatus"
-                    RowSourceType ="Value List"
-                    RowSource ="\"Preparation\";\"Ready for Install\";\"Installed\";\"Cancelled\""
-                    StatusBarText ="Install status"
-                    GridlineColor =10921638
-                    AllowValueListEdits =0
-
-                    LayoutCachedLeft =9000
-                    LayoutCachedTop =840
-                    LayoutCachedWidth =11640
-                    LayoutCachedHeight =1155
-                    ForeThemeColorIndex =0
-                    ForeTint =75.0
-                    ForeShade =100.0
                 End
                 Begin Label
                     OverlapFlags =85
@@ -1355,6 +1328,29 @@ Begin Form
                     LayoutCachedHeight =5175
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
+                End
+                Begin TextBox
+                    Enabled = NotDefault
+                    OldBorderStyle =0
+                    OverlapFlags =85
+                    BackStyle =0
+                    IMESentenceMode =3
+                    Left =9000
+                    Top =840
+                    Width =2640
+                    Height =315
+                    TabIndex =10
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="txtInstallStatus"
+                    ControlSource ="strInstallStatus"
+                    StatusBarText ="Install status"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =9000
+                    LayoutCachedTop =840
+                    LayoutCachedWidth =11640
+                    LayoutCachedHeight =1155
                 End
             End
         End

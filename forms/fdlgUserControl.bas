@@ -18,9 +18,9 @@ Begin Form
     Width =12900
     DatasheetFontHeight =11
     ItemSuffix =48
-    Left =5040
+    Left =5565
     Top =3045
-    Right =20430
+    Right =20955
     Bottom =14430
     Filter ="NOT strUsername = '!@#'"
     RecSrcDt = Begin
@@ -3064,7 +3064,15 @@ End Function
 
 Public Function GetUserPassword(strUsername As String) As String
 
-    GetUserPassword = GetUserInfo(strUsername, "strPassword")
+    Dim strReturnedPass As String
+
+    strReturnedPass = GetUserInfo(strUsername, "strPassword")
+    
+    If IsNull(strReturnedPass) Then
+        GetUserPassword = "err_NotAValidUser"
+    Else
+        GetUserPassword = strReturnedPass
+    End If
 
 End Function
 
@@ -3078,7 +3086,11 @@ Public Function LoginCurrentInstance(strUsername As String, strPasswordEntered A
     
     strCorrectPassword = GetUserPassword(strUsername)
     
-    If strCorrectPassword = strPasswordEntered Then
+    If strCorrectPassword = "err_NotAValidUser" Then
+    
+        LoginCurrentInstance = False
+        
+    ElseIf strCorrectPassword = strPasswordEntered Then
             
         ' Cleanup in case currentUser record already exists locally
         ' Disable warnings, as DoCmd.RunSQL asks user for confirmation before executing
