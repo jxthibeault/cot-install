@@ -27,11 +27,9 @@ Begin Form
     Top =3570
     Right =17850
     Bottom =7755
-    OrderBy ="strVersion DESC"
     RecSrcDt = Begin
-        0xdf4312ec4fece540
+        0x2e55f3b84fede540
     End
-    RecordSource ="zstblInstanceVersion"
     Caption ="Login"
     DatasheetFontName ="Calibri"
     Moveable =0

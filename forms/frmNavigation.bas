@@ -14,10 +14,10 @@ Begin Form
     GridY =24
     Width =17880
     DatasheetFontHeight =11
-    ItemSuffix =34
-    Left =5040
+    ItemSuffix =35
+    Left =5565
     Top =2625
-    Right =22605
+    Right =23445
     Bottom =13050
     RecSrcDt = Begin
         0xd5e2a17c9eebe540
@@ -3335,7 +3335,7 @@ Begin Form
             Begin
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =16080
+                    Left =14280
                     Top =60
                     Width =1620
                     Height =300
@@ -3345,9 +3345,9 @@ Begin Form
                     OnClick ="[Event Procedure]"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =16080
+                    LayoutCachedLeft =14280
                     LayoutCachedTop =60
-                    LayoutCachedWidth =17700
+                    LayoutCachedWidth =15900
                     LayoutCachedHeight =360
                     Gradient =0
                     BackColor =-2147483607
@@ -3367,7 +3367,7 @@ Begin Form
                 Begin Label
                     OverlapFlags =85
                     TextAlign =3
-                    Left =13560
+                    Left =11760
                     Top =120
                     Width =2385
                     Height =315
@@ -3375,16 +3375,47 @@ Begin Form
                     BorderColor =8355711
                     ForeColor =16777215
                     Name ="lblVersion"
-                    Caption ="version 1.2.2.1"
+                    Caption ="version x.x.x.x"
                     FontName ="Verdana"
                     GridlineColor =10921638
-                    LayoutCachedLeft =13560
+                    LayoutCachedLeft =11760
                     LayoutCachedTop =120
-                    LayoutCachedWidth =15945
+                    LayoutCachedWidth =14145
                     LayoutCachedHeight =435
                     ThemeFontIndex =-1
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =16020
+                    Top =60
+                    Width =1620
+                    Height =300
+                    TabIndex =1
+                    ForeColor =4210752
+                    Name ="cmdReportBug"
+                    Caption ="Report a Bug"
+                    OnClick ="[Event Procedure]"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =16020
+                    LayoutCachedTop =60
+                    LayoutCachedWidth =17640
+                    LayoutCachedHeight =360
+                    Gradient =0
+                    BackColor =-2147483607
+                    BackThemeColorIndex =-1
+                    BackTint =100.0
+                    BorderColor =14461583
+                    HoverColor =15189940
+                    PressedColor =9917743
+                    HoverForeColor =4210752
+                    PressedForeColor =4210752
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =2
+                    WebImagePaddingRight =1
+                    WebImagePaddingBottom =1
                 End
             End
         End
@@ -3429,6 +3460,15 @@ Private Sub cmdLogout_Click()
     
     ' Re-open login form
     DoCmd.OpenForm "fdlgLogIn", acNormal, , , , acDialog
+
+End Sub
+
+Private Sub cmdReportBug_Click()
+
+    Dim strWebBrowserExecutablePath As String
+    
+    strWebBrowserExecutablePath = """C:\Program Files\Google\Chrome\Application\chrome.exe"""
+    Shell strWebBrowserExecutablePath & " -url https://github.com/jxthibeault/cot-install/issues/new/choose"
 
 End Sub
 
@@ -3509,8 +3549,10 @@ Private Sub Form_Load()
 End Sub
 
 Private Sub cmdWhatsNewButton_Click()
-
-    ' Displays the changelog in a pop-up
-    DoCmd.OpenForm "fdlgChangelog", acNormal, "", "", , acNormal
-
+    
+    Dim strWebBrowserExecutablePath As String
+    
+    strWebBrowserExecutablePath = """C:\Program Files\Google\Chrome\Application\chrome.exe"""
+    Shell strWebBrowserExecutablePath & " -url https://github.com/jxthibeault/cot-install/commits/main"
+    
 End Sub
