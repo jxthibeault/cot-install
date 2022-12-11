@@ -2814,7 +2814,7 @@ Begin Form
                     BackStyle =0
                     Left =180
                     Top =660
-                    Width =17400
+                    Width =17580
                     BorderColor =16777215
                     ForeColor =3484194
                     Name ="navctlTabBar"
@@ -2827,7 +2827,7 @@ Begin Form
 
                     LayoutCachedLeft =180
                     LayoutCachedTop =660
-                    LayoutCachedWidth =17580
+                    LayoutCachedWidth =17760
                     LayoutCachedHeight =1080
                     LayoutGroup =2
                     BackThemeColorIndex =-1
@@ -2949,12 +2949,12 @@ Begin Form
                             OverlapFlags =119
                             Left =5040
                             Top =660
-                            Width =1455
+                            Width =1800
                             Height =405
                             TabIndex =2
                             ForeColor =15527148
                             Name ="navbtnInstalledInstalls"
-                            Caption ="Installed"
+                            Caption ="Post-Processing"
                             GroupTable =1
                             LeftPadding =0
                             TopPadding =0
@@ -2963,7 +2963,7 @@ Begin Form
 
                             LayoutCachedLeft =5040
                             LayoutCachedTop =660
-                            LayoutCachedWidth =6495
+                            LayoutCachedWidth =6840
                             LayoutCachedHeight =1065
                             ColumnStart =2
                             ColumnEnd =2
@@ -3002,7 +3002,7 @@ Begin Form
                         Begin NavigationButton
                             Visible = NotDefault
                             OverlapFlags =119
-                            Left =6525
+                            Left =6870
                             Top =660
                             Width =1785
                             Height =405
@@ -3016,9 +3016,9 @@ Begin Form
                             BottomPadding =15
                             GridlineColor =10921638
 
-                            LayoutCachedLeft =6525
+                            LayoutCachedLeft =6870
                             LayoutCachedTop =660
-                            LayoutCachedWidth =8310
+                            LayoutCachedWidth =8655
                             LayoutCachedHeight =1065
                             ColumnStart =3
                             ColumnEnd =3
@@ -3057,7 +3057,7 @@ Begin Form
                         Begin NavigationButton
                             Visible = NotDefault
                             OverlapFlags =119
-                            Left =8340
+                            Left =8685
                             Top =660
                             Width =1575
                             Height =405
@@ -3071,9 +3071,9 @@ Begin Form
                             BottomPadding =15
                             GridlineColor =10921638
 
-                            LayoutCachedLeft =8340
+                            LayoutCachedLeft =8685
                             LayoutCachedTop =660
-                            LayoutCachedWidth =9915
+                            LayoutCachedWidth =10260
                             LayoutCachedHeight =1065
                             ColumnStart =4
                             ColumnEnd =4
@@ -3112,7 +3112,7 @@ Begin Form
                         Begin NavigationButton
                             Visible = NotDefault
                             OverlapFlags =119
-                            Left =9945
+                            Left =10290
                             Top =660
                             Width =1800
                             Height =405
@@ -3126,9 +3126,9 @@ Begin Form
                             BottomPadding =15
                             GridlineColor =10921638
 
-                            LayoutCachedLeft =9945
+                            LayoutCachedLeft =10290
                             LayoutCachedTop =660
-                            LayoutCachedWidth =11745
+                            LayoutCachedWidth =12090
                             LayoutCachedHeight =1065
                             ColumnStart =5
                             ColumnEnd =5
@@ -3167,7 +3167,7 @@ Begin Form
                         Begin NavigationButton
                             Visible = NotDefault
                             OverlapFlags =119
-                            Left =11775
+                            Left =12120
                             Top =660
                             Width =1860
                             Height =405
@@ -3181,9 +3181,9 @@ Begin Form
                             BottomPadding =15
                             GridlineColor =10921638
 
-                            LayoutCachedLeft =11775
+                            LayoutCachedLeft =12120
                             LayoutCachedTop =660
-                            LayoutCachedWidth =13635
+                            LayoutCachedWidth =13980
                             LayoutCachedHeight =1065
                             ColumnStart =6
                             ColumnEnd =6
@@ -3221,8 +3221,8 @@ Begin Form
                         End
                         Begin NavigationButton
                             Visible = NotDefault
-                            OverlapFlags =119
-                            Left =13665
+                            OverlapFlags =247
+                            Left =14010
                             Top =660
                             Width =1560
                             Height =405
@@ -3236,9 +3236,9 @@ Begin Form
                             BottomPadding =15
                             GridlineColor =10921638
 
-                            LayoutCachedLeft =13665
+                            LayoutCachedLeft =14010
                             LayoutCachedTop =660
-                            LayoutCachedWidth =15225
+                            LayoutCachedWidth =15570
                             LayoutCachedHeight =1065
                             ColumnStart =7
                             ColumnEnd =7
@@ -3271,7 +3271,7 @@ Begin Form
                         End
                         Begin NavigationButton
                             OverlapFlags =247
-                            Left =15255
+                            Left =15600
                             Top =660
                             Width =2070
                             Height =405
@@ -3286,9 +3286,9 @@ Begin Form
                             BottomPadding =15
                             GridlineColor =10921638
 
-                            LayoutCachedLeft =15255
+                            LayoutCachedLeft =15600
                             LayoutCachedTop =660
-                            LayoutCachedWidth =17325
+                            LayoutCachedWidth =17670
                             LayoutCachedHeight =1065
                             ColumnStart =8
                             ColumnEnd =8
@@ -3318,7 +3318,7 @@ Begin Form
                     OverlapFlags =85
                     Left =180
                     Top =1140
-                    Width =17400
+                    Width =17580
                     Height =7860
                     TabIndex =1
                     BorderColor =10921638
@@ -3331,7 +3331,7 @@ Begin Form
 
                     LayoutCachedLeft =180
                     LayoutCachedTop =1140
-                    LayoutCachedWidth =17580
+                    LayoutCachedWidth =17760
                     LayoutCachedHeight =9000
                     RowStart =1
                     RowEnd =1
