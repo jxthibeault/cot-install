@@ -17,10 +17,10 @@ Begin Form
     Width =22980
     DatasheetFontHeight =11
     ItemSuffix =76
-    Left =5565
-    Top =2445
-    Right =20940
-    Bottom =14100
+    Left =5790
+    Top =2715
+    Right =21165
+    Bottom =14370
     RecSrcDt = Begin
         0x07c86f6233eee540
     End
@@ -918,7 +918,7 @@ Begin Form
                     TabIndex =11
                     BorderColor =10921638
                     Name ="txtInstallStatus"
-                    ControlSource ="strInstallStatus"
+                    ControlSource ="strInstallStatus "
                     RowSourceType ="Value List"
                     RowSource ="\"Preparation\";\"Ready for Install\";\"Installed\""
                     StatusBarText ="Install status"
@@ -4108,8 +4108,12 @@ End Sub
 
 Private Sub txtInstallStatus_Change()
 
-    If MsgBox("Have serial numbers been collected for all primary equipment, and EQIDs populated where available?", vbYesNo, "Serial Number Validation") = vbNo Then
-        txtInstallStatus.Value = "Preparation"
+    If txtInstallStatus.Value = "Ready for Install" Then
+    
+        If MsgBox("Have serial numbers been collected for all primary equipment, and EQIDs populated where available?", vbYesNo, "Serial Number Validation") = vbNo Then
+            txtInstallStatus.Value = "Preparation"
+        End If
+        
     End If
 
 End Sub
