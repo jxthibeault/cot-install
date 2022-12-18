@@ -573,7 +573,7 @@ Begin Form
                     LayoutCachedWidth =15840
                     LayoutCachedHeight =480
                     Gradient =0
-                    BackColor =-2147483607
+                    BackColor =15592953
                     BackThemeColorIndex =-1
                     BackTint =100.0
                     BorderColor =14461583
@@ -608,7 +608,7 @@ Option Compare Database
 
 Private Sub cmdModifyOrder_Click()
 
-        DoCmd.OpenForm "frmEditInstall", acNormal, "", "[lngID]=" & txtRecordId.Value, acFormEdit, acWindowNormal
+        DoCmd.OpenForm "frmEditInstall", acNormal, "", "[lngID]=" & txtRecordID.Value, acFormEdit, acWindowNormal
 
     
 End Sub

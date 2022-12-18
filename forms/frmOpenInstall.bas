@@ -17,14 +17,14 @@ Begin Form
     Width =22980
     DatasheetFontHeight =11
     ItemSuffix =76
-    Left =5565
-    Top =2445
-    Right =20940
-    Bottom =14100
+    Left =5790
+    Top =2715
+    Right =21165
+    Bottom =14370
     RecSrcDt = Begin
-        0x830b02b29eebe540
+        0x07c86f6233eee540
     End
-    RecordSource ="SELECT tblInstalls.*, tblInstalls.attAttachments FROM tblInstalls; "
+    RecordSource ="tblInstalls"
     Caption ="Installation Detail"
     DatasheetFontName ="Calibri"
     OnLoad ="[Event Procedure]"
@@ -918,9 +918,9 @@ Begin Form
                     TabIndex =11
                     BorderColor =10921638
                     Name ="txtInstallStatus"
-                    ControlSource ="strInstallStatus"
+                    ControlSource ="strInstallStatus "
                     RowSourceType ="Value List"
-                    RowSource ="\"Preparation\";\"Ready for Install\";\"Installed\""
+                    RowSource ="\"Preparation\";\"Ready for Install\""
                     StatusBarText ="Install status"
                     OnChange ="[Event Procedure]"
                     GridlineColor =10921638
@@ -4108,8 +4108,12 @@ End Sub
 
 Private Sub txtInstallStatus_Change()
 
-    If MsgBox("Have serial numbers been collected for all primary equipment, and EQIDs populated where available?", vbYesNo, "Serial Number Validation") = vbNo Then
-        txtInstallStatus.Value = "Preparation"
+    If txtInstallStatus.Value = "Ready for Install" Then
+    
+        If MsgBox("Have serial numbers been collected for all primary equipment, and EQIDs populated where available?", vbYesNo, "Serial Number Validation") = vbNo Then
+            txtInstallStatus.Value = "Preparation"
+        End If
+        
     End If
 
 End Sub

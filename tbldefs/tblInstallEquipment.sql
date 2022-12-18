@@ -10,5 +10,7 @@
   [ysnInStock] BIT ,
   [ysnReadyForInstall] BIT ,
   [strEquipmentType] VARCHAR (255),
-  [intInstall] LONG 
+  [intInstall] LONG ,
+  [strLocation] VARCHAR (255),
+  [strIpAddress] VARCHAR (255)
 )
