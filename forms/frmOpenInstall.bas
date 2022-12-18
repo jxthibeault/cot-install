@@ -922,6 +922,7 @@ Begin Form
                     RowSourceType ="Value List"
                     RowSource ="\"Preparation\";\"Ready for Install\";\"Installed\""
                     StatusBarText ="Install status"
+                    OnChange ="[Event Procedure]"
                     GridlineColor =10921638
                     AllowValueListEdits =0
                     InheritValueList =0
@@ -4101,6 +4102,14 @@ Private Sub Form_Load()
         
         txtInstallStatus.AddItem "Cancelled"
         
+    End If
+
+End Sub
+
+Private Sub txtInstallStatus_Change()
+
+    If MsgBox("Have serial numbers been collected for all primary equipment, and EQIDs populated where available?", vbYesNo, "Serial Number Validation") = vbNo Then
+        txtInstallStatus.Value = "Preparation"
     End If
 
 End Sub
