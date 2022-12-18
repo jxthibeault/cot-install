@@ -920,7 +920,7 @@ Begin Form
                     Name ="txtInstallStatus"
                     ControlSource ="strInstallStatus "
                     RowSourceType ="Value List"
-                    RowSource ="\"Preparation\";\"Ready for Install\";\"Installed\""
+                    RowSource ="\"Preparation\";\"Ready for Install\""
                     StatusBarText ="Install status"
                     OnChange ="[Event Procedure]"
                     GridlineColor =10921638

@@ -17,10 +17,10 @@ Begin Form
     Width =22980
     DatasheetFontHeight =11
     ItemSuffix =78
-    Left =900
-    Top =2325
-    Right =23730
-    Bottom =14310
+    Left =45
+    Top =2445
+    Right =22875
+    Bottom =14430
     RecSrcDt = Begin
         0x830b02b29eebe540
     End
@@ -1185,7 +1185,7 @@ Begin Form
                     TabIndex =24
                     ForeColor =4210752
                     Name ="cmdSaveAndClose"
-                    Caption ="Save and Close"
+                    Caption ="Close"
                     OnClick ="[Event Procedure]"
                     GridlineColor =10921638
 

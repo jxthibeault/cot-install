@@ -21,15 +21,15 @@ Begin Form
     GridY =24
     Width =11520
     DatasheetFontHeight =11
-    ItemSuffix =82
+    ItemSuffix =84
     Left =7020
-    Top =2280
+    Top =2445
     Right =20160
-    Bottom =14010
+    Bottom =14175
     RecSrcDt = Begin
-        0x830b02b29eebe540
+        0x33f476ae34eee540
     End
-    RecordSource ="SELECT tblInstalls.*, tblInstalls.attAttachments FROM tblInstalls; "
+    RecordSource ="tblInstalls"
     Caption ="Post-Install Info Collection"
     DatasheetFontName ="Calibri"
     OnLoad ="[Event Procedure]"
@@ -193,7 +193,7 @@ Begin Form
         Begin FormHeader
             CanShrink = NotDefault
             Height =839
-            BackColor =1841342
+            BackColor =1315470
             Name ="secFormHeader"
             AlternateBackThemeColorIndex =1
             AlternateBackShade =95.0
@@ -209,7 +209,7 @@ Begin Form
                     FontWeight =600
                     ForeColor =16777215
                     Name ="lblFormTitle"
-                    Caption ="Enter Post-Install Information"
+                    Caption ="Post-Install Info Entry"
                     FontName ="Verdana"
                     GroupTable =1
                     GridlineColor =10921638
@@ -243,6 +243,7 @@ Begin Form
                     Top =600
                     Width =3240
                     Height =315
+                    TabIndex =1
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="txtITContactName"
@@ -262,7 +263,7 @@ Begin Form
                     Top =1020
                     Width =3240
                     Height =315
-                    TabIndex =1
+                    TabIndex =2
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="txtITContactPhone"
@@ -282,7 +283,7 @@ Begin Form
                     Top =1440
                     Width =3240
                     Height =315
-                    TabIndex =2
+                    TabIndex =3
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="txtrITContactEmail"
@@ -303,7 +304,6 @@ Begin Form
                     Top =180
                     Width =3240
                     Height =315
-                    TabIndex =3
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="txtInstallScheduled"
@@ -366,7 +366,7 @@ Begin Form
                     Top =3360
                     Width =10979
                     Height =5820
-                    TabIndex =4
+                    TabIndex =5
                     BorderColor =-2147483617
                     Name ="subCustomerEquipment"
                     SourceObject ="Form.fsubPostInstallEquipment"
@@ -388,7 +388,7 @@ Begin Form
                     Width =4080
                     Height =480
                     FontWeight =500
-                    TabIndex =5
+                    TabIndex =6
                     ForeColor =4210752
                     Name ="cmdSaveAndComplete"
                     Caption ="Save and Mark Complete"
@@ -423,7 +423,7 @@ Begin Form
                     Top =2160
                     Width =10980
                     Height =962
-                    TabIndex =6
+                    TabIndex =4
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="txtPostInstallNotes"
@@ -517,6 +517,50 @@ Begin Form
                     WebImagePaddingRight =1
                     WebImagePaddingBottom =1
                 End
+                Begin ListBox
+                    Visible = NotDefault
+                    RowSourceTypeInt =1
+                    OverlapFlags =247
+                    IMESentenceMode =3
+                    Left =8520
+                    Top =1500
+                    Width =2760
+                    Height =360
+                    TabIndex =8
+                    ForeColor =4210752
+                    BorderColor =10921638
+                    Name ="txtInstallStatus"
+                    ControlSource ="strInstallStatus"
+                    RowSourceType ="Value List"
+                    RowSource ="\"Preparation\";\"Ready for Install\";\"Installed\";\"Completed\";\"Cancelled\""
+                    StatusBarText ="Install status"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =8520
+                    LayoutCachedTop =1500
+                    LayoutCachedWidth =11280
+                    LayoutCachedHeight =1860
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    OverlapFlags =93
+                    IMESentenceMode =3
+                    Left =7140
+                    Top =1500
+                    Height =315
+                    TabIndex =9
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="lngID"
+                    ControlSource ="lngID"
+                    StatusBarText ="Primary key - install ID"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =7140
+                    LayoutCachedTop =1500
+                    LayoutCachedWidth =8580
+                    LayoutCachedHeight =1815
+                End
             End
         End
         Begin FormFooter
@@ -537,35 +581,26 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Compare Database
 
-Private bInstallComplete As Boolean
-
 Private Sub cmdSaveAndComplete_Click()
-    
-    bInstallComplete = True
-    Me.Visible = False
+
+    If MsgBox("Submit this information as complete and close this install order?", vbYesNo, "Close Install Order") = vbYes Then
+        strInstallStatus.Value = "Installed"
+        DoCmd.Close acForm, "frmPostInstallInfo"
+    End If
     
 End Sub
 
 Private Sub cmdSaveForLaterEntry_Click()
 
-    Me.Visible = False
+    DoCmd.Close acForm, "frmPostInstallInfo"
 
 End Sub
-
-Public Function GetInstallComplete() As Boolean
-
-    GetInstallComplete = bInstallComplete
-
-End Function
-
 
 
 Private Sub Form_Load()
 
     Dim strCurrentUser As String
     Dim strUserLevel As String
-    
-    bInstallComplete = False
     
     ' Look up current user's name from instance variables and set logged-in-as label
     strCurrentUser = Form_fdlgUserControl.GetCurrentUser()
