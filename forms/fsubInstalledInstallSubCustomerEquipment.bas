@@ -320,8 +320,10 @@ Begin Form
                 End
                 Begin TextBox
                     EnterKeyBehavior = NotDefault
+                    OldBorderStyle =0
                     OverlapFlags =85
                     TextAlign =2
+                    BackStyle =0
                     IMESentenceMode =3
                     Left =3180
                     Top =60
@@ -345,8 +347,10 @@ Begin Form
                 End
                 Begin TextBox
                     EnterKeyBehavior = NotDefault
+                    OldBorderStyle =0
                     OverlapFlags =85
                     TextAlign =2
+                    BackStyle =0
                     IMESentenceMode =3
                     Left =5100
                     Top =60
@@ -369,8 +373,10 @@ Begin Form
                     GridlineThemeColorIndex =1
                 End
                 Begin TextBox
+                    OldBorderStyle =0
                     OverlapFlags =85
                     TextAlign =2
+                    BackStyle =0
                     IMESentenceMode =3
                     Left =6300
                     Top =60
@@ -393,8 +399,10 @@ Begin Form
                     GridlineThemeColorIndex =1
                 End
                 Begin TextBox
+                    OldBorderStyle =0
                     OverlapFlags =85
                     TextAlign =2
+                    BackStyle =0
                     IMESentenceMode =3
                     Left =7140
                     Top =60
@@ -417,7 +425,6 @@ Begin Form
                     GridlineThemeColorIndex =1
                 End
                 Begin TextBox
-                    Enabled = NotDefault
                     CanGrow = NotDefault
                     EnterKeyBehavior = NotDefault
                     OldBorderStyle =0
@@ -445,7 +452,6 @@ Begin Form
                     GridlineThemeColorIndex =1
                 End
                 Begin TextBox
-                    Enabled = NotDefault
                     CanGrow = NotDefault
                     EnterKeyBehavior = NotDefault
                     OldBorderStyle =0

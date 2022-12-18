@@ -1224,8 +1224,8 @@ Begin Form
                     TabIndex =26
                     BorderColor =-2147483617
                     Name ="subCustomerEquipment"
-                    SourceObject ="Form.fsubExistingInstallSubCustomerEquipment"
-                    LinkChildFields ="intInstall"
+                    SourceObject ="Form.fsubInstalledInstallSubCustomerEquipment"
+                    LinkChildFields ="lngID"
                     LinkMasterFields ="lngID"
                     GridlineColor =10921638
 
@@ -1247,8 +1247,8 @@ Begin Form
                     TabIndex =27
                     BorderColor =-2147483617
                     Name ="subAccessoryEquipment"
-                    SourceObject ="Form.fsubExistingInstallSubAccessoryEquipment"
-                    LinkChildFields ="intInstall"
+                    SourceObject ="Form.fsubInstalledInstallSubAccessoryEquipment"
+                    LinkChildFields ="lngID"
                     LinkMasterFields ="lngID"
                     GridlineColor =10921638
 
@@ -1270,8 +1270,8 @@ Begin Form
                     TabIndex =28
                     BorderColor =-2147483617
                     Name ="subSuppliesEquipment"
-                    SourceObject ="Form.fsubExistingInstallSubSupplyEquipment"
-                    LinkChildFields ="intInstall"
+                    SourceObject ="Form.fsubInstalledInstallSubSupplyEquipment"
+                    LinkChildFields ="lngID"
                     LinkMasterFields ="lngID"
                     GridlineColor =10921638
 
