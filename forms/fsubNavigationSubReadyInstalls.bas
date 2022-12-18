@@ -616,7 +616,7 @@ Option Compare Database
 
 Private Sub cmdInstallComplete_Click()
 
-    DoCmd.OpenForm "frmPostInstallInfo", acNormal, "", "[lngID]=" & txtRecordID, , acNormal
+    DoCmd.OpenForm "frmPostInstallInfo", acModal, "", "[lngID]=" & txtRecordID, , acModal
 
 End Sub
 

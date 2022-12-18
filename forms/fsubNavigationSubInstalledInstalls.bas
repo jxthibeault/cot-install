@@ -8,6 +8,7 @@ Begin Form
     AllowDeletions = NotDefault
     DividingLines = NotDefault
     AllowAdditions = NotDefault
+    OrderByOn = NotDefault
     AllowEdits = NotDefault
     PictureAlignment =2
     DatasheetGridlinesBehavior =3
@@ -557,22 +558,22 @@ Begin Form
                     OverlapFlags =85
                     Left =12780
                     Top =180
+                    Width =1800
                     Height =300
                     TabIndex =5
                     ForeColor =4210752
                     Name ="cmdOpenInstallDetails"
-                    Caption ="Details"
+                    Caption ="View Details"
                     OnClick ="[Event Procedure]"
                     GridlineColor =10921638
 
                     LayoutCachedLeft =12780
                     LayoutCachedTop =180
-                    LayoutCachedWidth =14220
+                    LayoutCachedWidth =14580
                     LayoutCachedHeight =480
                     Gradient =0
-                    BackColor =-2147483607
-                    BackThemeColorIndex =-1
-                    BackTint =100.0
+                    BackThemeColorIndex =5
+                    BackTint =20.0
                     BorderColor =14461583
                     HoverColor =15189940
                     PressedColor =9917743

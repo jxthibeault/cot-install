@@ -15,7 +15,7 @@ Begin Form
     GridY =24
     Width =22980
     DatasheetFontHeight =11
-    ItemSuffix =73
+    ItemSuffix =75
     Left =6375
     Top =2835
     Right =21510
@@ -516,7 +516,7 @@ Begin Form
                     Top =7320
                     Width =11340
                     Height =663
-                    TabIndex =21
+                    TabIndex =18
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="txtDeliveryNotes"
@@ -528,63 +528,6 @@ Begin Form
                     LayoutCachedTop =7320
                     LayoutCachedWidth =11640
                     LayoutCachedHeight =7983
-                End
-                Begin CheckBox
-                    Enabled = NotDefault
-                    OverlapFlags =93
-                    Left =6900
-                    Top =4170
-                    TabIndex =17
-                    BorderColor =-2147483609
-                    Name ="chkStairsRequired"
-                    ControlSource ="ysnStairsRequired"
-                    StatusBarText ="Stairs required for delivery?"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =6900
-                    LayoutCachedTop =4170
-                    LayoutCachedWidth =7160
-                    LayoutCachedHeight =4410
-                    BorderThemeColorIndex =-1
-                    BorderShade =100.0
-                End
-                Begin CheckBox
-                    Enabled = NotDefault
-                    OverlapFlags =93
-                    Left =6900
-                    Top =4530
-                    TabIndex =18
-                    BorderColor =-2147483609
-                    Name ="chkElevatorRequired"
-                    ControlSource ="ysnElevatorRequired"
-                    StatusBarText ="Elevator required for delivery?"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =6900
-                    LayoutCachedTop =4530
-                    LayoutCachedWidth =7160
-                    LayoutCachedHeight =4770
-                    BorderThemeColorIndex =-1
-                    BorderShade =100.0
-                End
-                Begin CheckBox
-                    Enabled = NotDefault
-                    OverlapFlags =93
-                    Left =6900
-                    Top =4890
-                    TabIndex =19
-                    BorderColor =-2147483609
-                    Name ="chkDockDelivery"
-                    ControlSource ="ysnDockDelivery"
-                    StatusBarText ="Dock delivery requested?"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =6900
-                    LayoutCachedTop =4890
-                    LayoutCachedWidth =7160
-                    LayoutCachedHeight =5130
-                    BorderThemeColorIndex =-1
-                    BorderShade =100.0
                 End
                 Begin TextBox
                     Enabled = NotDefault
@@ -598,7 +541,7 @@ Begin Form
                     Top =8400
                     Width =11340
                     Height =662
-                    TabIndex =22
+                    TabIndex =19
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="txtDeploymentNotes"
@@ -623,7 +566,7 @@ Begin Form
                     Top =9480
                     Width =11340
                     Height =662
-                    TabIndex =23
+                    TabIndex =20
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="txtNetworkNotes"
@@ -648,7 +591,7 @@ Begin Form
                     Top =10560
                     Width =11340
                     Height =662
-                    TabIndex =24
+                    TabIndex =21
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="txtSpecialHandlingNotes"
@@ -673,7 +616,7 @@ Begin Form
                     Top =6240
                     Width =11340
                     Height =662
-                    TabIndex =20
+                    TabIndex =17
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="txtInternal"
@@ -957,66 +900,27 @@ Begin Form
                     LayoutCachedWidth =10290
                     LayoutCachedHeight =2775
                 End
-                Begin Label
-                    OverlapFlags =247
-                    Left =7130
-                    Top =4140
-                    Width =2475
-                    Height =315
-                    LeftMargin =144
-                    BorderColor =8355711
-                    ForeColor =-2147483617
-                    Name ="lblStairClimberRequired"
-                    Caption ="Stair Climber Required"
-                    LeftPadding =361
-                    GridlineColor =10921638
-                    LayoutCachedLeft =7130
-                    LayoutCachedTop =4140
-                    LayoutCachedWidth =9605
-                    LayoutCachedHeight =4455
-                    ForeThemeColorIndex =-1
-                    ForeTint =100.0
-                End
-                Begin Label
-                    OverlapFlags =247
-                    Left =7130
-                    Top =4500
-                    Width =2895
-                    Height =315
-                    LeftMargin =144
-                    BorderColor =8355711
-                    ForeColor =-2147483617
-                    Name ="lblElevatorAvailable"
-                    Caption ="Elevator Available Onsite"
-                    GridlineColor =10921638
-                    LayoutCachedLeft =7130
-                    LayoutCachedTop =4500
-                    LayoutCachedWidth =10025
-                    LayoutCachedHeight =4815
-                    ForeThemeColorIndex =-1
-                    ForeTint =100.0
-                End
                 Begin Line
                     OverlapFlags =93
-                    Top =5280
+                    Top =4140
                     Width =11880
                     Name ="linHorizontalDivider"
                     GridlineColor =10921638
-                    LayoutCachedTop =5280
+                    LayoutCachedTop =4140
                     LayoutCachedWidth =11880
-                    LayoutCachedHeight =5280
+                    LayoutCachedHeight =4140
                 End
                 Begin Line
                     LineSlant = NotDefault
                     OverlapFlags =95
                     Left =6600
                     Width =0
-                    Height =5280
+                    Height =4140
                     Name ="linCustomerInfoDivider"
                     GridlineColor =10921638
                     LayoutCachedLeft =6600
                     LayoutCachedWidth =6600
-                    LayoutCachedHeight =5280
+                    LayoutCachedHeight =4140
                 End
                 Begin Line
                     OverlapFlags =95
@@ -1033,7 +937,7 @@ Begin Form
                 Begin Label
                     OverlapFlags =85
                     Left =300
-                    Top =5400
+                    Top =4380
                     Width =3390
                     Height =435
                     FontSize =16
@@ -1044,9 +948,9 @@ Begin Form
                     Caption ="Order Notes"
                     GridlineColor =10921638
                     LayoutCachedLeft =300
-                    LayoutCachedTop =5400
+                    LayoutCachedTop =4380
                     LayoutCachedWidth =3690
-                    LayoutCachedHeight =5835
+                    LayoutCachedHeight =4815
                 End
                 Begin Label
                     OverlapFlags =247
@@ -1221,11 +1125,11 @@ Begin Form
                     Top =840
                     Width =10979
                     Height =4680
-                    TabIndex =26
+                    TabIndex =23
                     BorderColor =-2147483617
                     Name ="subCustomerEquipment"
                     SourceObject ="Form.fsubInstalledInstallSubCustomerEquipment"
-                    LinkChildFields ="lngID"
+                    LinkChildFields ="intInstall"
                     LinkMasterFields ="lngID"
                     GridlineColor =10921638
 
@@ -1244,7 +1148,7 @@ Begin Form
                     Top =5520
                     Width =6120
                     Height =7020
-                    TabIndex =27
+                    TabIndex =24
                     BorderColor =-2147483617
                     Name ="subAccessoryEquipment"
                     SourceObject ="Form.fsubInstalledInstallSubAccessoryEquipment"
@@ -1267,7 +1171,7 @@ Begin Form
                     Top =5520
                     Width =4860
                     Height =7020
-                    TabIndex =28
+                    TabIndex =25
                     BorderColor =-2147483617
                     Name ="subSuppliesEquipment"
                     SourceObject ="Form.fsubInstalledInstallSubSupplyEquipment"
@@ -1308,7 +1212,7 @@ Begin Form
                     Name ="ctlAttachments"
                     ControlSource ="attAttachments"
                     GridlineColor =10921638
-                    TabIndex =25
+                    TabIndex =22
 
                     LayoutCachedLeft =300
                     LayoutCachedTop =11640
@@ -1339,24 +1243,47 @@ Begin Form
                     LayoutCachedWidth =22860
                     LayoutCachedHeight =12540
                 End
+                Begin TextBox
+                    Enabled = NotDefault
+                    EnterKeyBehavior = NotDefault
+                    ScrollBars =2
+                    OldBorderStyle =0
+                    OverlapFlags =93
+                    BackStyle =0
+                    IMESentenceMode =3
+                    Left =300
+                    Top =5160
+                    Width =11340
+                    Height =662
+                    TabIndex =26
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="txtPostInstallNotes"
+                    ControlSource ="memPostInstallNotes"
+                    StatusBarText ="Internal install notes"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =300
+                    LayoutCachedTop =5160
+                    LayoutCachedWidth =11640
+                    LayoutCachedHeight =5822
+                End
                 Begin Label
                     OverlapFlags =247
-                    Left =7130
+                    Left =300
                     Top =4860
-                    Width =2415
+                    Width =4080
                     Height =315
-                    LeftMargin =144
+                    FontWeight =600
                     BorderColor =8355711
-                    ForeColor =-2147483617
-                    Name ="lblLoadingDockDelivery"
-                    Caption ="Loading Dock Delivery"
+                    ForeColor =6710886
+                    Name ="lblPostInstallNotes"
+                    Caption ="Post-Install and Follow-Up Notes"
                     GridlineColor =10921638
-                    LayoutCachedLeft =7130
+                    LayoutCachedLeft =300
                     LayoutCachedTop =4860
-                    LayoutCachedWidth =9545
+                    LayoutCachedWidth =4380
                     LayoutCachedHeight =5175
-                    ForeThemeColorIndex =-1
-                    ForeTint =100.0
                 End
             End
         End

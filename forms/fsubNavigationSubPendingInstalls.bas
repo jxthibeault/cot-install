@@ -559,22 +559,22 @@ Begin Form
                     OverlapFlags =85
                     Left =12780
                     Top =180
+                    Width =1613
                     Height =300
                     TabIndex =5
                     ForeColor =4210752
                     Name ="cmdOpenInstallDetails"
-                    Caption ="Details"
+                    Caption ="View Details"
                     OnClick ="[Event Procedure]"
                     GridlineColor =10921638
 
                     LayoutCachedLeft =12780
                     LayoutCachedTop =180
-                    LayoutCachedWidth =14220
+                    LayoutCachedWidth =14393
                     LayoutCachedHeight =480
                     Gradient =0
-                    BackColor =-2147483607
-                    BackThemeColorIndex =-1
-                    BackTint =100.0
+                    BackThemeColorIndex =5
+                    BackTint =20.0
                     BorderColor =14461583
                     HoverColor =15189940
                     PressedColor =9917743
@@ -588,9 +588,9 @@ Begin Form
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =14400
+                    Left =14520
                     Top =180
-                    Width =1800
+                    Width =1613
                     Height =299
                     TabIndex =6
                     ForeColor =4210752
@@ -599,14 +599,13 @@ Begin Form
                     OnClick ="[Event Procedure]"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =14400
+                    LayoutCachedLeft =14520
                     LayoutCachedTop =180
-                    LayoutCachedWidth =16200
+                    LayoutCachedWidth =16133
                     LayoutCachedHeight =479
                     Gradient =0
-                    BackColor =-2147483607
-                    BackThemeColorIndex =-1
-                    BackTint =100.0
+                    BackColor =15983578
+                    BackTint =20.0
                     BorderColor =14461583
                     HoverColor =15189940
                     PressedColor =9917743

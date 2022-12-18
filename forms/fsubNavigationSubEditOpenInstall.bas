@@ -573,7 +573,7 @@ Begin Form
                     LayoutCachedWidth =15840
                     LayoutCachedHeight =480
                     Gradient =0
-                    BackColor =-2147483607
+                    BackColor =15592953
                     BackThemeColorIndex =-1
                     BackTint =100.0
                     BorderColor =14461583
