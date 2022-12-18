@@ -17,10 +17,8 @@ Begin Form
     Width =16344
     DatasheetFontHeight =11
     ItemSuffix =103
-    Left =585
-    Top =3420
-    Right =17805
-    Bottom =11010
+    Right =15135
+    Bottom =11730
     OrderBy ="dtmInstallScheduled, dtmDateReceived, strCustomer"
     RecSrcDt = Begin
         0x3d57a9c5d9ebe540
@@ -284,7 +282,7 @@ Begin Form
                     FontWeight =500
                     ForeColor =16777215
                     Name ="lblFormTitle"
-                    Caption ="In-Progress Install Orders - Ready to Ship"
+                    Caption ="In-Progress Installs - Ready to Ship"
                     FontName ="Verdana"
                     GroupTable =2
                     GridlineColor =10921638
@@ -639,12 +637,12 @@ Option Compare Database
 
 Private Sub cmdPrintTicket_Click()
 
-    DoCmd.OpenReport "rptInstallTicket", acViewPreview, , "[lngID] = " & txtRecordID.Value, acWindowNormal
+    DoCmd.OpenReport "rptInstallTicket", acViewPreview, , "[lngID] = " & txtRecordId.Value, acWindowNormal
     
 End Sub
 
 Private Sub cmdOpenInstallDetails_Click()
 
-    DoCmd.OpenForm "frmOpenInstall", acNormal, "", "[lngID]=" & txtRecordID, , acNormal
+    DoCmd.OpenForm "frmOpenInstall", acNormal, "", "[lngID]=" & txtRecordId, , acNormal
 
 End Sub

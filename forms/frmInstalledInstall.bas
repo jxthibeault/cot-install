@@ -3,36 +3,37 @@ VersionRequired =20
 Begin Form
     PopUp = NotDefault
     RecordSelectors = NotDefault
+    AutoCenter = NotDefault
     NavigationButtons = NotDefault
     DividingLines = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
-    ScrollBars =0
+    ScrollBars =2
+    RecordLocks =2
     PictureAlignment =2
     DatasheetGridlinesBehavior =3
     GridX =24
     GridY =24
-    Width =17760
+    Width =22980
     DatasheetFontHeight =11
-    ItemSuffix =39
+    ItemSuffix =76
     Left =5565
-    Top =2790
-    Right =23445
-    Bottom =13215
+    Top =2445
+    Right =20940
+    Bottom =14100
     RecSrcDt = Begin
-        0xd5e2a17c9eebe540
+        0x830b02b29eebe540
     End
-    Caption ="Installation Dashboard - COT Portland"
-    OnClose ="[Event Procedure]"
+    RecordSource ="SELECT tblInstalls.*, tblInstalls.attAttachments FROM tblInstalls; "
+    Caption ="Installation Detail"
     DatasheetFontName ="Calibri"
     OnLoad ="[Event Procedure]"
-    AllowDatasheetView =0
     FilterOnLoad =0
     ShowPageMargins =0
     DisplayOnSharePointSite =1
     DatasheetAlternateBackColor =15921906
     DatasheetGridlinesColor12 =0
-    FitToScreen =1
+    FitToScreen =255
     DatasheetBackThemeColorIndex =1
     BorderThemeColorIndex =3
     ThemeFontIndex =1
@@ -50,6 +51,12 @@ Begin Form
             BorderTint =50.0
             ForeThemeColorIndex =0
             ForeTint =60.0
+            GridlineThemeColorIndex =1
+            GridlineShade =65.0
+        End
+        Begin Line
+            BorderLineStyle =0
+            BorderThemeColorIndex =0
             GridlineThemeColorIndex =1
             GridlineShade =65.0
         End
@@ -91,6 +98,65 @@ Begin Form
             PressedForeThemeColorIndex =0
             PressedForeTint =75.0
         End
+        Begin CheckBox
+            BorderLineStyle =0
+            LabelX =230
+            LabelY =-30
+            BorderThemeColorIndex =1
+            BorderShade =65.0
+            GridlineThemeColorIndex =1
+            GridlineShade =65.0
+        End
+        Begin TextBox
+            AddColon = NotDefault
+            FELineBreak = NotDefault
+            BorderLineStyle =0
+            LabelX =-1800
+            FontSize =11
+            FontName ="Calibri"
+            AsianLineBreak =1
+            BackThemeColorIndex =1
+            BorderThemeColorIndex =1
+            BorderShade =65.0
+            ThemeFontIndex =1
+            ForeThemeColorIndex =0
+            ForeTint =75.0
+            GridlineThemeColorIndex =1
+            GridlineShade =65.0
+        End
+        Begin ListBox
+            BorderLineStyle =0
+            LabelX =-1800
+            FontSize =11
+            FontName ="Calibri"
+            AllowValueListEdits =1
+            InheritValueList =1
+            ThemeFontIndex =1
+            BackThemeColorIndex =1
+            BorderThemeColorIndex =1
+            BorderShade =65.0
+            ForeThemeColorIndex =0
+            ForeTint =75.0
+            GridlineThemeColorIndex =1
+            GridlineShade =65.0
+        End
+        Begin ComboBox
+            AddColon = NotDefault
+            BorderLineStyle =0
+            LabelX =-1800
+            FontSize =11
+            FontName ="Calibri"
+            AllowValueListEdits =1
+            InheritValueList =1
+            ThemeFontIndex =1
+            BackThemeColorIndex =1
+            BorderThemeColorIndex =1
+            BorderShade =65.0
+            ForeThemeColorIndex =2
+            ForeShade =50.0
+            GridlineThemeColorIndex =1
+            GridlineShade =65.0
+        End
         Begin Subform
             BorderLineStyle =0
             BorderThemeColorIndex =1
@@ -99,49 +165,28 @@ Begin Form
             BorderShade =65.0
             ShowPageHeaderAndPageFooter =1
         End
+        Begin Attachment
+            BackStyle =0
+            BorderLineStyle =0
+            PictureSizeMode =3
+            Width =4800
+            Height =3840
+            LabelX =-1800
+            AddColon =0
+            ThemeFontIndex =1
+            BackThemeColorIndex =1
+            BorderThemeColorIndex =1
+            BorderShade =65.0
+            GridlineThemeColorIndex =1
+            GridlineShade =65.0
+        End
         Begin EmptyCell
             Height =240
             GridlineThemeColorIndex =1
             GridlineShade =65.0
         End
-        Begin NavigationControl
-            BorderWidth =1
-            BorderLineStyle =0
-            BackThemeColorIndex =1
-            BorderThemeColorIndex =1
-            GridlineThemeColorIndex =1
-            GridlineShade =65.0
-        End
-        Begin NavigationButton
-            ForeColor =-2
-            GridlineThemeColorIndex =1
-            GridlineShade =65.0
-            HoverColor =-2
-            HoverThemeColorIndex =2
-            HoverTint =20.0
-            PressedColor =-2
-            PressedThemeColorIndex =2
-            PressedTint =60.0
-            HoverForeColor =-2
-            HoverForeThemeColorIndex =0
-            HoverForeTint =75.0
-            PressedForeColor =-2
-            PressedForeThemeColorIndex =0
-            PressedForeTint =75.0
-            BackThemeColorIndex =1
-            OldBorderStyle =0
-            BorderLineStyle =0
-            BorderThemeColorIndex =3
-            BorderShade =90.0
-            ThemeFontIndex =1
-            FontName ="Calibri"
-            FontWeight =400
-            FontSize =11
-            ForeThemeColorIndex =0
-            ForeTint =75.0
-        End
         Begin FormHeader
-            Height =720
+            Height =839
             BackColor =1315470
             Name ="secFormHeader"
             AlternateBackThemeColorIndex =1
@@ -150,47 +195,1246 @@ Begin Form
                 Begin Label
                     OverlapFlags =85
                     TextAlign =1
-                    Left =300
-                    Top =120
-                    Width =9772
-                    Height =460
-                    FontSize =18
-                    FontWeight =800
+                    Left =180
+                    Top =180
+                    Width =5940
+                    Height =480
+                    FontSize =16
+                    FontWeight =600
                     ForeColor =16777215
                     Name ="lblFormTitle"
-                    Caption ="Installation Dashboard"
+                    Caption ="Install Post-Processing Info"
                     FontName ="Verdana"
-                    GroupTable =3
+                    GroupTable =1
                     GridlineColor =10921638
-                    HorizontalAnchor =2
-                    LayoutCachedLeft =300
-                    LayoutCachedTop =120
-                    LayoutCachedWidth =10072
-                    LayoutCachedHeight =580
-                    LayoutGroup =3
+                    LayoutCachedLeft =180
+                    LayoutCachedTop =180
+                    LayoutCachedWidth =6120
+                    LayoutCachedHeight =660
+                    LayoutGroup =1
                     ThemeFontIndex =-1
                     BorderThemeColorIndex =2
                     BorderTint =100.0
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
-                    GroupTable =3
+                    GroupTable =1
+                End
+                Begin TextBox
+                    Locked = NotDefault
+                    OldBorderStyle =0
+                    OverlapFlags =85
+                    TextAlign =3
+                    BackStyle =0
+                    IMESentenceMode =3
+                    Left =10080
+                    Top =180
+                    Width =12120
+                    Height =480
+                    FontSize =14
+                    FontWeight =500
+                    BorderColor =10921638
+                    ForeColor =16777215
+                    Name ="txtCustomerNameHeader"
+                    ControlSource ="strCustomer"
+                    StatusBarText ="Customer name as it appears on legal documents"
+                    FontName ="Verdana"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =10080
+                    LayoutCachedTop =180
+                    LayoutCachedWidth =22200
+                    LayoutCachedHeight =660
+                    ThemeFontIndex =-1
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
+                End
+            End
+        End
+        Begin Section
+            CanGrow = NotDefault
+            Height =12675
+            Name ="secFormDetail"
+            AlternateBackThemeColorIndex =1
+            AlternateBackShade =95.0
+            BackThemeColorIndex =1
+            Begin
+                Begin TextBox
+                    Enabled = NotDefault
+                    OldBorderStyle =0
+                    OverlapFlags =85
+                    BackStyle =0
+                    IMESentenceMode =3
+                    Left =2880
+                    Top =840
+                    Width =3120
+                    Height =315
+                    ColumnWidth =4290
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="txtCustomer"
+                    ControlSource ="strCustomer"
+                    StatusBarText ="Customer name as it appears on legal documents"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =2880
+                    LayoutCachedTop =840
+                    LayoutCachedWidth =6000
+                    LayoutCachedHeight =1155
+                End
+                Begin TextBox
+                    Enabled = NotDefault
+                    OldBorderStyle =0
+                    OverlapFlags =93
+                    BackStyle =0
+                    IMESentenceMode =3
+                    Left =2880
+                    Top =1260
+                    Width =3120
+                    Height =315
+                    ColumnWidth =3420
+                    TabIndex =1
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="txtAddressStreet"
+                    ControlSource ="strAddressStreet"
+                    StatusBarText ="Install address street"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =2880
+                    LayoutCachedTop =1260
+                    LayoutCachedWidth =6000
+                    LayoutCachedHeight =1575
+                End
+                Begin TextBox
+                    Enabled = NotDefault
+                    OldBorderStyle =0
+                    OverlapFlags =247
+                    BackStyle =0
+                    IMESentenceMode =3
+                    Left =2880
+                    Top =1560
+                    Height =315
+                    TabIndex =2
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="txtAddressCity"
+                    ControlSource ="strAddressCity"
+                    StatusBarText ="Install address city"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =2880
+                    LayoutCachedTop =1560
+                    LayoutCachedWidth =4320
+                    LayoutCachedHeight =1875
+                End
+                Begin TextBox
+                    Enabled = NotDefault
+                    OldBorderStyle =0
+                    OverlapFlags =255
+                    BackStyle =0
+                    IMESentenceMode =3
+                    Left =4800
+                    Top =1560
+                    Width =420
+                    Height =315
+                    TabIndex =3
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="txtAddressState"
+                    ControlSource ="strAddressState"
+                    StatusBarText ="Install address state"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =4800
+                    LayoutCachedTop =1560
+                    LayoutCachedWidth =5220
+                    LayoutCachedHeight =1875
+                End
+                Begin TextBox
+                    Enabled = NotDefault
+                    OldBorderStyle =0
+                    OverlapFlags =247
+                    TextAlign =3
+                    BackStyle =0
+                    IMESentenceMode =3
+                    Left =5220
+                    Top =1560
+                    Width =780
+                    Height =315
+                    TabIndex =4
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="txtAddressZIP"
+                    ControlSource ="strAddressZIP"
+                    StatusBarText ="Install address ZIP"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =5220
+                    LayoutCachedTop =1560
+                    LayoutCachedWidth =6000
+                    LayoutCachedHeight =1875
+                End
+                Begin TextBox
+                    Enabled = NotDefault
+                    OldBorderStyle =0
+                    OverlapFlags =85
+                    BackStyle =0
+                    IMESentenceMode =3
+                    Left =9000
+                    Top =1680
+                    Width =2640
+                    Height =315
+                    TabIndex =13
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="txtSalesRep"
+                    ControlSource ="strSalesRep"
+                    StatusBarText ="Originating sales rep"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =9000
+                    LayoutCachedTop =1680
+                    LayoutCachedWidth =11640
+                    LayoutCachedHeight =1995
+                End
+                Begin TextBox
+                    Enabled = NotDefault
+                    OldBorderStyle =0
+                    OverlapFlags =85
+                    TextAlign =1
+                    BackStyle =0
+                    IMESentenceMode =3
+                    Left =9000
+                    Top =1260
+                    Width =2640
+                    Height =315
+                    TabIndex =12
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="txtDateReceived"
+                    ControlSource ="dtmDateReceived"
+                    Format ="Short Date"
+                    StatusBarText ="Date installation notice received"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =9000
+                    LayoutCachedTop =1260
+                    LayoutCachedWidth =11640
+                    LayoutCachedHeight =1575
+                End
+                Begin TextBox
+                    Enabled = NotDefault
+                    OldBorderStyle =0
+                    OverlapFlags =93
+                    BackStyle =0
+                    IMESentenceMode =3
+                    Left =2880
+                    Top =1980
+                    Width =2880
+                    Height =315
+                    TabIndex =5
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="txtContactName"
+                    ControlSource ="strContactName"
+                    StatusBarText ="Customer contact name"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =2880
+                    LayoutCachedTop =1980
+                    LayoutCachedWidth =5760
+                    LayoutCachedHeight =2295
+                End
+                Begin TextBox
+                    Enabled = NotDefault
+                    OldBorderStyle =0
+                    OverlapFlags =255
+                    BackStyle =0
+                    IMESentenceMode =3
+                    Left =2880
+                    Top =2280
+                    Width =2880
+                    Height =315
+                    TabIndex =6
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="txtContactPhone"
+                    ControlSource ="strContactPhone"
+                    StatusBarText ="Customer contact phone number"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =2880
+                    LayoutCachedTop =2280
+                    LayoutCachedWidth =5760
+                    LayoutCachedHeight =2595
+                End
+                Begin TextBox
+                    Enabled = NotDefault
+                    OldBorderStyle =0
+                    OverlapFlags =247
+                    BackStyle =0
+                    IMESentenceMode =3
+                    Left =2880
+                    Top =2580
+                    Width =2880
+                    Height =315
+                    TabIndex =7
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="txtContactEmail"
+                    ControlSource ="strContactEmail"
+                    StatusBarText ="Customer contact email address"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =2880
+                    LayoutCachedTop =2580
+                    LayoutCachedWidth =5760
+                    LayoutCachedHeight =2895
+                End
+                Begin TextBox
+                    Enabled = NotDefault
+                    OldBorderStyle =0
+                    OverlapFlags =93
+                    BackStyle =0
+                    IMESentenceMode =3
+                    Left =2880
+                    Top =3000
+                    Width =2880
+                    Height =315
+                    TabIndex =8
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="txtITContactName"
+                    ControlSource ="strITContactName"
+                    StatusBarText ="IT contact name"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =2880
+                    LayoutCachedTop =3000
+                    LayoutCachedWidth =5760
+                    LayoutCachedHeight =3315
+                End
+                Begin TextBox
+                    Enabled = NotDefault
+                    OldBorderStyle =0
+                    OverlapFlags =255
+                    BackStyle =0
+                    IMESentenceMode =3
+                    Left =2880
+                    Top =3300
+                    Width =2880
+                    Height =315
+                    TabIndex =9
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="txtITContactPhone"
+                    ControlSource ="strITContactPhone"
+                    StatusBarText ="IT contact phone number"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =2880
+                    LayoutCachedTop =3300
+                    LayoutCachedWidth =5760
+                    LayoutCachedHeight =3615
+                End
+                Begin TextBox
+                    Enabled = NotDefault
+                    OldBorderStyle =0
+                    OverlapFlags =247
+                    BackStyle =0
+                    IMESentenceMode =3
+                    Left =2880
+                    Top =3600
+                    Width =2880
+                    Height =315
+                    TabIndex =10
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="txtrITContactEmail"
+                    ControlSource ="strITContactEmail"
+                    StatusBarText ="IT contact email address"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =2880
+                    LayoutCachedTop =3600
+                    LayoutCachedWidth =5760
+                    LayoutCachedHeight =3915
+                End
+                Begin TextBox
+                    EnterKeyBehavior = NotDefault
+                    ScrollBars =2
+                    OverlapFlags =93
+                    IMESentenceMode =3
+                    Left =300
+                    Top =7320
+                    Width =11340
+                    Height =663
+                    TabIndex =21
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="txtDeliveryNotes"
+                    ControlSource ="memDeliveryNotes"
+                    StatusBarText ="Delivery notes"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =300
+                    LayoutCachedTop =7320
+                    LayoutCachedWidth =11640
+                    LayoutCachedHeight =7983
+                End
+                Begin CheckBox
+                    OverlapFlags =93
+                    Left =6900
+                    Top =4170
+                    TabIndex =17
+                    BorderColor =-2147483609
+                    Name ="chkStairsRequired"
+                    ControlSource ="ysnStairsRequired"
+                    StatusBarText ="Stairs required for delivery"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =6900
+                    LayoutCachedTop =4170
+                    LayoutCachedWidth =7160
+                    LayoutCachedHeight =4410
+                    BorderThemeColorIndex =-1
+                    BorderShade =100.0
+                End
+                Begin CheckBox
+                    OverlapFlags =93
+                    Left =6900
+                    Top =4530
+                    TabIndex =18
+                    BorderColor =-2147483609
+                    Name ="chkElevatorRequired"
+                    ControlSource ="ysnElevatorRequired"
+                    StatusBarText ="Elevator required for delivery"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =6900
+                    LayoutCachedTop =4530
+                    LayoutCachedWidth =7160
+                    LayoutCachedHeight =4770
+                    BorderThemeColorIndex =-1
+                    BorderShade =100.0
+                End
+                Begin CheckBox
+                    OverlapFlags =93
+                    Left =6900
+                    Top =4890
+                    TabIndex =19
+                    BorderColor =-2147483609
+                    Name ="chkDockDelivery"
+                    ControlSource ="ysnDockDelivery"
+                    StatusBarText ="Dock delivery requested"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =6900
+                    LayoutCachedTop =4890
+                    LayoutCachedWidth =7160
+                    LayoutCachedHeight =5130
+                    BorderThemeColorIndex =-1
+                    BorderShade =100.0
+                End
+                Begin TextBox
+                    EnterKeyBehavior = NotDefault
+                    ScrollBars =2
+                    OverlapFlags =93
+                    IMESentenceMode =3
+                    Left =300
+                    Top =8400
+                    Width =11340
+                    Height =662
+                    TabIndex =22
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="txtDeploymentNotes"
+                    ControlSource ="memDeploymentInfo"
+                    StatusBarText ="Deployment notes"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =300
+                    LayoutCachedTop =8400
+                    LayoutCachedWidth =11640
+                    LayoutCachedHeight =9062
+                End
+                Begin TextBox
+                    EnterKeyBehavior = NotDefault
+                    ScrollBars =2
+                    OverlapFlags =93
+                    IMESentenceMode =3
+                    Left =300
+                    Top =9480
+                    Width =11340
+                    Height =662
+                    TabIndex =23
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="txtNetworkNotes"
+                    ControlSource ="memNetworkInfo"
+                    StatusBarText ="Networking notes"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =300
+                    LayoutCachedTop =9480
+                    LayoutCachedWidth =11640
+                    LayoutCachedHeight =10142
+                End
+                Begin TextBox
+                    EnterKeyBehavior = NotDefault
+                    ScrollBars =2
+                    OverlapFlags =93
+                    IMESentenceMode =3
+                    Left =300
+                    Top =10560
+                    Width =11340
+                    Height =662
+                    TabIndex =24
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="txtSpecialHandlingNotes"
+                    ControlSource ="memSpecialInstructions"
+                    StatusBarText ="Special instructions for delivery and install"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =300
+                    LayoutCachedTop =10560
+                    LayoutCachedWidth =11640
+                    LayoutCachedHeight =11222
+                End
+                Begin TextBox
+                    EnterKeyBehavior = NotDefault
+                    ScrollBars =2
+                    OverlapFlags =93
+                    IMESentenceMode =3
+                    Left =300
+                    Top =6240
+                    Width =11340
+                    Height =662
+                    TabIndex =20
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="txtInternalNotes"
+                    ControlSource ="memNotes"
+                    StatusBarText ="Internal install notes"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =300
+                    LayoutCachedTop =6240
+                    LayoutCachedWidth =11640
+                    LayoutCachedHeight =6902
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    TextAlign =1
+                    IMESentenceMode =3
+                    Left =9000
+                    Top =2880
+                    Width =2640
+                    Height =315
+                    TabIndex =14
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="txtInstallScheduled"
+                    ControlSource ="dtmInstallScheduled"
+                    StatusBarText ="Scheduled date of installation"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =9000
+                    LayoutCachedTop =2880
+                    LayoutCachedWidth =11640
+                    LayoutCachedHeight =3195
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =9000
+                    Top =3300
+                    Width =2640
+                    Height =315
+                    TabIndex =15
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="txtDepartureTime"
+                    ControlSource ="dtmDepartureTime"
+                    StatusBarText ="Recommended departure time enroute to install"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =9000
+                    LayoutCachedTop =3300
+                    LayoutCachedWidth =11640
+                    LayoutCachedHeight =3615
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =9000
+                    Top =3720
+                    Width =2640
+                    Height =315
+                    TabIndex =16
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="txtDepartureFrom"
+                    ControlSource ="strDepartureFrom"
+                    StatusBarText ="Location of departure for install"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =9000
+                    LayoutCachedTop =3720
+                    LayoutCachedWidth =11640
+                    LayoutCachedHeight =4035
+                End
+                Begin Label
+                    OverlapFlags =85
+                    Left =300
+                    Top =300
+                    Width =2940
+                    Height =420
+                    FontSize =16
+                    FontWeight =700
+                    BorderColor =8355711
+                    ForeColor =6710886
+                    Name ="lblCustomerInformation"
+                    Caption ="Customer Information"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =300
+                    LayoutCachedTop =300
+                    LayoutCachedWidth =3240
+                    LayoutCachedHeight =720
+                End
+                Begin Label
+                    OverlapFlags =85
+                    Left =300
+                    Top =840
+                    Width =1215
+                    Height =315
+                    FontWeight =600
+                    BorderColor =8355711
+                    ForeColor =6710886
+                    Name ="lblCustomer"
+                    Caption ="Customer:"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =300
+                    LayoutCachedTop =840
+                    LayoutCachedWidth =1515
+                    LayoutCachedHeight =1155
+                End
+                Begin Label
+                    OverlapFlags =85
+                    Left =300
+                    Top =1260
+                    Width =2280
+                    Height =315
+                    FontWeight =600
+                    BorderColor =8355711
+                    ForeColor =6710886
+                    Name ="lblInstallAddress"
+                    Caption ="Installation Address:"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =300
+                    LayoutCachedTop =1260
+                    LayoutCachedWidth =2580
+                    LayoutCachedHeight =1575
+                End
+                Begin Label
+                    OverlapFlags =85
+                    Left =300
+                    Top =1980
+                    Width =1860
+                    Height =315
+                    FontWeight =600
+                    BorderColor =8355711
+                    ForeColor =6710886
+                    Name ="lblPrimaryContact"
+                    Caption ="Primary Contact:"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =300
+                    LayoutCachedTop =1980
+                    LayoutCachedWidth =2160
+                    LayoutCachedHeight =2295
+                End
+                Begin Label
+                    OverlapFlags =85
+                    Left =300
+                    Top =3000
+                    Width =2340
+                    Height =315
+                    FontWeight =600
+                    BorderColor =8355711
+                    ForeColor =6710886
+                    Name ="lblITSupportContact"
+                    Caption ="IT Support Contact:"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =300
+                    LayoutCachedTop =3000
+                    LayoutCachedWidth =2640
+                    LayoutCachedHeight =3315
+                End
+                Begin Label
+                    OverlapFlags =85
+                    Left =6900
+                    Top =300
+                    Width =3390
+                    Height =435
+                    FontSize =16
+                    FontWeight =700
+                    BorderColor =8355711
+                    ForeColor =6710886
+                    Name ="lblInstallOrderInformation"
+                    Caption ="Install Order Information"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =6900
+                    LayoutCachedTop =300
+                    LayoutCachedWidth =10290
+                    LayoutCachedHeight =735
+                End
+                Begin Label
+                    OverlapFlags =85
+                    Left =6900
+                    Top =840
+                    Width =1680
+                    Height =315
+                    FontWeight =600
+                    BorderColor =8355711
+                    ForeColor =6710886
+                    Name ="lblCurrentStatus"
+                    Caption ="Current Status:"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =6900
+                    LayoutCachedTop =840
+                    LayoutCachedWidth =8580
+                    LayoutCachedHeight =1155
+                End
+                Begin ComboBox
+                    LimitToList = NotDefault
+                    RowSourceTypeInt =1
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =9000
+                    Top =840
+                    Width =2640
+                    Height =315
+                    TabIndex =11
+                    BorderColor =10921638
+                    Name ="txtInstallStatus"
+                    ControlSource ="strInstallStatus"
+                    RowSourceType ="Value List"
+                    RowSource ="\"Ready for Install\";\"Installed\""
+                    StatusBarText ="Install status"
+                    GridlineColor =10921638
+                    AllowValueListEdits =0
+                    InheritValueList =0
+
+                    LayoutCachedLeft =9000
+                    LayoutCachedTop =840
+                    LayoutCachedWidth =11640
+                    LayoutCachedHeight =1155
+                    ForeThemeColorIndex =0
+                    ForeTint =75.0
+                    ForeShade =100.0
+                End
+                Begin Label
+                    OverlapFlags =85
+                    Left =6900
+                    Top =1260
+                    Width =1740
+                    Height =315
+                    FontWeight =600
+                    BorderColor =8355711
+                    ForeColor =6710886
+                    Name ="lblDateReceived"
+                    Caption ="Date Received:"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =6900
+                    LayoutCachedTop =1260
+                    LayoutCachedWidth =8640
+                    LayoutCachedHeight =1575
+                End
+                Begin Label
+                    OverlapFlags =85
+                    Left =6900
+                    Top =1680
+                    Width =1155
+                    Height =315
+                    FontWeight =600
+                    BorderColor =8355711
+                    ForeColor =6710886
+                    Name ="lblSalesRep"
+                    Caption ="Sales Rep:"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =6900
+                    LayoutCachedTop =1680
+                    LayoutCachedWidth =8055
+                    LayoutCachedHeight =1995
+                End
+                Begin Label
+                    OverlapFlags =85
+                    Left =6900
+                    Top =2340
+                    Width =3390
+                    Height =435
+                    FontSize =16
+                    FontWeight =700
+                    BorderColor =8355711
+                    ForeColor =6710886
+                    Name ="lblDeliveryInformation"
+                    Caption ="Delivery Information"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =6900
+                    LayoutCachedTop =2340
+                    LayoutCachedWidth =10290
+                    LayoutCachedHeight =2775
+                End
+                Begin Label
+                    OverlapFlags =247
+                    Left =7130
+                    Top =4140
+                    Width =2475
+                    Height =315
+                    LeftMargin =144
+                    BorderColor =8355711
+                    ForeColor =-2147483617
+                    Name ="lblStairClimberRequired"
+                    Caption ="Stair Climber Required"
+                    LeftPadding =361
+                    GridlineColor =10921638
+                    LayoutCachedLeft =7130
+                    LayoutCachedTop =4140
+                    LayoutCachedWidth =9605
+                    LayoutCachedHeight =4455
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
+                End
+                Begin Label
+                    OverlapFlags =247
+                    Left =7130
+                    Top =4500
+                    Width =2895
+                    Height =315
+                    LeftMargin =144
+                    BorderColor =8355711
+                    ForeColor =-2147483617
+                    Name ="lblElevatorAvailable"
+                    Caption ="Elevator Available Onsite"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =7130
+                    LayoutCachedTop =4500
+                    LayoutCachedWidth =10025
+                    LayoutCachedHeight =4815
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
+                End
+                Begin Label
+                    OverlapFlags =247
+                    Left =7130
+                    Top =4860
+                    Width =2415
+                    Height =315
+                    LeftMargin =144
+                    BorderColor =8355711
+                    ForeColor =-2147483617
+                    Name ="lblDockDelivery"
+                    Caption ="Loading Dock Delivery"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =7130
+                    LayoutCachedTop =4860
+                    LayoutCachedWidth =9545
+                    LayoutCachedHeight =5175
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
+                End
+                Begin Line
+                    OverlapFlags =93
+                    Top =5280
+                    Width =11880
+                    Name ="linHorizontalCenter"
+                    GridlineColor =10921638
+                    LayoutCachedTop =5280
+                    LayoutCachedWidth =11880
+                    LayoutCachedHeight =5280
+                End
+                Begin Line
+                    LineSlant = NotDefault
+                    OverlapFlags =95
+                    Left =6600
+                    Width =0
+                    Height =5280
+                    Name ="linVerticalLeft"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =6600
+                    LayoutCachedWidth =6600
+                    LayoutCachedHeight =5280
+                End
+                Begin Line
+                    OverlapFlags =95
+                    Left =6600
+                    Top =2160
+                    Width =5280
+                    Name ="linHorizontalTop"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =6600
+                    LayoutCachedTop =2160
+                    LayoutCachedWidth =11880
+                    LayoutCachedHeight =2160
+                End
+                Begin Label
+                    OverlapFlags =85
+                    Left =300
+                    Top =5400
+                    Width =3390
+                    Height =435
+                    FontSize =16
+                    FontWeight =700
+                    BorderColor =8355711
+                    ForeColor =6710886
+                    Name ="lblOrderNotes"
+                    Caption ="Order Notes"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =300
+                    LayoutCachedTop =5400
+                    LayoutCachedWidth =3690
+                    LayoutCachedHeight =5835
+                End
+                Begin Label
+                    OverlapFlags =247
+                    Left =300
+                    Top =7020
+                    Width =1890
+                    Height =315
+                    FontWeight =600
+                    BorderColor =8355711
+                    ForeColor =6710886
+                    Name ="lblDeliveryNotes"
+                    Caption ="Delivery Notes:"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =300
+                    LayoutCachedTop =7020
+                    LayoutCachedWidth =2190
+                    LayoutCachedHeight =7335
+                End
+                Begin Label
+                    OverlapFlags =247
+                    Left =300
+                    Top =8100
+                    Width =2085
+                    Height =315
+                    FontWeight =600
+                    BorderColor =8355711
+                    ForeColor =6710886
+                    Name ="lblDeploymentNotes"
+                    Caption ="Deployment Notes"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =300
+                    LayoutCachedTop =8100
+                    LayoutCachedWidth =2385
+                    LayoutCachedHeight =8415
+                End
+                Begin Label
+                    OverlapFlags =247
+                    Left =300
+                    Top =9180
+                    Width =3300
+                    Height =315
+                    FontWeight =600
+                    BorderColor =8355711
+                    ForeColor =6710886
+                    Name ="lblNetworkNotes"
+                    Caption ="Network Environment Notes:"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =300
+                    LayoutCachedTop =9180
+                    LayoutCachedWidth =3600
+                    LayoutCachedHeight =9495
+                End
+                Begin Label
+                    OverlapFlags =247
+                    Left =300
+                    Top =10260
+                    Width =4020
+                    Height =315
+                    FontWeight =600
+                    BorderColor =8355711
+                    ForeColor =6710886
+                    Name ="lblSpecialHandlingNotes"
+                    Caption ="Special Handling Notes:"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =300
+                    LayoutCachedTop =10260
+                    LayoutCachedWidth =4320
+                    LayoutCachedHeight =10575
+                End
+                Begin Label
+                    OverlapFlags =247
+                    Left =300
+                    Top =5940
+                    Width =2820
+                    Height =315
+                    FontWeight =600
+                    BorderColor =8355711
+                    ForeColor =6710886
+                    Name ="lblInternalNotes"
+                    Caption ="Internal Notes:"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =300
+                    LayoutCachedTop =5940
+                    LayoutCachedWidth =3120
+                    LayoutCachedHeight =6255
+                End
+                Begin Label
+                    OverlapFlags =85
+                    Left =6900
+                    Top =2880
+                    Width =2040
+                    Height =315
+                    FontWeight =600
+                    BorderColor =8355711
+                    ForeColor =6710886
+                    Name ="lblInstallScheduled"
+                    Caption ="Install Scheduled:"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =6900
+                    LayoutCachedTop =2880
+                    LayoutCachedWidth =8940
+                    LayoutCachedHeight =3195
+                End
+                Begin Label
+                    OverlapFlags =85
+                    Left =6900
+                    Top =3300
+                    Width =1860
+                    Height =315
+                    FontWeight =600
+                    BorderColor =8355711
+                    ForeColor =6710886
+                    Name ="lblEnrouteBy"
+                    Caption ="Enroute by:"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =6900
+                    LayoutCachedTop =3300
+                    LayoutCachedWidth =8760
+                    LayoutCachedHeight =3615
+                End
+                Begin Label
+                    OverlapFlags =85
+                    Left =6900
+                    Top =3720
+                    Width =1740
+                    Height =315
+                    FontWeight =600
+                    BorderColor =8355711
+                    ForeColor =6710886
+                    Name ="lblEnrouteFrom"
+                    Caption ="Enroute from:"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =6900
+                    LayoutCachedTop =3720
+                    LayoutCachedWidth =8640
+                    LayoutCachedHeight =4035
+                End
+                Begin Line
+                    LineSlant = NotDefault
+                    OverlapFlags =95
+                    Left =11880
+                    Width =0
+                    Height =11460
+                    Name ="linVerticalCenter"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =11880
+                    LayoutCachedWidth =11880
+                    LayoutCachedHeight =11460
+                End
+                Begin Label
+                    OverlapFlags =85
+                    Left =11940
+                    Top =300
+                    Width =3390
+                    Height =435
+                    FontSize =16
+                    FontWeight =700
+                    BorderColor =8355711
+                    ForeColor =6710886
+                    Name ="lblBillOfEquipment"
+                    Caption ="Bill of Equipment"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =11940
+                    LayoutCachedTop =300
+                    LayoutCachedWidth =15330
+                    LayoutCachedHeight =735
+                End
+                Begin Subform
+                    OverlapFlags =95
+                    Left =11880
+                    Top =840
+                    Width =10979
+                    Height =4680
+                    TabIndex =26
+                    BorderColor =-2147483617
+                    Name ="subCustomerEquipment"
+                    SourceObject ="Form.fsubExistingInstallSubCustomerEquipment"
+                    LinkChildFields ="intInstall"
+                    LinkMasterFields ="lngID"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =11880
+                    LayoutCachedTop =840
+                    LayoutCachedWidth =22859
+                    LayoutCachedHeight =5520
+                    BorderThemeColorIndex =-1
+                    BorderShade =100.0
+                End
+                Begin Subform
+                    OverlapFlags =95
+                    Left =11880
+                    Top =5520
+                    Width =6120
+                    Height =7020
+                    TabIndex =27
+                    BorderColor =-2147483617
+                    Name ="subAccessoryEquipment"
+                    SourceObject ="Form.fsubExistingInstallSubAccessoryEquipment"
+                    LinkChildFields ="intInstall"
+                    LinkMasterFields ="lngID"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =11880
+                    LayoutCachedTop =5520
+                    LayoutCachedWidth =18000
+                    LayoutCachedHeight =12540
+                    BorderThemeColorIndex =-1
+                    BorderShade =100.0
+                End
+                Begin Subform
+                    OverlapFlags =87
+                    Left =18000
+                    Top =5520
+                    Width =4860
+                    Height =7020
+                    TabIndex =28
+                    BorderColor =-2147483617
+                    Name ="subSuppliesEquipment"
+                    SourceObject ="Form.fsubExistingInstallSubSupplyEquipment"
+                    LinkChildFields ="intInstall"
+                    LinkMasterFields ="lngID"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =18000
+                    LayoutCachedTop =5520
+                    LayoutCachedWidth =22860
+                    LayoutCachedHeight =12540
+                    BorderThemeColorIndex =-1
+                    BorderShade =100.0
+                End
+                Begin Label
+                    OverlapFlags =93
+                    Left =300
+                    Top =11340
+                    Width =4020
+                    Height =315
+                    FontWeight =600
+                    BorderColor =8355711
+                    ForeColor =6710886
+                    Name ="lblAttachments"
+                    Caption ="Attached Files:"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =300
+                    LayoutCachedTop =11340
+                    LayoutCachedWidth =4320
+                    LayoutCachedHeight =11655
+                End
+                Begin Attachment
+                    Left =300
+                    Top =11640
+                    Width =11340
+                    Height =540
+                    BorderColor =10921638
+                    Name ="ctlAttachments"
+                    ControlSource ="tblInstalls.attAttachments"
+                    GridlineColor =10921638
+                    TabIndex =25
+
+                    LayoutCachedLeft =300
+                    LayoutCachedTop =11640
+                    LayoutCachedWidth =11640
+                    LayoutCachedHeight =12180
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =16080
+                    Left =17760
                     Top =240
-                    Width =1620
-                    Height =300
+                    Width =2400
+                    Height =480
+                    FontWeight =500
+                    TabIndex =29
                     ForeColor =4210752
-                    Name ="cmdLogout"
-                    Caption ="Log Out"
+                    Name ="cmdPrintStagingTags"
+                    Caption ="Print Staging Tags"
                     OnClick ="[Event Procedure]"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =16080
+                    LayoutCachedLeft =17760
                     LayoutCachedTop =240
-                    LayoutCachedWidth =17700
-                    LayoutCachedHeight =540
+                    LayoutCachedWidth =20160
+                    LayoutCachedHeight =720
+                    Gradient =0
+                    BackColor =-2147483607
+                    BackThemeColorIndex =-1
+                    BackTint =100.0
+                    BorderColor =14461583
+                    HoverColor =15189940
+                    PressedColor =9917743
+                    HoverForeColor =4210752
+                    PressedForeColor =4210752
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =2
+                    WebImagePaddingRight =1
+                    WebImagePaddingBottom =1
+                End
+                Begin Line
+                    LineSlant = NotDefault
+                    OverlapFlags =93
+                    Top =12540
+                    Width =11880
+                    BorderColor =-2147483617
+                    Name ="linHorizontalBottom"
+                    GridlineColor =10921638
+                    LayoutCachedTop =12540
+                    LayoutCachedWidth =11880
+                    LayoutCachedHeight =12540
+                    BorderThemeColorIndex =-1
+                End
+                Begin Line
+                    LineSlant = NotDefault
+                    OverlapFlags =93
+                    Left =22860
+                    Width =0
+                    Height =840
+                    BorderColor =-2147483617
+                    Name ="linVerticalRight"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =22860
+                    LayoutCachedWidth =22860
+                    LayoutCachedHeight =840
+                    BorderThemeColorIndex =-1
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =20340
+                    Top =240
+                    Width =2400
+                    Height =480
+                    FontWeight =500
+                    TabIndex =30
+                    ForeColor =4210752
+                    Name ="cmdSaveAndClose"
+                    Caption ="Save and Close"
+                    OnClick ="[Event Procedure]"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =20340
+                    LayoutCachedTop =240
+                    LayoutCachedWidth =22740
+                    LayoutCachedHeight =720
                     Gradient =0
                     BackColor =-2147483607
                     BackThemeColorIndex =-1
@@ -206,49 +1450,59 @@ Begin Form
                     WebImagePaddingBottom =1
                     Overlaps =1
                 End
-                Begin CommandButton
-                    OverlapFlags =85
-                    Left =13980
-                    Top =240
-                    Width =1920
-                    Height =300
-                    TabIndex =1
-                    ForeColor =4210752
-                    Name ="cmdChangePassword"
-                    Caption ="Change Password"
-                    OnClick ="[Event Procedure]"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =13980
-                    LayoutCachedTop =240
-                    LayoutCachedWidth =15900
-                    LayoutCachedHeight =540
-                    Gradient =0
-                    BackColor =-2147483607
-                    BackThemeColorIndex =-1
-                    BackTint =100.0
-                    BorderColor =14461583
-                    HoverColor =15189940
-                    PressedColor =9917743
-                    HoverForeColor =4210752
-                    PressedForeColor =4210752
-                    WebImagePaddingLeft =2
-                    WebImagePaddingTop =2
-                    WebImagePaddingRight =1
-                    WebImagePaddingBottom =1
-                End
             End
         End
-        Begin Section
-            CanGrow = NotDefault
-            Height =9240
-            Name ="secFormDetail"
+        Begin FormFooter
+            Height =720
+            Name ="secFormFooter"
             AlternateBackThemeColorIndex =1
             AlternateBackShade =95.0
             BackThemeColorIndex =1
             Begin
+                Begin TextBox
+                    Enabled = NotDefault
+                    FontItalic = NotDefault
+                    OldBorderStyle =0
+                    OverlapFlags =93
+                    TextAlign =1
+                    BackStyle =0
+                    IMESentenceMode =3
+                    Left =1440
+                    Top =240
+                    Height =315
+                    FontSize =9
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="txtRecordId"
+                    ControlSource ="lngID"
+                    StatusBarText ="Primary key - install ID"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =1440
+                    LayoutCachedTop =240
+                    LayoutCachedWidth =2880
+                    LayoutCachedHeight =555
+                End
+                Begin Label
+                    FontItalic = NotDefault
+                    OverlapFlags =247
+                    Left =300
+                    Top =240
+                    Width =1260
+                    Height =315
+                    FontSize =9
+                    BorderColor =8355711
+                    ForeColor =6710886
+                    Name ="lblRecordId"
+                    Caption ="Ref. number"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =300
+                    LayoutCachedTop =240
+                    LayoutCachedWidth =1560
+                    LayoutCachedHeight =555
+                End
                 Begin Image
-                    Left =15300
+                    Left =20520
                     Width =2340
                     Height =720
                     BackColor =1315470
@@ -2801,676 +4055,11 @@ Begin Form
                         0x6082
                     End
 
-                    LayoutCachedLeft =15300
-                    LayoutCachedWidth =17640
+                    LayoutCachedLeft =20520
+                    LayoutCachedWidth =22860
                     LayoutCachedHeight =720
-                    TabIndex =2
-                    BackThemeColorIndex =-1
-                End
-                Begin NavigationControl
-                    OldBorderStyle =0
-                    OverlapFlags =255
-                    BackStyle =0
-                    Left =180
-                    Top =660
-                    Width =17520
-                    BorderColor =16777215
-                    ForeColor =3484194
-                    Name ="navctlTabBar"
-                    GroupTable =2
-                    LeftPadding =0
-                    TopPadding =0
-                    RightPadding =0
-                    GridlineStyleBottom =1
-                    GridlineWidthBottom =4
-
-                    LayoutCachedLeft =180
-                    LayoutCachedTop =660
-                    LayoutCachedWidth =17700
-                    LayoutCachedHeight =1080
-                    LayoutGroup =2
-                    BackThemeColorIndex =-1
-                    NavigationSubform ="navSubform"
-                    GridlineColor =1841342
-                    GridlineThemeColorIndex =-1
-                    GridlineShade =100.0
-                    GroupTable =2
-                    Begin
-                        Begin NavigationButton
-                            Visible = NotDefault
-                            OverlapFlags =119
-                            Left =180
-                            Top =660
-                            Width =1980
-                            Height =405
-                            ForeColor =15527148
-                            Name ="navbtnInstallsPendingWork"
-                            Caption ="Pending Build"
-                            GroupTable =1
-                            LeftPadding =0
-                            TopPadding =0
-                            BottomPadding =15
-                            GridlineColor =10921638
-
-                            LayoutCachedLeft =180
-                            LayoutCachedTop =660
-                            LayoutCachedWidth =2160
-                            LayoutCachedHeight =1065
-                            LayoutGroup =1
-                            NavigationTargetName ="fsubNavigationSubPendingInstalls"
-                            NavigationTargetType =32768
-                            Shape =3
-                            HoverColor =1841342
-                            HoverThemeColorIndex =-1
-                            HoverTint =100.0
-                            PressedColor =1841342
-                            PressedThemeColorIndex =-1
-                            PressedTint =100.0
-                            HoverForeColor =16777215
-                            HoverForeThemeColorIndex =-1
-                            HoverForeTint =100.0
-                            PressedForeColor =16777215
-                            PressedForeThemeColorIndex =-1
-                            PressedForeTint =100.0
-                            BackColor =1315470
-                            BackThemeColorIndex =-1
-                            OldBorderStyle =1
-                            BorderColor =1841342
-                            BorderThemeColorIndex =-1
-                            BorderShade =100.0
-                            ThemeFontIndex =-1
-                            GroupTable =1
-                            FontName ="Verdana"
-                            FontWeight =500
-                            FontSize =8
-                            WebImagePaddingRight =1
-                            ForeThemeColorIndex =-1
-                            ForeTint =100.0
-                            Overlaps =1
-                        End
-                        Begin NavigationButton
-                            Visible = NotDefault
-                            OverlapFlags =119
-                            Left =2190
-                            Top =660
-                            Width =1845
-                            Height =405
-                            TabIndex =1
-                            ForeColor =15527148
-                            Name ="navbtnInstallsReadyToShip"
-                            Caption ="Ready to Ship"
-                            GroupTable =1
-                            LeftPadding =0
-                            TopPadding =0
-                            BottomPadding =15
-                            GridlineColor =10921638
-
-                            LayoutCachedLeft =2190
-                            LayoutCachedTop =660
-                            LayoutCachedWidth =4035
-                            LayoutCachedHeight =1065
-                            ColumnStart =1
-                            ColumnEnd =1
-                            LayoutGroup =1
-                            NavigationTargetName ="fsubNavigationSubReadyInstalls"
-                            NavigationTargetType =32768
-                            Shape =3
-                            HoverColor =1841342
-                            HoverThemeColorIndex =-1
-                            HoverTint =100.0
-                            PressedColor =1841342
-                            PressedThemeColorIndex =-1
-                            PressedTint =100.0
-                            HoverForeColor =16777215
-                            HoverForeThemeColorIndex =-1
-                            HoverForeTint =100.0
-                            PressedForeColor =16777215
-                            PressedForeThemeColorIndex =-1
-                            PressedForeTint =100.0
-                            BackColor =1315470
-                            BackThemeColorIndex =-1
-                            OldBorderStyle =1
-                            BorderColor =1841342
-                            BorderThemeColorIndex =-1
-                            BorderShade =100.0
-                            ThemeFontIndex =-1
-                            GroupTable =1
-                            FontName ="Verdana"
-                            FontWeight =500
-                            FontSize =8
-                            WebImagePaddingRight =1
-                            ForeThemeColorIndex =-1
-                            ForeTint =100.0
-                            Overlaps =1
-                        End
-                        Begin NavigationButton
-                            Visible = NotDefault
-                            OverlapFlags =119
-                            Left =4065
-                            Top =660
-                            Width =1875
-                            Height =405
-                            TabIndex =2
-                            ForeColor =15527148
-                            Name ="navbtnPostProcessing"
-                            Caption ="Post-Processing"
-                            GroupTable =1
-                            LeftPadding =0
-                            TopPadding =0
-                            BottomPadding =15
-                            GridlineColor =10921638
-
-                            LayoutCachedLeft =4065
-                            LayoutCachedTop =660
-                            LayoutCachedWidth =5940
-                            LayoutCachedHeight =1065
-                            ColumnStart =2
-                            ColumnEnd =2
-                            LayoutGroup =1
-                            NavigationTargetName ="fsubNavigationSubInstalledInstalls"
-                            NavigationTargetType =32768
-                            Shape =3
-                            HoverColor =1841342
-                            HoverThemeColorIndex =-1
-                            HoverTint =100.0
-                            PressedColor =1841342
-                            PressedThemeColorIndex =-1
-                            PressedTint =100.0
-                            HoverForeColor =16777215
-                            HoverForeThemeColorIndex =-1
-                            HoverForeTint =100.0
-                            PressedForeColor =16777215
-                            PressedForeThemeColorIndex =-1
-                            PressedForeTint =100.0
-                            BackColor =1315470
-                            BackThemeColorIndex =-1
-                            OldBorderStyle =1
-                            BorderColor =1841342
-                            BorderThemeColorIndex =-1
-                            BorderShade =100.0
-                            ThemeFontIndex =-1
-                            GroupTable =1
-                            FontName ="Verdana"
-                            FontWeight =500
-                            FontSize =8
-                            WebImagePaddingRight =1
-                            ForeThemeColorIndex =-1
-                            ForeTint =100.0
-                            Overlaps =1
-                        End
-                        Begin NavigationButton
-                            Visible = NotDefault
-                            OverlapFlags =119
-                            Left =5970
-                            Top =660
-                            Width =1785
-                            Height =405
-                            TabIndex =3
-                            ForeColor =15527148
-                            Name ="navbtnPastInstalls"
-                            Caption ="Completed"
-                            GroupTable =1
-                            LeftPadding =0
-                            TopPadding =0
-                            BottomPadding =15
-                            GridlineColor =10921638
-
-                            LayoutCachedLeft =5970
-                            LayoutCachedTop =660
-                            LayoutCachedWidth =7755
-                            LayoutCachedHeight =1065
-                            ColumnStart =3
-                            ColumnEnd =3
-                            LayoutGroup =1
-                            NavigationTargetName ="fsubNavigationSubClosedInstalls"
-                            NavigationTargetType =32768
-                            Shape =3
-                            HoverColor =1841342
-                            HoverThemeColorIndex =-1
-                            HoverTint =100.0
-                            PressedColor =1841342
-                            PressedThemeColorIndex =-1
-                            PressedTint =100.0
-                            HoverForeColor =16777215
-                            HoverForeThemeColorIndex =-1
-                            HoverForeTint =100.0
-                            PressedForeColor =16777215
-                            PressedForeThemeColorIndex =-1
-                            PressedForeTint =100.0
-                            BackColor =1315470
-                            BackThemeColorIndex =-1
-                            OldBorderStyle =1
-                            BorderColor =1841342
-                            BorderThemeColorIndex =-1
-                            BorderShade =100.0
-                            ThemeFontIndex =-1
-                            GroupTable =1
-                            FontName ="Verdana"
-                            FontWeight =500
-                            FontSize =8
-                            WebImagePaddingRight =1
-                            ForeThemeColorIndex =-1
-                            ForeTint =100.0
-                            Overlaps =1
-                        End
-                        Begin NavigationButton
-                            Visible = NotDefault
-                            OverlapFlags =119
-                            Left =7785
-                            Top =660
-                            Width =1575
-                            Height =405
-                            TabIndex =4
-                            ForeColor =15527148
-                            Name ="navbtnReports"
-                            Caption ="Reports"
-                            GroupTable =1
-                            LeftPadding =0
-                            TopPadding =0
-                            BottomPadding =15
-                            GridlineColor =10921638
-
-                            LayoutCachedLeft =7785
-                            LayoutCachedTop =660
-                            LayoutCachedWidth =9360
-                            LayoutCachedHeight =1065
-                            ColumnStart =4
-                            ColumnEnd =4
-                            LayoutGroup =1
-                            NavigationTargetName ="fsubNavigationSubReports"
-                            NavigationTargetType =32768
-                            Shape =3
-                            HoverColor =1841342
-                            HoverThemeColorIndex =-1
-                            HoverTint =100.0
-                            PressedColor =1841342
-                            PressedThemeColorIndex =-1
-                            PressedTint =100.0
-                            HoverForeColor =16777215
-                            HoverForeThemeColorIndex =-1
-                            HoverForeTint =100.0
-                            PressedForeColor =16777215
-                            PressedForeThemeColorIndex =-1
-                            PressedForeTint =100.0
-                            BackColor =1315470
-                            BackThemeColorIndex =-1
-                            OldBorderStyle =1
-                            BorderColor =1841342
-                            BorderThemeColorIndex =-1
-                            BorderShade =100.0
-                            ThemeFontIndex =-1
-                            GroupTable =1
-                            FontName ="Verdana"
-                            FontWeight =500
-                            FontSize =8
-                            WebImagePaddingRight =1
-                            ForeThemeColorIndex =-1
-                            ForeTint =100.0
-                            Overlaps =1
-                        End
-                        Begin NavigationButton
-                            Visible = NotDefault
-                            OverlapFlags =119
-                            Left =9390
-                            Top =660
-                            Width =1635
-                            Height =405
-                            TabIndex =5
-                            ForeColor =15527148
-                            Name ="navbtnEditInstalls"
-                            Caption ="Modify Order"
-                            GroupTable =1
-                            LeftPadding =0
-                            TopPadding =0
-                            BottomPadding =15
-                            GridlineColor =10921638
-
-                            LayoutCachedLeft =9390
-                            LayoutCachedTop =660
-                            LayoutCachedWidth =11025
-                            LayoutCachedHeight =1065
-                            ColumnStart =5
-                            ColumnEnd =5
-                            LayoutGroup =1
-                            NavigationTargetName ="fsubNavigationSubEditOpenInstall"
-                            NavigationTargetType =32768
-                            Shape =3
-                            HoverColor =1841342
-                            HoverThemeColorIndex =-1
-                            HoverTint =100.0
-                            PressedColor =1841342
-                            PressedThemeColorIndex =-1
-                            PressedTint =100.0
-                            HoverForeColor =16777215
-                            HoverForeThemeColorIndex =-1
-                            HoverForeTint =100.0
-                            PressedForeColor =16777215
-                            PressedForeThemeColorIndex =-1
-                            PressedForeTint =100.0
-                            BackColor =1315470
-                            BackThemeColorIndex =-1
-                            OldBorderStyle =1
-                            BorderColor =1841342
-                            BorderThemeColorIndex =-1
-                            BorderShade =100.0
-                            ThemeFontIndex =-1
-                            GroupTable =1
-                            FontName ="Verdana"
-                            FontWeight =500
-                            FontSize =8
-                            WebImagePaddingRight =1
-                            ForeThemeColorIndex =-1
-                            ForeTint =100.0
-                            Overlaps =1
-                        End
-                        Begin NavigationButton
-                            Visible = NotDefault
-                            OverlapFlags =119
-                            Left =11055
-                            Top =660
-                            Width =1545
-                            Height =405
-                            TabIndex =6
-                            ForeColor =15527148
-                            Name ="navbtnInstallManagement"
-                            Caption ="Management"
-                            GroupTable =1
-                            LeftPadding =0
-                            TopPadding =0
-                            BottomPadding =15
-                            GridlineColor =10921638
-
-                            LayoutCachedLeft =11055
-                            LayoutCachedTop =660
-                            LayoutCachedWidth =12600
-                            LayoutCachedHeight =1065
-                            ColumnStart =6
-                            ColumnEnd =6
-                            LayoutGroup =1
-                            NavigationTargetName ="fsubNavigationSubManagement"
-                            NavigationTargetType =32768
-                            Shape =3
-                            HoverColor =1841342
-                            HoverThemeColorIndex =-1
-                            HoverTint =100.0
-                            PressedColor =1841342
-                            PressedThemeColorIndex =-1
-                            PressedTint =100.0
-                            HoverForeColor =16777215
-                            HoverForeThemeColorIndex =-1
-                            HoverForeTint =100.0
-                            PressedForeColor =16777215
-                            PressedForeThemeColorIndex =-1
-                            PressedForeTint =100.0
-                            BackColor =1315470
-                            BackThemeColorIndex =-1
-                            OldBorderStyle =1
-                            BorderColor =1841342
-                            BorderThemeColorIndex =-1
-                            BorderShade =100.0
-                            ThemeFontIndex =-1
-                            GroupTable =1
-                            FontName ="Verdana"
-                            FontWeight =500
-                            FontSize =8
-                            WebImagePaddingRight =1
-                            ForeThemeColorIndex =-1
-                            ForeTint =100.0
-                            Overlaps =1
-                        End
-                        Begin NavigationButton
-                            Visible = NotDefault
-                            OverlapFlags =119
-                            Left =12630
-                            Top =660
-                            Width =1650
-                            Height =405
-                            TabIndex =7
-                            ForeColor =15527148
-                            Name ="navbtnDeveloper"
-                            Caption ="Developer Tools"
-                            GroupTable =1
-                            LeftPadding =0
-                            TopPadding =0
-                            BottomPadding =15
-                            GridlineColor =10921638
-
-                            LayoutCachedLeft =12630
-                            LayoutCachedTop =660
-                            LayoutCachedWidth =14280
-                            LayoutCachedHeight =1065
-                            ColumnStart =7
-                            ColumnEnd =7
-                            LayoutGroup =1
-                            NavigationTargetName ="fsubNavigationSubDeveloper"
-                            NavigationTargetType =32768
-                            Shape =3
-                            HoverColor =1841342
-                            HoverThemeColorIndex =-1
-                            HoverTint =100.0
-                            PressedColor =1841342
-                            PressedThemeColorIndex =-1
-                            PressedTint =100.0
-                            HoverForeColor =16777215
-                            HoverForeThemeColorIndex =-1
-                            HoverForeTint =100.0
-                            PressedForeColor =16777215
-                            PressedForeThemeColorIndex =-1
-                            PressedForeTint =100.0
-                            BackColor =1315470
-                            BackThemeColorIndex =-1
-                            OldBorderStyle =1
-                            BorderColor =1841342
-                            BorderThemeColorIndex =-1
-                            BorderShade =100.0
-                            ThemeFontIndex =-1
-                            GroupTable =1
-                            FontName ="Verdana"
-                            FontWeight =500
-                            FontSize =8
-                            WebImagePaddingRight =1
-                            ForeThemeColorIndex =-1
-                            ForeTint =100.0
-                            Overlaps =1
-                        End
-                        Begin NavigationButton
-                            OverlapFlags =247
-                            Left =14310
-                            Top =660
-                            Width =2070
-                            Height =405
-                            TabIndex =8
-                            ForeColor =4210752
-                            Name ="NavigationButton1"
-                            Caption ="[Add New]"
-                            ControlTipText ="Add a form or report by dropping it here"
-                            GroupTable =1
-                            LeftPadding =0
-                            TopPadding =0
-                            BottomPadding =15
-                            GridlineColor =10921638
-
-                            LayoutCachedLeft =14310
-                            LayoutCachedTop =660
-                            LayoutCachedWidth =16380
-                            LayoutCachedHeight =1065
-                            ColumnStart =8
-                            ColumnEnd =8
-                            LayoutGroup =1
-                            DefaultInsertButton =1
-                            Shape =3
-                            HoverThemeColorIndex =4
-                            HoverTint =100.0
-                            PressedThemeColorIndex =4
-                            PressedTint =100.0
-                            HoverForeThemeColorIndex =1
-                            HoverForeTint =100.0
-                            PressedForeThemeColorIndex =1
-                            PressedForeTint =100.0
-                            BackThemeColorIndex =4
-                            BackTint =40.0
-                            BorderThemeColorIndex =4
-                            BorderShade =100.0
-                            GroupTable =1
-                            WebImagePaddingRight =2
-                            WebImagePaddingBottom =1
-                            Overlaps =1
-                        End
-                    End
-                End
-                Begin Subform
-                    OverlapFlags =85
-                    Left =180
-                    Top =1140
-                    Width =17520
-                    Height =7860
                     TabIndex =1
-                    BorderColor =10921638
-                    Name ="navSubform"
-                    GroupTable =2
-                    LeftPadding =0
-                    TopPadding =0
-                    RightPadding =0
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =180
-                    LayoutCachedTop =1140
-                    LayoutCachedWidth =17700
-                    LayoutCachedHeight =9000
-                    RowStart =1
-                    RowEnd =1
-                    LayoutGroup =2
-                    GroupTable =2
-                End
-                Begin Label
-                    OverlapFlags =255
-                    TextAlign =3
-                    Left =10020
-                    Top =120
-                    Width =5325
-                    Height =315
-                    FontWeight =800
-                    BorderColor =8355711
-                    Name ="lblLoggedInAs"
-                    Caption ="Authentication Failed"
-                    GridlineColor =10921638
-                    LayoutCachedLeft =10020
-                    LayoutCachedTop =120
-                    LayoutCachedWidth =15345
-                    LayoutCachedHeight =435
-                    ForeTint =100.0
-                End
-                Begin Label
-                    FontItalic = NotDefault
-                    OverlapFlags =247
-                    TextAlign =3
-                    Left =10020
-                    Top =360
-                    Width =5325
-                    Height =315
-                    FontSize =10
-                    BorderColor =8355711
-                    Name ="lblTitle"
-                    Caption ="Authentication Failed"
-                    GridlineColor =10921638
-                    LayoutCachedLeft =10020
-                    LayoutCachedTop =360
-                    LayoutCachedWidth =15345
-                    LayoutCachedHeight =675
-                    ForeTint =100.0
-                End
-            End
-        End
-        Begin FormFooter
-            Height =480
-            BackColor =1315470
-            Name ="secFormFooter"
-            AlternateBackThemeColorIndex =1
-            AlternateBackShade =95.0
-            Begin
-                Begin CommandButton
-                    OverlapFlags =85
-                    Left =14280
-                    Top =60
-                    Width =1620
-                    Height =300
-                    ForeColor =4210752
-                    Name ="cmdWhatsNewButton"
-                    Caption ="What's New?"
-                    OnClick ="[Event Procedure]"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =14280
-                    LayoutCachedTop =60
-                    LayoutCachedWidth =15900
-                    LayoutCachedHeight =360
-                    Gradient =0
-                    BackColor =-2147483607
                     BackThemeColorIndex =-1
-                    BackTint =100.0
-                    BorderColor =14461583
-                    HoverColor =15189940
-                    PressedColor =9917743
-                    HoverForeColor =4210752
-                    PressedForeColor =4210752
-                    WebImagePaddingLeft =2
-                    WebImagePaddingTop =2
-                    WebImagePaddingRight =1
-                    WebImagePaddingBottom =1
-                    Overlaps =1
-                End
-                Begin Label
-                    OverlapFlags =85
-                    TextAlign =3
-                    Left =11760
-                    Top =120
-                    Width =2385
-                    Height =315
-                    FontSize =9
-                    BorderColor =8355711
-                    ForeColor =16777215
-                    Name ="lblVersion"
-                    Caption ="version 1.2.3"
-                    FontName ="Verdana"
-                    GridlineColor =10921638
-                    LayoutCachedLeft =11760
-                    LayoutCachedTop =120
-                    LayoutCachedWidth =14145
-                    LayoutCachedHeight =435
-                    ThemeFontIndex =-1
-                    ForeThemeColorIndex =-1
-                    ForeTint =100.0
-                End
-                Begin CommandButton
-                    OverlapFlags =85
-                    Left =16020
-                    Top =60
-                    Width =1620
-                    Height =300
-                    TabIndex =1
-                    ForeColor =4210752
-                    Name ="cmdReportBug"
-                    Caption ="Report a Bug"
-                    OnClick ="[Event Procedure]"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =16020
-                    LayoutCachedTop =60
-                    LayoutCachedWidth =17640
-                    LayoutCachedHeight =360
-                    Gradient =0
-                    BackColor =-2147483607
-                    BackThemeColorIndex =-1
-                    BackTint =100.0
-                    BorderColor =14461583
-                    HoverColor =15189940
-                    PressedColor =9917743
-                    HoverForeColor =4210752
-                    PressedForeColor =4210752
-                    WebImagePaddingLeft =2
-                    WebImagePaddingTop =2
-                    WebImagePaddingRight =1
-                    WebImagePaddingBottom =1
                 End
             End
         End
@@ -3483,134 +4072,36 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Compare Database
 
-Private Sub cmdChangePassword_Click()
-    DoCmd.OpenForm "fdlgChangePassword", acNormal, , , , acWindowNormal
-    Forms(fdlgChangePassword).SetFocus
+Private Sub cmdSaveAndClose_Click()
+
+    DoCmd.Close
+    
 End Sub
 
-Private Sub cmdLogout_Click()
+Private Sub cmdPrintStagingTags_Click()
 
-    Dim strSQL As String
-    Dim intLoopCount As Integer
-
-    ' Disable warnings, as DoCmd.RunSQL asks user for confirmation before executing
-    DoCmd.SetWarnings False
-    
-    ' On closing the form, sets the "currentUser" instance variable to null to effectively log user out
-    strSQL = "Delete * From [zstlkpInstanceVariables] WHERE [strKey]='currentUser'"
-    DoCmd.RunSQL strSQL
-    
-    ' Re-enable warnings (in effect, return to default setting)
-    DoCmd.SetWarnings True
-    
-    ' Close all forms except login form
-    For intLoopCount = (Forms.Count - 1) To 0 Step -1
-        DoCmd.Close acForm, Forms(intLoopCount).Name
-        Next intLoopCount
-    
-    ' Close all reports
-    For intLoopCount = (Reports.Count - 1) To 0 Step -1
-        DoCmd.Close acReport, Reports(intLoopCount).Name
-        Next intLoopCount
-    
-    ' Re-open login form
-    DoCmd.OpenForm "fdlgLogIn", acNormal, , , , acDialog
-
-End Sub
-
-Private Sub cmdReportBug_Click()
-
-    Dim strWebBrowserExecutablePath As String
-    
-    strWebBrowserExecutablePath = """C:\Program Files\Google\Chrome\Application\chrome.exe"""
-    Shell strWebBrowserExecutablePath & " -url https://github.com/jxthibeault/cot-install/issues/new/choose"
-
-End Sub
-
-Private Sub Form_Close()
-    
-    Dim strSQL As String
-
-    ' Disable warnings, as DoCmd.RunSQL asks user for confirmation before executing
-    DoCmd.SetWarnings False
-    
-    ' On closing the form, sets the "currentUser" instance variable to null to effectively log user out
-    strSQL = "Delete * From [zstlkpInstanceVariables] WHERE [strKey]='currentUser'"
-    DoCmd.RunSQL strSQL
-    
-    ' Re-enable warnings (in effect, return to default setting)
-    DoCmd.SetWarnings True
+    DoCmd.OpenReport "rptReadyForInstallTag", acViewPreview, , "lngID = " & Me.lngID.Value, acWindowNormal
     
 End Sub
 
 Private Sub Form_Load()
-    
-    Dim varCurrentVersion As Variant
+
     Dim strCurrentUser As String
     Dim strUserLevel As String
-    Dim strUserTitle As String
-    
-    ' Look up current app version number from instance variables and set version label
-    varCurrentVersion = DLookup("[strValue]", "zstlkpInstanceVariables", "[strKey] = 'appVersion'")
-    lblVersion.Caption = "version " & varCurrentVersion
     
     ' Look up current user's name from instance variables and set logged-in-as label
     strCurrentUser = Form_fdlgUserControl.GetCurrentUser()
-    lblLoggedInAs.Caption = "Logged in as " & Form_fdlgUserControl.GetUserDisplayName(strCurrentUser)
-    
-    ' Look up current user's title and set title label
-    strUserTitle = Form_fdlgUserControl.GetUserTitle(strCurrentUser)
-    lblTitle.Caption = strUserTitle
     
     ' Look up current user's permission level
     strUserLevel = Form_fdlgUserControl.GetUserAccountType(strCurrentUser)
     
-    ' Permission-based tabs
-    If strUserLevel = "Technician" Then
-        navbtnInstallsPendingWork.Visible = True
-        navbtnInstallsReadyToShip.Visible = True
-        navbtnEditInstalls.Visible = False
-        navbtnPastInstalls.Visible = True
-        navbtnReports.Visible = True
-        navbtnInstallManagement.Visible = False
-        navbtnDeveloper.Visible = False
-        navbtnPostProcessing.Visible = True
-    End If
-    
-    If strUserLevel = "Administrator" Then
-        navbtnInstallsPendingWork.Visible = True
-        navbtnInstallsReadyToShip.Visible = True
-        navbtnEditInstalls.Visible = True
-        navbtnPastInstalls.Visible = True
-        navbtnReports.Visible = True
-        navbtnInstallManagement.Visible = True
-        navbtnDeveloper.Visible = False
-        navbtnPostProcessing.Visible = True
-    End If
-    
-    If strUserLevel = "Development" Then
-        navbtnInstallsPendingWork.Visible = True
-        navbtnInstallsReadyToShip.Visible = True
-        navbtnEditInstalls.Visible = True
-        navbtnPastInstalls.Visible = True
-        navbtnReports.Visible = True
-        navbtnInstallManagement.Visible = True
-        navbtnDeveloper.Visible = True
-        navbtnPostProcessing.Visible = True
-        
-        ' If developer is logged in, automatically switch to Developer Tools
-        navbtnDeveloper.TabIndex = 0
-        DoCmd.BrowseTo acBrowseToForm, "fsubNavigationSubDeveloper", Me.Name & ".navSubform"
-        navbtnDeveloper.TabIndex = 5
-    End If
-    
-End Sub
+    ' Permission-based
 
-Private Sub cmdWhatsNewButton_Click()
-    
-    Dim strWebBrowserExecutablePath As String
-    
-    strWebBrowserExecutablePath = """C:\Program Files\Google\Chrome\Application\chrome.exe"""
-    Shell strWebBrowserExecutablePath & " -url https://github.com/jxthibeault/cot-install/commits/main"
-    
+    If strUserLevel = "Administrator" Or strUserLevel = "Development" Then
+        
+        txtInstallStatus.AddItem "Completed"
+        txtInstallStatus.AddItem "Cancelled"
+        
+    End If
+
 End Sub

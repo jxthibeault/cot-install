@@ -8,7 +8,6 @@ Begin Form
     AllowDeletions = NotDefault
     DividingLines = NotDefault
     AllowAdditions = NotDefault
-    OrderByOn = NotDefault
     AllowEdits = NotDefault
     PictureAlignment =2
     DatasheetGridlinesBehavior =3
@@ -16,15 +15,15 @@ Begin Form
     GridY =24
     Width =16344
     DatasheetFontHeight =11
-    ItemSuffix =104
+    ItemSuffix =103
     Right =15135
     Bottom =11730
-    OrderBy ="dtmInstallScheduled DESC, strInstallStatus, strCustomer"
+    OrderBy ="[tblInstalls].[dtmInstallScheduled] DESC"
     RecSrcDt = Begin
-        0xba9879959eebe540
+        0xd008711f32eee540
     End
-    RecordSource ="qryClosedInstalls"
-    Caption ="frmOpenInstalls"
+    RecordSource ="qryInstalledInstalls"
+    Caption ="Installs Ready to Ship"
     DatasheetFontName ="Calibri"
     AllowDatasheetView =0
     FilterOnLoad =0
@@ -159,7 +158,7 @@ Begin Form
                     Left =60
                     Top =690
                     Width =4256
-                    Height =345
+                    Height =360
                     FontSize =12
                     FontWeight =500
                     LeftMargin =44
@@ -175,7 +174,7 @@ Begin Form
                     LayoutCachedLeft =60
                     LayoutCachedTop =690
                     LayoutCachedWidth =4316
-                    LayoutCachedHeight =1035
+                    LayoutCachedHeight =1050
                     LayoutGroup =1
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
@@ -187,7 +186,7 @@ Begin Form
                     Left =10440
                     Top =690
                     Width =2025
-                    Height =345
+                    Height =360
                     FontSize =12
                     FontWeight =500
                     LeftMargin =44
@@ -203,7 +202,7 @@ Begin Form
                     LayoutCachedLeft =10440
                     LayoutCachedTop =690
                     LayoutCachedWidth =12465
-                    LayoutCachedHeight =1035
+                    LayoutCachedHeight =1050
                     ColumnStart =4
                     ColumnEnd =4
                     LayoutGroup =1
@@ -217,7 +216,7 @@ Begin Form
                     Left =4380
                     Top =690
                     Width =2036
-                    Height =345
+                    Height =360
                     FontSize =12
                     FontWeight =500
                     LeftMargin =44
@@ -233,7 +232,7 @@ Begin Form
                     LayoutCachedLeft =4380
                     LayoutCachedTop =690
                     LayoutCachedWidth =6416
-                    LayoutCachedHeight =1035
+                    LayoutCachedHeight =1050
                     ColumnStart =1
                     ColumnEnd =1
                     LayoutGroup =1
@@ -247,7 +246,7 @@ Begin Form
                     Left =6480
                     Top =690
                     Width =1616
-                    Height =345
+                    Height =360
                     FontSize =12
                     FontWeight =500
                     LeftMargin =44
@@ -263,7 +262,7 @@ Begin Form
                     LayoutCachedLeft =6480
                     LayoutCachedTop =690
                     LayoutCachedWidth =8096
-                    LayoutCachedHeight =1035
+                    LayoutCachedHeight =1050
                     ColumnStart =2
                     ColumnEnd =2
                     LayoutGroup =1
@@ -274,21 +273,21 @@ Begin Form
                 Begin Label
                     OverlapFlags =85
                     TextAlign =1
-                    Left =120
+                    Left =60
                     Top =120
-                    Width =12840
+                    Width =13500
                     Height =480
                     FontSize =16
                     FontWeight =500
                     ForeColor =16777215
                     Name ="lblFormTitle"
-                    Caption ="Closed Installs"
+                    Caption ="Installs Pending Post-Processing"
                     FontName ="Verdana"
                     GroupTable =2
                     GridlineColor =10921638
-                    LayoutCachedLeft =120
+                    LayoutCachedLeft =60
                     LayoutCachedTop =120
-                    LayoutCachedWidth =12960
+                    LayoutCachedWidth =13560
                     LayoutCachedHeight =600
                     LayoutGroup =2
                     ThemeFontIndex =-1
@@ -303,8 +302,8 @@ Begin Form
                     TextAlign =2
                     Left =8160
                     Top =690
-                    Width =2220
-                    Height =345
+                    Width =2216
+                    Height =360
                     FontSize =12
                     FontWeight =500
                     BorderColor =8355711
@@ -315,8 +314,8 @@ Begin Form
                     GridlineColor =10921638
                     LayoutCachedLeft =8160
                     LayoutCachedTop =690
-                    LayoutCachedWidth =10380
-                    LayoutCachedHeight =1035
+                    LayoutCachedWidth =10376
+                    LayoutCachedHeight =1050
                     ColumnStart =3
                     ColumnEnd =3
                     LayoutGroup =1
@@ -328,14 +327,14 @@ Begin Form
                     Left =12525
                     Top =690
                     Width =135
-                    Height =345
+                    Height =360
                     Name ="EmptyCell99"
                     GroupTable =1
                     GridlineColor =10921638
                     LayoutCachedLeft =12525
                     LayoutCachedTop =690
                     LayoutCachedWidth =12660
-                    LayoutCachedHeight =1035
+                    LayoutCachedHeight =1050
                     ColumnStart =5
                     ColumnEnd =5
                     LayoutGroup =1
@@ -502,7 +501,7 @@ Begin Form
                     IMESentenceMode =3
                     Left =8160
                     Top =180
-                    Width =2220
+                    Width =2216
                     Height =315
                     FontSize =12
                     TabIndex =3
@@ -516,7 +515,7 @@ Begin Form
 
                     LayoutCachedLeft =8160
                     LayoutCachedTop =180
-                    LayoutCachedWidth =10380
+                    LayoutCachedWidth =10376
                     LayoutCachedHeight =495
                     RowStart =1
                     RowEnd =1
@@ -558,7 +557,6 @@ Begin Form
                     OverlapFlags =85
                     Left =12780
                     Top =180
-                    Width =1560
                     Height =300
                     TabIndex =5
                     ForeColor =4210752
@@ -569,7 +567,7 @@ Begin Form
 
                     LayoutCachedLeft =12780
                     LayoutCachedTop =180
-                    LayoutCachedWidth =14340
+                    LayoutCachedWidth =14220
                     LayoutCachedHeight =480
                     Gradient =0
                     BackColor =-2147483607
@@ -605,8 +603,9 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Compare Database
 
+
 Private Sub cmdOpenInstallDetails_Click()
 
-    DoCmd.OpenForm "frmClosedInstall", acNormal, "", "[lngID]=" & txtRecordId, , acNormal
+    DoCmd.OpenForm "frmInstalledInstall", acNormal, "", "[lngID]=" & txtRecordId, , acNormal
 
 End Sub
