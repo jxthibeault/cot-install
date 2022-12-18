@@ -22,9 +22,9 @@ Begin Form
     Right =20940
     Bottom =14100
     RecSrcDt = Begin
-        0x830b02b29eebe540
+        0x07c86f6233eee540
     End
-    RecordSource ="SELECT tblInstalls.*, tblInstalls.attAttachments FROM tblInstalls; "
+    RecordSource ="tblInstalls"
     Caption ="Installation Detail"
     DatasheetFontName ="Calibri"
     OnLoad ="[Event Procedure]"

@@ -608,7 +608,7 @@ Option Compare Database
 
 Private Sub cmdModifyOrder_Click()
 
-        DoCmd.OpenForm "frmEditInstall", acNormal, "", "[lngID]=" & txtRecordId.Value, acFormEdit, acWindowNormal
+        DoCmd.OpenForm "frmEditInstall", acNormal, "", "[lngID]=" & txtRecordID.Value, acFormEdit, acWindowNormal
 
     
 End Sub

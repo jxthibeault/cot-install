@@ -638,12 +638,12 @@ Option Compare Database
 
 Private Sub cmdPrintTicket_Click()
 
-    DoCmd.OpenReport "rptShopTicket", acViewPreview, , "[lngID] = " & txtRecordId.Value, acWindowNormal
+    DoCmd.OpenReport "rptShopTicket", acViewPreview, , "[lngID] = " & txtRecordID.Value, acWindowNormal
     
 End Sub
 
 Private Sub cmdOpenInstallDetails_Click()
 
-    DoCmd.OpenForm "frmOpenInstall", acNormal, "", "[lngID]=" & txtRecordId, , acNormal
+    DoCmd.OpenForm "frmOpenInstall", acNormal, "", "[lngID]=" & txtRecordID, , acNormal
 
 End Sub

@@ -17,10 +17,10 @@ Begin Form
     Width =22980
     DatasheetFontHeight =11
     ItemSuffix =76
-    Left =5565
+    Left =-75
     Top =2445
-    Right =20940
-    Bottom =14100
+    Right =22755
+    Bottom =14430
     RecSrcDt = Begin
         0x830b02b29eebe540
     End
@@ -1271,7 +1271,7 @@ Begin Form
                     TabIndex =26
                     BorderColor =-2147483617
                     Name ="subCustomerEquipment"
-                    SourceObject ="Form.fsubExistingInstallSubCustomerEquipment"
+                    SourceObject ="Form.fsubInstalledInstallSubCustomerEquipment"
                     LinkChildFields ="intInstall"
                     LinkMasterFields ="lngID"
                     GridlineColor =10921638
@@ -1358,38 +1358,6 @@ Begin Form
                     LayoutCachedWidth =11640
                     LayoutCachedHeight =12180
                 End
-                Begin CommandButton
-                    OverlapFlags =85
-                    Left =17760
-                    Top =240
-                    Width =2400
-                    Height =480
-                    FontWeight =500
-                    TabIndex =29
-                    ForeColor =4210752
-                    Name ="cmdPrintStagingTags"
-                    Caption ="Print Staging Tags"
-                    OnClick ="[Event Procedure]"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =17760
-                    LayoutCachedTop =240
-                    LayoutCachedWidth =20160
-                    LayoutCachedHeight =720
-                    Gradient =0
-                    BackColor =-2147483607
-                    BackThemeColorIndex =-1
-                    BackTint =100.0
-                    BorderColor =14461583
-                    HoverColor =15189940
-                    PressedColor =9917743
-                    HoverForeColor =4210752
-                    PressedForeColor =4210752
-                    WebImagePaddingLeft =2
-                    WebImagePaddingTop =2
-                    WebImagePaddingRight =1
-                    WebImagePaddingBottom =1
-                End
                 Begin Line
                     LineSlant = NotDefault
                     OverlapFlags =93
@@ -1424,7 +1392,7 @@ Begin Form
                     Width =2400
                     Height =480
                     FontWeight =500
-                    TabIndex =30
+                    TabIndex =29
                     ForeColor =4210752
                     Name ="cmdSaveAndClose"
                     Caption ="Save and Close"
@@ -4078,11 +4046,6 @@ Private Sub cmdSaveAndClose_Click()
     
 End Sub
 
-Private Sub cmdPrintStagingTags_Click()
-
-    DoCmd.OpenReport "rptReadyForInstallTag", acViewPreview, , "lngID = " & Me.lngID.Value, acWindowNormal
-    
-End Sub
 
 Private Sub Form_Load()
 
