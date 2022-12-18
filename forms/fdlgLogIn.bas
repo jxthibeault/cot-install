@@ -11,6 +11,7 @@ Begin Form
     AllowDeletions = NotDefault
     DividingLines = NotDefault
     AllowAdditions = NotDefault
+    OrderByOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
     ScrollBars =0
@@ -24,14 +25,13 @@ Begin Form
     ItemSuffix =14
     Left =10710
     Top =3570
-    Right =20475
-    Bottom =10995
+    Right =17850
+    Bottom =7755
     RecSrcDt = Begin
         0x2e55f3b84fede540
     End
     Caption ="Login"
     DatasheetFontName ="Calibri"
-    OnLoad ="[Event Procedure]"
     Moveable =0
     FilterOnLoad =0
     ShowPageMargins =0
@@ -2835,28 +2835,6 @@ Begin Form
                     TabIndex =3
                     BackThemeColorIndex =-1
                 End
-                Begin Label
-                    OverlapFlags =85
-                    TextAlign =3
-                    TextFontFamily =49
-                    Left =4680
-                    Top =3240
-                    Width =2385
-                    Height =240
-                    FontSize =8
-                    BorderColor =8355711
-                    Name ="lblVersion"
-                    Caption ="version 1.2.3"
-                    FontName ="Consolas"
-                    GridlineColor =10921638
-                    LayoutCachedLeft =4680
-                    LayoutCachedTop =3240
-                    LayoutCachedWidth =7065
-                    LayoutCachedHeight =3480
-                    ThemeFontIndex =-1
-                    ForeThemeColorIndex =-1
-                    ForeTint =100.0
-                End
             End
         End
         Begin FormFooter
@@ -2896,15 +2874,5 @@ Private Sub cmdLogIn_Click()
         DoCmd.Close acForm, "fdlgLogin"
         DoCmd.Close acForm, "fdlgUserControl"
     End If
-    
-End Sub
-
-Private Sub Form_Load()
-
-    Dim varCurrentVersion As Variant
-        
-    ' Look up current app version number from instance variables and set version label
-    varCurrentVersion = DLookup("[strValue]", "zstlkpInstanceVariables", "[strKey] = 'appVersion'")
-    lblVersion.Caption = "version " & varCurrentVersion
     
 End Sub
