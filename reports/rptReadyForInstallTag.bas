@@ -14,9 +14,10 @@ Begin Report
     GridY =24
     Width =11520
     DatasheetFontHeight =11
-    ItemSuffix =60
-    Left =7575
-    Top =2445
+    ItemSuffix =67
+    Left =5565
+    Top =3045
+    Filter ="lngID = 67"
     RecSrcDt = Begin
         0x5363e0cc9eebe540
     End
@@ -200,7 +201,7 @@ Begin Report
                     Left =120
                     Top =4200
                     Width =11280
-                    Height =7080
+                    Height =5400
                     ColumnWidth =4290
                     FontSize =64
                     FontWeight =600
@@ -214,7 +215,7 @@ Begin Report
                     LayoutCachedLeft =120
                     LayoutCachedTop =4200
                     LayoutCachedWidth =11400
-                    LayoutCachedHeight =11280
+                    LayoutCachedHeight =9600
                 End
                 Begin TextBox
                     OldBorderStyle =0
@@ -2800,8 +2801,82 @@ Begin Report
                     LayoutCachedTop =11460
                     LayoutCachedWidth =7560
                     LayoutCachedHeight =12720
-                    TabIndex =2
+                    TabIndex =5
                     BackThemeColorIndex =-1
+                End
+                Begin TextBox
+                    OldBorderStyle =0
+                    TextAlign =2
+                    BackStyle =0
+                    IMESentenceMode =3
+                    Left =120
+                    Top =9660
+                    Width =11280
+                    Height =540
+                    FontSize =20
+                    TabIndex =2
+                    BorderColor =-2147483616
+                    Name ="txtStreetAddress"
+                    ControlSource ="strAddressStreet"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =120
+                    LayoutCachedTop =9660
+                    LayoutCachedWidth =11400
+                    LayoutCachedHeight =10200
+                    BorderThemeColorIndex =-1
+                    BorderShade =100.0
+                    ForeTint =100.0
+                End
+                Begin TextBox
+                    OldBorderStyle =0
+                    OverlapFlags =4
+                    TextAlign =2
+                    BackStyle =0
+                    IMESentenceMode =3
+                    Left =120
+                    Top =10200
+                    Width =11280
+                    Height =540
+                    FontSize =20
+                    TabIndex =3
+                    BorderColor =-2147483616
+                    Name ="txtAddressCity"
+                    ControlSource ="strAddressCity"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =120
+                    LayoutCachedTop =10200
+                    LayoutCachedWidth =11400
+                    LayoutCachedHeight =10740
+                    BorderThemeColorIndex =-1
+                    BorderShade =100.0
+                    ForeTint =100.0
+                End
+                Begin TextBox
+                    OldBorderStyle =0
+                    OverlapFlags =4
+                    TextAlign =2
+                    BackStyle =0
+                    IMESentenceMode =3
+                    Left =120
+                    Top =10680
+                    Width =11280
+                    Height =540
+                    FontSize =20
+                    TabIndex =4
+                    BorderColor =-2147483616
+                    Name ="txtAddressState"
+                    ControlSource ="strAddressState"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =120
+                    LayoutCachedTop =10680
+                    LayoutCachedWidth =11400
+                    LayoutCachedHeight =11220
+                    BorderThemeColorIndex =-1
+                    BorderShade =100.0
+                    ForeTint =100.0
                 End
             End
         End
@@ -2814,3 +2889,9 @@ Begin Report
         End
     End
 End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database

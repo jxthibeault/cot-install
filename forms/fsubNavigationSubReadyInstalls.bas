@@ -16,7 +16,7 @@ Begin Form
     GridY =24
     Width =16344
     DatasheetFontHeight =11
-    ItemSuffix =103
+    ItemSuffix =112
     Right =15135
     Bottom =11730
     OrderBy ="dtmInstallScheduled, dtmDateReceived, strCustomer"
@@ -184,9 +184,9 @@ Begin Form
                 Begin Label
                     OverlapFlags =85
                     TextAlign =2
-                    Left =10440
+                    Left =6480
                     Top =690
-                    Width =2025
+                    Width =1616
                     Height =360
                     FontSize =12
                     FontWeight =500
@@ -200,12 +200,12 @@ Begin Form
                     Caption ="Sales Rep"
                     GroupTable =1
                     GridlineColor =10921638
-                    LayoutCachedLeft =10440
+                    LayoutCachedLeft =6480
                     LayoutCachedTop =690
-                    LayoutCachedWidth =12465
+                    LayoutCachedWidth =8096
                     LayoutCachedHeight =1050
-                    ColumnStart =4
-                    ColumnEnd =4
+                    ColumnStart =2
+                    ColumnEnd =2
                     LayoutGroup =1
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
@@ -226,8 +226,8 @@ Begin Form
                     BottomMargin =22
                     BorderColor =8355711
                     ForeColor =16777215
-                    Name ="lblStatus"
-                    Caption ="Status"
+                    Name ="lblDateReceived"
+                    Caption ="Date Received"
                     GroupTable =1
                     GridlineColor =10921638
                     LayoutCachedLeft =4380
@@ -236,36 +236,6 @@ Begin Form
                     LayoutCachedHeight =1050
                     ColumnStart =1
                     ColumnEnd =1
-                    LayoutGroup =1
-                    ForeThemeColorIndex =-1
-                    ForeTint =100.0
-                    GroupTable =1
-                End
-                Begin Label
-                    OverlapFlags =85
-                    TextAlign =2
-                    Left =6480
-                    Top =690
-                    Width =1616
-                    Height =360
-                    FontSize =12
-                    FontWeight =500
-                    LeftMargin =44
-                    TopMargin =22
-                    RightMargin =44
-                    BottomMargin =22
-                    BorderColor =8355711
-                    ForeColor =16777215
-                    Name ="lblDateReceived"
-                    Caption ="Date Received"
-                    GroupTable =1
-                    GridlineColor =10921638
-                    LayoutCachedLeft =6480
-                    LayoutCachedTop =690
-                    LayoutCachedWidth =8096
-                    LayoutCachedHeight =1050
-                    ColumnStart =2
-                    ColumnEnd =2
                     LayoutGroup =1
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
@@ -325,19 +295,19 @@ Begin Form
                     GroupTable =1
                 End
                 Begin EmptyCell
-                    Left =12525
+                    Left =10440
                     Top =690
                     Width =135
                     Height =360
                     Name ="EmptyCell99"
                     GroupTable =1
                     GridlineColor =10921638
-                    LayoutCachedLeft =12525
+                    LayoutCachedLeft =10440
                     LayoutCachedTop =690
-                    LayoutCachedWidth =12660
+                    LayoutCachedWidth =10575
                     LayoutCachedHeight =1050
-                    ColumnStart =5
-                    ColumnEnd =5
+                    ColumnStart =4
+                    ColumnEnd =4
                     LayoutGroup =1
                     GroupTable =1
                 End
@@ -345,7 +315,7 @@ Begin Form
         End
         Begin Section
             CanGrow = NotDefault
-            Height =645
+            Height =600
             Name ="secFormDetail"
             AlternateBackThemeColorIndex =1
             AlternateBackShade =95.0
@@ -366,6 +336,7 @@ Begin Form
                     ColumnWidth =2895
                     FontSize =12
                     FontWeight =500
+                    TabIndex =2
                     LeftMargin =44
                     TopMargin =22
                     RightMargin =44
@@ -396,9 +367,9 @@ Begin Form
                     TextAlign =2
                     BackStyle =0
                     IMESentenceMode =3
-                    Left =10440
+                    Left =6480
                     Top =180
-                    Width =2025
+                    Width =1616
                     Height =315
                     FontSize =12
                     TabIndex =4
@@ -411,43 +382,6 @@ Begin Form
                     Name ="txtSalesRep"
                     ControlSource ="strSalesRep"
                     StatusBarText ="Originating sales rep"
-                    GroupTable =1
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =10440
-                    LayoutCachedTop =180
-                    LayoutCachedWidth =12465
-                    LayoutCachedHeight =495
-                    RowStart =1
-                    RowEnd =1
-                    ColumnStart =4
-                    ColumnEnd =4
-                    LayoutGroup =1
-                    GroupTable =1
-                End
-                Begin TextBox
-                    Enabled = NotDefault
-                    OldBorderStyle =0
-                    OverlapFlags =85
-                    TextAlign =2
-                    BackStyle =0
-                    IMESentenceMode =3
-                    Left =6480
-                    Top =180
-                    Width =1616
-                    Height =315
-                    FontSize =12
-                    TabIndex =2
-                    LeftMargin =44
-                    TopMargin =22
-                    RightMargin =44
-                    BottomMargin =22
-                    BorderColor =10921638
-                    ForeColor =4210752
-                    Name ="txtDateReceived"
-                    ControlSource ="dtmDateReceived"
-                    Format ="Short Date"
-                    StatusBarText ="Date installation notice received"
                     GroupTable =1
                     GridlineColor =10921638
 
@@ -473,12 +407,18 @@ Begin Form
                     Top =180
                     Width =2036
                     Height =315
-                    TabIndex =1
+                    FontSize =12
+                    TabIndex =3
+                    LeftMargin =44
+                    TopMargin =22
+                    RightMargin =44
+                    BottomMargin =22
                     BorderColor =10921638
                     ForeColor =4210752
-                    Name ="txtInstallStatus"
-                    ControlSource ="strInstallStatus"
-                    StatusBarText ="Install status"
+                    Name ="txtDateReceived"
+                    ControlSource ="dtmDateReceived"
+                    Format ="Short Date"
+                    StatusBarText ="Date installation notice received"
                     GroupTable =1
                     GridlineColor =10921638
 
@@ -505,7 +445,7 @@ Begin Form
                     Width =2216
                     Height =315
                     FontSize =12
-                    TabIndex =3
+                    TabIndex =5
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="txtInstallScheduled"
@@ -525,55 +465,25 @@ Begin Form
                     LayoutGroup =1
                     GroupTable =1
                 End
-                Begin TextBox
-                    Visible = NotDefault
-                    Enabled = NotDefault
-                    OverlapFlags =85
-                    IMESentenceMode =3
-                    Left =12525
-                    Top =180
-                    Width =135
-                    Height =315
-                    TabIndex =7
-                    BorderColor =10921638
-                    ForeColor =4210752
-                    Name ="txtRecordId"
-                    ControlSource ="lngID"
-                    StatusBarText ="Primary key - install ID"
-                    GroupTable =1
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =12525
-                    LayoutCachedTop =180
-                    LayoutCachedWidth =12660
-                    LayoutCachedHeight =495
-                    RowStart =1
-                    RowEnd =1
-                    ColumnStart =5
-                    ColumnEnd =5
-                    LayoutGroup =1
-                    GroupTable =1
-                End
                 Begin CommandButton
-                    OverlapFlags =85
-                    Left =12780
+                    OverlapFlags =93
+                    Left =10620
                     Top =180
+                    Width =1800
                     Height =300
-                    TabIndex =5
                     ForeColor =4210752
                     Name ="cmdOpenInstallDetails"
-                    Caption ="Details"
+                    Caption ="View Details"
                     OnClick ="[Event Procedure]"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =12780
+                    LayoutCachedLeft =10620
                     LayoutCachedTop =180
-                    LayoutCachedWidth =14220
+                    LayoutCachedWidth =12420
                     LayoutCachedHeight =480
                     Gradient =0
-                    BackColor =-2147483607
-                    BackThemeColorIndex =-1
-                    BackTint =100.0
+                    BackThemeColorIndex =5
+                    BackTint =20.0
                     BorderColor =14461583
                     HoverColor =15189940
                     PressedColor =9917743
@@ -587,23 +497,72 @@ Begin Form
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =14340
+                    Left =12540
                     Top =180
-                    Width =1860
+                    Width =1800
                     Height =299
-                    TabIndex =6
+                    TabIndex =1
                     ForeColor =4210752
                     Name ="cmdPrintTicket"
                     Caption ="Print for Delivery"
                     OnClick ="[Event Procedure]"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =14340
+                    LayoutCachedLeft =12540
                     LayoutCachedTop =180
-                    LayoutCachedWidth =16200
+                    LayoutCachedWidth =14340
                     LayoutCachedHeight =479
                     Gradient =0
-                    BackColor =-2147483607
+                    BackThemeColorIndex =8
+                    BackTint =20.0
+                    BorderColor =14461583
+                    HoverColor =15189940
+                    PressedColor =9917743
+                    HoverForeColor =4210752
+                    PressedForeColor =4210752
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =2
+                    WebImagePaddingRight =1
+                    WebImagePaddingBottom =1
+                End
+                Begin EmptyCell
+                    Left =10440
+                    Top =180
+                    Width =135
+                    Height =315
+                    Name ="EmptyCell109"
+                    GroupTable =1
+                    GridlineColor =10921638
+                    LayoutCachedLeft =10440
+                    LayoutCachedTop =180
+                    LayoutCachedWidth =10575
+                    LayoutCachedHeight =495
+                    RowStart =1
+                    RowEnd =1
+                    ColumnStart =4
+                    ColumnEnd =4
+                    LayoutGroup =1
+                    GroupTable =1
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =14460
+                    Top =180
+                    Width =1800
+                    Height =299
+                    TabIndex =6
+                    ForeColor =4210752
+                    Name ="cmdInstallComplete"
+                    Caption ="Complete"
+                    OnClick ="[Event Procedure]"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =14460
+                    LayoutCachedTop =180
+                    LayoutCachedWidth =16260
+                    LayoutCachedHeight =479
+                    Gradient =0
+                    BackColor =14151142
                     BackThemeColorIndex =-1
                     BackTint =100.0
                     BorderColor =14461583
@@ -615,6 +574,26 @@ Begin Form
                     WebImagePaddingTop =2
                     WebImagePaddingRight =1
                     WebImagePaddingBottom =1
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    OverlapFlags =215
+                    IMESentenceMode =3
+                    Left =10680
+                    Top =180
+                    Height =315
+                    TabIndex =7
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="txtRecordID"
+                    ControlSource ="lngID"
+                    StatusBarText ="Primary key - install ID"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =10680
+                    LayoutCachedTop =180
+                    LayoutCachedWidth =12120
+                    LayoutCachedHeight =495
                 End
             End
         End
@@ -635,14 +614,20 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Compare Database
 
+Private Sub cmdInstallComplete_Click()
+
+    DoCmd.OpenForm "frmPostInstallInfo", acModal, "", "[lngID]=" & txtRecordID, , acModal
+
+End Sub
+
 Private Sub cmdPrintTicket_Click()
 
-    DoCmd.OpenReport "rptInstallTicket", acViewPreview, , "[lngID] = " & txtRecordId.Value, acWindowNormal
+    DoCmd.OpenReport "rptInstallTicket", acViewPreview, , "[lngID] = " & txtRecordID.Value, acWindowNormal
     
 End Sub
 
 Private Sub cmdOpenInstallDetails_Click()
 
-    DoCmd.OpenForm "frmOpenInstall", acNormal, "", "[lngID]=" & txtRecordId, , acNormal
+    DoCmd.OpenForm "frmOpenInstall", acNormal, "", "[lngID]=" & txtRecordID, , acNormal
 
 End Sub
