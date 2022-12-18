@@ -13,6 +13,7 @@ Begin Form
     CloseButton = NotDefault
     DividingLines = NotDefault
     AllowAdditions = NotDefault
+    OrderByOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
     ScrollBars =0
@@ -2736,29 +2737,6 @@ Begin Form
                     BorderThemeColorIndex =-1
                     BorderShade =100.0
                 End
-                Begin Label
-                    OverlapFlags =85
-                    TextAlign =3
-                    TextFontFamily =49
-                    Left =5640
-                    Top =3960
-                    Width =2385
-                    Height =240
-                    FontSize =8
-                    BorderColor =8355711
-                    ForeColor =16777215
-                    Name ="lblVersion"
-                    Caption ="version 1.2.3"
-                    FontName ="Consolas"
-                    GridlineColor =10921638
-                    LayoutCachedLeft =5640
-                    LayoutCachedTop =3960
-                    LayoutCachedWidth =8025
-                    LayoutCachedHeight =4200
-                    ThemeFontIndex =-1
-                    ForeThemeColorIndex =-1
-                    ForeTint =100.0
-                End
             End
         End
         Begin FormFooter
@@ -2780,13 +2758,7 @@ Option Compare Database
 
 Private Sub Form_Load()
 
-    Dim varCurrentVersion As Variant
-
     DoCmd.ShowToolbar "Ribbon", acToolbarNo
-        
-    ' Look up current app version number from instance variables and set version label
-    varCurrentVersion = DLookup("[strValue]", "zstlkpInstanceVariables", "[strKey] = 'appVersion'")
-    lblVersion.Caption = "version " & varCurrentVersion
 
 End Sub
 

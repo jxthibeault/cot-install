@@ -12,12 +12,12 @@ Begin Form
     DatasheetGridlinesBehavior =3
     GridX =24
     GridY =24
-    Width =17820
+    Width =17880
     DatasheetFontHeight =11
-    ItemSuffix =43
+    ItemSuffix =35
     Left =5565
     Top =2625
-    Right =23370
+    Right =23445
     Bottom =13050
     RecSrcDt = Begin
         0xd5e2a17c9eebe540
@@ -152,7 +152,7 @@ Begin Form
                     TextAlign =1
                     Left =300
                     Top =120
-                    Width =9487
+                    Width =8077
                     Height =460
                     FontSize =18
                     FontWeight =800
@@ -165,7 +165,7 @@ Begin Form
                     HorizontalAnchor =2
                     LayoutCachedLeft =300
                     LayoutCachedTop =120
-                    LayoutCachedWidth =9787
+                    LayoutCachedWidth =8377
                     LayoutCachedHeight =580
                     LayoutGroup =3
                     ThemeFontIndex =-1
@@ -236,7 +236,6 @@ Begin Form
                     WebImagePaddingTop =2
                     WebImagePaddingRight =1
                     WebImagePaddingBottom =1
-                    Overlaps =1
                 End
             End
         End
@@ -2814,7 +2813,7 @@ Begin Form
                     BackStyle =0
                     Left =180
                     Top =660
-                    Width =17580
+                    Width =17490
                     BorderColor =16777215
                     ForeColor =3484194
                     Name ="navctlTabBar"
@@ -2827,7 +2826,7 @@ Begin Form
 
                     LayoutCachedLeft =180
                     LayoutCachedTop =660
-                    LayoutCachedWidth =17760
+                    LayoutCachedWidth =17670
                     LayoutCachedHeight =1080
                     LayoutGroup =2
                     BackThemeColorIndex =-1
@@ -2949,12 +2948,12 @@ Begin Form
                             OverlapFlags =119
                             Left =5040
                             Top =660
-                            Width =1800
+                            Width =1860
                             Height =405
                             TabIndex =2
                             ForeColor =15527148
-                            Name ="navbtnInstalledInstalls"
-                            Caption ="Post-Processing"
+                            Name ="navbtnEditInstalls"
+                            Caption ="Modify Orders"
                             GroupTable =1
                             LeftPadding =0
                             TopPadding =0
@@ -2963,12 +2962,12 @@ Begin Form
 
                             LayoutCachedLeft =5040
                             LayoutCachedTop =660
-                            LayoutCachedWidth =6840
+                            LayoutCachedWidth =6900
                             LayoutCachedHeight =1065
                             ColumnStart =2
                             ColumnEnd =2
                             LayoutGroup =1
-                            NavigationTargetName ="fsubNavigationSubInstalledInstalls"
+                            NavigationTargetName ="fsubNavigationSubEditOpenInstall"
                             NavigationTargetType =32768
                             Shape =3
                             HoverColor =1841342
@@ -3002,28 +3001,28 @@ Begin Form
                         Begin NavigationButton
                             Visible = NotDefault
                             OverlapFlags =119
-                            Left =6870
+                            Left =6930
                             Top =660
                             Width =1785
                             Height =405
                             TabIndex =3
                             ForeColor =15527148
                             Name ="navbtnPastInstalls"
-                            Caption ="Completed"
+                            Caption ="Past Installs"
                             GroupTable =1
                             LeftPadding =0
                             TopPadding =0
                             BottomPadding =15
                             GridlineColor =10921638
 
-                            LayoutCachedLeft =6870
+                            LayoutCachedLeft =6930
                             LayoutCachedTop =660
-                            LayoutCachedWidth =8655
+                            LayoutCachedWidth =8715
                             LayoutCachedHeight =1065
                             ColumnStart =3
                             ColumnEnd =3
                             LayoutGroup =1
-                            NavigationTargetName ="fsubNavigationSubCompletedInstalls"
+                            NavigationTargetName ="fsubNavigationSubClosedInstalls"
                             NavigationTargetType =32768
                             Shape =3
                             HoverColor =1841342
@@ -3057,7 +3056,7 @@ Begin Form
                         Begin NavigationButton
                             Visible = NotDefault
                             OverlapFlags =119
-                            Left =8685
+                            Left =8745
                             Top =660
                             Width =1575
                             Height =405
@@ -3071,9 +3070,9 @@ Begin Form
                             BottomPadding =15
                             GridlineColor =10921638
 
-                            LayoutCachedLeft =8685
+                            LayoutCachedLeft =8745
                             LayoutCachedTop =660
-                            LayoutCachedWidth =10260
+                            LayoutCachedWidth =10320
                             LayoutCachedHeight =1065
                             ColumnStart =4
                             ColumnEnd =4
@@ -3112,9 +3111,9 @@ Begin Form
                         Begin NavigationButton
                             Visible = NotDefault
                             OverlapFlags =119
-                            Left =10290
+                            Left =10350
                             Top =660
-                            Width =1800
+                            Width =2265
                             Height =405
                             TabIndex =5
                             ForeColor =15527148
@@ -3126,9 +3125,9 @@ Begin Form
                             BottomPadding =15
                             GridlineColor =10921638
 
-                            LayoutCachedLeft =10290
+                            LayoutCachedLeft =10350
                             LayoutCachedTop =660
-                            LayoutCachedWidth =12090
+                            LayoutCachedWidth =12615
                             LayoutCachedHeight =1065
                             ColumnStart =5
                             ColumnEnd =5
@@ -3166,29 +3165,29 @@ Begin Form
                         End
                         Begin NavigationButton
                             Visible = NotDefault
-                            OverlapFlags =119
-                            Left =12120
+                            OverlapFlags =247
+                            Left =12645
                             Top =660
-                            Width =1860
+                            Width =2895
                             Height =405
                             TabIndex =6
                             ForeColor =15527148
-                            Name ="navbtnEditInstalls"
-                            Caption ="Modify Orders"
+                            Name ="navbtnDeveloper"
+                            Caption ="Developer Tools"
                             GroupTable =1
                             LeftPadding =0
                             TopPadding =0
                             BottomPadding =15
                             GridlineColor =10921638
 
-                            LayoutCachedLeft =12120
+                            LayoutCachedLeft =12645
                             LayoutCachedTop =660
-                            LayoutCachedWidth =13980
+                            LayoutCachedWidth =15540
                             LayoutCachedHeight =1065
                             ColumnStart =6
                             ColumnEnd =6
                             LayoutGroup =1
-                            NavigationTargetName ="fsubNavigationSubEditOpenInstall"
+                            NavigationTargetName ="fsubNavigationSubDeveloper"
                             NavigationTargetType =32768
                             Shape =3
                             HoverColor =1841342
@@ -3220,62 +3219,12 @@ Begin Form
                             Overlaps =1
                         End
                         Begin NavigationButton
-                            Visible = NotDefault
                             OverlapFlags =247
-                            Left =14010
-                            Top =660
-                            Width =1560
-                            Height =405
-                            TabIndex =7
-                            ForeColor =0
-                            Name ="navbtnDeveloper"
-                            Caption ="Developer Tools"
-                            GroupTable =1
-                            LeftPadding =0
-                            TopPadding =0
-                            BottomPadding =15
-                            GridlineColor =10921638
-
-                            LayoutCachedLeft =14010
-                            LayoutCachedTop =660
-                            LayoutCachedWidth =15570
-                            LayoutCachedHeight =1065
-                            ColumnStart =7
-                            ColumnEnd =7
-                            LayoutGroup =1
-                            NavigationTargetName ="fsubNavigationSubDeveloper"
-                            NavigationTargetType =32768
-                            Shape =3
-                            HoverColor =62207
-                            HoverThemeColorIndex =-1
-                            HoverTint =100.0
-                            PressedColor =62207
-                            PressedThemeColorIndex =-1
-                            PressedTint =100.0
-                            HoverForeColor =0
-                            HoverForeTint =100.0
-                            PressedForeColor =0
-                            PressedForeTint =100.0
-                            BackThemeColorIndex =7
-                            OldBorderStyle =1
-                            BorderThemeColorIndex =7
-                            BorderShade =100.0
-                            ThemeFontIndex =-1
-                            GroupTable =1
-                            FontName ="Verdana"
-                            FontWeight =500
-                            FontSize =8
-                            WebImagePaddingRight =1
-                            ForeTint =100.0
-                            Overlaps =1
-                        End
-                        Begin NavigationButton
-                            OverlapFlags =247
-                            Left =15600
+                            Left =15570
                             Top =660
                             Width =2070
                             Height =405
-                            TabIndex =8
+                            TabIndex =7
                             ForeColor =4210752
                             Name ="NavigationButton1"
                             Caption ="[Add New]"
@@ -3286,12 +3235,12 @@ Begin Form
                             BottomPadding =15
                             GridlineColor =10921638
 
-                            LayoutCachedLeft =15600
+                            LayoutCachedLeft =15570
                             LayoutCachedTop =660
-                            LayoutCachedWidth =17670
+                            LayoutCachedWidth =17640
                             LayoutCachedHeight =1065
-                            ColumnStart =8
-                            ColumnEnd =8
+                            ColumnStart =7
+                            ColumnEnd =7
                             LayoutGroup =1
                             DefaultInsertButton =1
                             Shape =3
@@ -3318,7 +3267,7 @@ Begin Form
                     OverlapFlags =85
                     Left =180
                     Top =1140
-                    Width =17580
+                    Width =17490
                     Height =7860
                     TabIndex =1
                     BorderColor =10921638
@@ -3331,7 +3280,7 @@ Begin Form
 
                     LayoutCachedLeft =180
                     LayoutCachedTop =1140
-                    LayoutCachedWidth =17760
+                    LayoutCachedWidth =17670
                     LayoutCachedHeight =9000
                     RowStart =1
                     RowEnd =1
@@ -3426,7 +3375,7 @@ Begin Form
                     BorderColor =8355711
                     ForeColor =16777215
                     Name ="lblVersion"
-                    Caption ="version 1.2.3"
+                    Caption ="version x.x.x.x"
                     FontName ="Verdana"
                     GridlineColor =10921638
                     LayoutCachedLeft =11760
@@ -3467,7 +3416,6 @@ Begin Form
                     WebImagePaddingTop =2
                     WebImagePaddingRight =1
                     WebImagePaddingBottom =1
-                    Overlaps =1
                 End
             End
         End
@@ -3571,7 +3519,6 @@ Private Sub Form_Load()
         navbtnReports.Visible = True
         navbtnInstallManagement.Visible = False
         navbtnDeveloper.Visible = False
-        navbtnInstalledInstalls.Visible = True
     End If
     
     If strUserLevel = "Administrator" Then
@@ -3582,7 +3529,6 @@ Private Sub Form_Load()
         navbtnReports.Visible = True
         navbtnInstallManagement.Visible = True
         navbtnDeveloper.Visible = False
-        navbtnInstalledInstalls.Visible = True
     End If
     
     If strUserLevel = "Development" Then
@@ -3593,7 +3539,6 @@ Private Sub Form_Load()
         navbtnReports.Visible = True
         navbtnInstallManagement.Visible = True
         navbtnDeveloper.Visible = True
-        navbtnInstalledInstalls.Visible = True
         
         ' If developer is logged in, automatically switch to Developer Tools
         navbtnDeveloper.TabIndex = 0
