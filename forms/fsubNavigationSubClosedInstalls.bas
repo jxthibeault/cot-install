@@ -16,7 +16,7 @@ Begin Form
     GridY =24
     Width =16344
     DatasheetFontHeight =11
-    ItemSuffix =106
+    ItemSuffix =108
     Right =15135
     Bottom =11730
     OrderBy ="dtmInstallScheduled DESC, strInstallStatus, strCustomer"
@@ -514,7 +514,7 @@ Begin Form
                     OverlapFlags =85
                     Left =12780
                     Top =180
-                    Width =1800
+                    Width =1613
                     Height =300
                     TabIndex =4
                     ForeColor =4210752
@@ -525,7 +525,7 @@ Begin Form
 
                     LayoutCachedLeft =12780
                     LayoutCachedTop =180
-                    LayoutCachedWidth =14580
+                    LayoutCachedWidth =14393
                     LayoutCachedHeight =480
                     Gradient =0
                     BackThemeColorIndex =5
@@ -560,6 +560,36 @@ Begin Form
                     LayoutGroup =1
                     GroupTable =1
                 End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =14520
+                    Top =180
+                    Width =1613
+                    Height =300
+                    TabIndex =6
+                    ForeColor =4210752
+                    Name ="cmdPrintFollowUp"
+                    Caption ="Print Post Info"
+                    OnClick ="[Event Procedure]"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =14520
+                    LayoutCachedTop =180
+                    LayoutCachedWidth =16133
+                    LayoutCachedHeight =480
+                    Gradient =0
+                    BackColor =15983578
+                    BackTint =20.0
+                    BorderColor =14461583
+                    HoverColor =15189940
+                    PressedColor =9917743
+                    HoverForeColor =4210752
+                    PressedForeColor =4210752
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =2
+                    WebImagePaddingRight =1
+                    WebImagePaddingBottom =1
+                End
             End
         End
         Begin FormFooter
@@ -583,4 +613,11 @@ Private Sub cmdOpenInstallDetails_Click()
 
     DoCmd.OpenForm "frmClosedInstall", acNormal, "", "[lngID]=" & txtRecordID, , acNormal
 
+End Sub
+
+
+Private Sub cmdPrintFollowUp_Click()
+
+    DoCmd.OpenReport "rptInstallFollowUpInfo", acViewPreview, , "[lngID]=" & lngID, acWindowNormal
+    
 End Sub

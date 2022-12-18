@@ -251,6 +251,7 @@ Begin Form
                     GridlineThemeColorIndex =1
                 End
                 Begin TextBox
+                    Enabled = NotDefault
                     EnterKeyBehavior = NotDefault
                     OldBorderStyle =0
                     OverlapFlags =85
@@ -278,6 +279,7 @@ Begin Form
                     GridlineThemeColorIndex =1
                 End
                 Begin TextBox
+                    Enabled = NotDefault
                     EnterKeyBehavior = NotDefault
                     OldBorderStyle =0
                     OverlapFlags =85

@@ -13,18 +13,12 @@ Begin Report
     GridY =24
     Width =11520
     DatasheetFontHeight =11
-    ItemSuffix =23
-    Left =405
-    Top =5430
+    ItemSuffix =25
+    Top =900
     RecSrcDt = Begin
-        0xd277cb5d9febe540
+        0xef5bd55935eee540
     End
-    RecordSource ="SELECT [qryEquipTypeCustomerEquipment].[lngID], [qryEquipTypeCustomerEquipment]."
-        "[strDescription], [qryEquipTypeCustomerEquipment].[strSerialNumber], [qryEquipTy"
-        "peCustomerEquipment].[strEQID], [qryEquipTypeCustomerEquipment].[intMeterMono], "
-        "[qryEquipTypeCustomerEquipment].[intMeterColor], [qryEquipTypeCustomerEquipment]"
-        ".[ysnInStock], [qryEquipTypeCustomerEquipment].[ysnReadyForInstall], [qryEquipTy"
-        "peCustomerEquipment].[intInstall] FROM qryEquipTypeCustomerEquipment; "
+    RecordSource ="qryEquipTypeCustomerEquipment"
     Caption ="subrptCustomerEquipment"
     DatasheetFontName ="Calibri"
     FilterOnLoad =0
@@ -106,7 +100,7 @@ Begin Report
         End
         Begin FormHeader
             KeepTogether = NotDefault
-            Height =495
+            Height =540
             Name ="secReportHeader"
             AlternateBackThemeColorIndex =1
             AlternateBackShade =95.0
@@ -115,27 +109,27 @@ Begin Report
             Begin
                 Begin Label
                     TextAlign =2
-                    Left =840
+                    Left =2100
                     Top =240
-                    Width =3480
+                    Width =3120
                     Height =255
                     BorderColor =8355711
                     Name ="lblDescription"
-                    Caption ="Equipment Description"
+                    Caption ="Description"
                     Tag ="DetachedLabel"
                     GridlineStyleBottom =1
                     GridlineColor =10921638
-                    LayoutCachedLeft =840
+                    LayoutCachedLeft =2100
                     LayoutCachedTop =240
-                    LayoutCachedWidth =4320
+                    LayoutCachedWidth =5220
                     LayoutCachedHeight =495
                     ForeTint =100.0
                 End
                 Begin Label
                     TextAlign =2
-                    Left =6300
+                    Left =5280
                     Top =240
-                    Width =2760
+                    Width =2340
                     Height =255
                     BorderColor =8355711
                     Name ="lblSerialNumber"
@@ -143,15 +137,15 @@ Begin Report
                     Tag ="DetachedLabel"
                     GridlineStyleBottom =1
                     GridlineColor =10921638
-                    LayoutCachedLeft =6300
+                    LayoutCachedLeft =5280
                     LayoutCachedTop =240
-                    LayoutCachedWidth =9060
+                    LayoutCachedWidth =7620
                     LayoutCachedHeight =495
                     ForeTint =100.0
                 End
                 Begin Label
                     TextAlign =2
-                    Left =4320
+                    Left =60
                     Top =240
                     Width =1980
                     Height =255
@@ -161,63 +155,45 @@ Begin Report
                     Tag ="DetachedLabel"
                     GridlineStyleBottom =1
                     GridlineColor =10921638
-                    LayoutCachedLeft =4320
+                    LayoutCachedLeft =60
                     LayoutCachedTop =240
-                    LayoutCachedWidth =6300
+                    LayoutCachedWidth =2040
                     LayoutCachedHeight =495
                     ForeTint =100.0
                 End
                 Begin Label
                     TextAlign =2
-                    Left =60
-                    Width =11340
+                    Left =4620
+                    Width =2235
                     Height =315
                     FontWeight =600
                     BorderColor =8355711
                     Name ="lblReportHeader"
-                    Caption ="Primary Equipment"
+                    Caption ="Installed Equipment"
                     Tag ="DetachedLabel"
                     GridlineStyleBottom =1
                     GridlineColor =10921638
-                    LayoutCachedLeft =60
-                    LayoutCachedWidth =11400
+                    LayoutCachedLeft =4620
+                    LayoutCachedWidth =6855
                     LayoutCachedHeight =315
                     ForeTint =100.0
                 End
                 Begin Label
                     TextAlign =2
-                    Left =10020
+                    Left =7680
                     Top =240
-                    Width =1380
+                    Width =3720
                     Height =255
                     BorderColor =8355711
-                    Name ="lblLoaded"
-                    Caption ="Loaded"
+                    Name ="lblLocation"
+                    Caption ="Installed Location"
                     Tag ="DetachedLabel"
                     GridlineStyleBottom =1
                     GridlineColor =10921638
-                    LayoutCachedLeft =10020
+                    LayoutCachedLeft =7680
                     LayoutCachedTop =240
                     LayoutCachedWidth =11400
                     LayoutCachedHeight =495
-                    ForeTint =100.0
-                End
-                Begin Label
-                    TextAlign =2
-                    Left =60
-                    Top =240
-                    Width =780
-                    Height =240
-                    BorderColor =8355711
-                    Name ="lblLine"
-                    Caption ="Line"
-                    Tag ="DetachedLabel"
-                    GridlineStyleBottom =1
-                    GridlineColor =10921638
-                    LayoutCachedLeft =60
-                    LayoutCachedTop =240
-                    LayoutCachedWidth =840
-                    LayoutCachedHeight =480
                     ForeTint =100.0
                 End
             End
@@ -244,8 +220,8 @@ Begin Report
                     TextAlign =2
                     BackStyle =0
                     IMESentenceMode =3
-                    Left =840
-                    Width =3480
+                    Left =2100
+                    Width =3120
                     Height =300
                     ColumnWidth =2385
                     BorderColor =10921638
@@ -255,8 +231,8 @@ Begin Report
                     StatusBarText ="Description of equipment"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =840
-                    LayoutCachedWidth =4320
+                    LayoutCachedLeft =2100
+                    LayoutCachedWidth =5220
                     LayoutCachedHeight =300
                 End
                 Begin TextBox
@@ -265,8 +241,8 @@ Begin Report
                     TextAlign =2
                     BackStyle =0
                     IMESentenceMode =3
-                    Left =6300
-                    Width =2760
+                    Left =5280
+                    Width =2340
                     Height =300
                     TabIndex =1
                     BorderColor =10921638
@@ -276,8 +252,8 @@ Begin Report
                     StatusBarText ="Equipment serial number"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =6300
-                    LayoutCachedWidth =9060
+                    LayoutCachedLeft =5280
+                    LayoutCachedWidth =7620
                     LayoutCachedHeight =300
                 End
                 Begin TextBox
@@ -286,9 +262,10 @@ Begin Report
                     TextAlign =2
                     BackStyle =0
                     IMESentenceMode =3
-                    Left =4320
+                    Left =60
                     Width =1980
                     Height =300
+                    FontWeight =700
                     TabIndex =2
                     BorderColor =10921638
                     ForeColor =4210752
@@ -297,44 +274,29 @@ Begin Report
                     StatusBarText ="Equipment asset number"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =4320
-                    LayoutCachedWidth =6300
+                    LayoutCachedLeft =60
+                    LayoutCachedWidth =2040
                     LayoutCachedHeight =300
-                End
-                Begin Rectangle
-                    Left =10620
-                    Top =60
-                    Width =180
-                    Height =180
-                    Name ="shpLoadedBox"
-                    GridlineColor =10921638
-                    LayoutCachedLeft =10620
-                    LayoutCachedTop =60
-                    LayoutCachedWidth =10800
-                    LayoutCachedHeight =240
-                    BorderThemeColorIndex =0
-                    BorderShade =100.0
                 End
                 Begin TextBox
                     Enabled = NotDefault
                     OldBorderStyle =0
-                    OverlapFlags =4
                     TextAlign =2
                     BackStyle =0
                     IMESentenceMode =3
-                    Left =60
-                    Width =780
+                    Left =7680
+                    Width =3720
                     Height =300
                     TabIndex =3
                     BorderColor =10921638
                     ForeColor =4210752
-                    Name ="txtLine"
-                    ControlSource ="lngID"
-                    StatusBarText ="Primary key - equipment ID"
+                    Name ="txtLocation"
+                    ControlSource ="strLocation"
+                    StatusBarText ="Equipment serial number"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =60
-                    LayoutCachedWidth =840
+                    LayoutCachedLeft =7680
+                    LayoutCachedWidth =11400
                     LayoutCachedHeight =300
                 End
             End

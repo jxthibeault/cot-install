@@ -16,10 +16,10 @@ Begin Form
     GridY =24
     Width =22980
     DatasheetFontHeight =11
-    ItemSuffix =78
-    Left =45
+    ItemSuffix =79
+    Left =5565
     Top =2445
-    Right =22875
+    Right =28395
     Bottom =14430
     RecSrcDt = Begin
         0x830b02b29eebe540
@@ -1185,7 +1185,7 @@ Begin Form
                     TabIndex =24
                     ForeColor =4210752
                     Name ="cmdSaveAndClose"
-                    Caption ="Close"
+                    Caption ="Close Window"
                     OnClick ="[Event Procedure]"
                     GridlineColor =10921638
 
@@ -1247,6 +1247,38 @@ Begin Form
                     LayoutCachedTop =4080
                     LayoutCachedWidth =3690
                     LayoutCachedHeight =4515
+                End
+                Begin CommandButton
+                    Enabled = NotDefault
+                    OverlapFlags =85
+                    Left =17820
+                    Top =240
+                    Width =2400
+                    Height =480
+                    FontWeight =500
+                    TabIndex =26
+                    ForeColor =4210752
+                    Name ="cmdComplete"
+                    Caption ="Close Install Order"
+                    OnClick ="[Event Procedure]"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =17820
+                    LayoutCachedTop =240
+                    LayoutCachedWidth =20220
+                    LayoutCachedHeight =720
+                    Gradient =0
+                    BackThemeColorIndex =9
+                    BackTint =20.0
+                    BorderColor =14461583
+                    HoverColor =15189940
+                    PressedColor =9917743
+                    HoverForeColor =4210752
+                    PressedForeColor =4210752
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =2
+                    WebImagePaddingRight =1
+                    WebImagePaddingBottom =1
                 End
             End
         End
@@ -3870,6 +3902,17 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Compare Database
 
+Private Sub cmdComplete_Click()
+
+    If MsgBox("Close install order and print follow-up reportz?", vbYesNo, "Close Install Order") = vbYes Then
+        DoCmd.OpenReport "rptInstallFollowUpInfo", acViewPreview, , "[lngID]=" & lngID, acWindowNormal
+        
+        strInstallStatus.Value = "Completed"
+        DoCmd.Close acForm, "frmInstalledInstall"
+    End If
+
+End Sub
+
 Private Sub cmdSaveAndClose_Click()
 
     DoCmd.Close
@@ -3892,7 +3935,7 @@ Private Sub Form_Load()
 
     If strUserLevel = "Administrator" Or strUserLevel = "Development" Then
         
-        txtInstallStatus.AddItem "Completed"
+        cmdComplete.Enabled = True
         txtInstallStatus.AddItem "Cancelled"
         txtInstallScheduled.Enabled = True
         
