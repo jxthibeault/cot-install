@@ -15,6 +15,8 @@ Begin OutputColumns
     Expression ="tblInstallEquipment.ysnReadyForInstall"
     Expression ="tblInstallEquipment.intInstall"
     Expression ="tblInstallEquipment.strEquipmentType"
+    Expression ="tblInstallEquipment.strLocation"
+    Expression ="tblInstallEquipment.strIpAddress"
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
@@ -74,6 +76,14 @@ Begin
         dbText "Name" ="tblInstallEquipment.strEquipmentType"
         dbLong "AggregateType" ="-1"
     End
+    Begin
+        dbText "Name" ="tblInstallEquipment.strLocation"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblInstallEquipment.strIpAddress"
+        dbLong "AggregateType" ="-1"
+    End
 End
 Begin
     State =0
@@ -83,8 +93,8 @@ Begin
     Bottom =833
     Left =-1
     Top =-1
-    Right =964
-    Bottom =427
+    Right =956
+    Bottom =393
     Left =0
     Top =0
     ColumnsShown =539

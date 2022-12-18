@@ -16,7 +16,7 @@ Begin Form
     GridY =24
     Width =16344
     DatasheetFontHeight =11
-    ItemSuffix =104
+    ItemSuffix =108
     Right =15135
     Bottom =11730
     OrderBy ="dtmInstallScheduled DESC, strInstallStatus, strCustomer"
@@ -214,36 +214,6 @@ Begin Form
                 Begin Label
                     OverlapFlags =85
                     TextAlign =2
-                    Left =4380
-                    Top =690
-                    Width =2036
-                    Height =345
-                    FontSize =12
-                    FontWeight =500
-                    LeftMargin =44
-                    TopMargin =22
-                    RightMargin =44
-                    BottomMargin =22
-                    BorderColor =8355711
-                    ForeColor =16777215
-                    Name ="lblStatus"
-                    Caption ="Status"
-                    GroupTable =1
-                    GridlineColor =10921638
-                    LayoutCachedLeft =4380
-                    LayoutCachedTop =690
-                    LayoutCachedWidth =6416
-                    LayoutCachedHeight =1035
-                    ColumnStart =1
-                    ColumnEnd =1
-                    LayoutGroup =1
-                    ForeThemeColorIndex =-1
-                    ForeTint =100.0
-                    GroupTable =1
-                End
-                Begin Label
-                    OverlapFlags =85
-                    TextAlign =2
                     Left =6480
                     Top =690
                     Width =1616
@@ -282,7 +252,7 @@ Begin Form
                     FontWeight =500
                     ForeColor =16777215
                     Name ="lblFormTitle"
-                    Caption ="Closed Installs"
+                    Caption ="Closed Install Orders"
                     FontName ="Verdana"
                     GroupTable =2
                     GridlineColor =10921638
@@ -338,6 +308,23 @@ Begin Form
                     LayoutCachedHeight =1035
                     ColumnStart =5
                     ColumnEnd =5
+                    LayoutGroup =1
+                    GroupTable =1
+                End
+                Begin EmptyCell
+                    Left =4380
+                    Top =690
+                    Width =2036
+                    Height =345
+                    Name ="EmptyCell105"
+                    GroupTable =1
+                    GridlineColor =10921638
+                    LayoutCachedLeft =4380
+                    LayoutCachedTop =690
+                    LayoutCachedWidth =6416
+                    LayoutCachedHeight =1035
+                    ColumnStart =1
+                    ColumnEnd =1
                     LayoutGroup =1
                     GroupTable =1
                 End
@@ -401,7 +388,7 @@ Begin Form
                     Width =2025
                     Height =315
                     FontSize =12
-                    TabIndex =4
+                    TabIndex =3
                     LeftMargin =44
                     TopMargin =22
                     RightMargin =44
@@ -437,7 +424,7 @@ Begin Form
                     Width =1616
                     Height =315
                     FontSize =12
-                    TabIndex =2
+                    TabIndex =1
                     LeftMargin =44
                     TopMargin =22
                     RightMargin =44
@@ -469,43 +456,12 @@ Begin Form
                     TextAlign =2
                     BackStyle =0
                     IMESentenceMode =3
-                    Left =4380
-                    Top =180
-                    Width =2036
-                    Height =315
-                    TabIndex =1
-                    BorderColor =10921638
-                    ForeColor =4210752
-                    Name ="txtInstallStatus"
-                    ControlSource ="strInstallStatus"
-                    StatusBarText ="Install status"
-                    GroupTable =1
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =4380
-                    LayoutCachedTop =180
-                    LayoutCachedWidth =6416
-                    LayoutCachedHeight =495
-                    RowStart =1
-                    RowEnd =1
-                    ColumnStart =1
-                    ColumnEnd =1
-                    LayoutGroup =1
-                    GroupTable =1
-                End
-                Begin TextBox
-                    Enabled = NotDefault
-                    OldBorderStyle =0
-                    OverlapFlags =85
-                    TextAlign =2
-                    BackStyle =0
-                    IMESentenceMode =3
                     Left =8160
                     Top =180
                     Width =2220
                     Height =315
                     FontSize =12
-                    TabIndex =3
+                    TabIndex =2
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="txtInstallScheduled"
@@ -534,7 +490,7 @@ Begin Form
                     Top =180
                     Width =135
                     Height =315
-                    TabIndex =6
+                    TabIndex =5
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="txtRecordId"
@@ -558,23 +514,22 @@ Begin Form
                     OverlapFlags =85
                     Left =12780
                     Top =180
-                    Width =1560
+                    Width =1613
                     Height =300
-                    TabIndex =5
+                    TabIndex =4
                     ForeColor =4210752
                     Name ="cmdOpenInstallDetails"
-                    Caption ="Details"
+                    Caption ="View Details"
                     OnClick ="[Event Procedure]"
                     GridlineColor =10921638
 
                     LayoutCachedLeft =12780
                     LayoutCachedTop =180
-                    LayoutCachedWidth =14340
+                    LayoutCachedWidth =14393
                     LayoutCachedHeight =480
                     Gradient =0
-                    BackColor =-2147483607
-                    BackThemeColorIndex =-1
-                    BackTint =100.0
+                    BackThemeColorIndex =5
+                    BackTint =20.0
                     BorderColor =14461583
                     HoverColor =15189940
                     PressedColor =9917743
@@ -585,6 +540,55 @@ Begin Form
                     WebImagePaddingRight =1
                     WebImagePaddingBottom =1
                     Overlaps =1
+                End
+                Begin EmptyCell
+                    Left =4380
+                    Top =180
+                    Width =2036
+                    Height =315
+                    Name ="EmptyCell104"
+                    GroupTable =1
+                    GridlineColor =10921638
+                    LayoutCachedLeft =4380
+                    LayoutCachedTop =180
+                    LayoutCachedWidth =6416
+                    LayoutCachedHeight =495
+                    RowStart =1
+                    RowEnd =1
+                    ColumnStart =1
+                    ColumnEnd =1
+                    LayoutGroup =1
+                    GroupTable =1
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =14520
+                    Top =180
+                    Width =1613
+                    Height =300
+                    TabIndex =6
+                    ForeColor =4210752
+                    Name ="cmdPrintFollowUp"
+                    Caption ="Print Post Info"
+                    OnClick ="[Event Procedure]"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =14520
+                    LayoutCachedTop =180
+                    LayoutCachedWidth =16133
+                    LayoutCachedHeight =480
+                    Gradient =0
+                    BackColor =15983578
+                    BackTint =20.0
+                    BorderColor =14461583
+                    HoverColor =15189940
+                    PressedColor =9917743
+                    HoverForeColor =4210752
+                    PressedForeColor =4210752
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =2
+                    WebImagePaddingRight =1
+                    WebImagePaddingBottom =1
                 End
             End
         End
@@ -607,6 +611,13 @@ Option Compare Database
 
 Private Sub cmdOpenInstallDetails_Click()
 
-    DoCmd.OpenForm "frmClosedInstall", acNormal, "", "[lngID]=" & txtRecordId, , acNormal
+    DoCmd.OpenForm "frmClosedInstall", acNormal, "", "[lngID]=" & txtRecordID, , acNormal
 
+End Sub
+
+
+Private Sub cmdPrintFollowUp_Click()
+
+    DoCmd.OpenReport "rptInstallFollowUpInfo", acViewPreview, , "[lngID]=" & lngID, acWindowNormal
+    
 End Sub
