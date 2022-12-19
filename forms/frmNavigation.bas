@@ -179,7 +179,7 @@ Begin Form
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =16080
+                    Left =15960
                     Top =240
                     Width =1620
                     Height =300
@@ -188,10 +188,11 @@ Begin Form
                     Caption ="Log Out"
                     OnClick ="[Event Procedure]"
                     GridlineColor =10921638
+                    HorizontalAnchor =1
 
-                    LayoutCachedLeft =16080
+                    LayoutCachedLeft =15960
                     LayoutCachedTop =240
-                    LayoutCachedWidth =17700
+                    LayoutCachedWidth =17580
                     LayoutCachedHeight =540
                     Gradient =0
                     BackColor =-2147483607
@@ -210,7 +211,7 @@ Begin Form
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =13980
+                    Left =13860
                     Top =240
                     Width =1920
                     Height =300
@@ -220,10 +221,11 @@ Begin Form
                     Caption ="Change Password"
                     OnClick ="[Event Procedure]"
                     GridlineColor =10921638
+                    HorizontalAnchor =1
 
-                    LayoutCachedLeft =13980
+                    LayoutCachedLeft =13860
                     LayoutCachedTop =240
-                    LayoutCachedWidth =15900
+                    LayoutCachedWidth =15780
                     LayoutCachedHeight =540
                     Gradient =0
                     BackColor =-2147483607
@@ -258,6 +260,7 @@ Begin Form
                     Name ="imgCOTLogo"
                     Picture ="COT logo with motto.png"
                     GridlineColor =10921638
+                    HorizontalAnchor =1
                     ImageData = Begin
                         0x89504e470d0a1a0a0000000d4948445200000672000001c20806000000dbd557 ,
                         0xff000000017352474200aece1ce90000000467414d410000b18f0bfc61050000 ,
@@ -2815,7 +2818,7 @@ Begin Form
                     BackStyle =0
                     Left =180
                     Top =660
-                    Width =17520
+                    Width =17400
                     BorderColor =16777215
                     ForeColor =3484194
                     Name ="navctlTabBar"
@@ -2825,10 +2828,11 @@ Begin Form
                     RightPadding =0
                     GridlineStyleBottom =1
                     GridlineWidthBottom =4
+                    HorizontalAnchor =2
 
                     LayoutCachedLeft =180
                     LayoutCachedTop =660
-                    LayoutCachedWidth =17700
+                    LayoutCachedWidth =17580
                     LayoutCachedHeight =1080
                     LayoutGroup =2
                     BackThemeColorIndex =-1
@@ -3321,10 +3325,11 @@ Begin Form
                     End
                 End
                 Begin Subform
+                    CanShrink = NotDefault
                     OverlapFlags =85
                     Left =180
                     Top =1140
-                    Width =17520
+                    Width =17400
                     Height =7860
                     TabIndex =1
                     BorderColor =10921638
@@ -3334,10 +3339,11 @@ Begin Form
                     TopPadding =0
                     RightPadding =0
                     GridlineColor =10921638
+                    HorizontalAnchor =2
 
                     LayoutCachedLeft =180
                     LayoutCachedTop =1140
-                    LayoutCachedWidth =17700
+                    LayoutCachedWidth =17580
                     LayoutCachedHeight =9000
                     RowStart =1
                     RowEnd =1
@@ -3356,6 +3362,7 @@ Begin Form
                     Name ="lblLoggedInAs"
                     Caption ="Authentication Failed"
                     GridlineColor =10921638
+                    HorizontalAnchor =1
                     LayoutCachedLeft =10020
                     LayoutCachedTop =120
                     LayoutCachedWidth =15345
@@ -3375,6 +3382,7 @@ Begin Form
                     Name ="lblTitle"
                     Caption ="Authentication Failed"
                     GridlineColor =10921638
+                    HorizontalAnchor =1
                     LayoutCachedLeft =10020
                     LayoutCachedTop =360
                     LayoutCachedWidth =15345
@@ -3392,7 +3400,7 @@ Begin Form
             Begin
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =14280
+                    Left =14220
                     Top =60
                     Width =1620
                     Height =300
@@ -3401,10 +3409,12 @@ Begin Form
                     Caption ="What's New?"
                     OnClick ="[Event Procedure]"
                     GridlineColor =10921638
+                    HorizontalAnchor =1
+                    VerticalAnchor =1
 
-                    LayoutCachedLeft =14280
+                    LayoutCachedLeft =14220
                     LayoutCachedTop =60
-                    LayoutCachedWidth =15900
+                    LayoutCachedWidth =15840
                     LayoutCachedHeight =360
                     Gradient =0
                     BackColor =-2147483607
@@ -3424,7 +3434,7 @@ Begin Form
                 Begin Label
                     OverlapFlags =85
                     TextAlign =3
-                    Left =11760
+                    Left =11700
                     Top =120
                     Width =2385
                     Height =315
@@ -3435,9 +3445,11 @@ Begin Form
                     Caption ="version 1.2.3"
                     FontName ="Verdana"
                     GridlineColor =10921638
-                    LayoutCachedLeft =11760
+                    HorizontalAnchor =1
+                    VerticalAnchor =1
+                    LayoutCachedLeft =11700
                     LayoutCachedTop =120
-                    LayoutCachedWidth =14145
+                    LayoutCachedWidth =14085
                     LayoutCachedHeight =435
                     ThemeFontIndex =-1
                     ForeThemeColorIndex =-1
@@ -3445,7 +3457,7 @@ Begin Form
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =16020
+                    Left =15960
                     Top =60
                     Width =1620
                     Height =300
@@ -3455,10 +3467,12 @@ Begin Form
                     Caption ="Report a Bug"
                     OnClick ="[Event Procedure]"
                     GridlineColor =10921638
+                    HorizontalAnchor =1
+                    VerticalAnchor =1
 
-                    LayoutCachedLeft =16020
+                    LayoutCachedLeft =15960
                     LayoutCachedTop =60
-                    LayoutCachedWidth =17640
+                    LayoutCachedWidth =17580
                     LayoutCachedHeight =360
                     Gradient =0
                     BackColor =-2147483607

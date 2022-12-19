@@ -14,10 +14,10 @@ Begin Form
     Width =16344
     DatasheetFontHeight =11
     ItemSuffix =5
-    Left =585
-    Top =3480
-    Right =17055
-    Bottom =11070
+    Left =75
+    Top =1830
+    Right =16545
+    Bottom =9420
     RecSrcDt = Begin
         0x326b8b37a1ebe540
     End
@@ -163,6 +163,7 @@ Begin Form
                     Caption ="Toggle Native Ribbon"
                     OnClick ="[Event Procedure]"
                     GridlineColor =10921638
+                    HorizontalAnchor =2
 
                     LayoutCachedLeft =4680
                     LayoutCachedTop =780

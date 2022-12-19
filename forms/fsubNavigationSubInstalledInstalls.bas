@@ -14,7 +14,7 @@ Begin Form
     DatasheetGridlinesBehavior =3
     GridX =24
     GridY =24
-    Width =16344
+    Width =14700
     DatasheetFontHeight =11
     ItemSuffix =103
     Right =15135
@@ -172,6 +172,7 @@ Begin Form
                     Caption ="Customer"
                     GroupTable =1
                     GridlineColor =10921638
+                    HorizontalAnchor =2
                     LayoutCachedLeft =60
                     LayoutCachedTop =690
                     LayoutCachedWidth =4316
@@ -378,6 +379,7 @@ Begin Form
                     StatusBarText ="Customer name as it appears on legal documents"
                     GroupTable =1
                     GridlineColor =10921638
+                    HorizontalAnchor =2
 
                     LayoutCachedLeft =60
                     LayoutCachedTop =180
@@ -556,7 +558,7 @@ Begin Form
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =12780
+                    Left =12720
                     Top =180
                     Width =1800
                     Height =300
@@ -566,10 +568,11 @@ Begin Form
                     Caption ="View Details"
                     OnClick ="[Event Procedure]"
                     GridlineColor =10921638
+                    HorizontalAnchor =1
 
-                    LayoutCachedLeft =12780
+                    LayoutCachedLeft =12720
                     LayoutCachedTop =180
-                    LayoutCachedWidth =14580
+                    LayoutCachedWidth =14520
                     LayoutCachedHeight =480
                     Gradient =0
                     BackThemeColorIndex =5

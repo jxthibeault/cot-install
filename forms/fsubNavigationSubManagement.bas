@@ -2,7 +2,10 @@
 VersionRequired =20
 Begin Form
     RecordSelectors = NotDefault
+    ControlBox = NotDefault
+    AutoCenter = NotDefault
     NavigationButtons = NotDefault
+    CloseButton = NotDefault
     DividingLines = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
@@ -14,10 +17,10 @@ Begin Form
     Width =16344
     DatasheetFontHeight =11
     ItemSuffix =6
-    Left =585
-    Top =3420
-    Right =17805
-    Bottom =11010
+    Left =540
+    Top =1230
+    Right =17505
+    Bottom =9075
     RecSrcDt = Begin
         0x326b8b37a1ebe540
     End
@@ -127,7 +130,7 @@ Begin Form
                     FontWeight =500
                     ForeColor =16777215
                     Name ="lblFormTitle"
-                    Caption ="Install Order Management"
+                    Caption ="Install Management"
                     FontName ="Verdana"
                     GroupTable =1
                     GridlineColor =10921638
@@ -164,6 +167,7 @@ Begin Form
                     Caption ="Create New Installation Order"
                     OnClick ="[Event Procedure]"
                     GridlineColor =10921638
+                    HorizontalAnchor =2
 
                     LayoutCachedLeft =4800
                     LayoutCachedTop =780
@@ -195,6 +199,7 @@ Begin Form
                     Caption ="User Control"
                     OnClick ="[Event Procedure]"
                     GridlineColor =10921638
+                    HorizontalAnchor =2
 
                     LayoutCachedLeft =4800
                     LayoutCachedTop =1440

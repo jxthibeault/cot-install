@@ -3,6 +3,8 @@ VersionRequired =20
 Begin Form
     AllowFilters = NotDefault
     RecordSelectors = NotDefault
+    ControlBox = NotDefault
+    AutoCenter = NotDefault
     NavigationButtons = NotDefault
     AllowDeletions = NotDefault
     DividingLines = NotDefault
@@ -15,10 +17,10 @@ Begin Form
     DatasheetGridlinesBehavior =3
     GridX =24
     GridY =24
-    Width =16394
+    Width =7920
     DatasheetFontHeight =11
     ItemSuffix =3
-    Right =15135
+    Right =17220
     Bottom =11730
     RecSrcDt = Begin
         0x61fd9ffb51ece540
@@ -124,7 +126,7 @@ Begin Form
                     TextAlign =1
                     Left =60
                     Top =60
-                    Width =13500
+                    Width =7320
                     Height =480
                     FontSize =16
                     FontWeight =500
@@ -136,7 +138,7 @@ Begin Form
                     GridlineColor =10921638
                     LayoutCachedLeft =60
                     LayoutCachedTop =60
-                    LayoutCachedWidth =13560
+                    LayoutCachedWidth =7380
                     LayoutCachedHeight =540
                     LayoutGroup =1
                     ThemeFontIndex =-1
@@ -149,9 +151,8 @@ Begin Form
             End
         End
         Begin Section
-            Height =7560
+            Height =1320
             Name ="secFormDetail"
-            AutoHeight =1
             AlternateBackThemeColorIndex =1
             AlternateBackShade =95.0
             BackThemeColorIndex =1
@@ -161,8 +162,8 @@ Begin Form
                     OverlapFlags =85
                     IMESentenceMode =3
                     Left =180
-                    Top =600
-                    Width =5100
+                    Top =780
+                    Width =5460
                     Height =300
                     BorderColor =10921638
                     ColumnInfo ="\"\";\"\";\"10\";\"510\""
@@ -171,13 +172,14 @@ Begin Form
                     RowSource ="SELECT zstlkpReportTypes.strReportTitle FROM zstlkpReportTypes ORDER BY zstlkpRe"
                         "portTypes.strReportTitle; "
                     GridlineColor =10921638
+                    HorizontalAnchor =2
                     AllowValueListEdits =0
 
                     ShowOnlyRowSourceValues =255
                     LayoutCachedLeft =180
-                    LayoutCachedTop =600
-                    LayoutCachedWidth =5280
-                    LayoutCachedHeight =900
+                    LayoutCachedTop =780
+                    LayoutCachedWidth =5640
+                    LayoutCachedHeight =1080
                     ForeThemeColorIndex =0
                     ForeTint =75.0
                     ForeShade =100.0
@@ -185,8 +187,8 @@ Begin Form
                 Begin Label
                     OverlapFlags =85
                     Left =180
-                    Top =180
-                    Width =8640
+                    Top =360
+                    Width =7680
                     Height =315
                     FontSize =12
                     FontWeight =600
@@ -196,14 +198,14 @@ Begin Form
                     Caption ="Select the report you wish to compile, then click \"Generate Report\""
                     GridlineColor =10921638
                     LayoutCachedLeft =180
-                    LayoutCachedTop =180
-                    LayoutCachedWidth =8820
-                    LayoutCachedHeight =495
+                    LayoutCachedTop =360
+                    LayoutCachedWidth =7860
+                    LayoutCachedHeight =675
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =5520
-                    Top =600
+                    Left =5940
+                    Top =780
                     Width =1740
                     Height =300
                     TabIndex =1
@@ -212,15 +214,15 @@ Begin Form
                     Caption ="Generate Report"
                     OnClick ="[Event Procedure]"
                     GridlineColor =10921638
+                    HorizontalAnchor =1
 
-                    LayoutCachedLeft =5520
-                    LayoutCachedTop =600
-                    LayoutCachedWidth =7260
-                    LayoutCachedHeight =900
+                    LayoutCachedLeft =5940
+                    LayoutCachedTop =780
+                    LayoutCachedWidth =7680
+                    LayoutCachedHeight =1080
                     Gradient =0
-                    BackColor =-2147483607
-                    BackThemeColorIndex =-1
-                    BackTint =100.0
+                    BackColor =15983578
+                    BackTint =20.0
                     BorderColor =14461583
                     HoverColor =15189940
                     PressedColor =9917743

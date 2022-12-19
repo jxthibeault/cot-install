@@ -173,6 +173,7 @@ Begin Form
                     Caption ="Customer"
                     GroupTable =1
                     GridlineColor =10921638
+                    HorizontalAnchor =2
                     LayoutCachedLeft =60
                     LayoutCachedTop =690
                     LayoutCachedWidth =4316
@@ -379,6 +380,7 @@ Begin Form
                     StatusBarText ="Customer name as it appears on legal documents"
                     GroupTable =1
                     GridlineColor =10921638
+                    HorizontalAnchor =2
 
                     LayoutCachedLeft =60
                     LayoutCachedTop =180
@@ -567,6 +569,7 @@ Begin Form
                     Caption ="Modify Order"
                     OnClick ="[Event Procedure]"
                     GridlineColor =10921638
+                    HorizontalAnchor =1
 
                     LayoutCachedLeft =12960
                     LayoutCachedTop =180

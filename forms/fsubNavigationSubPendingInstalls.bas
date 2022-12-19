@@ -5,6 +5,7 @@ Begin Form
     RecordSelectors = NotDefault
     MaxButton = NotDefault
     MinButton = NotDefault
+    ControlBox = NotDefault
     AutoCenter = NotDefault
     NavigationButtons = NotDefault
     AllowDeletions = NotDefault
@@ -179,6 +180,7 @@ Begin Form
                     Caption ="Customer"
                     GroupTable =1
                     GridlineColor =10921638
+                    HorizontalAnchor =2
                     LayoutCachedLeft =60
                     LayoutCachedTop =690
                     LayoutCachedWidth =4316
@@ -385,6 +387,7 @@ Begin Form
                     StatusBarText ="Customer name as it appears on legal documents"
                     GroupTable =1
                     GridlineColor =10921638
+                    HorizontalAnchor =2
 
                     LayoutCachedLeft =60
                     LayoutCachedTop =180
@@ -573,6 +576,7 @@ Begin Form
                     Caption ="View Details"
                     OnClick ="[Event Procedure]"
                     GridlineColor =10921638
+                    HorizontalAnchor =1
 
                     LayoutCachedLeft =12780
                     LayoutCachedTop =180
@@ -604,6 +608,7 @@ Begin Form
                     Caption ="Print for Shop"
                     OnClick ="[Event Procedure]"
                     GridlineColor =10921638
+                    HorizontalAnchor =1
 
                     LayoutCachedLeft =14520
                     LayoutCachedTop =180

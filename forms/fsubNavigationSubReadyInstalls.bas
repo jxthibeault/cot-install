@@ -3,6 +3,7 @@ VersionRequired =20
 Begin Form
     Modal = NotDefault
     RecordSelectors = NotDefault
+    ControlBox = NotDefault
     AutoCenter = NotDefault
     NavigationButtons = NotDefault
     AllowDeletions = NotDefault
@@ -17,8 +18,8 @@ Begin Form
     Width =16344
     DatasheetFontHeight =11
     ItemSuffix =112
-    Right =15135
-    Bottom =11730
+    Right =17100
+    Bottom =10935
     OrderBy ="dtmInstallScheduled, dtmDateReceived, strCustomer"
     RecSrcDt = Begin
         0x3d57a9c5d9ebe540
@@ -172,6 +173,7 @@ Begin Form
                     Caption ="Customer"
                     GroupTable =1
                     GridlineColor =10921638
+                    HorizontalAnchor =2
                     LayoutCachedLeft =60
                     LayoutCachedTop =690
                     LayoutCachedWidth =4316
@@ -349,6 +351,7 @@ Begin Form
                     StatusBarText ="Customer name as it appears on legal documents"
                     GroupTable =1
                     GridlineColor =10921638
+                    HorizontalAnchor =2
 
                     LayoutCachedLeft =60
                     LayoutCachedTop =180
@@ -476,6 +479,7 @@ Begin Form
                     Caption ="View Details"
                     OnClick ="[Event Procedure]"
                     GridlineColor =10921638
+                    HorizontalAnchor =1
 
                     LayoutCachedLeft =10620
                     LayoutCachedTop =180
@@ -507,6 +511,7 @@ Begin Form
                     Caption ="Print for Delivery"
                     OnClick ="[Event Procedure]"
                     GridlineColor =10921638
+                    HorizontalAnchor =1
 
                     LayoutCachedLeft =12540
                     LayoutCachedTop =180
@@ -556,6 +561,7 @@ Begin Form
                     Caption ="Complete"
                     OnClick ="[Event Procedure]"
                     GridlineColor =10921638
+                    HorizontalAnchor =1
 
                     LayoutCachedLeft =14460
                     LayoutCachedTop =180
