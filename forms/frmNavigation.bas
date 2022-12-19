@@ -3233,8 +3233,8 @@ Begin Form
                             Height =405
                             TabIndex =7
                             ForeColor =15527148
-                            Name ="navbtnDeveloper"
-                            Caption ="Developer Tools"
+                            Name ="navbtnSetup"
+                            Caption ="System Setup"
                             GroupTable =1
                             LeftPadding =0
                             TopPadding =0
@@ -3248,7 +3248,7 @@ Begin Form
                             ColumnStart =7
                             ColumnEnd =7
                             LayoutGroup =1
-                            NavigationTargetName ="fsubNavigationSubDeveloper"
+                            NavigationTargetName ="fsubNavigationSubSetup"
                             NavigationTargetType =32768
                             Shape =3
                             HoverColor =1841342
@@ -3590,7 +3590,7 @@ Private Sub Form_Load()
         navbtnPastInstalls.Visible = True
         navbtnReports.Visible = True
         navbtnInstallManagement.Visible = False
-        navbtnDeveloper.Visible = False
+        navbtnSetup.Visible = False
         navbtnPostProcessing.Visible = True
     End If
     
@@ -3601,24 +3601,24 @@ Private Sub Form_Load()
         navbtnPastInstalls.Visible = True
         navbtnReports.Visible = True
         navbtnInstallManagement.Visible = True
-        navbtnDeveloper.Visible = False
+        navbtnSetup.Visible = False
         navbtnPostProcessing.Visible = True
     End If
     
-    If strUserLevel = "Development" Then
-        navbtnInstallsPendingWork.Visible = True
-        navbtnInstallsReadyToShip.Visible = True
-        navbtnEditInstalls.Visible = True
-        navbtnPastInstalls.Visible = True
-        navbtnReports.Visible = True
-        navbtnInstallManagement.Visible = True
-        navbtnDeveloper.Visible = True
-        navbtnPostProcessing.Visible = True
+    If strUserLevel = "setup" Then
+        navbtnInstallsPendingWork.Visible = False
+        navbtnInstallsReadyToShip.Visible = False
+        navbtnEditInstalls.Visible = False
+        navbtnPastInstalls.Visible = False
+        navbtnReports.Visible = False
+        navbtnInstallManagement.Visible = False
+        navbtnSetup.Visible = True
+        navbtnPostProcessing.Visible = False
         
         ' If developer is logged in, automatically switch to Developer Tools
-        navbtnDeveloper.TabIndex = 0
-        DoCmd.BrowseTo acBrowseToForm, "fsubNavigationSubDeveloper", Me.Name & ".navSubform"
-        navbtnDeveloper.TabIndex = 5
+        navbtnSetup.TabIndex = 0
+        DoCmd.BrowseTo acBrowseToForm, "fsubNavigationSubSetup", Me.Name & ".navSubform"
+        navbtnSetup.TabIndex = 5
     End If
     
 End Sub
