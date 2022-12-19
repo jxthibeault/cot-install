@@ -109,18 +109,18 @@ Begin Form
             GridlineShade =65.0
         End
         Begin FormHeader
-            Height =562
-            BackColor =62207
+            Height =1080
             Name ="secFormHeader"
-            AutoHeight =1
             AlternateBackThemeColorIndex =1
             AlternateBackShade =95.0
+            BackThemeColorIndex =5
+            BackShade =75.0
             Begin
                 Begin Label
                     OverlapFlags =85
                     TextAlign =1
                     Left =60
-                    Top =60
+                    Top =120
                     Width =13500
                     Height =480
                     FontSize =16
@@ -131,9 +131,9 @@ Begin Form
                     GroupTable =1
                     GridlineColor =10921638
                     LayoutCachedLeft =60
-                    LayoutCachedTop =60
+                    LayoutCachedTop =120
                     LayoutCachedWidth =13560
-                    LayoutCachedHeight =540
+                    LayoutCachedHeight =600
                     LayoutGroup =1
                     ThemeFontIndex =-1
                     BorderThemeColorIndex =2

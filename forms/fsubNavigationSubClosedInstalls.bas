@@ -245,7 +245,7 @@ Begin Form
                 Begin Label
                     OverlapFlags =85
                     TextAlign =1
-                    Left =120
+                    Left =60
                     Top =120
                     Width =12840
                     Height =480
@@ -257,9 +257,9 @@ Begin Form
                     FontName ="Verdana"
                     GroupTable =2
                     GridlineColor =10921638
-                    LayoutCachedLeft =120
+                    LayoutCachedLeft =60
                     LayoutCachedTop =120
-                    LayoutCachedWidth =12960
+                    LayoutCachedWidth =12900
                     LayoutCachedHeight =600
                     LayoutGroup =2
                     ThemeFontIndex =-1
@@ -469,7 +469,7 @@ Begin Form
                 Begin TextBox
                     Visible = NotDefault
                     Enabled = NotDefault
-                    OverlapFlags =93
+                    OverlapFlags =85
                     IMESentenceMode =3
                     Left =10425
                     Top =180
@@ -496,8 +496,8 @@ Begin Form
                     GroupTable =1
                 End
                 Begin CommandButton
-                    OverlapFlags =247
-                    Left =10500
+                    OverlapFlags =85
+                    Left =10620
                     Top =180
                     Width =1613
                     Height =300
@@ -509,9 +509,9 @@ Begin Form
                     GridlineColor =10921638
                     HorizontalAnchor =1
 
-                    LayoutCachedLeft =10500
+                    LayoutCachedLeft =10620
                     LayoutCachedTop =180
-                    LayoutCachedWidth =12113
+                    LayoutCachedWidth =12233
                     LayoutCachedHeight =480
                     Gradient =0
                     BackThemeColorIndex =5
@@ -529,7 +529,7 @@ Begin Form
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =12240
+                    Left =12360
                     Top =180
                     Width =1613
                     Height =300
@@ -541,9 +541,9 @@ Begin Form
                     GridlineColor =10921638
                     HorizontalAnchor =1
 
-                    LayoutCachedLeft =12240
+                    LayoutCachedLeft =12360
                     LayoutCachedTop =180
-                    LayoutCachedWidth =13853
+                    LayoutCachedWidth =13973
                     LayoutCachedHeight =480
                     Gradient =0
                     BackColor =15983578

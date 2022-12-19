@@ -354,7 +354,7 @@ Begin Form
         End
         Begin Section
             CanGrow = NotDefault
-            Height =645
+            Height =660
             Name ="secFormDetail"
             AlternateBackThemeColorIndex =1
             AlternateBackShade =95.0
@@ -566,7 +566,7 @@ Begin Form
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =12780
+                    Left =12900
                     Top =180
                     Width =1613
                     Height =300
@@ -578,9 +578,9 @@ Begin Form
                     GridlineColor =10921638
                     HorizontalAnchor =1
 
-                    LayoutCachedLeft =12780
+                    LayoutCachedLeft =12900
                     LayoutCachedTop =180
-                    LayoutCachedWidth =14393
+                    LayoutCachedWidth =14513
                     LayoutCachedHeight =480
                     Gradient =0
                     BackThemeColorIndex =5
@@ -598,7 +598,7 @@ Begin Form
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =14520
+                    Left =14640
                     Top =180
                     Width =1613
                     Height =299
@@ -610,9 +610,9 @@ Begin Form
                     GridlineColor =10921638
                     HorizontalAnchor =1
 
-                    LayoutCachedLeft =14520
+                    LayoutCachedLeft =14640
                     LayoutCachedTop =180
-                    LayoutCachedWidth =16133
+                    LayoutCachedWidth =16253
                     LayoutCachedHeight =479
                     Gradient =0
                     BackColor =15983578

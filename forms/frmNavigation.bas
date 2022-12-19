@@ -14,9 +14,9 @@ Begin Form
     DatasheetGridlinesBehavior =3
     GridX =24
     GridY =24
-    Width =17760
+    Width =17640
     DatasheetFontHeight =11
-    ItemSuffix =39
+    ItemSuffix =41
     Top =345
     Right =17295
     Bottom =10770
@@ -2851,7 +2851,7 @@ Begin Form
                             Height =405
                             ForeColor =15527148
                             Name ="navbtnInstallsPendingWork"
-                            Caption ="Pending Build"
+                            Caption ="Pending Prep"
                             GroupTable =1
                             LeftPadding =0
                             TopPadding =0
@@ -3064,12 +3064,12 @@ Begin Form
                             OverlapFlags =119
                             Left =7785
                             Top =660
-                            Width =1575
+                            Width =1635
                             Height =405
-                            TabIndex =4
+                            TabIndex =5
                             ForeColor =15527148
-                            Name ="navbtnReports"
-                            Caption ="Reports"
+                            Name ="navbtnEditInstalls"
+                            Caption ="Modify Order"
                             GroupTable =1
                             LeftPadding =0
                             TopPadding =0
@@ -3078,12 +3078,12 @@ Begin Form
 
                             LayoutCachedLeft =7785
                             LayoutCachedTop =660
-                            LayoutCachedWidth =9360
+                            LayoutCachedWidth =9420
                             LayoutCachedHeight =1065
                             ColumnStart =4
                             ColumnEnd =4
                             LayoutGroup =1
-                            NavigationTargetName ="fsubNavigationSubReports"
+                            NavigationTargetName ="fsubNavigationSubEditOpenInstall"
                             NavigationTargetType =32768
                             Shape =3
                             HoverColor =1841342
@@ -3117,28 +3117,28 @@ Begin Form
                         Begin NavigationButton
                             Visible = NotDefault
                             OverlapFlags =119
-                            Left =9390
+                            Left =9450
                             Top =660
-                            Width =1635
+                            Width =1575
                             Height =405
-                            TabIndex =5
+                            TabIndex =4
                             ForeColor =15527148
-                            Name ="navbtnEditInstalls"
-                            Caption ="Modify Order"
+                            Name ="navbtnReports"
+                            Caption ="Reports"
                             GroupTable =1
                             LeftPadding =0
                             TopPadding =0
                             BottomPadding =15
                             GridlineColor =10921638
 
-                            LayoutCachedLeft =9390
+                            LayoutCachedLeft =9450
                             LayoutCachedTop =660
                             LayoutCachedWidth =11025
                             LayoutCachedHeight =1065
                             ColumnStart =5
                             ColumnEnd =5
                             LayoutGroup =1
-                            NavigationTargetName ="fsubNavigationSubEditOpenInstall"
+                            NavigationTargetName ="fsubNavigationSubReports"
                             NavigationTargetType =32768
                             Shape =3
                             HoverColor =1841342
@@ -3340,6 +3340,7 @@ Begin Form
                     RightPadding =0
                     GridlineColor =10921638
                     HorizontalAnchor =2
+                    VerticalAnchor =2
 
                     LayoutCachedLeft =180
                     LayoutCachedTop =1140
@@ -3442,7 +3443,7 @@ Begin Form
                     BorderColor =8355711
                     ForeColor =16777215
                     Name ="lblVersion"
-                    Caption ="version 1.2.3"
+                    Caption ="version 1.3.2"
                     FontName ="Verdana"
                     GridlineColor =10921638
                     HorizontalAnchor =1

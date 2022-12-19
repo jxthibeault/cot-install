@@ -20,8 +20,10 @@ Begin Form
     Width =7920
     DatasheetFontHeight =11
     ItemSuffix =3
-    Right =17220
-    Bottom =11730
+    Left =810
+    Top =2235
+    Right =18030
+    Bottom =13965
     RecSrcDt = Begin
         0x61fd9ffb51ece540
     End
@@ -114,10 +116,9 @@ Begin Form
             GridlineShade =65.0
         End
         Begin FormHeader
-            Height =562
+            Height =1080
             BackColor =1315470
             Name ="secFormHeader"
-            AutoHeight =1
             AlternateBackThemeColorIndex =1
             AlternateBackShade =95.0
             Begin
@@ -125,7 +126,7 @@ Begin Form
                     OverlapFlags =85
                     TextAlign =1
                     Left =60
-                    Top =60
+                    Top =120
                     Width =7320
                     Height =480
                     FontSize =16
@@ -137,9 +138,9 @@ Begin Form
                     GroupTable =1
                     GridlineColor =10921638
                     LayoutCachedLeft =60
-                    LayoutCachedTop =60
+                    LayoutCachedTop =120
                     LayoutCachedWidth =7380
-                    LayoutCachedHeight =540
+                    LayoutCachedHeight =600
                     LayoutGroup =1
                     ThemeFontIndex =-1
                     BorderThemeColorIndex =2

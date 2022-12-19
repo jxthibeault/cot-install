@@ -558,7 +558,7 @@ Begin Form
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =12720
+                    Left =12840
                     Top =180
                     Width =1800
                     Height =300
@@ -570,9 +570,9 @@ Begin Form
                     GridlineColor =10921638
                     HorizontalAnchor =1
 
-                    LayoutCachedLeft =12720
+                    LayoutCachedLeft =12840
                     LayoutCachedTop =180
-                    LayoutCachedWidth =14520
+                    LayoutCachedWidth =14640
                     LayoutCachedHeight =480
                     Gradient =0
                     BackThemeColorIndex =5
