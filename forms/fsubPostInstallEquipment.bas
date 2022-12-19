@@ -19,6 +19,7 @@ Begin Form
     ItemSuffix =34
     Right =18495
     Bottom =11985
+    OrderBy ="[strEQID]"
     RecSrcDt = Begin
         0x0990f03733eee540
     End
