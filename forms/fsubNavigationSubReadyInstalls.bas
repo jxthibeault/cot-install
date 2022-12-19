@@ -3,6 +3,7 @@ VersionRequired =20
 Begin Form
     Modal = NotDefault
     RecordSelectors = NotDefault
+    ControlBox = NotDefault
     AutoCenter = NotDefault
     NavigationButtons = NotDefault
     AllowDeletions = NotDefault
@@ -16,9 +17,11 @@ Begin Form
     GridY =24
     Width =16344
     DatasheetFontHeight =11
-    ItemSuffix =112
-    Right =15135
-    Bottom =11730
+    ItemSuffix =121
+    Left =525
+    Top =2745
+    Right =17655
+    Bottom =10335
     OrderBy ="dtmInstallScheduled, dtmDateReceived, strCustomer"
     RecSrcDt = Begin
         0x3d57a9c5d9ebe540
@@ -170,16 +173,14 @@ Begin Form
                     ForeColor =16777215
                     Name ="lblCustomer"
                     Caption ="Customer"
-                    GroupTable =1
                     GridlineColor =10921638
+                    HorizontalAnchor =2
                     LayoutCachedLeft =60
                     LayoutCachedTop =690
                     LayoutCachedWidth =4316
                     LayoutCachedHeight =1050
-                    LayoutGroup =1
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
-                    GroupTable =1
                 End
                 Begin Label
                     OverlapFlags =85
@@ -198,7 +199,6 @@ Begin Form
                     ForeColor =16777215
                     Name ="lblSalesRep"
                     Caption ="Sales Rep"
-                    GroupTable =1
                     GridlineColor =10921638
                     LayoutCachedLeft =6480
                     LayoutCachedTop =690
@@ -206,10 +206,8 @@ Begin Form
                     LayoutCachedHeight =1050
                     ColumnStart =2
                     ColumnEnd =2
-                    LayoutGroup =1
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
-                    GroupTable =1
                 End
                 Begin Label
                     OverlapFlags =85
@@ -228,7 +226,6 @@ Begin Form
                     ForeColor =16777215
                     Name ="lblDateReceived"
                     Caption ="Date Received"
-                    GroupTable =1
                     GridlineColor =10921638
                     LayoutCachedLeft =4380
                     LayoutCachedTop =690
@@ -236,10 +233,8 @@ Begin Form
                     LayoutCachedHeight =1050
                     ColumnStart =1
                     ColumnEnd =1
-                    LayoutGroup =1
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
-                    GroupTable =1
                 End
                 Begin Label
                     OverlapFlags =85
@@ -254,19 +249,16 @@ Begin Form
                     Name ="lblFormTitle"
                     Caption ="In-Progress Installs - Ready to Ship"
                     FontName ="Verdana"
-                    GroupTable =2
                     GridlineColor =10921638
                     LayoutCachedLeft =60
                     LayoutCachedTop =120
                     LayoutCachedWidth =13560
                     LayoutCachedHeight =600
-                    LayoutGroup =2
                     ThemeFontIndex =-1
                     BorderThemeColorIndex =2
                     BorderTint =100.0
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
-                    GroupTable =2
                 End
                 Begin Label
                     OverlapFlags =85
@@ -281,7 +273,6 @@ Begin Form
                     ForeColor =16777215
                     Name ="lblInstallScheduled"
                     Caption ="Install Scheduled"
-                    GroupTable =1
                     GridlineColor =10921638
                     LayoutCachedLeft =8160
                     LayoutCachedTop =690
@@ -289,33 +280,14 @@ Begin Form
                     LayoutCachedHeight =1050
                     ColumnStart =3
                     ColumnEnd =3
-                    LayoutGroup =1
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
-                    GroupTable =1
-                End
-                Begin EmptyCell
-                    Left =10440
-                    Top =690
-                    Width =135
-                    Height =360
-                    Name ="EmptyCell99"
-                    GroupTable =1
-                    GridlineColor =10921638
-                    LayoutCachedLeft =10440
-                    LayoutCachedTop =690
-                    LayoutCachedWidth =10575
-                    LayoutCachedHeight =1050
-                    ColumnStart =4
-                    ColumnEnd =4
-                    LayoutGroup =1
-                    GroupTable =1
                 End
             End
         End
         Begin Section
             CanGrow = NotDefault
-            Height =600
+            Height =660
             Name ="secFormDetail"
             AlternateBackThemeColorIndex =1
             AlternateBackShade =95.0
@@ -347,8 +319,8 @@ Begin Form
                     Name ="txtCustomer"
                     ControlSource ="strCustomer"
                     StatusBarText ="Customer name as it appears on legal documents"
-                    GroupTable =1
                     GridlineColor =10921638
+                    HorizontalAnchor =2
 
                     LayoutCachedLeft =60
                     LayoutCachedTop =180
@@ -356,9 +328,7 @@ Begin Form
                     LayoutCachedHeight =495
                     RowStart =1
                     RowEnd =1
-                    LayoutGroup =1
                     BackThemeColorIndex =-1
-                    GroupTable =1
                 End
                 Begin TextBox
                     Enabled = NotDefault
@@ -382,7 +352,6 @@ Begin Form
                     Name ="txtSalesRep"
                     ControlSource ="strSalesRep"
                     StatusBarText ="Originating sales rep"
-                    GroupTable =1
                     GridlineColor =10921638
 
                     LayoutCachedLeft =6480
@@ -393,8 +362,6 @@ Begin Form
                     RowEnd =1
                     ColumnStart =2
                     ColumnEnd =2
-                    LayoutGroup =1
-                    GroupTable =1
                 End
                 Begin TextBox
                     Enabled = NotDefault
@@ -419,7 +386,6 @@ Begin Form
                     ControlSource ="dtmDateReceived"
                     Format ="Short Date"
                     StatusBarText ="Date installation notice received"
-                    GroupTable =1
                     GridlineColor =10921638
 
                     LayoutCachedLeft =4380
@@ -430,8 +396,6 @@ Begin Form
                     RowEnd =1
                     ColumnStart =1
                     ColumnEnd =1
-                    LayoutGroup =1
-                    GroupTable =1
                 End
                 Begin TextBox
                     Enabled = NotDefault
@@ -451,7 +415,6 @@ Begin Form
                     Name ="txtInstallScheduled"
                     ControlSource ="dtmInstallScheduled"
                     StatusBarText ="Scheduled date of installation"
-                    GroupTable =1
                     GridlineColor =10921638
 
                     LayoutCachedLeft =8160
@@ -462,8 +425,6 @@ Begin Form
                     RowEnd =1
                     ColumnStart =3
                     ColumnEnd =3
-                    LayoutGroup =1
-                    GroupTable =1
                 End
                 Begin CommandButton
                     OverlapFlags =93
@@ -476,6 +437,7 @@ Begin Form
                     Caption ="View Details"
                     OnClick ="[Event Procedure]"
                     GridlineColor =10921638
+                    HorizontalAnchor =1
 
                     LayoutCachedLeft =10620
                     LayoutCachedTop =180
@@ -507,6 +469,7 @@ Begin Form
                     Caption ="Print for Delivery"
                     OnClick ="[Event Procedure]"
                     GridlineColor =10921638
+                    HorizontalAnchor =1
 
                     LayoutCachedLeft =12540
                     LayoutCachedTop =180
@@ -525,25 +488,6 @@ Begin Form
                     WebImagePaddingRight =1
                     WebImagePaddingBottom =1
                 End
-                Begin EmptyCell
-                    Left =10440
-                    Top =180
-                    Width =135
-                    Height =315
-                    Name ="EmptyCell109"
-                    GroupTable =1
-                    GridlineColor =10921638
-                    LayoutCachedLeft =10440
-                    LayoutCachedTop =180
-                    LayoutCachedWidth =10575
-                    LayoutCachedHeight =495
-                    RowStart =1
-                    RowEnd =1
-                    ColumnStart =4
-                    ColumnEnd =4
-                    LayoutGroup =1
-                    GroupTable =1
-                End
                 Begin CommandButton
                     OverlapFlags =85
                     Left =14460
@@ -556,6 +500,7 @@ Begin Form
                     Caption ="Complete"
                     OnClick ="[Event Procedure]"
                     GridlineColor =10921638
+                    HorizontalAnchor =1
 
                     LayoutCachedLeft =14460
                     LayoutCachedTop =180

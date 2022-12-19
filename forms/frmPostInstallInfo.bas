@@ -1,12 +1,9 @@
 ﻿Version =20
 VersionRequired =20
 Begin Form
-    AutoResize = NotDefault
     PopUp = NotDefault
     Modal = NotDefault
     RecordSelectors = NotDefault
-    MaxButton = NotDefault
-    ControlBox = NotDefault
     AutoCenter = NotDefault
     NavigationButtons = NotDefault
     DividingLines = NotDefault
@@ -14,23 +11,22 @@ Begin Form
     DefaultView =0
     ScrollBars =2
     RecordLocks =2
-    BorderStyle =3
     PictureAlignment =2
     DatasheetGridlinesBehavior =3
     GridX =24
     GridY =24
-    Width =11520
+    Width =12240
     DatasheetFontHeight =11
     ItemSuffix =84
-    Left =7020
+    Left =8025
     Top =2445
-    Right =20160
-    Bottom =14175
+    Right =20520
+    Bottom =12690
     RecSrcDt = Begin
         0x33f476ae34eee540
     End
     RecordSource ="tblInstalls"
-    Caption ="Post-Install Info Collection"
+    Caption ="Post-Install Data Entry"
     DatasheetFontName ="Calibri"
     OnLoad ="[Event Procedure]"
     FilterOnLoad =0
@@ -229,8 +225,7 @@ Begin Form
         End
         Begin Section
             CanGrow = NotDefault
-            CanShrink = NotDefault
-            Height =9360
+            Height =9240
             Name ="secFormDetail"
             AlternateBackThemeColorIndex =1
             AlternateBackShade =95.0
@@ -333,16 +328,6 @@ Begin Form
                     LayoutCachedWidth =2640
                     LayoutCachedHeight =915
                 End
-                Begin Line
-                    OverlapFlags =85
-                    Top =3240
-                    Width =11520
-                    Name ="linHorizontalCenter"
-                    GridlineColor =10921638
-                    LayoutCachedTop =3240
-                    LayoutCachedWidth =11520
-                    LayoutCachedHeight =3240
-                End
                 Begin Label
                     OverlapFlags =85
                     Left =300
@@ -363,9 +348,9 @@ Begin Form
                 Begin Subform
                     OverlapFlags =85
                     Left =300
-                    Top =3360
-                    Width =10979
-                    Height =5820
+                    Top =3960
+                    Width =11639
+                    Height =5160
                     TabIndex =5
                     BorderColor =-2147483617
                     Name ="subCustomerEquipment"
@@ -373,19 +358,21 @@ Begin Form
                     LinkChildFields ="intInstall"
                     LinkMasterFields ="lngID"
                     GridlineColor =10921638
+                    HorizontalAnchor =2
+                    VerticalAnchor =2
 
                     LayoutCachedLeft =300
-                    LayoutCachedTop =3360
-                    LayoutCachedWidth =11279
-                    LayoutCachedHeight =9180
+                    LayoutCachedTop =3960
+                    LayoutCachedWidth =11939
+                    LayoutCachedHeight =9120
                     BorderThemeColorIndex =-1
                     BorderShade =100.0
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =7200
+                    Left =7500
                     Top =180
-                    Width =4080
+                    Width =4440
                     Height =480
                     FontWeight =500
                     TabIndex =6
@@ -394,15 +381,15 @@ Begin Form
                     Caption ="Save and Mark Complete"
                     OnClick ="[Event Procedure]"
                     GridlineColor =10921638
+                    HorizontalAnchor =2
 
-                    LayoutCachedLeft =7200
+                    LayoutCachedLeft =7500
                     LayoutCachedTop =180
-                    LayoutCachedWidth =11280
+                    LayoutCachedWidth =11940
                     LayoutCachedHeight =660
                     Gradient =0
-                    BackColor =-2147483607
-                    BackThemeColorIndex =-1
-                    BackTint =100.0
+                    BackThemeColorIndex =9
+                    BackTint =20.0
                     BorderColor =14461583
                     HoverColor =15189940
                     PressedColor =9917743
@@ -421,8 +408,8 @@ Begin Form
                     IMESentenceMode =3
                     Left =300
                     Top =2160
-                    Width =10980
-                    Height =962
+                    Width =11640
+                    Height =1622
                     TabIndex =4
                     BorderColor =10921638
                     ForeColor =4210752
@@ -430,11 +417,12 @@ Begin Form
                     ControlSource ="memPostInstallNotes"
                     StatusBarText ="Internal install notes"
                     GridlineColor =10921638
+                    HorizontalAnchor =2
 
                     LayoutCachedLeft =300
                     LayoutCachedTop =2160
-                    LayoutCachedWidth =11280
-                    LayoutCachedHeight =3122
+                    LayoutCachedWidth =11940
+                    LayoutCachedHeight =3782
                 End
                 Begin Label
                     OverlapFlags =85
@@ -487,9 +475,9 @@ Begin Form
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =7200
+                    Left =7500
                     Top =840
-                    Width =4080
+                    Width =4440
                     Height =480
                     FontWeight =500
                     TabIndex =7
@@ -498,10 +486,11 @@ Begin Form
                     Caption ="Save for Later Entry"
                     OnClick ="[Event Procedure]"
                     GridlineColor =10921638
+                    HorizontalAnchor =2
 
-                    LayoutCachedLeft =7200
+                    LayoutCachedLeft =7500
                     LayoutCachedTop =840
-                    LayoutCachedWidth =11280
+                    LayoutCachedWidth =11940
                     LayoutCachedHeight =1320
                     Gradient =0
                     BackColor =-2147483607
@@ -516,6 +505,7 @@ Begin Form
                     WebImagePaddingTop =2
                     WebImagePaddingRight =1
                     WebImagePaddingBottom =1
+                    Overlaps =1
                 End
                 Begin ListBox
                     Visible = NotDefault
@@ -564,9 +554,7 @@ Begin Form
             End
         End
         Begin FormFooter
-            Visible = NotDefault
-            CanShrink = NotDefault
-            Height =0
+            Height =180
             Name ="secFormFooter"
             AlternateBackThemeColorIndex =1
             AlternateBackShade =95.0
@@ -598,6 +586,8 @@ End Sub
 
 
 Private Sub Form_Load()
+
+    DoCmd.Maximize
 
     Dim strCurrentUser As String
     Dim strUserLevel As String

@@ -3,6 +3,9 @@ VersionRequired =20
 Begin Form
     Modal = NotDefault
     RecordSelectors = NotDefault
+    MaxButton = NotDefault
+    MinButton = NotDefault
+    ControlBox = NotDefault
     AutoCenter = NotDefault
     NavigationButtons = NotDefault
     AllowDeletions = NotDefault
@@ -10,6 +13,7 @@ Begin Form
     AllowAdditions = NotDefault
     OrderByOn = NotDefault
     AllowEdits = NotDefault
+    BorderStyle =0
     PictureAlignment =2
     DatasheetGridlinesBehavior =3
     GridX =24
@@ -17,9 +21,10 @@ Begin Form
     Width =16344
     DatasheetFontHeight =11
     ItemSuffix =103
-    Top =825
-    Right =14265
-    Bottom =8415
+    Left =585
+    Top =3585
+    Right =17835
+    Bottom =11175
     OrderBy ="dtmInstallScheduled, dtmDateReceived, strCustomer"
     RecSrcDt = Begin
         0xf0ff0ba3d9ebe540
@@ -27,6 +32,8 @@ Begin Form
     RecordSource ="qryPendingWorkInstalls"
     Caption ="Installs Pending Work"
     DatasheetFontName ="Calibri"
+    OnLoad ="[Event Procedure]"
+    Moveable =0
     AllowDatasheetView =0
     FilterOnLoad =0
     ShowPageMargins =0
@@ -173,6 +180,7 @@ Begin Form
                     Caption ="Customer"
                     GroupTable =1
                     GridlineColor =10921638
+                    HorizontalAnchor =2
                     LayoutCachedLeft =60
                     LayoutCachedTop =690
                     LayoutCachedWidth =4316
@@ -346,7 +354,7 @@ Begin Form
         End
         Begin Section
             CanGrow = NotDefault
-            Height =645
+            Height =660
             Name ="secFormDetail"
             AlternateBackThemeColorIndex =1
             AlternateBackShade =95.0
@@ -379,6 +387,7 @@ Begin Form
                     StatusBarText ="Customer name as it appears on legal documents"
                     GroupTable =1
                     GridlineColor =10921638
+                    HorizontalAnchor =2
 
                     LayoutCachedLeft =60
                     LayoutCachedTop =180
@@ -557,7 +566,7 @@ Begin Form
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =12780
+                    Left =12900
                     Top =180
                     Width =1613
                     Height =300
@@ -567,10 +576,11 @@ Begin Form
                     Caption ="View Details"
                     OnClick ="[Event Procedure]"
                     GridlineColor =10921638
+                    HorizontalAnchor =1
 
-                    LayoutCachedLeft =12780
+                    LayoutCachedLeft =12900
                     LayoutCachedTop =180
-                    LayoutCachedWidth =14393
+                    LayoutCachedWidth =14513
                     LayoutCachedHeight =480
                     Gradient =0
                     BackThemeColorIndex =5
@@ -588,7 +598,7 @@ Begin Form
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =14520
+                    Left =14640
                     Top =180
                     Width =1613
                     Height =299
@@ -598,10 +608,11 @@ Begin Form
                     Caption ="Print for Shop"
                     OnClick ="[Event Procedure]"
                     GridlineColor =10921638
+                    HorizontalAnchor =1
 
-                    LayoutCachedLeft =14520
+                    LayoutCachedLeft =14640
                     LayoutCachedTop =180
-                    LayoutCachedWidth =16133
+                    LayoutCachedWidth =16253
                     LayoutCachedHeight =479
                     Gradient =0
                     BackColor =15983578
@@ -644,5 +655,12 @@ End Sub
 Private Sub cmdOpenInstallDetails_Click()
 
     DoCmd.OpenForm "frmOpenInstall", acNormal, "", "[lngID]=" & txtRecordID, , acNormal
+
+End Sub
+
+
+Private Sub Form_Load()
+
+    DoCmd.Maximize
 
 End Sub

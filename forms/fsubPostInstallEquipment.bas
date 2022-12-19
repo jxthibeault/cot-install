@@ -1,12 +1,14 @@
 ﻿Version =20
 VersionRequired =20
 Begin Form
+    AutoResize = NotDefault
     RecordSelectors = NotDefault
     AutoCenter = NotDefault
     NavigationButtons = NotDefault
     AllowDeletions = NotDefault
     DividingLines = NotDefault
     AllowAdditions = NotDefault
+    OrderByOn = NotDefault
     AllowDesignChanges = NotDefault
     ScrollBars =2
     RecordLocks =2
@@ -14,11 +16,14 @@ Begin Form
     DatasheetGridlinesBehavior =3
     GridX =24
     GridY =24
-    Width =10800
+    Width =11340
     DatasheetFontHeight =11
     ItemSuffix =34
-    Right =18495
-    Bottom =11985
+    Left =705
+    Top =3360
+    Right =12075
+    Bottom =8250
+    OrderBy ="[strEQID]"
     RecSrcDt = Begin
         0x0990f03733eee540
     End
@@ -30,7 +35,6 @@ Begin Form
     DisplayOnSharePointSite =1
     DatasheetAlternateBackColor =15921906
     DatasheetGridlinesColor12 =0
-    FitToScreen =1
     DatasheetBackThemeColorIndex =1
     BorderThemeColorIndex =3
     ThemeFontIndex =1
@@ -186,6 +190,7 @@ Begin Form
                     Name ="lblLocation"
                     Caption ="On-site Location"
                     GridlineColor =10921638
+                    HorizontalAnchor =1
                     LayoutCachedLeft =5760
                     LayoutCachedTop =360
                     LayoutCachedWidth =8820
@@ -196,18 +201,19 @@ Begin Form
                 Begin Label
                     OverlapFlags =85
                     TextAlign =2
-                    Left =8880
+                    Left =8940
                     Top =360
-                    Width =1800
+                    Width =2280
                     Height =240
                     BorderColor =8355711
                     ForeColor =16777215
                     Name ="lblIpAddress"
                     Caption ="IP Address"
                     GridlineColor =10921638
-                    LayoutCachedLeft =8880
+                    HorizontalAnchor =1
+                    LayoutCachedLeft =8940
                     LayoutCachedTop =360
-                    LayoutCachedWidth =10680
+                    LayoutCachedWidth =11220
                     LayoutCachedHeight =600
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
@@ -237,6 +243,7 @@ Begin Form
                     Height =300
                     ColumnWidth =3000
                     FontSize =10
+                    TabIndex =1
                     Name ="txtDescription"
                     ControlSource ="strDescription"
                     StatusBarText ="Description of equipment"
@@ -264,7 +271,7 @@ Begin Form
                     Height =300
                     ColumnWidth =3000
                     FontSize =10
-                    TabIndex =1
+                    TabIndex =2
                     Name ="txtSerialNumber"
                     ControlSource ="strSerialNumber"
                     StatusBarText ="Equipment serial number"
@@ -292,7 +299,6 @@ Begin Form
                     Height =300
                     ColumnWidth =3000
                     FontSize =10
-                    TabIndex =2
                     Name ="txtEQID"
                     ControlSource ="strEQID"
                     StatusBarText ="Equipment asset number"
@@ -320,6 +326,7 @@ Begin Form
                     Name ="txtLocation"
                     ControlSource ="strLocation"
                     StatusBarText ="Equipment serial number"
+                    HorizontalAnchor =1
 
                     LayoutCachedLeft =5760
                     LayoutCachedTop =60
@@ -335,19 +342,20 @@ Begin Form
                     OverlapFlags =85
                     TextAlign =2
                     IMESentenceMode =3
-                    Left =8880
+                    Left =8940
                     Top =60
-                    Width =1800
+                    Width =2280
                     Height =300
                     FontSize =10
                     TabIndex =4
                     Name ="txtIpAddress"
                     ControlSource ="strIpAddress"
                     StatusBarText ="Equipment serial number"
+                    HorizontalAnchor =1
 
-                    LayoutCachedLeft =8880
+                    LayoutCachedLeft =8940
                     LayoutCachedTop =60
-                    LayoutCachedWidth =10680
+                    LayoutCachedWidth =11220
                     LayoutCachedHeight =360
                     BackThemeColorIndex =1
                     BorderThemeColorIndex =1
@@ -357,8 +365,7 @@ Begin Form
             End
         End
         Begin FormFooter
-            Visible = NotDefault
-            Height =0
+            Height =120
             Name ="secFormFooter"
             AlternateBackThemeColorIndex =1
             AlternateBackShade =95.0

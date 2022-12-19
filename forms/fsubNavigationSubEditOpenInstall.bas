@@ -14,7 +14,7 @@ Begin Form
     DatasheetGridlinesBehavior =3
     GridX =24
     GridY =24
-    Width =16344
+    Width =14100
     DatasheetFontHeight =11
     ItemSuffix =103
     Top =825
@@ -173,6 +173,7 @@ Begin Form
                     Caption ="Customer"
                     GroupTable =1
                     GridlineColor =10921638
+                    HorizontalAnchor =2
                     LayoutCachedLeft =60
                     LayoutCachedTop =690
                     LayoutCachedWidth =4316
@@ -379,6 +380,7 @@ Begin Form
                     StatusBarText ="Customer name as it appears on legal documents"
                     GroupTable =1
                     GridlineColor =10921638
+                    HorizontalAnchor =2
 
                     LayoutCachedLeft =60
                     LayoutCachedTop =180
@@ -529,7 +531,7 @@ Begin Form
                 Begin TextBox
                     Visible = NotDefault
                     Enabled = NotDefault
-                    OverlapFlags =85
+                    OverlapFlags =93
                     IMESentenceMode =3
                     Left =12525
                     Top =180
@@ -556,10 +558,9 @@ Begin Form
                     GroupTable =1
                 End
                 Begin CommandButton
-                    OverlapFlags =85
-                    Left =12960
+                    OverlapFlags =247
+                    Left =12600
                     Top =180
-                    Width =2880
                     Height =300
                     TabIndex =5
                     ForeColor =4210752
@@ -567,10 +568,11 @@ Begin Form
                     Caption ="Modify Order"
                     OnClick ="[Event Procedure]"
                     GridlineColor =10921638
+                    HorizontalAnchor =1
 
-                    LayoutCachedLeft =12960
+                    LayoutCachedLeft =12600
                     LayoutCachedTop =180
-                    LayoutCachedWidth =15840
+                    LayoutCachedWidth =14040
                     LayoutCachedHeight =480
                     Gradient =0
                     BackColor =15592953

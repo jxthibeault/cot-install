@@ -13,7 +13,6 @@ Begin Form
     CloseButton = NotDefault
     DividingLines = NotDefault
     AllowAdditions = NotDefault
-    OrderByOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
     ScrollBars =0
@@ -29,7 +28,7 @@ Begin Form
     Top =3540
     Right =16995
     Bottom =10320
-    TimerInterval =2500
+    TimerInterval =900
     RecSrcDt = Begin
         0x7c26ac2350ede540
     End
@@ -161,7 +160,7 @@ Begin Form
                     BorderColor =8355711
                     ForeColor =16777215
                     Name ="lblNowLoading"
-                    Caption ="Install Dashboard is loading..."
+                    Caption ="Opening connection..."
                     FontName ="Verdana"
                     GridlineColor =10921638
                     LayoutCachedTop =2940
