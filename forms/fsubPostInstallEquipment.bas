@@ -1,12 +1,14 @@
 ﻿Version =20
 VersionRequired =20
 Begin Form
+    AutoResize = NotDefault
     RecordSelectors = NotDefault
     AutoCenter = NotDefault
     NavigationButtons = NotDefault
     AllowDeletions = NotDefault
     DividingLines = NotDefault
     AllowAdditions = NotDefault
+    OrderByOn = NotDefault
     AllowDesignChanges = NotDefault
     ScrollBars =2
     RecordLocks =2
@@ -14,11 +16,13 @@ Begin Form
     DatasheetGridlinesBehavior =3
     GridX =24
     GridY =24
-    Width =10800
+    Width =11520
     DatasheetFontHeight =11
     ItemSuffix =34
-    Right =18495
-    Bottom =11985
+    Left =2160
+    Top =5580
+    Right =13530
+    Bottom =11130
     OrderBy ="[strEQID]"
     RecSrcDt = Begin
         0x0990f03733eee540
@@ -31,7 +35,6 @@ Begin Form
     DisplayOnSharePointSite =1
     DatasheetAlternateBackColor =15921906
     DatasheetGridlinesColor12 =0
-    FitToScreen =1
     DatasheetBackThemeColorIndex =1
     BorderThemeColorIndex =3
     ThemeFontIndex =1
@@ -197,18 +200,18 @@ Begin Form
                 Begin Label
                     OverlapFlags =85
                     TextAlign =2
-                    Left =8880
+                    Left =8940
                     Top =360
-                    Width =1800
+                    Width =2100
                     Height =240
                     BorderColor =8355711
                     ForeColor =16777215
                     Name ="lblIpAddress"
                     Caption ="IP Address"
                     GridlineColor =10921638
-                    LayoutCachedLeft =8880
+                    LayoutCachedLeft =8940
                     LayoutCachedTop =360
-                    LayoutCachedWidth =10680
+                    LayoutCachedWidth =11040
                     LayoutCachedHeight =600
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
@@ -238,6 +241,7 @@ Begin Form
                     Height =300
                     ColumnWidth =3000
                     FontSize =10
+                    TabIndex =1
                     Name ="txtDescription"
                     ControlSource ="strDescription"
                     StatusBarText ="Description of equipment"
@@ -265,7 +269,7 @@ Begin Form
                     Height =300
                     ColumnWidth =3000
                     FontSize =10
-                    TabIndex =1
+                    TabIndex =2
                     Name ="txtSerialNumber"
                     ControlSource ="strSerialNumber"
                     StatusBarText ="Equipment serial number"
@@ -293,7 +297,6 @@ Begin Form
                     Height =300
                     ColumnWidth =3000
                     FontSize =10
-                    TabIndex =2
                     Name ="txtEQID"
                     ControlSource ="strEQID"
                     StatusBarText ="Equipment asset number"
@@ -336,9 +339,9 @@ Begin Form
                     OverlapFlags =85
                     TextAlign =2
                     IMESentenceMode =3
-                    Left =8880
+                    Left =8940
                     Top =60
-                    Width =1800
+                    Width =2100
                     Height =300
                     FontSize =10
                     TabIndex =4
@@ -346,9 +349,9 @@ Begin Form
                     ControlSource ="strIpAddress"
                     StatusBarText ="Equipment serial number"
 
-                    LayoutCachedLeft =8880
+                    LayoutCachedLeft =8940
                     LayoutCachedTop =60
-                    LayoutCachedWidth =10680
+                    LayoutCachedWidth =11040
                     LayoutCachedHeight =360
                     BackThemeColorIndex =1
                     BorderThemeColorIndex =1

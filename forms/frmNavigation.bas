@@ -1,9 +1,11 @@
 ﻿Version =20
 VersionRequired =20
 Begin Form
-    PopUp = NotDefault
     RecordSelectors = NotDefault
+    ControlBox = NotDefault
+    AutoCenter = NotDefault
     NavigationButtons = NotDefault
+    CloseButton = NotDefault
     DividingLines = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
@@ -15,10 +17,9 @@ Begin Form
     Width =17760
     DatasheetFontHeight =11
     ItemSuffix =39
-    Left =5565
-    Top =2790
-    Right =22860
-    Bottom =13215
+    Top =345
+    Right =17295
+    Bottom =10770
     RecSrcDt = Begin
         0xd5e2a17c9eebe540
     End
@@ -26,6 +27,7 @@ Begin Form
     OnClose ="[Event Procedure]"
     DatasheetFontName ="Calibri"
     OnLoad ="[Event Procedure]"
+    Moveable =0
     AllowDatasheetView =0
     FilterOnLoad =0
     ShowPageMargins =0

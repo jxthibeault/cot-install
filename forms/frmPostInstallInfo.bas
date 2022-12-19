@@ -1,31 +1,26 @@
 ﻿Version =20
 VersionRequired =20
 Begin Form
-    AutoResize = NotDefault
-    PopUp = NotDefault
     Modal = NotDefault
     RecordSelectors = NotDefault
     MaxButton = NotDefault
-    ControlBox = NotDefault
-    AutoCenter = NotDefault
     NavigationButtons = NotDefault
     DividingLines = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
     ScrollBars =2
     RecordLocks =2
-    BorderStyle =3
     PictureAlignment =2
     DatasheetGridlinesBehavior =3
     GridX =24
     GridY =24
-    Width =11520
+    Width =12240
     DatasheetFontHeight =11
     ItemSuffix =84
-    Left =7020
-    Top =2445
-    Right =20160
-    Bottom =14175
+    Left =3375
+    Top =810
+    Right =15615
+    Bottom =10995
     RecSrcDt = Begin
         0x33f476ae34eee540
     End
@@ -336,11 +331,11 @@ Begin Form
                 Begin Line
                     OverlapFlags =85
                     Top =3240
-                    Width =11520
+                    Width =12240
                     Name ="linHorizontalCenter"
                     GridlineColor =10921638
                     LayoutCachedTop =3240
-                    LayoutCachedWidth =11520
+                    LayoutCachedWidth =12240
                     LayoutCachedHeight =3240
                 End
                 Begin Label
@@ -364,7 +359,7 @@ Begin Form
                     OverlapFlags =85
                     Left =300
                     Top =3360
-                    Width =10979
+                    Width =11639
                     Height =5820
                     TabIndex =5
                     BorderColor =-2147483617
@@ -376,14 +371,14 @@ Begin Form
 
                     LayoutCachedLeft =300
                     LayoutCachedTop =3360
-                    LayoutCachedWidth =11279
+                    LayoutCachedWidth =11939
                     LayoutCachedHeight =9180
                     BorderThemeColorIndex =-1
                     BorderShade =100.0
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =7200
+                    Left =7860
                     Top =180
                     Width =4080
                     Height =480
@@ -395,9 +390,9 @@ Begin Form
                     OnClick ="[Event Procedure]"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =7200
+                    LayoutCachedLeft =7860
                     LayoutCachedTop =180
-                    LayoutCachedWidth =11280
+                    LayoutCachedWidth =11940
                     LayoutCachedHeight =660
                     Gradient =0
                     BackColor =-2147483607
@@ -421,7 +416,7 @@ Begin Form
                     IMESentenceMode =3
                     Left =300
                     Top =2160
-                    Width =10980
+                    Width =11640
                     Height =962
                     TabIndex =4
                     BorderColor =10921638
@@ -433,7 +428,7 @@ Begin Form
 
                     LayoutCachedLeft =300
                     LayoutCachedTop =2160
-                    LayoutCachedWidth =11280
+                    LayoutCachedWidth =11940
                     LayoutCachedHeight =3122
                 End
                 Begin Label
@@ -487,7 +482,7 @@ Begin Form
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =7200
+                    Left =7860
                     Top =840
                     Width =4080
                     Height =480
@@ -499,9 +494,9 @@ Begin Form
                     OnClick ="[Event Procedure]"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =7200
+                    LayoutCachedLeft =7860
                     LayoutCachedTop =840
-                    LayoutCachedWidth =11280
+                    LayoutCachedWidth =11940
                     LayoutCachedHeight =1320
                     Gradient =0
                     BackColor =-2147483607
@@ -516,6 +511,7 @@ Begin Form
                     WebImagePaddingTop =2
                     WebImagePaddingRight =1
                     WebImagePaddingBottom =1
+                    Overlaps =1
                 End
                 Begin ListBox
                     Visible = NotDefault

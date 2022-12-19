@@ -3,6 +3,8 @@ VersionRequired =20
 Begin Form
     Modal = NotDefault
     RecordSelectors = NotDefault
+    MaxButton = NotDefault
+    MinButton = NotDefault
     AutoCenter = NotDefault
     NavigationButtons = NotDefault
     AllowDeletions = NotDefault
@@ -10,6 +12,7 @@ Begin Form
     AllowAdditions = NotDefault
     OrderByOn = NotDefault
     AllowEdits = NotDefault
+    BorderStyle =0
     PictureAlignment =2
     DatasheetGridlinesBehavior =3
     GridX =24
@@ -17,9 +20,10 @@ Begin Form
     Width =16344
     DatasheetFontHeight =11
     ItemSuffix =103
-    Top =825
-    Right =14265
-    Bottom =8415
+    Left =585
+    Top =3585
+    Right =17835
+    Bottom =11175
     OrderBy ="dtmInstallScheduled, dtmDateReceived, strCustomer"
     RecSrcDt = Begin
         0xf0ff0ba3d9ebe540
@@ -27,6 +31,8 @@ Begin Form
     RecordSource ="qryPendingWorkInstalls"
     Caption ="Installs Pending Work"
     DatasheetFontName ="Calibri"
+    OnLoad ="[Event Procedure]"
+    Moveable =0
     AllowDatasheetView =0
     FilterOnLoad =0
     ShowPageMargins =0
@@ -644,5 +650,12 @@ End Sub
 Private Sub cmdOpenInstallDetails_Click()
 
     DoCmd.OpenForm "frmOpenInstall", acNormal, "", "[lngID]=" & txtRecordID, , acNormal
+
+End Sub
+
+
+Private Sub Form_Load()
+
+    DoCmd.Maximize
 
 End Sub
