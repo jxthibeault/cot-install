@@ -6,26 +6,28 @@ Begin Form
     RecordSelectors = NotDefault
     MaxButton = NotDefault
     MinButton = NotDefault
+    ControlBox = NotDefault
     AutoCenter = NotDefault
     NavigationButtons = NotDefault
     AllowDeletions = NotDefault
+    CloseButton = NotDefault
     DividingLines = NotDefault
     AllowAdditions = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
     ScrollBars =0
-    BorderStyle =3
+    BorderStyle =1
     PictureAlignment =2
     DatasheetGridlinesBehavior =3
     GridX =24
     GridY =24
     Width =7140
     DatasheetFontHeight =11
-    ItemSuffix =14
+    ItemSuffix =19
     Left =10710
     Top =3570
-    Right =17850
-    Bottom =7755
+    Right =20085
+    Bottom =9420
     RecSrcDt = Begin
         0x2e55f3b84fede540
     End
@@ -125,6 +127,11 @@ Begin Form
             GridlineThemeColorIndex =1
             GridlineShade =65.0
         End
+        Begin EmptyCell
+            Height =240
+            GridlineThemeColorIndex =1
+            GridlineShade =65.0
+        End
         Begin FormHeader
             Height =660
             BackColor =1315470
@@ -145,25 +152,22 @@ Begin Form
                     Name ="lblFormTitle"
                     Caption ="Authentication Required"
                     FontName ="Verdana"
-                    GroupTable =1
                     GridlineColor =10921638
                     LayoutCachedLeft =60
                     LayoutCachedTop =120
                     LayoutCachedWidth =7080
                     LayoutCachedHeight =555
-                    LayoutGroup =1
                     ThemeFontIndex =-1
                     BorderThemeColorIndex =2
                     BorderTint =100.0
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
-                    GroupTable =1
                 End
             End
         End
         Begin Section
             CanGrow = NotDefault
-            Height =3540
+            Height =3840
             Name ="secFormDetail"
             AlternateBackThemeColorIndex =1
             BackThemeColorIndex =1
@@ -2831,8 +2835,51 @@ Begin Form
                     LayoutCachedTop =180
                     LayoutCachedWidth =5160
                     LayoutCachedHeight =1200
-                    TabIndex =3
+                    TabIndex =4
                     BackThemeColorIndex =-1
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =1800
+                    Top =3120
+                    Width =3600
+                    Height =420
+                    FontWeight =100
+                    TabIndex =3
+                    Name ="cmdClose"
+                    Caption ="Exit Database"
+                    OnClick ="[Event Procedure]"
+                    FontName ="Calibri Light"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =1800
+                    LayoutCachedTop =3120
+                    LayoutCachedWidth =5400
+                    LayoutCachedHeight =3540
+                    ForeTint =100.0
+                    Gradient =0
+                    BackColor =7961551
+                    BackThemeColorIndex =-1
+                    BackTint =100.0
+                    BorderWidth =1
+                    BorderThemeColorIndex =0
+                    BorderTint =100.0
+                    ThemeFontIndex =0
+                    HoverColor =10856415
+                    HoverThemeColorIndex =-1
+                    HoverTint =100.0
+                    PressedColor =3751056
+                    PressedThemeColorIndex =-1
+                    PressedShade =100.0
+                    HoverForeColor =0
+                    HoverForeTint =100.0
+                    PressedForeThemeColorIndex =1
+                    PressedForeTint =100.0
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =2
+                    WebImagePaddingRight =1
+                    WebImagePaddingBottom =1
+                    Overlaps =1
                 End
             End
         End
@@ -2852,6 +2899,12 @@ Attribute VB_Creatable = True
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Compare Database
+
+Private Sub cmdClose_Click()
+
+    Application.Quit acQuitSaveAll
+    
+End Sub
 
 Private Sub cmdLogIn_Click()
     
