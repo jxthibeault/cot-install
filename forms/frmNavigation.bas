@@ -23,7 +23,7 @@ Begin Form
     RecSrcDt = Begin
         0xd5e2a17c9eebe540
     End
-    Caption ="Installation Dashboard - COT Portland"
+    Caption ="Portland"
     OnClose ="[Event Procedure]"
     DatasheetFontName ="Calibri"
     OnLoad ="[Event Procedure]"
