@@ -163,7 +163,7 @@ Begin Form
                     Height =420
                     ForeColor =4210752
                     Name ="cmdCreateNewInstall"
-                    Caption ="Create New Installation Order"
+                    Caption ="Enter New Installation Order"
                     OnClick ="[Event Procedure]"
                     GridlineColor =10921638
                     HorizontalAnchor =2

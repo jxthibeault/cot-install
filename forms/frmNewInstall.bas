@@ -19,15 +19,16 @@ Begin Form
     DatasheetFontHeight =11
     ItemSuffix =83
     Left =5565
-    Top =3285
-    Right =28395
-    Bottom =14430
+    Top =3105
+    Right =20670
+    Bottom =12225
     RecSrcDt = Begin
         0x830b02b29eebe540
     End
     RecordSource ="SELECT tblInstalls.*, tblInstalls.attAttachments FROM tblInstalls; "
-    Caption ="Installation Detail"
+    Caption ="Enter New Install Order"
     DatasheetFontName ="Calibri"
+    OnLoad ="[Event Procedure]"
     FilterOnLoad =0
     ShowPageMargins =0
     DisplayOnSharePointSite =1
@@ -203,7 +204,7 @@ Begin Form
                     FontWeight =600
                     ForeColor =16777215
                     Name ="lblFormTitle"
-                    Caption ="Create New Installation Order"
+                    Caption ="New Installation Order Entry"
                     FontName ="Verdana"
                     GroupTable =1
                     GridlineColor =10921638
@@ -223,7 +224,7 @@ Begin Form
         End
         Begin Section
             CanGrow = NotDefault
-            Height =12675
+            Height =12720
             Name ="secFormDetail"
             AlternateBackThemeColorIndex =1
             AlternateBackShade =95.0
@@ -479,7 +480,7 @@ Begin Form
                     Top =4680
                     Width =2880
                     Height =315
-                    TabIndex =11
+                    TabIndex =10
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="txtITContactEmail"
@@ -508,6 +509,7 @@ Begin Form
                     ControlSource ="memDeliveryNotes"
                     StatusBarText ="Delivery notes"
                     GridlineColor =10921638
+                    HorizontalAnchor =2
 
                     LayoutCachedLeft =300
                     LayoutCachedTop =7320
@@ -584,6 +586,7 @@ Begin Form
                     ControlSource ="memDeploymentInfo"
                     StatusBarText ="Deployment notes"
                     GridlineColor =10921638
+                    HorizontalAnchor =2
 
                     LayoutCachedLeft =300
                     LayoutCachedTop =8400
@@ -606,6 +609,7 @@ Begin Form
                     ControlSource ="memNetworkInfo"
                     StatusBarText ="Networking notes"
                     GridlineColor =10921638
+                    HorizontalAnchor =2
 
                     LayoutCachedLeft =300
                     LayoutCachedTop =9480
@@ -628,6 +632,7 @@ Begin Form
                     ControlSource ="memSpecialInstructions"
                     StatusBarText ="Special instructions for delivery and install"
                     GridlineColor =10921638
+                    HorizontalAnchor =2
 
                     LayoutCachedLeft =300
                     LayoutCachedTop =10560
@@ -650,6 +655,7 @@ Begin Form
                     ControlSource ="memNotes"
                     StatusBarText ="Internal install notes"
                     GridlineColor =10921638
+                    HorizontalAnchor =2
 
                     LayoutCachedLeft =300
                     LayoutCachedTop =6240
@@ -838,6 +844,33 @@ Begin Form
                     LayoutCachedWidth =8580
                     LayoutCachedHeight =1155
                 End
+                Begin ComboBox
+                    LimitToList = NotDefault
+                    RowSourceTypeInt =1
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =9000
+                    Top =840
+                    Width =2640
+                    Height =315
+                    TabIndex =11
+                    BorderColor =10921638
+                    Name ="txtInstallStatus"
+                    ControlSource ="strInstallStatus"
+                    RowSourceType ="Value List"
+                    RowSource ="\"Preparation\";\"Ready for Install\";\"Installed\";\"Cancelled\""
+                    StatusBarText ="Install status"
+                    GridlineColor =10921638
+                    AllowValueListEdits =0
+
+                    LayoutCachedLeft =9000
+                    LayoutCachedTop =840
+                    LayoutCachedWidth =11640
+                    LayoutCachedHeight =1155
+                    ForeThemeColorIndex =0
+                    ForeTint =75.0
+                    ForeShade =100.0
+                End
                 Begin Label
                     OverlapFlags =85
                     Left =6900
@@ -954,6 +987,7 @@ Begin Form
                     Width =11880
                     Name ="linHorizontalCenter"
                     GridlineColor =10921638
+                    HorizontalAnchor =2
                     LayoutCachedTop =5280
                     LayoutCachedWidth =11880
                     LayoutCachedHeight =5280
@@ -977,6 +1011,7 @@ Begin Form
                     Width =5280
                     Name ="linHorizontalTop"
                     GridlineColor =10921638
+                    HorizontalAnchor =2
                     LayoutCachedLeft =6600
                     LayoutCachedTop =2160
                     LayoutCachedWidth =11880
@@ -1141,12 +1176,14 @@ Begin Form
                     OverlapFlags =95
                     Left =11880
                     Width =0
-                    Height =11460
+                    Height =12720
                     Name ="linVerticalBillOfEquipment"
                     GridlineColor =10921638
+                    HorizontalAnchor =1
+                    VerticalAnchor =2
                     LayoutCachedLeft =11880
                     LayoutCachedWidth =11880
-                    LayoutCachedHeight =11460
+                    LayoutCachedHeight =12720
                 End
                 Begin Label
                     OverlapFlags =85
@@ -1161,6 +1198,7 @@ Begin Form
                     Name ="lblBillOfEquipment"
                     Caption ="Bill of Equipment"
                     GridlineColor =10921638
+                    HorizontalAnchor =1
                     LayoutCachedLeft =11940
                     LayoutCachedTop =300
                     LayoutCachedWidth =15330
@@ -1179,6 +1217,7 @@ Begin Form
                     LinkChildFields ="intInstall"
                     LinkMasterFields ="lngID"
                     GridlineColor =10921638
+                    HorizontalAnchor =1
 
                     LayoutCachedLeft =11880
                     LayoutCachedTop =840
@@ -1200,6 +1239,8 @@ Begin Form
                     LinkChildFields ="intInstall"
                     LinkMasterFields ="lngID"
                     GridlineColor =10921638
+                    HorizontalAnchor =1
+                    VerticalAnchor =2
 
                     LayoutCachedLeft =11880
                     LayoutCachedTop =5520
@@ -1234,39 +1275,14 @@ Begin Form
                     Name ="ctlAttachments"
                     ControlSource ="tblInstalls.attAttachments"
                     GridlineColor =10921638
+                    HorizontalAnchor =2
+                    VerticalAnchor =2
                     TabIndex =25
 
                     LayoutCachedLeft =300
                     LayoutCachedTop =11640
                     LayoutCachedWidth =11640
                     LayoutCachedHeight =12180
-                End
-                Begin Line
-                    LineSlant = NotDefault
-                    OverlapFlags =93
-                    Top =12540
-                    Width =11880
-                    BorderColor =-2147483617
-                    Name ="linHorizontalBottom"
-                    GridlineColor =10921638
-                    LayoutCachedTop =12540
-                    LayoutCachedWidth =11880
-                    LayoutCachedHeight =12540
-                    BorderThemeColorIndex =-1
-                End
-                Begin Line
-                    LineSlant = NotDefault
-                    OverlapFlags =93
-                    Left =22860
-                    Width =0
-                    Height =840
-                    BorderColor =-2147483617
-                    Name ="linVerticalRight"
-                    GridlineColor =10921638
-                    LayoutCachedLeft =22860
-                    LayoutCachedWidth =22860
-                    LayoutCachedHeight =840
-                    BorderThemeColorIndex =-1
                 End
                 Begin Label
                     OverlapFlags =85
@@ -1371,6 +1387,7 @@ Begin Form
                     Caption ="Save and Close"
                     OnClick ="[Event Procedure]"
                     GridlineColor =10921638
+                    HorizontalAnchor =1
 
                     LayoutCachedLeft =20340
                     LayoutCachedTop =240
@@ -1411,31 +1428,6 @@ Begin Form
                     LayoutCachedWidth =1740
                     LayoutCachedHeight =375
                 End
-                Begin TextBox
-                    Enabled = NotDefault
-                    Locked = NotDefault
-                    OldBorderStyle =0
-                    OverlapFlags =85
-                    BackStyle =0
-                    IMESentenceMode =3
-                    Left =9000
-                    Top =840
-                    Width =2640
-                    Height =315
-                    TabIndex =10
-                    BorderColor =10921638
-                    ForeColor =4210752
-                    Name ="txtInstallStatus"
-                    ControlSource ="strInstallStatus"
-                    StatusBarText ="Install status"
-                    DefaultValue ="\"Preparation\""
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =9000
-                    LayoutCachedTop =840
-                    LayoutCachedWidth =11640
-                    LayoutCachedHeight =1155
-                End
             End
         End
         Begin FormFooter
@@ -1454,6 +1446,8 @@ Begin Form
                     Name ="imgCOTLogo"
                     Picture ="COT logo with motto.png"
                     GridlineColor =10921638
+                    HorizontalAnchor =1
+                    VerticalAnchor =1
                     ImageData = Begin
                         0x89504e470d0a1a0a0000000d4948445200000672000001c20806000000dbd557 ,
                         0xff000000017352474200aece1ce90000000467414d410000b18f0bfc61050000 ,
@@ -4004,6 +3998,18 @@ Begin Form
                     LayoutCachedHeight =720
                     BackThemeColorIndex =-1
                 End
+                Begin Line
+                    LineSlant = NotDefault
+                    OverlapFlags =119
+                    Width =22980
+                    BorderColor =-2147483617
+                    Name ="linHorizontalBottom"
+                    GridlineColor =10921638
+                    HorizontalAnchor =2
+                    VerticalAnchor =1
+                    LayoutCachedWidth =22980
+                    BorderThemeColorIndex =-1
+                End
             End
         End
     End
@@ -4019,4 +4025,10 @@ Private Sub cmdSaveAndClose_Click()
 
     DoCmd.Close
     
+End Sub
+
+Private Sub Form_Load()
+
+    DoCmd.Maximize
+
 End Sub

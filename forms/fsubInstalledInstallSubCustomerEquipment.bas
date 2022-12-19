@@ -17,8 +17,10 @@ Begin Form
     Width =10800
     DatasheetFontHeight =11
     ItemSuffix =30
-    Right =18495
-    Bottom =11985
+    Left =3735
+    Top =2565
+    Right =14445
+    Bottom =6975
     RecSrcDt = Begin
         0x0990f03733eee540
     End
@@ -441,6 +443,7 @@ Begin Form
                     ControlSource ="strIpAddress"
                     StatusBarText ="Description of equipment"
                     TopPadding =0
+                    HorizontalAnchor =2
 
                     LayoutCachedLeft =7980
                     LayoutCachedTop =180
@@ -468,6 +471,7 @@ Begin Form
                     ControlSource ="strLocation"
                     StatusBarText ="Description of equipment"
                     TopPadding =0
+                    HorizontalAnchor =2
 
                     LayoutCachedLeft =7980
                     LayoutCachedWidth =10680

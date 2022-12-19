@@ -15,8 +15,10 @@ Begin Form
     Width =10800
     DatasheetFontHeight =11
     ItemSuffix =29
-    Right =15015
-    Bottom =11730
+    Left =2880
+    Top =3720
+    Right =13590
+    Bottom =8130
     RecSrcDt = Begin
         0x1609e283deebe540
     End
@@ -154,6 +156,7 @@ Begin Form
                     Name ="lblSerialNumber"
                     Caption ="Serial No."
                     GridlineColor =10921638
+                    HorizontalAnchor =1
                     LayoutCachedLeft =3720
                     LayoutCachedTop =360
                     LayoutCachedWidth =5580
@@ -173,6 +176,7 @@ Begin Form
                     Name ="lblEQID"
                     Caption ="EQ No."
                     GridlineColor =10921638
+                    HorizontalAnchor =1
                     LayoutCachedLeft =5700
                     LayoutCachedTop =360
                     LayoutCachedWidth =6960
@@ -194,6 +198,7 @@ Begin Form
                     Name ="lblMetersHeader"
                     Caption ="Meters"
                     GridlineColor =10921638
+                    HorizontalAnchor =1
                     LayoutCachedLeft =7080
                     LayoutCachedTop =120
                     LayoutCachedWidth =9000
@@ -213,6 +218,7 @@ Begin Form
                     Name ="lblMeterMono"
                     Caption ="Mono"
                     GridlineColor =10921638
+                    HorizontalAnchor =1
                     LayoutCachedLeft =7080
                     LayoutCachedTop =360
                     LayoutCachedWidth =7980
@@ -232,6 +238,7 @@ Begin Form
                     Name ="lblMeterColor"
                     Caption ="Color"
                     GridlineColor =10921638
+                    HorizontalAnchor =1
                     LayoutCachedLeft =8100
                     LayoutCachedTop =360
                     LayoutCachedWidth =9000
@@ -251,6 +258,7 @@ Begin Form
                     Name ="lblInStock"
                     Caption ="In Stock"
                     GridlineColor =10921638
+                    HorizontalAnchor =1
                     LayoutCachedLeft =9000
                     LayoutCachedTop =360
                     LayoutCachedWidth =9795
@@ -270,6 +278,7 @@ Begin Form
                     Name ="lblReady"
                     Caption ="Ready"
                     GridlineColor =10921638
+                    HorizontalAnchor =1
                     LayoutCachedLeft =9900
                     LayoutCachedTop =360
                     LayoutCachedWidth =10545
@@ -377,6 +386,7 @@ Begin Form
                     ControlSource ="strSerialNumber"
                     StatusBarText ="Equipment serial number"
                     GridlineColor =10921638
+                    HorizontalAnchor =1
 
                     LayoutCachedLeft =3720
                     LayoutCachedTop =60
@@ -401,6 +411,7 @@ Begin Form
                     ControlSource ="strEQID"
                     StatusBarText ="Equipment asset number"
                     GridlineColor =10921638
+                    HorizontalAnchor =1
 
                     LayoutCachedLeft =5700
                     LayoutCachedTop =60
@@ -424,6 +435,7 @@ Begin Form
                     ControlSource ="intMeterMono"
                     StatusBarText ="Starting mono meter for used equipment"
                     GridlineColor =10921638
+                    HorizontalAnchor =1
 
                     LayoutCachedLeft =7080
                     LayoutCachedTop =60
@@ -447,6 +459,7 @@ Begin Form
                     ControlSource ="intMeterColor"
                     StatusBarText ="Starting color meter for used equipment"
                     GridlineColor =10921638
+                    HorizontalAnchor =1
 
                     LayoutCachedLeft =8100
                     LayoutCachedTop =60
@@ -463,6 +476,7 @@ Begin Form
                     ControlSource ="ysnInStock"
                     StatusBarText ="Equipment in stock"
                     GridlineColor =10921638
+                    HorizontalAnchor =1
 
                     LayoutCachedLeft =9300
                     LayoutCachedTop =120
@@ -479,6 +493,7 @@ Begin Form
                     ControlSource ="ysnReadyForInstall"
                     StatusBarText ="Equipment ready for install"
                     GridlineColor =10921638
+                    HorizontalAnchor =1
 
                     LayoutCachedLeft =10080
                     LayoutCachedTop =120

@@ -15,8 +15,13 @@ Begin Form
     Width =10800
     DatasheetFontHeight =11
     ItemSuffix =33
-    Right =15015
-    Bottom =11730
+    Left =2880
+    Top =5520
+    Right =13590
+    Bottom =12270
+    RecSrcDt = Begin
+        0x3547a5ba79ece540
+    End
     RecordSource ="SELECT tblInstallEquipment.strEquipmentType, tblInstallEquipment.intQuantity, tb"
         "lInstallEquipment.strDescription, tblInstallEquipment.intOptionFor, tblInstallEq"
         "uipment.intInstall, tblInstallEquipment.ysnReadyForInstall, tblInstallEquipment."
@@ -168,6 +173,7 @@ Begin Form
                     Name ="lblDescription"
                     Caption ="Description"
                     GridlineColor =10921638
+                    HorizontalAnchor =1
                     LayoutCachedLeft =780
                     LayoutCachedTop =360
                     LayoutCachedWidth =2460
@@ -187,6 +193,7 @@ Begin Form
                     Name ="lblForLine"
                     Caption ="For Line"
                     GridlineColor =10921638
+                    HorizontalAnchor =1
                     LayoutCachedLeft =4020
                     LayoutCachedTop =360
                     LayoutCachedWidth =5220
@@ -206,6 +213,7 @@ Begin Form
                     Name ="lblItemType"
                     Caption ="Item Type"
                     GridlineColor =10921638
+                    HorizontalAnchor =1
                     LayoutCachedLeft =5340
                     LayoutCachedTop =360
                     LayoutCachedWidth =8040
@@ -225,6 +233,7 @@ Begin Form
                     Name ="lblInStock"
                     Caption ="In Stock"
                     GridlineColor =10921638
+                    HorizontalAnchor =1
                     LayoutCachedLeft =8400
                     LayoutCachedTop =360
                     LayoutCachedWidth =9300
@@ -244,6 +253,7 @@ Begin Form
                     Name ="lblReady"
                     Caption ="Ready"
                     GridlineColor =10921638
+                    HorizontalAnchor =1
                     LayoutCachedLeft =9420
                     LayoutCachedTop =360
                     LayoutCachedWidth =10020
@@ -317,6 +327,7 @@ Begin Form
                     ControlSource ="strDescription"
                     StatusBarText ="Description of equipment"
                     GridlineColor =10921638
+                    HorizontalAnchor =1
 
                     LayoutCachedLeft =780
                     LayoutCachedTop =60
@@ -339,6 +350,7 @@ Begin Form
                     ControlSource ="intOptionFor"
                     StatusBarText ="Master equipment number"
                     GridlineColor =10921638
+                    HorizontalAnchor =1
 
                     LayoutCachedLeft =4020
                     LayoutCachedTop =60
@@ -356,6 +368,7 @@ Begin Form
                     StatusBarText ="Equipment in stock"
                     DefaultValue ="False"
                     GridlineColor =10921638
+                    HorizontalAnchor =1
 
                     LayoutCachedLeft =8640
                     LayoutCachedTop =120
@@ -372,6 +385,7 @@ Begin Form
                     ControlSource ="ysnReadyForInstall"
                     StatusBarText ="Equipment ready for install"
                     GridlineColor =10921638
+                    HorizontalAnchor =1
 
                     LayoutCachedLeft =9600
                     LayoutCachedTop =120
@@ -383,7 +397,7 @@ Begin Form
                     OverlapFlags =247
                     IMESentenceMode =3
                     ColumnCount =3
-                    Left =7440
+                    Left =7260
                     Top =60
                     Height =300
                     ColumnWidth =2955
@@ -399,9 +413,9 @@ Begin Form
                     GridlineColor =10921638
                     AllowValueListEdits =0
 
-                    LayoutCachedLeft =7440
+                    LayoutCachedLeft =7260
                     LayoutCachedTop =60
-                    LayoutCachedWidth =8880
+                    LayoutCachedWidth =8700
                     LayoutCachedHeight =360
                 End
                 Begin ComboBox
@@ -421,6 +435,7 @@ Begin Form
                         "pment\""
                     StatusBarText ="Classification of equipment use case"
                     GridlineColor =10921638
+                    HorizontalAnchor =1
                     AllowValueListEdits =0
 
                     LayoutCachedLeft =5340

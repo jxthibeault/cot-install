@@ -16,13 +16,13 @@ Begin Form
     DatasheetGridlinesBehavior =3
     GridX =24
     GridY =24
-    Width =11520
+    Width =11340
     DatasheetFontHeight =11
     ItemSuffix =34
-    Left =2160
-    Top =5580
-    Right =13530
-    Bottom =11130
+    Left =705
+    Top =3360
+    Right =12075
+    Bottom =8250
     OrderBy ="[strEQID]"
     RecSrcDt = Begin
         0x0990f03733eee540
@@ -190,6 +190,7 @@ Begin Form
                     Name ="lblLocation"
                     Caption ="On-site Location"
                     GridlineColor =10921638
+                    HorizontalAnchor =1
                     LayoutCachedLeft =5760
                     LayoutCachedTop =360
                     LayoutCachedWidth =8820
@@ -202,16 +203,17 @@ Begin Form
                     TextAlign =2
                     Left =8940
                     Top =360
-                    Width =2100
+                    Width =2280
                     Height =240
                     BorderColor =8355711
                     ForeColor =16777215
                     Name ="lblIpAddress"
                     Caption ="IP Address"
                     GridlineColor =10921638
+                    HorizontalAnchor =1
                     LayoutCachedLeft =8940
                     LayoutCachedTop =360
-                    LayoutCachedWidth =11040
+                    LayoutCachedWidth =11220
                     LayoutCachedHeight =600
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
@@ -324,6 +326,7 @@ Begin Form
                     Name ="txtLocation"
                     ControlSource ="strLocation"
                     StatusBarText ="Equipment serial number"
+                    HorizontalAnchor =1
 
                     LayoutCachedLeft =5760
                     LayoutCachedTop =60
@@ -341,17 +344,18 @@ Begin Form
                     IMESentenceMode =3
                     Left =8940
                     Top =60
-                    Width =2100
+                    Width =2280
                     Height =300
                     FontSize =10
                     TabIndex =4
                     Name ="txtIpAddress"
                     ControlSource ="strIpAddress"
                     StatusBarText ="Equipment serial number"
+                    HorizontalAnchor =1
 
                     LayoutCachedLeft =8940
                     LayoutCachedTop =60
-                    LayoutCachedWidth =11040
+                    LayoutCachedWidth =11220
                     LayoutCachedHeight =360
                     BackThemeColorIndex =1
                     BorderThemeColorIndex =1
@@ -361,8 +365,7 @@ Begin Form
             End
         End
         Begin FormFooter
-            Visible = NotDefault
-            Height =0
+            Height =120
             Name ="secFormFooter"
             AlternateBackThemeColorIndex =1
             AlternateBackShade =95.0
