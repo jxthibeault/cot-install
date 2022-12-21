@@ -18,10 +18,10 @@ Begin Form
     Width =22980
     DatasheetFontHeight =11
     ItemSuffix =83
-    Left =5565
-    Top =3105
-    Right =20670
-    Bottom =12225
+    Left =-23235
+    Top =1530
+    Right =-7575
+    Bottom =10455
     RecSrcDt = Begin
         0x830b02b29eebe540
     End
@@ -858,8 +858,9 @@ Begin Form
                     Name ="txtInstallStatus"
                     ControlSource ="strInstallStatus"
                     RowSourceType ="Value List"
-                    RowSource ="\"Preparation\";\"Ready for Install\";\"Installed\";\"Cancelled\""
+                    RowSource ="\"Preparation\""
                     StatusBarText ="Install status"
+                    DefaultValue ="\"Preparation\""
                     GridlineColor =10921638
                     AllowValueListEdits =0
 

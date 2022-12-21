@@ -14,10 +14,10 @@ Begin Form
     Width =16344
     DatasheetFontHeight =11
     ItemSuffix =5
-    Left =75
-    Top =1830
-    Right =16545
-    Bottom =9420
+    Left =585
+    Top =3585
+    Right =17715
+    Bottom =11175
     RecSrcDt = Begin
         0x326b8b37a1ebe540
     End
@@ -110,11 +110,10 @@ Begin Form
         End
         Begin FormHeader
             Height =1080
+            BackColor =1315470
             Name ="secFormHeader"
             AlternateBackThemeColorIndex =1
             AlternateBackShade =95.0
-            BackThemeColorIndex =5
-            BackShade =75.0
             Begin
                 Begin Label
                     OverlapFlags =85
@@ -126,7 +125,7 @@ Begin Form
                     FontSize =16
                     FontWeight =500
                     Name ="lblFormTitle"
-                    Caption ="Developer Tools"
+                    Caption ="System Setup"
                     FontName ="Verdana"
                     GroupTable =1
                     GridlineColor =10921638
@@ -138,7 +137,7 @@ Begin Form
                     ThemeFontIndex =-1
                     BorderThemeColorIndex =2
                     BorderTint =100.0
-                    ForeThemeColorIndex =-1
+                    ForeThemeColorIndex =1
                     ForeTint =100.0
                     GroupTable =1
                 End

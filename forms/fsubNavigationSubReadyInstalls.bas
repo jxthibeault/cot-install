@@ -200,6 +200,7 @@ Begin Form
                     Name ="lblSalesRep"
                     Caption ="Sales Rep"
                     GridlineColor =10921638
+                    HorizontalAnchor =1
                     LayoutCachedLeft =6480
                     LayoutCachedTop =690
                     LayoutCachedWidth =8096
@@ -227,6 +228,7 @@ Begin Form
                     Name ="lblDateReceived"
                     Caption ="Date Received"
                     GridlineColor =10921638
+                    HorizontalAnchor =1
                     LayoutCachedLeft =4380
                     LayoutCachedTop =690
                     LayoutCachedWidth =6416
@@ -274,6 +276,7 @@ Begin Form
                     Name ="lblInstallScheduled"
                     Caption ="Install Scheduled"
                     GridlineColor =10921638
+                    HorizontalAnchor =1
                     LayoutCachedLeft =8160
                     LayoutCachedTop =690
                     LayoutCachedWidth =10376
@@ -353,6 +356,7 @@ Begin Form
                     ControlSource ="strSalesRep"
                     StatusBarText ="Originating sales rep"
                     GridlineColor =10921638
+                    HorizontalAnchor =1
 
                     LayoutCachedLeft =6480
                     LayoutCachedTop =180
@@ -387,6 +391,7 @@ Begin Form
                     Format ="Short Date"
                     StatusBarText ="Date installation notice received"
                     GridlineColor =10921638
+                    HorizontalAnchor =1
 
                     LayoutCachedLeft =4380
                     LayoutCachedTop =180
@@ -416,6 +421,7 @@ Begin Form
                     ControlSource ="dtmInstallScheduled"
                     StatusBarText ="Scheduled date of installation"
                     GridlineColor =10921638
+                    HorizontalAnchor =1
 
                     LayoutCachedLeft =8160
                     LayoutCachedTop =180

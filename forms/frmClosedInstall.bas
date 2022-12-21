@@ -18,9 +18,9 @@ Begin Form
     DatasheetFontHeight =11
     ItemSuffix =75
     Left =5565
-    Top =2445
-    Right =22845
-    Bottom =14175
+    Top =1530
+    Right =18930
+    Bottom =10995
     RecSrcDt = Begin
         0xd01332f191ebe540
     End
@@ -841,7 +841,7 @@ Begin Form
                     Name ="txtInstallStatus"
                     ControlSource ="strInstallStatus"
                     RowSourceType ="Value List"
-                    RowSource ="\"Installed\";\"Cancelled\""
+                    RowSource ="\"Installed\";\"Completed\";\"Cancelled\""
                     StatusBarText ="Install status"
                     GridlineColor =10921638
                     AllowValueListEdits =0
@@ -1164,7 +1164,7 @@ Begin Form
                     BorderColor =-2147483617
                     Name ="subAccessoryEquipment"
                     SourceObject ="Form.fsubInstalledInstallSubAccessoryEquipment"
-                    LinkChildFields ="lngID"
+                    LinkChildFields ="intInstall"
                     LinkMasterFields ="lngID"
                     GridlineColor =10921638
                     HorizontalAnchor =1
@@ -1189,7 +1189,7 @@ Begin Form
                     BorderColor =-2147483617
                     Name ="subSuppliesEquipment"
                     SourceObject ="Form.fsubInstalledInstallSubSupplyEquipment"
-                    LinkChildFields ="lngID"
+                    LinkChildFields ="intInstall"
                     LinkMasterFields ="lngID"
                     GridlineColor =10921638
                     HorizontalAnchor =1

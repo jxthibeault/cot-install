@@ -1,5 +1,2 @@
-﻿CREATE TABLE [tblConstants] (
-  [ID] AUTOINCREMENT CONSTRAINT [PrimaryKey] PRIMARY KEY UNIQUE NOT NULL,
-  [strKey] VARCHAR (255) CONSTRAINT [Key] UNIQUE,
-  [strValue] VARCHAR (255)
+﻿CREATE TABLE [tblConstants] 
 )
