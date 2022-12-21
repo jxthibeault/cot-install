@@ -17,10 +17,10 @@ Begin Form
     Width =22980
     DatasheetFontHeight =11
     ItemSuffix =76
-    Left =5790
-    Top =2715
-    Right =21165
-    Bottom =14370
+    Left =-23235
+    Top =1530
+    Right =-8865
+    Bottom =10695
     RecSrcDt = Begin
         0x07c86f6233eee540
     End
@@ -924,7 +924,7 @@ Begin Form
                     TabIndex =11
                     BorderColor =10921638
                     Name ="txtInstallStatus"
-                    ControlSource ="strInstallStatus "
+                    ControlSource ="strInstallStatus"
                     RowSourceType ="Value List"
                     RowSource ="\"Preparation\";\"Ready for Install\""
                     StatusBarText ="Install status"

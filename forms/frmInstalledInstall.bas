@@ -17,10 +17,10 @@ Begin Form
     Width =22980
     DatasheetFontHeight =11
     ItemSuffix =79
-    Left =-75
-    Top =2445
-    Right =22755
-    Bottom =14430
+    Left =5565
+    Top =1530
+    Right =20070
+    Bottom =11145
     RecSrcDt = Begin
         0x830b02b29eebe540
     End
@@ -3915,7 +3915,7 @@ Option Compare Database
 
 Private Sub cmdComplete_Click()
 
-    If MsgBox("Close install order and print follow-up reportz?", vbYesNo, "Close Install Order") = vbYes Then
+    If MsgBox("Close install order and print follow-up reports?", vbYesNo, "Close Install Order") = vbYes Then
         DoCmd.OpenReport "rptInstallFollowUpInfo", acViewPreview, , "[lngID]=" & lngID, acWindowNormal
         
         strInstallStatus.Value = "Completed"
