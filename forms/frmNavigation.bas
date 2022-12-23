@@ -19,7 +19,7 @@ Begin Form
     ItemSuffix =41
     Left =2715
     Top =600
-    Right =20355
+    Right =15735
     Bottom =11025
     RecSrcDt = Begin
         0xd5e2a17c9eebe540
@@ -3562,6 +3562,8 @@ Private Sub Form_Close()
 End Sub
 
 Private Sub Form_Load()
+
+    DoCmd.OpenForm "fsysDetectIdleTime", acNormal, , , , acHidden
     
     Dim varCurrentVersion As Variant
     Dim strCurrentUser As String
