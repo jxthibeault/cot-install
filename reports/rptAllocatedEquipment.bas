@@ -237,7 +237,7 @@ Begin Report
                     FontWeight =600
                     ForeColor =16777215
                     Name ="lblReportTitle"
-                    Caption ="All Inventory Allocated for Pending Installs by Customer"
+                    Caption ="Inventory Allocated for Pending Installs"
                     FontName ="Calibri Light"
                     GridlineColor =10921638
                     LayoutCachedLeft =285

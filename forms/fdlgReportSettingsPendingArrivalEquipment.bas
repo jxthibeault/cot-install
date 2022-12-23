@@ -22,10 +22,10 @@ Begin Form
     Width =7140
     DatasheetFontHeight =11
     ItemSuffix =23
-    Left =7890
-    Top =3165
-    Right =18585
-    Bottom =8910
+    Left =8100
+    Top =5355
+    Right =18795
+    Bottom =11100
     RecSrcDt = Begin
         0x40d4cba4cceee540
     End
@@ -325,7 +325,7 @@ Begin Form
                     BorderColor =10921638
                     Name ="cboSortBy"
                     RowSourceType ="Value List"
-                    RowSource ="\"Equipment Description\";\"Customer\";\"Equipment Type\""
+                    RowSource ="\"Equipment Description\";\"Customer\";\"Equipment Type\";\"Date Requested\""
                     DefaultValue ="\"Equipment Description\""
                     GridlineColor =10921638
                     AllowValueListEdits =0
@@ -359,7 +359,7 @@ Attribute VB_Exposed = False
 Option Compare Database
 
 Private Sub cmdCancel_Click()
-    DoCmd.Close acForm, "fdlgReportSettingsAllocatedEquipment"
+    DoCmd.Close acForm, "fdlgReportSettingsPendingArrivalEquipment"
     Forms(frmNavigation).SetFocus
 End Sub
 
@@ -378,7 +378,6 @@ Private Sub cmdRun_Click()
     
     If Not strEquipmentType = "All Equipment" Then
         strFilter = "[strEquipmentType] = '" & strEquipmentType & "'"
-        strEquipmentType = "All Inventory"
     End If
     
     If strRequestedSort = "Equipment Description" Then
@@ -387,9 +386,11 @@ Private Sub cmdRun_Click()
         strSort = "strCustomer"
     ElseIf strRequestedSort = "Equipment Type" Then
         strSort = "strEquipmentType"
+    ElseIf strRequestedSort = "Date Requested" Then
+        strSort = "dtmDateReceived"
     End If
     
-    DoCmd.OpenReport "rptAllocatedEquipment", acViewPreview, , strFilter, acWindowNormal, strSort
-    DoCmd.Close acForm, "fdlgReportSettingsAllocatedEquipment"
+    DoCmd.OpenReport "rptPendingArrivalEquipment", acViewPreview, , strFilter, acWindowNormal, strSort
+    DoCmd.Close acForm, "fdlgReportSettingsPendingArrivalEquipment"
         
 End Sub

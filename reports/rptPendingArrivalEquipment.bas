@@ -245,7 +245,7 @@ Begin Report
                     FontWeight =600
                     ForeColor =16777215
                     Name ="lblReportHeader"
-                    Caption ="All Not-in-Stock Items for Pending Installations by Date Requested"
+                    Caption ="Not-in-Stock Items for Pending Installs"
                     FontName ="Calibri Light"
                     GroupTable =3
                     GridlineColor =10921638

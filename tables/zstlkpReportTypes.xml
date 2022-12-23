@@ -8,8 +8,8 @@
 <zstlkpReportTypes>
 <ID>2</ID>
 <strReportTitle>Install Items Needed (Not In Stock)</strReportTitle>
-<strObjectName>rptPendingArrivalEquipment</strObjectName>
-<strObjectType>report</strObjectType>
+<strObjectName>fdlgReportSettingsPendingArrivalEquipment</strObjectName>
+<strObjectType>form</strObjectType>
 </zstlkpReportTypes>
 <zstlkpReportTypes>
 <ID>3</ID>
