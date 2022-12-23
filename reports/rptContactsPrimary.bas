@@ -5,6 +5,7 @@ Begin Report
     PopUp = NotDefault
     AutoCenter = NotDefault
     DividingLines = NotDefault
+    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
     DateGrouping =1
@@ -17,7 +18,7 @@ Begin Report
     Width =11520
     DatasheetFontHeight =11
     ItemSuffix =87
-    Left =5430
+    Left =5565
     Top =2940
     Filter ="strContactName <> \"\""
     RecSrcDt = Begin
@@ -237,7 +238,7 @@ Begin Report
                     FontWeight =600
                     ForeColor =16777215
                     Name ="lblReportHeader"
-                    Caption ="Primary Site Contacts by Customer"
+                    Caption ="Primary Site Contacts"
                     FontName ="Calibri Light"
                     GroupTable =3
                     GridlineColor =10921638

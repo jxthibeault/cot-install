@@ -20,8 +20,8 @@
 <zstlkpReportTypes>
 <ID>4</ID>
 <strReportTitle>IT Support Contacts by Customer</strReportTitle>
-<strObjectName>rptContactsITSupport</strObjectName>
-<strObjectType>report</strObjectType>
+<strObjectName>fdlgReportSettingsContactsITSupport</strObjectName>
+<strObjectType>form</strObjectType>
 </zstlkpReportTypes>
 <zstlkpReportTypes>
 <ID>5</ID>

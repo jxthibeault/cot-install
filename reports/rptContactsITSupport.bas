@@ -17,7 +17,7 @@ Begin Report
     Width =11520
     DatasheetFontHeight =11
     ItemSuffix =89
-    Left =5040
+    Left =5565
     Top =3855
     RecSrcDt = Begin
         0xd6fe7fdadcebe540
@@ -236,7 +236,7 @@ Begin Report
                     FontWeight =600
                     ForeColor =16777215
                     Name ="lblReportHeader"
-                    Caption ="IT Support Contacts by Customer"
+                    Caption ="IT Support Contacts"
                     FontName ="Calibri Light"
                     GroupTable =3
                     GridlineColor =10921638
