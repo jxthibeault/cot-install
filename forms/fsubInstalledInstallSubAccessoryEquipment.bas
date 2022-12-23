@@ -7,6 +7,7 @@ Begin Form
     AllowDeletions = NotDefault
     DividingLines = NotDefault
     AllowAdditions = NotDefault
+    OrderByOn = NotDefault
     AllowDesignChanges = NotDefault
     ScrollBars =2
     RecordLocks =2
@@ -19,7 +20,7 @@ Begin Form
     ItemSuffix =11
     Right =15135
     Bottom =11730
-    OrderBy ="intOptionFor"
+    OrderBy ="intOptionFor, strDescription"
     RecSrcDt = Begin
         0xd8784dae9debe540
     End
