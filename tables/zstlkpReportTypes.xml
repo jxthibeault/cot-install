@@ -14,8 +14,8 @@
 <zstlkpReportTypes>
 <ID>3</ID>
 <strReportTitle>Primary Contacts by Customer</strReportTitle>
-<strObjectName>rptContactsPrimary</strObjectName>
-<strObjectType>report</strObjectType>
+<strObjectName>fdlgReportSettingsContactsPrimary</strObjectName>
+<strObjectType>form</strObjectType>
 </zstlkpReportTypes>
 <zstlkpReportTypes>
 <ID>4</ID>

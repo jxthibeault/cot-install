@@ -19,13 +19,14 @@ Begin Report
     ItemSuffix =87
     Left =5430
     Top =2940
+    Filter ="strContactName <> \"\""
     RecSrcDt = Begin
         0xb0bb04a8dcebe540
     End
     RecordSource ="qryPrimaryContacts"
     Caption ="Print Report"
     DatasheetFontName ="Calibri"
-    FilterOnLoad =0
+    FilterOnLoad =255
     FitToPage =1
     DisplayOnSharePointSite =1
     DatasheetAlternateBackColor =15921906
