@@ -382,11 +382,11 @@ Private Sub cmdRun_Click()
     End If
     
     If strRequestedSort = "Equipment Description" Then
-        strSort = "strDescription"
+        strSort = "strDescription, strCustomer"
     ElseIf strRequestedSort = "Customer" Then
-        strSort = "strCustomer"
+        strSort = "strCustomer, strDescription"
     ElseIf strRequestedSort = "Equipment Type" Then
-        strSort = "strEquipmentType"
+        strSort = "strEquipmentType, strDescription, strCustomer"
     End If
     
     DoCmd.OpenReport "rptAllocatedEquipment", acViewPreview, , strFilter, acWindowNormal, strSort

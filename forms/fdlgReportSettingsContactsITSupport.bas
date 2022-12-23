@@ -326,9 +326,9 @@ Private Sub cmdRun_Click()
     strSort = ""
     
     If strRequestedSort = "Contact Name" Then
-        strSort = "strITContactName"
+        strSort = "strITContactName, strCustomer"
     ElseIf strRequestedSort = "Customer" Then
-        strSort = "strCustomer"
+        strSort = "strCustomer, strITContactName"
     End If
     
     DoCmd.OpenReport "rptContactsITSupport", acViewPreview, , , acWindowNormal, strSort

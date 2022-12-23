@@ -279,8 +279,8 @@ Begin Form
                     BorderColor =10921638
                     Name ="cboSortBy"
                     RowSourceType ="Value List"
-                    RowSource ="\"Contact Name\";\"Customer\""
-                    DefaultValue ="\"Contact Name\""
+                    RowSource ="\"Delivery Date\";\"Install Date\""
+                    DefaultValue ="\"Install Date\""
                     GridlineColor =10921638
                     AllowValueListEdits =0
 
@@ -313,7 +313,7 @@ Attribute VB_Exposed = False
 Option Compare Database
 
 Private Sub cmdCancel_Click()
-    DoCmd.Close acForm, "fdlgReportSettingsContactsPrimary"
+    DoCmd.Close acForm, "fdlgReportSettingsScheduledInstalls"
     Forms(frmNavigation).SetFocus
 End Sub
 
@@ -325,13 +325,13 @@ Private Sub cmdRun_Click()
     strRequestedSort = cboSortBy.Value
     strSort = ""
     
-    If strRequestedSort = "Contact Name" Then
-        strSort = "strContactName, strCustomer"
-    ElseIf strRequestedSort = "Customer" Then
-        strSort = "strCustomer, strContactName"
+    If strRequestedSort = "Delivery Date" Then
+        strSort = "dtmDeliveryDate, strCustomer"
+    ElseIf strRequestedSort = "Install Date" Then
+        strSort = "dtmInstallScheduled, strCustomer"
     End If
     
-    DoCmd.OpenReport "rptContactsPrimary", acViewPreview, , , acWindowNormal, strSort
-    DoCmd.Close acForm, "fdlgReportSettingsContactsPrimary"
+    DoCmd.OpenReport "rptScheduledInstalls", acViewPreview, , , acWindowNormal, strSort
+    DoCmd.Close acForm, "fdlgReportSettingsScheduledInstalls"
         
 End Sub

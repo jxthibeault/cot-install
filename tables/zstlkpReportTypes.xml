@@ -26,8 +26,8 @@
 <zstlkpReportTypes>
 <ID>5</ID>
 <strReportTitle>Upcoming Installation Schedule by Date</strReportTitle>
-<strObjectName>rptScheduledInstalls</strObjectName>
-<strObjectType>report</strObjectType>
+<strObjectName>fdlgReportSettingsScheduledInstalls</strObjectName>
+<strObjectType>form</strObjectType>
 </zstlkpReportTypes>
 <zstlkpReportTypes>
 <ID>6</ID>

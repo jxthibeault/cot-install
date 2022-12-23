@@ -381,13 +381,13 @@ Private Sub cmdRun_Click()
     End If
     
     If strRequestedSort = "Equipment Description" Then
-        strSort = "strDescription"
+        strSort = "strDescription, strCustomer"
     ElseIf strRequestedSort = "Customer" Then
-        strSort = "strCustomer"
+        strSort = "strCustomer, strEquipmentType, strDescription"
     ElseIf strRequestedSort = "Equipment Type" Then
-        strSort = "strEquipmentType"
+        strSort = "strEquipmentType, strDescription, strCustomer"
     ElseIf strRequestedSort = "Date Requested" Then
-        strSort = "dtmDateReceived"
+        strSort = "dtmDateReceived, strCustomer, strEquipmentType, strDescription"
     End If
     
     DoCmd.OpenReport "rptPendingArrivalEquipment", acViewPreview, , strFilter, acWindowNormal, strSort
