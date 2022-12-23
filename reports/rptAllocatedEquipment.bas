@@ -30,6 +30,7 @@ Begin Report
         "n\" Or (tblInstalls.strInstallStatus)=\"Ready for Install\" Or (tblInstalls.strI"
         "nstallStatus)=\"Ready for Install\")); "
     Caption ="Print Report"
+    OnOpen ="[Event Procedure]"
     DatasheetFontName ="Calibri"
     FilterOnLoad =0
     FitToPage =1
@@ -200,7 +201,6 @@ Begin Report
                     Enabled = NotDefault
                     Locked = NotDefault
                     OldBorderStyle =0
-                    OverlapFlags =4
                     TextAlign =3
                     BackStyle =0
                     IMESentenceMode =3
@@ -3056,3 +3056,8 @@ Attribute VB_Creatable = True
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Compare Database
+
+Private Sub Report_Open(Cancel As Integer)
+    Me.OrderBy = Me.OpenArgs
+    Me.OrderByOn = True
+End Sub
