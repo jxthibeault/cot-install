@@ -17,7 +17,7 @@ Begin Report
     GridY =24
     Width =11520
     DatasheetFontHeight =11
-    ItemSuffix =87
+    ItemSuffix =89
     Left =5565
     Top =2940
     Filter ="strContactName <> \"\""
@@ -26,6 +26,7 @@ Begin Report
     End
     RecordSource ="qryPrimaryContacts"
     Caption ="Print Report"
+    OnOpen ="[Event Procedure]"
     DatasheetFontName ="Calibri"
     FilterOnLoad =255
     FitToPage =1
@@ -165,69 +166,6 @@ Begin Report
             AlternateBackThemeColorIndex =1
             AlternateBackShade =95.0
             Begin
-                Begin TextBox
-                    Enabled = NotDefault
-                    Locked = NotDefault
-                    OldBorderStyle =0
-                    TextAlign =3
-                    BackStyle =0
-                    IMESentenceMode =3
-                    Left =5865
-                    Top =60
-                    Width =5280
-                    Height =315
-                    BorderColor =10921638
-                    ForeColor =16777215
-                    Name ="txtDatestamp"
-                    ControlSource ="=Date()"
-                    Format ="Medium Date"
-                    GroupTable =3
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =5865
-                    LayoutCachedTop =60
-                    LayoutCachedWidth =11145
-                    LayoutCachedHeight =375
-                    ColumnStart =1
-                    ColumnEnd =1
-                    LayoutGroup =1
-                    ForeThemeColorIndex =-1
-                    ForeTint =100.0
-                    GroupTable =3
-                End
-                Begin TextBox
-                    Enabled = NotDefault
-                    Locked = NotDefault
-                    OldBorderStyle =0
-                    TextAlign =3
-                    BackStyle =0
-                    IMESentenceMode =3
-                    Left =5865
-                    Top =435
-                    Width =5280
-                    Height =360
-                    TabIndex =1
-                    BorderColor =10921638
-                    ForeColor =16777215
-                    Name ="txtTimestamp"
-                    ControlSource ="=Time()"
-                    Format ="Long Time"
-                    GroupTable =3
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =5865
-                    LayoutCachedTop =435
-                    LayoutCachedWidth =11145
-                    LayoutCachedHeight =795
-                    RowStart =1
-                    RowEnd =1
-                    ColumnStart =1
-                    ColumnEnd =1
-                    LayoutGroup =1
-                    ForeThemeColorIndex =-1
-                    ForeTint =100.0
-                    GroupTable =3
-                End
                 Begin Label
                     TextAlign =1
                     Left =285
@@ -254,6 +192,82 @@ Begin Report
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
                     GroupTable =3
+                End
+                Begin TextBox
+                    Enabled = NotDefault
+                    Locked = NotDefault
+                    OldBorderStyle =0
+                    TextAlign =3
+                    BackStyle =0
+                    IMESentenceMode =3
+                    Left =5880
+                    Top =60
+                    Width =5280
+                    Height =315
+                    BorderColor =10921638
+                    ForeColor =16777215
+                    Name ="txtDateStamp"
+                    ControlSource ="=Date()"
+                    Format ="Medium Date"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =5880
+                    LayoutCachedTop =60
+                    LayoutCachedWidth =11160
+                    LayoutCachedHeight =375
+                    ColumnStart =1
+                    ColumnEnd =1
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
+                End
+                Begin TextBox
+                    Enabled = NotDefault
+                    Locked = NotDefault
+                    OldBorderStyle =0
+                    TextAlign =3
+                    BackStyle =0
+                    IMESentenceMode =3
+                    Left =5880
+                    Top =300
+                    Width =5280
+                    Height =360
+                    TabIndex =1
+                    BorderColor =10921638
+                    ForeColor =16777215
+                    Name ="txtTimeStamp"
+                    ControlSource ="=Time()"
+                    Format ="Long Time"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =5880
+                    LayoutCachedTop =300
+                    LayoutCachedWidth =11160
+                    LayoutCachedHeight =660
+                    RowStart =1
+                    RowEnd =1
+                    ColumnStart =1
+                    ColumnEnd =1
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
+                End
+                Begin Label
+                    TextAlign =3
+                    Left =5820
+                    Top =540
+                    Width =5325
+                    Height =315
+                    BorderColor =8355711
+                    ForeColor =16777215
+                    Name ="lblLoggedInAs"
+                    Caption ="Authentication Failed"
+                    GridlineColor =10921638
+                    HorizontalAnchor =1
+                    LayoutCachedLeft =5820
+                    LayoutCachedTop =540
+                    LayoutCachedWidth =11145
+                    LayoutCachedHeight =855
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
                 End
             End
         End
@@ -3053,3 +3067,20 @@ Begin Report
         End
     End
 End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database
+
+Private Sub Report_Open(Cancel As Integer)
+    Me.OrderBy = Me.OpenArgs
+    Me.OrderByOn = True
+    
+    Dim strCurrentUser As String
+    
+    ' Look up current user's name from instance variables and set logged-in-as label
+    strCurrentUser = Form_fdlgUserControl.GetCurrentUser()
+    lblLoggedInAs.Caption = strCurrentUser
+End Sub

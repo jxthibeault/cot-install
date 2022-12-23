@@ -251,6 +251,25 @@ Begin Report
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
                 End
+                Begin Label
+                    TextAlign =3
+                    Left =5820
+                    Top =540
+                    Width =5325
+                    Height =315
+                    BorderColor =8355711
+                    ForeColor =16777215
+                    Name ="lblLoggedInAs"
+                    Caption ="Authentication Failed"
+                    GridlineColor =10921638
+                    HorizontalAnchor =1
+                    LayoutCachedLeft =5820
+                    LayoutCachedTop =540
+                    LayoutCachedWidth =11145
+                    LayoutCachedHeight =855
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
+                End
             End
         End
         Begin PageHeader
@@ -3060,4 +3079,10 @@ Option Compare Database
 Private Sub Report_Open(Cancel As Integer)
     Me.OrderBy = Me.OpenArgs
     Me.OrderByOn = True
+    
+    Dim strCurrentUser As String
+    
+    ' Look up current user's name from instance variables and set logged-in-as label
+    strCurrentUser = Form_fdlgUserControl.GetCurrentUser()
+    lblLoggedInAs.Caption = strCurrentUser
 End Sub

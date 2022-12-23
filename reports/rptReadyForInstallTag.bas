@@ -16,13 +16,14 @@ Begin Report
     DatasheetFontHeight =11
     ItemSuffix =76
     Left =6885
-    Top =1530
+    Top =2445
     RecSrcDt = Begin
         0xd487e08b8eeee540
     End
     RecordSource ="SELECT tblInstallEquipment.*, tblInstalls.* FROM tblInstalls INNER JOIN tblInsta"
         "llEquipment ON tblInstalls.lngID = tblInstallEquipment.intInstall; "
     Caption ="Print Staging Tag"
+    OnOpen ="[Event Procedure]"
     DatasheetFontName ="Calibri"
     FilterOnLoad =0
     FitToPage =1
@@ -2801,7 +2802,7 @@ Begin Report
                     LayoutCachedTop =11760
                     LayoutCachedWidth =7560
                     LayoutCachedHeight =13020
-                    TabIndex =9
+                    TabIndex =11
                     BackThemeColorIndex =-1
                 End
                 Begin TextBox
@@ -3054,6 +3055,83 @@ Begin Report
                     BorderTint =100.0
                     ForeTint =80.0
                 End
+                Begin TextBox
+                    Enabled = NotDefault
+                    Locked = NotDefault
+                    OldBorderStyle =0
+                    TextAlign =3
+                    BackStyle =0
+                    IMESentenceMode =3
+                    Left =6120
+                    Top =13320
+                    Width =5280
+                    Height =315
+                    FontSize =8
+                    TabIndex =9
+                    BorderColor =10921638
+                    Name ="txtDateStamp"
+                    ControlSource ="=Date()"
+                    Format ="Medium Date"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =6120
+                    LayoutCachedTop =13320
+                    LayoutCachedWidth =11400
+                    LayoutCachedHeight =13635
+                    ColumnStart =1
+                    ColumnEnd =1
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
+                End
+                Begin TextBox
+                    Enabled = NotDefault
+                    Locked = NotDefault
+                    OldBorderStyle =0
+                    TextAlign =3
+                    BackStyle =0
+                    IMESentenceMode =3
+                    Left =6120
+                    Top =13560
+                    Width =5280
+                    Height =360
+                    FontSize =8
+                    TabIndex =10
+                    BorderColor =10921638
+                    Name ="txtTimeStamp"
+                    ControlSource ="=Time()"
+                    Format ="Long Time"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =6120
+                    LayoutCachedTop =13560
+                    LayoutCachedWidth =11400
+                    LayoutCachedHeight =13920
+                    RowStart =1
+                    RowEnd =1
+                    ColumnStart =1
+                    ColumnEnd =1
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
+                End
+                Begin Label
+                    TextAlign =3
+                    Left =6060
+                    Top =13800
+                    Width =5325
+                    Height =315
+                    FontSize =8
+                    BorderColor =8355711
+                    Name ="lblLoggedInAs"
+                    Caption ="Authentication Failed"
+                    GridlineColor =10921638
+                    HorizontalAnchor =1
+                    LayoutCachedLeft =6060
+                    LayoutCachedTop =13800
+                    LayoutCachedWidth =11385
+                    LayoutCachedHeight =14115
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
+                End
             End
         End
         Begin PageFooter
@@ -3071,3 +3149,11 @@ Attribute VB_Creatable = True
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Compare Database
+
+Private Sub Report_Open(Cancel As Integer)
+    Dim strCurrentUser As String
+    
+    ' Look up current user's name from instance variables and set logged-in-as label
+    strCurrentUser = Form_fdlgUserControl.GetCurrentUser()
+    lblLoggedInAs.Caption = strCurrentUser
+End Sub
