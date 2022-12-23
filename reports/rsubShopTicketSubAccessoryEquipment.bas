@@ -16,6 +16,7 @@ Begin Report
     ItemSuffix =16
     Left =135
     Top =6240
+    OrderBy ="intOptionFor"
     RecSrcDt = Begin
         0x70bfb80b7aece540
     End

@@ -7,6 +7,7 @@ Begin Form
     AllowDeletions = NotDefault
     DividingLines = NotDefault
     AllowAdditions = NotDefault
+    OrderByOn = NotDefault
     AllowDesignChanges = NotDefault
     ScrollBars =2
     RecordLocks =2
@@ -16,15 +17,17 @@ Begin Form
     GridY =24
     Width =10800
     DatasheetFontHeight =11
-    ItemSuffix =27
+    ItemSuffix =30
     Right =17295
     Bottom =11730
+    OrderBy ="lngID"
     RecSrcDt = Begin
         0x90526c5e33eee540
     End
     RecordSource ="qryEquipTypeCustomerEquipment"
     Caption ="subCustomerEquipment"
     DatasheetFontName ="Calibri"
+    OnLoad ="[Event Procedure]"
     FilterOnLoad =0
     ShowPageMargins =0
     DisplayOnSharePointSite =1
@@ -50,6 +53,32 @@ Begin Form
             ForeTint =60.0
             GridlineThemeColorIndex =1
             GridlineShade =65.0
+        End
+        Begin CommandButton
+            FontSize =11
+            FontWeight =400
+            FontName ="Calibri"
+            ForeThemeColorIndex =0
+            ForeTint =75.0
+            GridlineThemeColorIndex =1
+            GridlineShade =65.0
+            UseTheme =1
+            Shape =1
+            Gradient =12
+            BackThemeColorIndex =4
+            BackTint =60.0
+            BorderLineStyle =0
+            BorderThemeColorIndex =4
+            BorderTint =60.0
+            ThemeFontIndex =1
+            HoverThemeColorIndex =4
+            HoverTint =40.0
+            PressedThemeColorIndex =4
+            PressedShade =75.0
+            HoverForeThemeColorIndex =0
+            HoverForeTint =75.0
+            PressedForeThemeColorIndex =0
+            PressedForeTint =75.0
         End
         Begin CheckBox
             BorderLineStyle =0
@@ -105,7 +134,7 @@ Begin Form
                     TextAlign =2
                     Left =900
                     Top =360
-                    Width =2700
+                    Width =2580
                     Height =240
                     BorderColor =8355711
                     ForeColor =16777215
@@ -114,7 +143,7 @@ Begin Form
                     GridlineColor =10921638
                     LayoutCachedLeft =900
                     LayoutCachedTop =360
-                    LayoutCachedWidth =3600
+                    LayoutCachedWidth =3480
                     LayoutCachedHeight =600
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
@@ -141,7 +170,7 @@ Begin Form
                 Begin Label
                     OverlapFlags =85
                     TextAlign =2
-                    Left =3720
+                    Left =3540
                     Top =360
                     Width =1860
                     Height =240
@@ -150,9 +179,9 @@ Begin Form
                     Name ="lblSerialNumber"
                     Caption ="Serial No."
                     GridlineColor =10921638
-                    LayoutCachedLeft =3720
+                    LayoutCachedLeft =3540
                     LayoutCachedTop =360
-                    LayoutCachedWidth =5580
+                    LayoutCachedWidth =5400
                     LayoutCachedHeight =600
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
@@ -160,85 +189,26 @@ Begin Form
                 Begin Label
                     OverlapFlags =85
                     TextAlign =2
-                    Left =5700
+                    Left =5460
                     Top =360
-                    Width =1260
+                    Width =1140
                     Height =240
                     BorderColor =8355711
                     ForeColor =16777215
                     Name ="lblEQID"
                     Caption ="EQ No."
                     GridlineColor =10921638
-                    LayoutCachedLeft =5700
+                    LayoutCachedLeft =5460
                     LayoutCachedTop =360
-                    LayoutCachedWidth =6960
+                    LayoutCachedWidth =6600
                     LayoutCachedHeight =600
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
                 End
                 Begin Label
-                    FontItalic = NotDefault
-                    OverlapFlags =93
+                    OverlapFlags =85
                     TextAlign =2
-                    Left =7080
-                    Top =120
-                    Width =1920
-                    Height =315
-                    FontWeight =500
-                    BorderColor =8355711
-                    ForeColor =16777215
-                    Name ="lblMetersHeader"
-                    Caption ="Meters"
-                    GridlineColor =10921638
-                    LayoutCachedLeft =7080
-                    LayoutCachedTop =120
-                    LayoutCachedWidth =9000
-                    LayoutCachedHeight =435
-                    ForeThemeColorIndex =-1
-                    ForeTint =100.0
-                End
-                Begin Label
-                    OverlapFlags =215
-                    TextAlign =2
-                    Left =7080
-                    Top =360
-                    Width =900
-                    Height =240
-                    BorderColor =8355711
-                    ForeColor =16777215
-                    Name ="lblMeterMono"
-                    Caption ="Mono"
-                    GridlineColor =10921638
-                    LayoutCachedLeft =7080
-                    LayoutCachedTop =360
-                    LayoutCachedWidth =7980
-                    LayoutCachedHeight =600
-                    ForeThemeColorIndex =-1
-                    ForeTint =100.0
-                End
-                Begin Label
-                    OverlapFlags =223
-                    TextAlign =2
-                    Left =8100
-                    Top =360
-                    Width =900
-                    Height =240
-                    BorderColor =8355711
-                    ForeColor =16777215
-                    Name ="lblMeterColor"
-                    Caption ="Color"
-                    GridlineColor =10921638
-                    LayoutCachedLeft =8100
-                    LayoutCachedTop =360
-                    LayoutCachedWidth =9000
-                    LayoutCachedHeight =600
-                    ForeThemeColorIndex =-1
-                    ForeTint =100.0
-                End
-                Begin Label
-                    OverlapFlags =87
-                    TextAlign =2
-                    Left =9000
+                    Left =8520
                     Top =360
                     Width =795
                     Height =240
@@ -247,9 +217,9 @@ Begin Form
                     Name ="lblInStock"
                     Caption ="In Stock"
                     GridlineColor =10921638
-                    LayoutCachedLeft =9000
+                    LayoutCachedLeft =8520
                     LayoutCachedTop =360
-                    LayoutCachedWidth =9795
+                    LayoutCachedWidth =9315
                     LayoutCachedHeight =600
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
@@ -257,7 +227,7 @@ Begin Form
                 Begin Label
                     OverlapFlags =85
                     TextAlign =2
-                    Left =9900
+                    Left =9360
                     Top =360
                     Width =645
                     Height =240
@@ -266,9 +236,9 @@ Begin Form
                     Name ="lblReady"
                     Caption ="Ready"
                     GridlineColor =10921638
-                    LayoutCachedLeft =9900
+                    LayoutCachedLeft =9360
                     LayoutCachedTop =360
-                    LayoutCachedWidth =10545
+                    LayoutCachedWidth =10005
                     LayoutCachedHeight =600
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
@@ -291,6 +261,44 @@ Begin Form
                     LayoutCachedTop =120
                     LayoutCachedWidth =2415
                     LayoutCachedHeight =435
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
+                End
+                Begin Label
+                    OverlapFlags =85
+                    TextAlign =2
+                    Left =6660
+                    Top =360
+                    Width =1800
+                    Height =240
+                    BorderColor =8355711
+                    ForeColor =16777215
+                    Name ="lblAssignedLocation"
+                    Caption ="Onsite Location"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =6660
+                    LayoutCachedTop =360
+                    LayoutCachedWidth =8460
+                    LayoutCachedHeight =600
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
+                End
+                Begin Label
+                    OverlapFlags =85
+                    TextAlign =2
+                    Left =10080
+                    Top =360
+                    Width =645
+                    Height =240
+                    BorderColor =8355711
+                    ForeColor =16777215
+                    Name ="lblTag"
+                    Caption ="Tag"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =10080
+                    LayoutCachedTop =360
+                    LayoutCachedWidth =10725
+                    LayoutCachedHeight =600
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
                 End
@@ -341,7 +349,7 @@ Begin Form
                     IMESentenceMode =3
                     Left =900
                     Top =60
-                    Width =2700
+                    Width =2580
                     Height =300
                     ColumnWidth =3000
                     FontSize =10
@@ -355,7 +363,7 @@ Begin Form
 
                     LayoutCachedLeft =900
                     LayoutCachedTop =60
-                    LayoutCachedWidth =3600
+                    LayoutCachedWidth =3480
                     LayoutCachedHeight =360
                 End
                 Begin TextBox
@@ -363,7 +371,7 @@ Begin Form
                     OverlapFlags =85
                     TextAlign =2
                     IMESentenceMode =3
-                    Left =3720
+                    Left =3540
                     Top =60
                     Width =1860
                     Height =300
@@ -377,9 +385,9 @@ Begin Form
                     StatusBarText ="Equipment serial number"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =3720
+                    LayoutCachedLeft =3540
                     LayoutCachedTop =60
-                    LayoutCachedWidth =5580
+                    LayoutCachedWidth =5400
                     LayoutCachedHeight =360
                 End
                 Begin TextBox
@@ -387,9 +395,9 @@ Begin Form
                     OverlapFlags =85
                     TextAlign =2
                     IMESentenceMode =3
-                    Left =5700
+                    Left =5460
                     Top =60
-                    Width =1260
+                    Width =1140
                     Height =300
                     ColumnWidth =3000
                     FontSize =10
@@ -401,88 +409,97 @@ Begin Form
                     StatusBarText ="Equipment asset number"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =5700
+                    LayoutCachedLeft =5460
                     LayoutCachedTop =60
-                    LayoutCachedWidth =6960
+                    LayoutCachedWidth =6600
                     LayoutCachedHeight =360
-                End
-                Begin TextBox
-                    OverlapFlags =85
-                    TextAlign =2
-                    IMESentenceMode =3
-                    Left =7080
-                    Top =60
-                    Width =900
-                    Height =299
-                    ColumnWidth =1050
-                    FontSize =10
-                    TabIndex =4
-                    BorderColor =10921638
-                    ForeColor =4210752
-                    Name ="txtMeterMono"
-                    ControlSource ="intMeterMono"
-                    StatusBarText ="Starting mono meter for used equipment"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =7080
-                    LayoutCachedTop =60
-                    LayoutCachedWidth =7980
-                    LayoutCachedHeight =359
-                End
-                Begin TextBox
-                    OverlapFlags =85
-                    TextAlign =2
-                    IMESentenceMode =3
-                    Left =8100
-                    Top =60
-                    Width =900
-                    Height =299
-                    ColumnWidth =1050
-                    FontSize =10
-                    TabIndex =5
-                    BorderColor =10921638
-                    ForeColor =4210752
-                    Name ="txtMeterColor"
-                    ControlSource ="intMeterColor"
-                    StatusBarText ="Starting color meter for used equipment"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =8100
-                    LayoutCachedTop =60
-                    LayoutCachedWidth =9000
-                    LayoutCachedHeight =359
                 End
                 Begin CheckBox
                     OverlapFlags =85
-                    Left =9300
+                    Left =8820
                     Top =120
-                    TabIndex =6
+                    TabIndex =4
                     BorderColor =10921638
                     Name ="chkInStock"
                     ControlSource ="ysnInStock"
                     StatusBarText ="Equipment in stock"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =9300
+                    LayoutCachedLeft =8820
                     LayoutCachedTop =120
-                    LayoutCachedWidth =9560
+                    LayoutCachedWidth =9080
                     LayoutCachedHeight =360
                 End
                 Begin CheckBox
                     OverlapFlags =85
-                    Left =10080
+                    Left =9600
                     Top =120
-                    TabIndex =7
+                    TabIndex =5
                     BorderColor =10921638
                     Name ="chkReadyForInstall"
                     ControlSource ="ysnReadyForInstall"
                     StatusBarText ="Equipment ready for install"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =10080
+                    LayoutCachedLeft =9600
                     LayoutCachedTop =120
-                    LayoutCachedWidth =10340
+                    LayoutCachedWidth =9860
                     LayoutCachedHeight =360
+                End
+                Begin TextBox
+                    Enabled = NotDefault
+                    EnterKeyBehavior = NotDefault
+                    OverlapFlags =85
+                    TextAlign =2
+                    IMESentenceMode =3
+                    Left =6660
+                    Top =60
+                    Width =1800
+                    Height =300
+                    FontSize =10
+                    TabIndex =6
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="txtLocation"
+                    ControlSource ="strLocation"
+                    StatusBarText ="Equipment asset number"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =6660
+                    LayoutCachedTop =60
+                    LayoutCachedWidth =8460
+                    LayoutCachedHeight =360
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =10080
+                    Top =60
+                    Width =660
+                    Height =300
+                    TabIndex =7
+                    ForeColor =4210752
+                    Name ="cmdTag"
+                    Caption ="Tag"
+                    OnClick ="[Event Procedure]"
+                    GridlineColor =10921638
+                    HorizontalAnchor =1
+
+                    LayoutCachedLeft =10080
+                    LayoutCachedTop =60
+                    LayoutCachedWidth =10740
+                    LayoutCachedHeight =360
+                    Gradient =0
+                    BackThemeColorIndex =5
+                    BackTint =20.0
+                    BorderColor =14461583
+                    HoverColor =15189940
+                    PressedColor =9917743
+                    HoverForeColor =4210752
+                    PressedForeColor =4210752
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =2
+                    WebImagePaddingRight =1
+                    WebImagePaddingBottom =1
                 End
             End
         End
@@ -502,3 +519,30 @@ Attribute VB_Creatable = True
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Compare Database
+
+Private Sub cmdTag_Click()
+
+    DoCmd.OpenReport "rptReadyForInstallTag", acViewPreview, , "[tblInstallEquipment.lngID]=" & lngID, acWindowNormal
+
+End Sub
+
+Private Sub Form_Load()
+
+    Dim strCurrentUser As String
+    Dim strUserLevel As String
+    
+    ' Look up current user's name from instance variables and set logged-in-as label
+    strCurrentUser = Form_fdlgUserControl.GetCurrentUser()
+    
+    ' Look up current user's permission level
+    strUserLevel = Form_fdlgUserControl.GetUserAccountType(strCurrentUser)
+    
+    ' Permission-based
+
+    If strUserLevel = "Administrator" Or strUserLevel = "Development" Then
+        
+        txtLocation.Enabled = True
+        
+    End If
+    
+End Sub

@@ -14,14 +14,14 @@ Begin Report
     GridY =24
     Width =11520
     DatasheetFontHeight =11
-    ItemSuffix =67
-    Left =5565
-    Top =3045
-    Filter ="lngID = 67"
+    ItemSuffix =76
+    Left =6885
+    Top =1530
     RecSrcDt = Begin
-        0x5363e0cc9eebe540
+        0xd487e08b8eeee540
     End
-    RecordSource ="tblInstalls"
+    RecordSource ="SELECT tblInstallEquipment.*, tblInstalls.* FROM tblInstalls INNER JOIN tblInsta"
+        "llEquipment ON tblInstalls.lngID = tblInstallEquipment.intInstall; "
     Caption ="Print Staging Tag"
     DatasheetFontName ="Calibri"
     FilterOnLoad =0
@@ -157,7 +157,7 @@ Begin Report
                 Begin Label
                     TextAlign =2
                     Left =120
-                    Top =420
+                    Top =540
                     Width =11280
                     Height =840
                     FontSize =36
@@ -167,16 +167,16 @@ Begin Report
                     Caption ="*** FOR INSTALL***"
                     GridlineColor =10921638
                     LayoutCachedLeft =120
-                    LayoutCachedTop =420
+                    LayoutCachedTop =540
                     LayoutCachedWidth =11400
-                    LayoutCachedHeight =1260
+                    LayoutCachedHeight =1380
                     BorderThemeColorIndex =-1
                     BorderTint =100.0
                 End
                 Begin Label
                     TextAlign =2
                     Left =120
-                    Top =12960
+                    Top =13260
                     Width =11280
                     Height =840
                     FontSize =36
@@ -186,9 +186,9 @@ Begin Report
                     Caption ="*** FOR INSTALL***"
                     GridlineColor =10921638
                     LayoutCachedLeft =120
-                    LayoutCachedTop =12960
+                    LayoutCachedTop =13260
                     LayoutCachedWidth =11400
-                    LayoutCachedHeight =13800
+                    LayoutCachedHeight =14100
                     BorderThemeColorIndex =-1
                     BorderTint =100.0
                 End
@@ -198,10 +198,10 @@ Begin Report
                     TextAlign =2
                     BackStyle =0
                     IMESentenceMode =3
-                    Left =120
-                    Top =4200
+                    Left =60
+                    Top =3900
                     Width =11280
-                    Height =5400
+                    Height =4200
                     ColumnWidth =4290
                     FontSize =64
                     FontWeight =600
@@ -212,31 +212,31 @@ Begin Report
                     StatusBarText ="Customer name as it appears on legal documents"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =120
-                    LayoutCachedTop =4200
-                    LayoutCachedWidth =11400
-                    LayoutCachedHeight =9600
+                    LayoutCachedLeft =60
+                    LayoutCachedTop =3900
+                    LayoutCachedWidth =11340
+                    LayoutCachedHeight =8100
                 End
                 Begin TextBox
                     OldBorderStyle =0
-                    TextAlign =2
+                    TextAlign =3
                     BackStyle =0
                     IMESentenceMode =3
-                    Left =120
-                    Top =2460
-                    Width =11280
-                    Height =840
-                    FontSize =28
+                    Left =4320
+                    Top =2940
+                    Width =6420
+                    Height =600
+                    FontSize =24
                     TabIndex =1
                     BorderColor =-2147483616
                     Name ="txtInstallScheduled"
                     ControlSource ="dtmInstallScheduled"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =120
-                    LayoutCachedTop =2460
-                    LayoutCachedWidth =11400
-                    LayoutCachedHeight =3300
+                    LayoutCachedLeft =4320
+                    LayoutCachedTop =2940
+                    LayoutCachedWidth =10740
+                    LayoutCachedHeight =3540
                     BorderThemeColorIndex =-1
                     BorderShade =100.0
                     ForeTint =100.0
@@ -244,7 +244,7 @@ Begin Report
                 Begin Image
                     BackStyle =0
                     Left =3960
-                    Top =11460
+                    Top =11760
                     Width =3600
                     Height =1260
                     BackColor =1315470
@@ -2798,10 +2798,10 @@ Begin Report
                     End
 
                     LayoutCachedLeft =3960
-                    LayoutCachedTop =11460
+                    LayoutCachedTop =11760
                     LayoutCachedWidth =7560
-                    LayoutCachedHeight =12720
-                    TabIndex =5
+                    LayoutCachedHeight =13020
+                    TabIndex =9
                     BackThemeColorIndex =-1
                 End
                 Begin TextBox
@@ -2809,8 +2809,8 @@ Begin Report
                     TextAlign =2
                     BackStyle =0
                     IMESentenceMode =3
-                    Left =120
-                    Top =9660
+                    Left =60
+                    Top =10320
                     Width =11280
                     Height =540
                     FontSize =20
@@ -2820,22 +2820,21 @@ Begin Report
                     ControlSource ="strAddressStreet"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =120
-                    LayoutCachedTop =9660
-                    LayoutCachedWidth =11400
-                    LayoutCachedHeight =10200
+                    LayoutCachedLeft =60
+                    LayoutCachedTop =10320
+                    LayoutCachedWidth =11340
+                    LayoutCachedHeight =10860
                     BorderThemeColorIndex =-1
                     BorderShade =100.0
                     ForeTint =100.0
                 End
                 Begin TextBox
                     OldBorderStyle =0
-                    OverlapFlags =4
                     TextAlign =2
                     BackStyle =0
                     IMESentenceMode =3
-                    Left =120
-                    Top =10200
+                    Left =60
+                    Top =10620
                     Width =11280
                     Height =540
                     FontSize =20
@@ -2845,22 +2844,21 @@ Begin Report
                     ControlSource ="strAddressCity"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =120
-                    LayoutCachedTop =10200
-                    LayoutCachedWidth =11400
-                    LayoutCachedHeight =10740
+                    LayoutCachedLeft =60
+                    LayoutCachedTop =10620
+                    LayoutCachedWidth =11340
+                    LayoutCachedHeight =11160
                     BorderThemeColorIndex =-1
                     BorderShade =100.0
                     ForeTint =100.0
                 End
                 Begin TextBox
                     OldBorderStyle =0
-                    OverlapFlags =4
                     TextAlign =2
                     BackStyle =0
                     IMESentenceMode =3
-                    Left =120
-                    Top =10680
+                    Left =60
+                    Top =10920
                     Width =11280
                     Height =540
                     FontSize =20
@@ -2870,13 +2868,191 @@ Begin Report
                     ControlSource ="strAddressState"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =120
-                    LayoutCachedTop =10680
-                    LayoutCachedWidth =11400
-                    LayoutCachedHeight =11220
+                    LayoutCachedLeft =60
+                    LayoutCachedTop =10920
+                    LayoutCachedWidth =11340
+                    LayoutCachedHeight =11460
                     BorderThemeColorIndex =-1
                     BorderShade =100.0
                     ForeTint =100.0
+                End
+                Begin TextBox
+                    OldBorderStyle =0
+                    TextAlign =3
+                    BackStyle =0
+                    IMESentenceMode =3
+                    Left =4320
+                    Top =1800
+                    Width =6420
+                    Height =600
+                    FontSize =24
+                    TabIndex =5
+                    BorderColor =-2147483616
+                    Name ="txtShipDate"
+                    ControlSource ="dtmDeliveryDate"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =4320
+                    LayoutCachedTop =1800
+                    LayoutCachedWidth =10740
+                    LayoutCachedHeight =2400
+                    BorderThemeColorIndex =-1
+                    BorderShade =100.0
+                    ForeTint =100.0
+                End
+                Begin TextBox
+                    OldBorderStyle =0
+                    TextAlign =3
+                    BackStyle =0
+                    IMESentenceMode =3
+                    Left =4320
+                    Top =2340
+                    Width =6420
+                    Height =600
+                    FontSize =24
+                    TabIndex =6
+                    BorderColor =-2147483616
+                    Name ="txtDeliveryMethod"
+                    ControlSource ="strDeliveryMethod"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =4320
+                    LayoutCachedTop =2340
+                    LayoutCachedWidth =10740
+                    LayoutCachedHeight =2940
+                    BorderThemeColorIndex =-1
+                    BorderShade =100.0
+                    ForeTint =100.0
+                End
+                Begin Label
+                    TextAlign =1
+                    Left =660
+                    Top =1800
+                    Width =4380
+                    Height =600
+                    FontSize =24
+                    BorderColor =-2147483616
+                    Name ="lblDeliveryDate"
+                    Caption ="Delivery:"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =660
+                    LayoutCachedTop =1800
+                    LayoutCachedWidth =5040
+                    LayoutCachedHeight =2400
+                    BorderThemeColorIndex =-1
+                    BorderTint =100.0
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
+                End
+                Begin Label
+                    TextAlign =1
+                    Left =660
+                    Top =2340
+                    Width =4380
+                    Height =600
+                    FontSize =24
+                    BorderColor =-2147483616
+                    Name ="lblProvider"
+                    Caption ="Delivery Method:"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =660
+                    LayoutCachedTop =2340
+                    LayoutCachedWidth =5040
+                    LayoutCachedHeight =2940
+                    BorderThemeColorIndex =-1
+                    BorderTint =100.0
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
+                End
+                Begin Label
+                    TextAlign =1
+                    Left =660
+                    Top =2940
+                    Width =4380
+                    Height =600
+                    FontSize =24
+                    BorderColor =-2147483616
+                    Name ="lblInstallDate"
+                    Caption ="Installation:"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =660
+                    LayoutCachedTop =2940
+                    LayoutCachedWidth =5040
+                    LayoutCachedHeight =3540
+                    BorderThemeColorIndex =-1
+                    BorderTint =100.0
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
+                End
+                Begin TextBox
+                    Enabled = NotDefault
+                    OldBorderStyle =0
+                    TextAlign =2
+                    BackStyle =0
+                    IMESentenceMode =3
+                    Left =60
+                    Top =8100
+                    Width =11280
+                    Height =900
+                    FontSize =36
+                    FontWeight =600
+                    TabIndex =7
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="txtEQID"
+                    ControlSource ="strEQID"
+                    StatusBarText ="Customer name as it appears on legal documents"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =60
+                    LayoutCachedTop =8100
+                    LayoutCachedWidth =11340
+                    LayoutCachedHeight =9000
+                End
+                Begin TextBox
+                    Enabled = NotDefault
+                    OldBorderStyle =0
+                    TextAlign =2
+                    BackStyle =0
+                    IMESentenceMode =3
+                    Left =60
+                    Top =8820
+                    Width =11280
+                    Height =900
+                    FontSize =36
+                    TabIndex =8
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="txtLocation"
+                    ControlSource ="strLocation"
+                    StatusBarText ="Customer name as it appears on legal documents"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =60
+                    LayoutCachedTop =8820
+                    LayoutCachedWidth =11340
+                    LayoutCachedHeight =9720
+                End
+                Begin Label
+                    FontItalic = NotDefault
+                    TextAlign =2
+                    Left =120
+                    Top =120
+                    Width =11280
+                    Height =840
+                    FontSize =12
+                    BorderColor =-2147483616
+                    ForeColor =3355443
+                    Name ="lblInstructions"
+                    Caption ="Affix this tag to outside of machine listed below and all external accessories."
+                    GridlineColor =10921638
+                    LayoutCachedLeft =120
+                    LayoutCachedTop =120
+                    LayoutCachedWidth =11400
+                    LayoutCachedHeight =960
+                    BorderThemeColorIndex =-1
+                    BorderTint =100.0
+                    ForeTint =80.0
                 End
             End
         End

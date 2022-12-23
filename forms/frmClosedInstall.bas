@@ -16,11 +16,11 @@ Begin Form
     GridY =24
     Width =22980
     DatasheetFontHeight =11
-    ItemSuffix =75
-    Left =5565
-    Top =1530
-    Right =18930
-    Bottom =10995
+    ItemSuffix =79
+    Left =6645
+    Top =1455
+    Right =20010
+    Bottom =10920
     RecSrcDt = Begin
         0xd01332f191ebe540
     End
@@ -517,7 +517,7 @@ Begin Form
                     Top =7320
                     Width =11340
                     Height =663
-                    TabIndex =18
+                    TabIndex =16
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="txtDeliveryNotes"
@@ -543,7 +543,7 @@ Begin Form
                     Top =8400
                     Width =11340
                     Height =662
-                    TabIndex =19
+                    TabIndex =17
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="txtDeploymentNotes"
@@ -569,7 +569,7 @@ Begin Form
                     Top =9480
                     Width =11340
                     Height =662
-                    TabIndex =20
+                    TabIndex =18
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="txtNetworkNotes"
@@ -595,7 +595,7 @@ Begin Form
                     Top =10560
                     Width =11340
                     Height =662
-                    TabIndex =21
+                    TabIndex =19
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="txtSpecialHandlingNotes"
@@ -621,7 +621,7 @@ Begin Form
                     Top =6240
                     Width =11340
                     Height =662
-                    TabIndex =17
+                    TabIndex =15
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="txtInternal"
@@ -643,7 +643,7 @@ Begin Form
                     BackStyle =0
                     IMESentenceMode =3
                     Left =9000
-                    Top =2880
+                    Top =3720
                     Width =2640
                     Height =315
                     TabIndex =14
@@ -652,52 +652,6 @@ Begin Form
                     Name ="txtInstallScheduled"
                     ControlSource ="dtmInstallScheduled"
                     StatusBarText ="Scheduled date of installation"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =9000
-                    LayoutCachedTop =2880
-                    LayoutCachedWidth =11640
-                    LayoutCachedHeight =3195
-                End
-                Begin TextBox
-                    Enabled = NotDefault
-                    OldBorderStyle =0
-                    OverlapFlags =85
-                    BackStyle =0
-                    IMESentenceMode =3
-                    Left =9000
-                    Top =3300
-                    Width =2640
-                    Height =315
-                    TabIndex =15
-                    BorderColor =10921638
-                    ForeColor =4210752
-                    Name ="txtDepartureTime"
-                    ControlSource ="dtmDepartureTime"
-                    StatusBarText ="Recommended departure time enroute to install"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =9000
-                    LayoutCachedTop =3300
-                    LayoutCachedWidth =11640
-                    LayoutCachedHeight =3615
-                End
-                Begin TextBox
-                    Enabled = NotDefault
-                    OldBorderStyle =0
-                    OverlapFlags =85
-                    BackStyle =0
-                    IMESentenceMode =3
-                    Left =9000
-                    Top =3720
-                    Width =2640
-                    Height =315
-                    TabIndex =16
-                    BorderColor =10921638
-                    ForeColor =4210752
-                    Name ="txtDepartureFrom"
-                    ControlSource ="strDepartureFrom"
-                    StatusBarText ="Location of departure for install"
                     GridlineColor =10921638
 
                     LayoutCachedLeft =9000
@@ -899,7 +853,7 @@ Begin Form
                     BorderColor =8355711
                     ForeColor =6710886
                     Name ="lblDeliveryInformation"
-                    Caption ="Delivery Information"
+                    Caption ="Scheduling Information"
                     GridlineColor =10921638
                     LayoutCachedLeft =6900
                     LayoutCachedTop =2340
@@ -1048,52 +1002,18 @@ Begin Form
                 Begin Label
                     OverlapFlags =85
                     Left =6900
-                    Top =2880
+                    Top =3720
                     Width =2040
                     Height =315
                     FontWeight =600
                     BorderColor =8355711
                     ForeColor =6710886
                     Name ="lblInstallScheduled"
-                    Caption ="Install Scheduled:"
-                    GridlineColor =10921638
-                    LayoutCachedLeft =6900
-                    LayoutCachedTop =2880
-                    LayoutCachedWidth =8940
-                    LayoutCachedHeight =3195
-                End
-                Begin Label
-                    OverlapFlags =85
-                    Left =6900
-                    Top =3300
-                    Width =1860
-                    Height =315
-                    FontWeight =600
-                    BorderColor =8355711
-                    ForeColor =6710886
-                    Name ="lblEnrouteBy"
-                    Caption ="Enroute by:"
-                    GridlineColor =10921638
-                    LayoutCachedLeft =6900
-                    LayoutCachedTop =3300
-                    LayoutCachedWidth =8760
-                    LayoutCachedHeight =3615
-                End
-                Begin Label
-                    OverlapFlags =85
-                    Left =6900
-                    Top =3720
-                    Width =1740
-                    Height =315
-                    FontWeight =600
-                    BorderColor =8355711
-                    ForeColor =6710886
-                    Name ="lblEnrouteFrom"
-                    Caption ="Enroute from:"
+                    Caption ="Install Date:"
                     GridlineColor =10921638
                     LayoutCachedLeft =6900
                     LayoutCachedTop =3720
-                    LayoutCachedWidth =8640
+                    LayoutCachedWidth =8940
                     LayoutCachedHeight =4035
                 End
                 Begin Line
@@ -1135,7 +1055,7 @@ Begin Form
                     Top =840
                     Width =10979
                     Height =4680
-                    TabIndex =23
+                    TabIndex =21
                     BorderColor =-2147483617
                     Name ="subCustomerEquipment"
                     SourceObject ="Form.fsubInstalledInstallSubCustomerEquipment"
@@ -1160,7 +1080,7 @@ Begin Form
                     Top =5520
                     Width =6120
                     Height =7020
-                    TabIndex =24
+                    TabIndex =22
                     BorderColor =-2147483617
                     Name ="subAccessoryEquipment"
                     SourceObject ="Form.fsubInstalledInstallSubAccessoryEquipment"
@@ -1185,7 +1105,7 @@ Begin Form
                     Top =5520
                     Width =4860
                     Height =7020
-                    TabIndex =25
+                    TabIndex =23
                     BorderColor =-2147483617
                     Name ="subSuppliesEquipment"
                     SourceObject ="Form.fsubInstalledInstallSubSupplyEquipment"
@@ -1230,7 +1150,7 @@ Begin Form
                     GridlineColor =10921638
                     HorizontalAnchor =2
                     VerticalAnchor =2
-                    TabIndex =22
+                    TabIndex =20
 
                     LayoutCachedLeft =300
                     LayoutCachedTop =11640
@@ -1250,7 +1170,7 @@ Begin Form
                     Top =5160
                     Width =11340
                     Height =662
-                    TabIndex =26
+                    TabIndex =24
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="txtPostInstallNotes"
@@ -1280,6 +1200,88 @@ Begin Form
                     LayoutCachedTop =4860
                     LayoutCachedWidth =4380
                     LayoutCachedHeight =5175
+                End
+                Begin TextBox
+                    Enabled = NotDefault
+                    OldBorderStyle =0
+                    OverlapFlags =85
+                    TextAlign =1
+                    BackStyle =0
+                    IMESentenceMode =3
+                    Left =9000
+                    Top =2880
+                    Width =2640
+                    Height =315
+                    TabIndex =25
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="txtDeliveryDate"
+                    ControlSource ="dtmDeliveryDate"
+                    StatusBarText ="Scheduled date of installation"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =9000
+                    LayoutCachedTop =2880
+                    LayoutCachedWidth =11640
+                    LayoutCachedHeight =3195
+                End
+                Begin Label
+                    OverlapFlags =85
+                    Left =6900
+                    Top =2880
+                    Width =2040
+                    Height =315
+                    FontWeight =600
+                    BorderColor =8355711
+                    ForeColor =6710886
+                    Name ="lblDeliveryDate"
+                    Caption ="Delivery Date:"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =6900
+                    LayoutCachedTop =2880
+                    LayoutCachedWidth =8940
+                    LayoutCachedHeight =3195
+                End
+                Begin TextBox
+                    Enabled = NotDefault
+                    OldBorderStyle =0
+                    OverlapFlags =85
+                    TextAlign =1
+                    BackStyle =0
+                    IMESentenceMode =3
+                    Left =9000
+                    Top =3300
+                    Width =2640
+                    Height =315
+                    TabIndex =26
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="txtDeliveryMethod"
+                    ControlSource ="strDeliveryMethod"
+                    StatusBarText ="Scheduled date of installation"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =9000
+                    LayoutCachedTop =3300
+                    LayoutCachedWidth =11640
+                    LayoutCachedHeight =3615
+                End
+                Begin Label
+                    OverlapFlags =85
+                    Left =6900
+                    Top =3300
+                    Width =2040
+                    Height =315
+                    FontWeight =600
+                    BorderColor =8355711
+                    ForeColor =6710886
+                    Name ="lblDeliveryMethod"
+                    Caption ="Delivery Method:"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =6900
+                    LayoutCachedTop =3300
+                    LayoutCachedWidth =8940
+                    LayoutCachedHeight =3615
                 End
             End
         End

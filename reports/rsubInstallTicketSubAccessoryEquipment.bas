@@ -14,8 +14,8 @@ Begin Report
     Width =11520
     DatasheetFontHeight =11
     ItemSuffix =12
-    Left =-105
     Top =1215
+    OrderBy ="intOptionFor"
     RecSrcDt = Begin
         0xa30bc3a59febe540
     End
@@ -113,7 +113,6 @@ Begin Report
             BackShade =75.0
             Begin
                 Begin Label
-                    OverlapFlags =12
                     TextAlign =2
                     Left =120
                     Top =240
@@ -132,7 +131,6 @@ Begin Report
                     ForeTint =100.0
                 End
                 Begin Label
-                    OverlapFlags =12
                     TextAlign =2
                     Left =4740
                     Top =240
@@ -151,7 +149,6 @@ Begin Report
                     ForeTint =100.0
                 End
                 Begin Label
-                    OverlapFlags =4
                     TextAlign =2
                     Left =3578
                     Width =4185
@@ -169,7 +166,6 @@ Begin Report
                     ForeTint =100.0
                 End
                 Begin Label
-                    OverlapFlags =4
                     TextAlign =2
                     Left =10020
                     Top =240

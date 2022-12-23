@@ -16,8 +16,8 @@ Begin Report
     GridY =24
     Width =11520
     DatasheetFontHeight =11
-    ItemSuffix =75
-    Left =5040
+    ItemSuffix =82
+    Left =5565
     Top =2775
     RecSrcDt = Begin
         0x3b09922ca1ebe540
@@ -176,7 +176,7 @@ Begin Report
                     TextAlign =3
                     BackStyle =0
                     IMESentenceMode =3
-                    Left =5865
+                    Left =5880
                     Top =60
                     Width =5280
                     Height =315
@@ -185,29 +185,27 @@ Begin Report
                     Name ="txtDateStamp"
                     ControlSource ="=Date()"
                     Format ="Medium Date"
-                    GroupTable =3
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =5865
+                    LayoutCachedLeft =5880
                     LayoutCachedTop =60
-                    LayoutCachedWidth =11145
+                    LayoutCachedWidth =11160
                     LayoutCachedHeight =375
                     ColumnStart =1
                     ColumnEnd =1
-                    LayoutGroup =1
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
-                    GroupTable =3
                 End
                 Begin TextBox
                     Enabled = NotDefault
                     Locked = NotDefault
                     OldBorderStyle =0
+                    OverlapFlags =4
                     TextAlign =3
                     BackStyle =0
                     IMESentenceMode =3
-                    Left =5865
-                    Top =435
+                    Left =5880
+                    Top =300
                     Width =5280
                     Height =360
                     TabIndex =1
@@ -216,21 +214,18 @@ Begin Report
                     Name ="txtTimeStamp"
                     ControlSource ="=Time()"
                     Format ="Long Time"
-                    GroupTable =3
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =5865
-                    LayoutCachedTop =435
-                    LayoutCachedWidth =11145
-                    LayoutCachedHeight =795
+                    LayoutCachedLeft =5880
+                    LayoutCachedTop =300
+                    LayoutCachedWidth =11160
+                    LayoutCachedHeight =660
                     RowStart =1
                     RowEnd =1
                     ColumnStart =1
                     ColumnEnd =1
-                    LayoutGroup =1
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
-                    GroupTable =3
                 End
                 Begin Label
                     TextAlign =1
@@ -244,20 +239,17 @@ Begin Report
                     Name ="lblReportTitle"
                     Caption ="All Inventory Allocated for Pending Installs by Customer"
                     FontName ="Calibri Light"
-                    GroupTable =3
                     GridlineColor =10921638
                     LayoutCachedLeft =285
                     LayoutCachedTop =60
                     LayoutCachedWidth =5805
                     LayoutCachedHeight =795
                     RowEnd =1
-                    LayoutGroup =1
                     ThemeFontIndex =0
                     BorderThemeColorIndex =2
                     BorderTint =100.0
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
-                    GroupTable =3
                 End
             End
         End

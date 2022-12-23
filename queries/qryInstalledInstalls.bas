@@ -32,6 +32,9 @@ Begin OutputColumns
     Expression ="tblInstalls.dtmInstallScheduled"
     Expression ="tblInstalls.dtmDepartureTime"
     Expression ="tblInstalls.strDepartureFrom"
+    Expression ="tblInstalls.memPostInstallNotes"
+    Expression ="tblInstalls.dtmDeliveryDate"
+    Expression ="tblInstalls.strDeliveryMethod"
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
@@ -163,6 +166,18 @@ Begin
         dbText "Name" ="tblInstalls.strDepartureFrom"
         dbLong "AggregateType" ="-1"
     End
+    Begin
+        dbText "Name" ="tblInstalls.memPostInstallNotes"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblInstalls.dtmDeliveryDate"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblInstalls.strDeliveryMethod"
+        dbLong "AggregateType" ="-1"
+    End
 End
 Begin
     State =0
@@ -173,7 +188,7 @@ Begin
     Left =-1
     Top =-1
     Right =1226
-    Bottom =393
+    Bottom =376
     Left =0
     Top =0
     ColumnsShown =539

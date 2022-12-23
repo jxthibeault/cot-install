@@ -16,7 +16,7 @@ Begin Report
     Width =11520
     DatasheetFontHeight =11
     ItemSuffix =79
-    Left =5040
+    Left =5565
     Top =2775
     RecSrcDt = Begin
         0x5363e0cc9eebe540
@@ -779,8 +779,8 @@ Begin Report
                     TextAlign =1
                     BackStyle =0
                     IMESentenceMode =3
-                    Left =7200
-                    Top =60
+                    Left =7380
+                    Top =540
                     Width =4080
                     Height =315
                     TabIndex =19
@@ -791,9 +791,32 @@ Begin Report
                     StatusBarText ="Scheduled date of installation"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =7200
+                    LayoutCachedLeft =7380
+                    LayoutCachedTop =540
+                    LayoutCachedWidth =11460
+                    LayoutCachedHeight =855
+                End
+                Begin TextBox
+                    Enabled = NotDefault
+                    OldBorderStyle =0
+                    TextAlign =1
+                    BackStyle =0
+                    IMESentenceMode =3
+                    Left =7380
+                    Top =60
+                    Width =4080
+                    Height =315
+                    TabIndex =20
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="txtDepartureTime"
+                    ControlSource ="dtmDeliveryDate"
+                    StatusBarText ="Recommended departure time enroute to install"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =7380
                     LayoutCachedTop =60
-                    LayoutCachedWidth =11280
+                    LayoutCachedWidth =11460
                     LayoutCachedHeight =375
                 End
                 Begin TextBox
@@ -802,49 +825,26 @@ Begin Report
                     TextAlign =1
                     BackStyle =0
                     IMESentenceMode =3
-                    Left =7200
+                    Left =7380
                     Top =300
-                    Width =4080
-                    Height =315
-                    TabIndex =20
-                    BorderColor =10921638
-                    ForeColor =4210752
-                    Name ="txtDepartureTime"
-                    ControlSource ="dtmDepartureTime"
-                    StatusBarText ="Recommended departure time enroute to install"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =7200
-                    LayoutCachedTop =300
-                    LayoutCachedWidth =11280
-                    LayoutCachedHeight =615
-                End
-                Begin TextBox
-                    Enabled = NotDefault
-                    OldBorderStyle =0
-                    TextAlign =1
-                    BackStyle =0
-                    IMESentenceMode =3
-                    Left =7200
-                    Top =540
                     Width =4080
                     Height =315
                     TabIndex =21
                     BorderColor =10921638
                     ForeColor =4210752
-                    Name ="txtDepartureFrom"
-                    ControlSource ="strDepartureFrom"
+                    Name ="txtDeliveryMethod"
+                    ControlSource ="strDeliveryMethod"
                     StatusBarText ="Location of departure for install"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =7200
-                    LayoutCachedTop =540
-                    LayoutCachedWidth =11280
-                    LayoutCachedHeight =855
+                    LayoutCachedLeft =7380
+                    LayoutCachedTop =300
+                    LayoutCachedWidth =11460
+                    LayoutCachedHeight =615
                 End
                 Begin Label
-                    Left =5640
-                    Top =60
+                    Left =5820
+                    Top =540
                     Width =1905
                     Height =315
                     BorderColor =8355711
@@ -852,40 +852,40 @@ Begin Report
                     Name ="lblInstallDate"
                     Caption ="Install Date:"
                     GridlineColor =10921638
-                    LayoutCachedLeft =5640
+                    LayoutCachedLeft =5820
+                    LayoutCachedTop =540
+                    LayoutCachedWidth =7725
+                    LayoutCachedHeight =855
+                End
+                Begin Label
+                    Left =5820
+                    Top =60
+                    Width =1560
+                    Height =315
+                    BorderColor =8355711
+                    ForeColor =6710886
+                    Name ="lblDeliveryDate"
+                    Caption ="Delivery Date:"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =5820
                     LayoutCachedTop =60
-                    LayoutCachedWidth =7545
+                    LayoutCachedWidth =7380
                     LayoutCachedHeight =375
                 End
                 Begin Label
-                    Left =5640
+                    Left =5820
                     Top =300
                     Width =1560
                     Height =315
                     BorderColor =8355711
                     ForeColor =6710886
-                    Name ="lblEnrouteBy"
-                    Caption ="Enroute By:"
+                    Name ="lblDeliveryMethod"
+                    Caption ="Fulfillment:"
                     GridlineColor =10921638
-                    LayoutCachedLeft =5640
+                    LayoutCachedLeft =5820
                     LayoutCachedTop =300
-                    LayoutCachedWidth =7200
+                    LayoutCachedWidth =7380
                     LayoutCachedHeight =615
-                End
-                Begin Label
-                    Left =5640
-                    Top =540
-                    Width =1560
-                    Height =315
-                    BorderColor =8355711
-                    ForeColor =6710886
-                    Name ="lblEnrouteFrom"
-                    Caption ="Enroute From:"
-                    GridlineColor =10921638
-                    LayoutCachedLeft =5640
-                    LayoutCachedTop =540
-                    LayoutCachedWidth =7200
-                    LayoutCachedHeight =855
                 End
                 Begin Label
                     Left =60

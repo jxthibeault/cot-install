@@ -15,7 +15,7 @@ Begin Report
     GridY =24
     Width =11520
     DatasheetFontHeight =11
-    ItemSuffix =79
+    ItemSuffix =81
     Left =6300
     Top =2445
     RecSrcDt = Begin
@@ -634,7 +634,7 @@ Begin Report
                     BackStyle =0
                     IMESentenceMode =3
                     Left =7200
-                    Top =60
+                    Top =480
                     Width =4080
                     Height =315
                     TabIndex =14
@@ -646,13 +646,13 @@ Begin Report
                     GridlineColor =10921638
 
                     LayoutCachedLeft =7200
-                    LayoutCachedTop =60
+                    LayoutCachedTop =480
                     LayoutCachedWidth =11280
-                    LayoutCachedHeight =375
+                    LayoutCachedHeight =795
                 End
                 Begin Label
                     Left =5640
-                    Top =60
+                    Top =480
                     Width =1905
                     Height =315
                     BorderColor =8355711
@@ -661,9 +661,9 @@ Begin Report
                     Caption ="Install Date:"
                     GridlineColor =10921638
                     LayoutCachedLeft =5640
-                    LayoutCachedTop =60
+                    LayoutCachedTop =480
                     LayoutCachedWidth =7545
-                    LayoutCachedHeight =375
+                    LayoutCachedHeight =795
                 End
                 Begin Rectangle
                     BackStyle =0
@@ -894,6 +894,46 @@ Begin Report
                     LayoutCachedHeight =11339
                     BorderThemeColorIndex =1
                     BorderShade =65.0
+                End
+                Begin TextBox
+                    Enabled = NotDefault
+                    OldBorderStyle =0
+                    OverlapFlags =4
+                    TextAlign =1
+                    BackStyle =0
+                    IMESentenceMode =3
+                    Left =7200
+                    Top =120
+                    Width =4080
+                    Height =315
+                    TabIndex =17
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="txtDeliveryDate"
+                    ControlSource ="dtmDeliveryDate"
+                    StatusBarText ="Scheduled date of installation"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =7200
+                    LayoutCachedTop =120
+                    LayoutCachedWidth =11280
+                    LayoutCachedHeight =435
+                End
+                Begin Label
+                    OverlapFlags =4
+                    Left =5640
+                    Top =120
+                    Width =1905
+                    Height =315
+                    BorderColor =8355711
+                    ForeColor =6710886
+                    Name ="lblDeliveryDate"
+                    Caption ="Ship Date:"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =5640
+                    LayoutCachedTop =120
+                    LayoutCachedWidth =7545
+                    LayoutCachedHeight =435
                 End
             End
         End

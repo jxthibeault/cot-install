@@ -20,11 +20,11 @@ Begin Form
     GridY =24
     Width =16344
     DatasheetFontHeight =11
-    ItemSuffix =103
-    Left =585
-    Top =3585
-    Right =17835
-    Bottom =11175
+    ItemSuffix =119
+    Left =-420
+    Top =225
+    Right =16830
+    Bottom =7815
     OrderBy ="dtmInstallScheduled, dtmDateReceived, strCustomer"
     RecSrcDt = Begin
         0xf0ff0ba3d9ebe540
@@ -193,36 +193,6 @@ Begin Form
                 Begin Label
                     OverlapFlags =85
                     TextAlign =2
-                    Left =10440
-                    Top =690
-                    Width =2025
-                    Height =360
-                    FontSize =12
-                    FontWeight =500
-                    LeftMargin =44
-                    TopMargin =22
-                    RightMargin =44
-                    BottomMargin =22
-                    BorderColor =8355711
-                    ForeColor =16777215
-                    Name ="lblSalesRep"
-                    Caption ="Sales Rep"
-                    GroupTable =1
-                    GridlineColor =10921638
-                    LayoutCachedLeft =10440
-                    LayoutCachedTop =690
-                    LayoutCachedWidth =12465
-                    LayoutCachedHeight =1050
-                    ColumnStart =4
-                    ColumnEnd =4
-                    LayoutGroup =1
-                    ForeThemeColorIndex =-1
-                    ForeTint =100.0
-                    GroupTable =1
-                End
-                Begin Label
-                    OverlapFlags =85
-                    TextAlign =2
                     Left =4380
                     Top =690
                     Width =2036
@@ -307,24 +277,45 @@ Begin Form
                     ForeTint =100.0
                     GroupTable =2
                 End
+                Begin EmptyCell
+                    Left =12300
+                    Top =690
+                    Width =135
+                    Height =360
+                    Name ="EmptyCell99"
+                    GroupTable =1
+                    GridlineColor =10921638
+                    LayoutCachedLeft =12300
+                    LayoutCachedTop =690
+                    LayoutCachedWidth =12435
+                    LayoutCachedHeight =1050
+                    ColumnStart =5
+                    ColumnEnd =5
+                    LayoutGroup =1
+                    GroupTable =1
+                End
                 Begin Label
                     OverlapFlags =85
                     TextAlign =2
                     Left =8160
                     Top =690
-                    Width =2216
+                    Width =1976
                     Height =360
                     FontSize =12
                     FontWeight =500
+                    LeftMargin =44
+                    TopMargin =22
+                    RightMargin =44
+                    BottomMargin =22
                     BorderColor =8355711
                     ForeColor =16777215
-                    Name ="lblInstallScheduled"
-                    Caption ="Install Scheduled"
+                    Name ="lblDeliveryDate"
+                    Caption ="Ship Date"
                     GroupTable =1
                     GridlineColor =10921638
                     LayoutCachedLeft =8160
                     LayoutCachedTop =690
-                    LayoutCachedWidth =10376
+                    LayoutCachedWidth =10136
                     LayoutCachedHeight =1050
                     ColumnStart =3
                     ColumnEnd =3
@@ -333,21 +324,30 @@ Begin Form
                     ForeTint =100.0
                     GroupTable =1
                 End
-                Begin EmptyCell
-                    Left =12525
+                Begin Label
+                    OverlapFlags =85
+                    TextAlign =2
+                    Left =10200
                     Top =690
-                    Width =135
+                    Width =2040
                     Height =360
-                    Name ="EmptyCell99"
+                    FontSize =12
+                    FontWeight =500
+                    BorderColor =8355711
+                    ForeColor =16777215
+                    Name ="lblInstallScheduled"
+                    Caption ="Install Date"
                     GroupTable =1
                     GridlineColor =10921638
-                    LayoutCachedLeft =12525
+                    LayoutCachedLeft =10200
                     LayoutCachedTop =690
-                    LayoutCachedWidth =12660
+                    LayoutCachedWidth =12240
                     LayoutCachedHeight =1050
-                    ColumnStart =5
-                    ColumnEnd =5
+                    ColumnStart =4
+                    ColumnEnd =4
                     LayoutGroup =1
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
                     GroupTable =1
                 End
             End
@@ -375,6 +375,7 @@ Begin Form
                     ColumnWidth =2895
                     FontSize =12
                     FontWeight =500
+                    TabIndex =2
                     LeftMargin =44
                     TopMargin =22
                     RightMargin =44
@@ -406,48 +407,12 @@ Begin Form
                     TextAlign =2
                     BackStyle =0
                     IMESentenceMode =3
-                    Left =10440
-                    Top =180
-                    Width =2025
-                    Height =315
-                    FontSize =12
-                    TabIndex =4
-                    LeftMargin =44
-                    TopMargin =22
-                    RightMargin =44
-                    BottomMargin =22
-                    BorderColor =10921638
-                    ForeColor =4210752
-                    Name ="txtSalesRep"
-                    ControlSource ="strSalesRep"
-                    StatusBarText ="Originating sales rep"
-                    GroupTable =1
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =10440
-                    LayoutCachedTop =180
-                    LayoutCachedWidth =12465
-                    LayoutCachedHeight =495
-                    RowStart =1
-                    RowEnd =1
-                    ColumnStart =4
-                    ColumnEnd =4
-                    LayoutGroup =1
-                    GroupTable =1
-                End
-                Begin TextBox
-                    Enabled = NotDefault
-                    OldBorderStyle =0
-                    OverlapFlags =85
-                    TextAlign =2
-                    BackStyle =0
-                    IMESentenceMode =3
                     Left =6480
                     Top =180
                     Width =1616
                     Height =315
                     FontSize =12
-                    TabIndex =2
+                    TabIndex =4
                     LeftMargin =44
                     TopMargin =22
                     RightMargin =44
@@ -483,7 +448,7 @@ Begin Form
                     Top =180
                     Width =2036
                     Height =315
-                    TabIndex =1
+                    TabIndex =3
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="txtInstallStatus"
@@ -504,43 +469,11 @@ Begin Form
                     GroupTable =1
                 End
                 Begin TextBox
-                    Enabled = NotDefault
-                    OldBorderStyle =0
-                    OverlapFlags =85
-                    TextAlign =2
-                    BackStyle =0
-                    IMESentenceMode =3
-                    Left =8160
-                    Top =180
-                    Width =2216
-                    Height =315
-                    FontSize =12
-                    TabIndex =3
-                    BorderColor =10921638
-                    ForeColor =4210752
-                    Name ="txtInstallScheduled"
-                    ControlSource ="dtmInstallScheduled"
-                    StatusBarText ="Scheduled date of installation"
-                    GroupTable =1
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =8160
-                    LayoutCachedTop =180
-                    LayoutCachedWidth =10376
-                    LayoutCachedHeight =495
-                    RowStart =1
-                    RowEnd =1
-                    ColumnStart =3
-                    ColumnEnd =3
-                    LayoutGroup =1
-                    GroupTable =1
-                End
-                Begin TextBox
                     Visible = NotDefault
                     Enabled = NotDefault
                     OverlapFlags =85
                     IMESentenceMode =3
-                    Left =12525
+                    Left =12300
                     Top =180
                     Width =135
                     Height =315
@@ -553,9 +486,9 @@ Begin Form
                     GroupTable =1
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =12525
+                    LayoutCachedLeft =12300
                     LayoutCachedTop =180
-                    LayoutCachedWidth =12660
+                    LayoutCachedWidth =12435
                     LayoutCachedHeight =495
                     RowStart =1
                     RowEnd =1
@@ -570,7 +503,6 @@ Begin Form
                     Top =180
                     Width =1613
                     Height =300
-                    TabIndex =5
                     ForeColor =4210752
                     Name ="cmdOpenInstallDetails"
                     Caption ="View Details"
@@ -602,7 +534,7 @@ Begin Form
                     Top =180
                     Width =1613
                     Height =299
-                    TabIndex =6
+                    TabIndex =1
                     ForeColor =4210752
                     Name ="cmdPrintTicket"
                     Caption ="Print for Shop"
@@ -627,12 +559,79 @@ Begin Form
                     WebImagePaddingRight =1
                     WebImagePaddingBottom =1
                 End
+                Begin TextBox
+                    Enabled = NotDefault
+                    OldBorderStyle =0
+                    OverlapFlags =85
+                    TextAlign =1
+                    BackStyle =0
+                    IMESentenceMode =3
+                    Left =8160
+                    Top =180
+                    Width =1976
+                    Height =315
+                    FontSize =12
+                    TabIndex =5
+                    LeftMargin =44
+                    TopMargin =22
+                    RightMargin =44
+                    BottomMargin =22
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="txtDeliveryDate"
+                    ControlSource ="dtmDeliveryDate"
+                    StatusBarText ="Originating sales rep"
+                    GroupTable =1
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =8160
+                    LayoutCachedTop =180
+                    LayoutCachedWidth =10136
+                    LayoutCachedHeight =495
+                    RowStart =1
+                    RowEnd =1
+                    ColumnStart =3
+                    ColumnEnd =3
+                    LayoutGroup =1
+                    GroupTable =1
+                End
+                Begin TextBox
+                    Enabled = NotDefault
+                    OldBorderStyle =0
+                    OverlapFlags =85
+                    TextAlign =1
+                    BackStyle =0
+                    IMESentenceMode =3
+                    Left =10200
+                    Top =180
+                    Width =2040
+                    Height =315
+                    FontSize =12
+                    TabIndex =6
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="txtInstallScheduled"
+                    ControlSource ="dtmInstallScheduled"
+                    StatusBarText ="Scheduled date of installation"
+                    GroupTable =1
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =10200
+                    LayoutCachedTop =180
+                    LayoutCachedWidth =12240
+                    LayoutCachedHeight =495
+                    RowStart =1
+                    RowEnd =1
+                    ColumnStart =4
+                    ColumnEnd =4
+                    LayoutGroup =1
+                    GroupTable =1
+                End
             End
         End
         Begin FormFooter
-            Height =0
+            Height =60
             Name ="secFormFooter"
-            AutoHeight =1
             AlternateBackThemeColorIndex =1
             AlternateBackShade =95.0
             BackThemeColorIndex =1

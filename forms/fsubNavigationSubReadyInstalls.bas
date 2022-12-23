@@ -18,10 +18,10 @@ Begin Form
     Width =16344
     DatasheetFontHeight =11
     ItemSuffix =121
-    Left =525
-    Top =2745
-    Right =17655
-    Bottom =10335
+    Left =-105
+    Top =-120
+    Right =19605
+    Bottom =9405
     OrderBy ="dtmInstallScheduled, dtmDateReceived, strCustomer"
     RecSrcDt = Begin
         0x3d57a9c5d9ebe540
@@ -187,7 +187,7 @@ Begin Form
                     TextAlign =2
                     Left =6480
                     Top =690
-                    Width =1616
+                    Width =1976
                     Height =360
                     FontSize =12
                     FontWeight =500
@@ -197,13 +197,13 @@ Begin Form
                     BottomMargin =22
                     BorderColor =8355711
                     ForeColor =16777215
-                    Name ="lblSalesRep"
-                    Caption ="Sales Rep"
+                    Name ="lblDeliveryDate"
+                    Caption ="Ship Date"
                     GridlineColor =10921638
                     HorizontalAnchor =1
                     LayoutCachedLeft =6480
                     LayoutCachedTop =690
-                    LayoutCachedWidth =8096
+                    LayoutCachedWidth =8456
                     LayoutCachedHeight =1050
                     ColumnStart =2
                     ColumnEnd =2
@@ -265,22 +265,22 @@ Begin Form
                 Begin Label
                     OverlapFlags =85
                     TextAlign =2
-                    Left =8160
-                    Top =690
-                    Width =2216
-                    Height =360
+                    Left =8520
+                    Top =720
+                    Width =2040
+                    Height =345
                     FontSize =12
                     FontWeight =500
                     BorderColor =8355711
                     ForeColor =16777215
                     Name ="lblInstallScheduled"
-                    Caption ="Install Scheduled"
+                    Caption ="Install Date"
                     GridlineColor =10921638
                     HorizontalAnchor =1
-                    LayoutCachedLeft =8160
-                    LayoutCachedTop =690
-                    LayoutCachedWidth =10376
-                    LayoutCachedHeight =1050
+                    LayoutCachedLeft =8520
+                    LayoutCachedTop =720
+                    LayoutCachedWidth =10560
+                    LayoutCachedHeight =1065
                     ColumnStart =3
                     ColumnEnd =3
                     ForeThemeColorIndex =-1
@@ -342,7 +342,7 @@ Begin Form
                     IMESentenceMode =3
                     Left =6480
                     Top =180
-                    Width =1616
+                    Width =1976
                     Height =315
                     FontSize =12
                     TabIndex =4
@@ -352,15 +352,15 @@ Begin Form
                     BottomMargin =22
                     BorderColor =10921638
                     ForeColor =4210752
-                    Name ="txtSalesRep"
-                    ControlSource ="strSalesRep"
+                    Name ="txtDeliveryDate"
+                    ControlSource ="dtmDeliveryDate"
                     StatusBarText ="Originating sales rep"
                     GridlineColor =10921638
                     HorizontalAnchor =1
 
                     LayoutCachedLeft =6480
                     LayoutCachedTop =180
-                    LayoutCachedWidth =8096
+                    LayoutCachedWidth =8456
                     LayoutCachedHeight =495
                     RowStart =1
                     RowEnd =1
@@ -409,9 +409,9 @@ Begin Form
                     TextAlign =2
                     BackStyle =0
                     IMESentenceMode =3
-                    Left =8160
+                    Left =8520
                     Top =180
-                    Width =2216
+                    Width =2036
                     Height =315
                     FontSize =12
                     TabIndex =5
@@ -423,9 +423,9 @@ Begin Form
                     GridlineColor =10921638
                     HorizontalAnchor =1
 
-                    LayoutCachedLeft =8160
+                    LayoutCachedLeft =8520
                     LayoutCachedTop =180
-                    LayoutCachedWidth =10376
+                    LayoutCachedWidth =10556
                     LayoutCachedHeight =495
                     RowStart =1
                     RowEnd =1
