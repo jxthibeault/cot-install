@@ -5,8 +5,9 @@
   },
   "Items": {
     "Name": "tblLabelPrints",
-    "Connect": "MS Access;PWD=Thepassword2;DATABASE=C:\\Users\\Joshua Thibeault\\OneDrive - Connected Office Technologies\\Internal Documents\\Installs Database\\InstallsDatabase_BackendGlobalConstants.accdb",
+    "Connect": "MS Access;PWD=Thepassword2;DATABASE=rel:InstallsDatabase_BackendGlobalConstants.accdb",
     "SourceTableName": "tblLabelPrints",
-    "Attributes": 1073741824
+    "Attributes": 1073741824,
+    "PrimaryKey": "[ID]"
   }
 }

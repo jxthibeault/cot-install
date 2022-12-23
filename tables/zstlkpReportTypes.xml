@@ -2,31 +2,31 @@
 <zstlkpReportTypes>
 <ID>1</ID>
 <strReportTitle>Allocated Inventory by Customer</strReportTitle>
-<strReportObjectName>rptAllocatedEquipment</strReportObjectName>
+<strObjectName>rptAllocatedEquipment</strObjectName>
 </zstlkpReportTypes>
 <zstlkpReportTypes>
 <ID>2</ID>
 <strReportTitle>Install Items Needed (Not In Stock)</strReportTitle>
-<strReportObjectName>rptPendingArrivalEquipment</strReportObjectName>
+<strObjectName>rptPendingArrivalEquipment</strObjectName>
 </zstlkpReportTypes>
 <zstlkpReportTypes>
 <ID>3</ID>
 <strReportTitle>Primary Contacts by Customer</strReportTitle>
-<strReportObjectName>rptContactsPrimary</strReportObjectName>
+<strObjectName>rptContactsPrimary</strObjectName>
 </zstlkpReportTypes>
 <zstlkpReportTypes>
 <ID>4</ID>
 <strReportTitle>IT Support Contacts by Customer</strReportTitle>
-<strReportObjectName>rptContactsITSupport</strReportObjectName>
+<strObjectName>rptContactsITSupport</strObjectName>
 </zstlkpReportTypes>
 <zstlkpReportTypes>
 <ID>5</ID>
 <strReportTitle>Upcoming Installation Schedule by Date</strReportTitle>
-<strReportObjectName>rptScheduledInstalls</strReportObjectName>
+<strObjectName>rptScheduledInstalls</strObjectName>
 </zstlkpReportTypes>
 <zstlkpReportTypes>
 <ID>6</ID>
 <strReportTitle>All Pending Installs by Date Received</strReportTitle>
-<strReportObjectName>rptAllOpenInstalls</strReportObjectName>
+<strObjectName>rptAllOpenInstalls</strObjectName>
 </zstlkpReportTypes>
 </dataroot>
