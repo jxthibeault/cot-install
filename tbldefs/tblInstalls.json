@@ -5,8 +5,9 @@
   },
   "Items": {
     "Name": "tblInstalls",
-    "Connect": ";DATABASE=C:\\Users\\Joshua Thibeault\\OneDrive - Connected Office Technologies\\Internal Documents\\Installs Database\\InstallsDatabase_Backend_sampleSnapshot.accdb",
+    "Connect": ";DATABASE=rel:InstallsDatabase_Backend_sampleSnapshot.accdb",
     "SourceTableName": "tblInstalls",
-    "Attributes": 1073741824
+    "Attributes": 1073741824,
+    "PrimaryKey": "[lngID]"
   }
 }

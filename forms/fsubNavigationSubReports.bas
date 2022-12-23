@@ -17,13 +17,13 @@ Begin Form
     DatasheetGridlinesBehavior =3
     GridX =24
     GridY =24
-    Width =7920
+    Width =12060
     DatasheetFontHeight =11
     ItemSuffix =3
     Left =810
     Top =2235
     Right =18030
-    Bottom =13965
+    Bottom =11985
     RecSrcDt = Begin
         0x61fd9ffb51ece540
     End
@@ -152,7 +152,7 @@ Begin Form
             End
         End
         Begin Section
-            Height =1320
+            Height =5160
             Name ="secFormDetail"
             AlternateBackThemeColorIndex =1
             AlternateBackShade =95.0
@@ -255,8 +255,17 @@ Option Compare Database
 Private Sub cmdGenerateReport_Click()
 
     Dim varRequestedReportObjectName As Variant
+    Dim varRequestedReportObjectType As Variant
     
-    varRequestedReportObjectName = DLookup("[strReportObjectName]", "zstlkpReportTypes", "[strReportTitle] = '" & cboReportName.Value & "'")
-    DoCmd.OpenReport varRequestedReportObjectName, acViewPreview, , , , acWindowNormal
+    varRequestedReportObjectName = DLookup("[strObjectName]", "zstlkpReportTypes", "[strReportTitle] = '" & cboReportName.Value & "'")
+    varRequestedReportObjectType = DLookup("[strObjectType]", "zstlkpReportTypes", "[strReportTitle] = '" & cboReportName.Value & "'")
+    
+    If varRequestedReportObjectType = "report" Then
+        DoCmd.OpenReport varRequestedReportObjectName, acViewPreview, , , , acWindowNormal
+    ElseIf varRequestedReportObjectType = "form" Then
+        DoCmd.OpenForm varRequestedReportObjectName, acNormal, , , , acWindowNormal
+    Else
+        MsgBox "Error: Unknown object type in referenced report.", vbOKOnly, "Error!"
+    End If
     
 End Sub

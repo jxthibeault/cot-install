@@ -11,7 +11,6 @@ Begin Form
     AllowDeletions = NotDefault
     DividingLines = NotDefault
     AllowAdditions = NotDefault
-    OrderByOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
     ScrollBars =0
@@ -22,15 +21,15 @@ Begin Form
     GridY =24
     Width =7140
     DatasheetFontHeight =11
-    ItemSuffix =19
-    Left =10710
-    Top =3780
-    Right =19215
-    Bottom =9390
+    ItemSuffix =23
+    Left =7890
+    Top =3165
+    Right =18585
+    Bottom =8910
     RecSrcDt = Begin
-        0xa8d51ba6cceee540
+        0x40d4cba4cceee540
     End
-    Caption ="Change Password"
+    Caption ="Report Settings"
     DatasheetFontName ="Calibri"
     Moveable =0
     FilterOnLoad =0
@@ -114,6 +113,23 @@ Begin Form
             GridlineThemeColorIndex =1
             GridlineShade =65.0
         End
+        Begin ComboBox
+            AddColon = NotDefault
+            BorderLineStyle =0
+            LabelX =-1800
+            FontSize =11
+            FontName ="Calibri"
+            AllowValueListEdits =1
+            InheritValueList =1
+            ThemeFontIndex =1
+            BackThemeColorIndex =1
+            BorderThemeColorIndex =1
+            BorderShade =65.0
+            ForeThemeColorIndex =2
+            ForeShade =50.0
+            GridlineThemeColorIndex =1
+            GridlineShade =65.0
+        End
         Begin UnboundObjectFrame
             SpecialEffect =2
             OldBorderStyle =1
@@ -144,7 +160,7 @@ Begin Form
                     FontWeight =500
                     ForeColor =16777215
                     Name ="lblFormTitle"
-                    Caption ="Change Password"
+                    Caption ="Report Settings"
                     FontName ="Verdana"
                     GroupTable =1
                     GridlineColor =10921638
@@ -164,66 +180,45 @@ Begin Form
         End
         Begin Section
             CanGrow = NotDefault
-            Height =2880
+            Height =2280
             Name ="secFormDetail"
             AlternateBackThemeColorIndex =1
             BackThemeColorIndex =1
             Begin
                 Begin Label
                     OverlapFlags =85
-                    Left =1260
+                    Left =1140
                     Top =420
                     Width =1920
                     Height =360
                     FontSize =12
                     BorderColor =8355711
-                    Name ="lblOldPass"
-                    Caption ="Current Password"
+                    Name ="lblEquipmentType"
+                    Caption ="Equipment Type"
                     GridlineColor =10921638
-                    LayoutCachedLeft =1260
+                    LayoutCachedLeft =1140
                     LayoutCachedTop =420
-                    LayoutCachedWidth =3180
+                    LayoutCachedWidth =3060
                     LayoutCachedHeight =780
                     ForeTint =100.0
-                End
-                Begin TextBox
-                    OverlapFlags =85
-                    IMESentenceMode =3
-                    Left =3300
-                    Top =1500
-                    Width =2580
-                    Height =315
-                    FontSize =12
-                    TabIndex =2
-                    BorderColor =10921638
-                    ForeColor =4210752
-                    Name ="txtConfirmPass"
-                    InputMask ="Password"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =3300
-                    LayoutCachedTop =1500
-                    LayoutCachedWidth =5880
-                    LayoutCachedHeight =1815
                 End
                 Begin CommandButton
                     Default = NotDefault
                     OverlapFlags =85
                     Left =1440
-                    Top =2100
+                    Top =1560
                     Width =1920
                     Height =420
-                    TabIndex =3
                     ForeColor =4210752
-                    Name ="cmdConfirm"
-                    Caption ="Confirm"
+                    Name ="cmdRun"
+                    Caption ="Run Report"
                     OnClick ="[Event Procedure]"
                     GridlineColor =10921638
 
                     LayoutCachedLeft =1440
-                    LayoutCachedTop =2100
+                    LayoutCachedTop =1560
                     LayoutCachedWidth =3360
-                    LayoutCachedHeight =2520
+                    LayoutCachedHeight =1980
                     Gradient =0
                     BackColor =-2147483607
                     BackThemeColorIndex =-1
@@ -238,87 +233,31 @@ Begin Form
                     WebImagePaddingRight =1
                     WebImagePaddingBottom =1
                 End
-                Begin TextBox
-                    OverlapFlags =85
-                    IMESentenceMode =3
-                    Left =3300
-                    Top =960
-                    Width =2580
-                    Height =315
-                    FontSize =12
-                    TabIndex =1
-                    BorderColor =10921638
-                    ForeColor =4210752
-                    Name ="txtNewPass"
-                    InputMask ="Password"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =3300
-                    LayoutCachedTop =960
-                    LayoutCachedWidth =5880
-                    LayoutCachedHeight =1275
-                End
-                Begin TextBox
-                    OverlapFlags =85
-                    IMESentenceMode =3
-                    Left =3300
-                    Top =420
-                    Width =2580
-                    Height =315
-                    FontSize =12
-                    BorderColor =10921638
-                    ForeColor =4210752
-                    Name ="txtOldPass"
-                    InputMask ="Password"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =3300
-                    LayoutCachedTop =420
-                    LayoutCachedWidth =5880
-                    LayoutCachedHeight =735
-                End
                 Begin Label
                     OverlapFlags =85
-                    Left =1260
+                    Left =1140
                     Top =960
                     Width =1920
                     Height =360
                     FontSize =12
                     BorderColor =8355711
-                    Name ="lblNewPass"
-                    Caption ="New Password"
+                    Name ="lblSortBy"
+                    Caption ="Sort By"
                     GridlineColor =10921638
-                    LayoutCachedLeft =1260
+                    LayoutCachedLeft =1140
                     LayoutCachedTop =960
-                    LayoutCachedWidth =3180
+                    LayoutCachedWidth =3060
                     LayoutCachedHeight =1320
-                    ForeTint =100.0
-                End
-                Begin Label
-                    OverlapFlags =85
-                    Left =1260
-                    Top =1500
-                    Width =1920
-                    Height =360
-                    FontSize =12
-                    BorderColor =8355711
-                    Name ="lblConfirmPass"
-                    Caption ="Confirm Password"
-                    GridlineColor =10921638
-                    LayoutCachedLeft =1260
-                    LayoutCachedTop =1500
-                    LayoutCachedWidth =3180
-                    LayoutCachedHeight =1860
                     ForeTint =100.0
                 End
                 Begin CommandButton
                     Cancel = NotDefault
                     OverlapFlags =85
                     Left =3840
-                    Top =2100
+                    Top =1560
                     Width =1920
                     Height =420
-                    TabIndex =4
+                    TabIndex =1
                     ForeColor =4210752
                     Name ="cmdCancel"
                     Caption ="Cancel"
@@ -326,9 +265,9 @@ Begin Form
                     GridlineColor =10921638
 
                     LayoutCachedLeft =3840
-                    LayoutCachedTop =2100
+                    LayoutCachedTop =1560
                     LayoutCachedWidth =5760
-                    LayoutCachedHeight =2520
+                    LayoutCachedHeight =1980
                     Gradient =0
                     BackColor =-2147483607
                     BackThemeColorIndex =-1
@@ -342,6 +281,63 @@ Begin Form
                     WebImagePaddingTop =2
                     WebImagePaddingRight =1
                     WebImagePaddingBottom =1
+                End
+                Begin ComboBox
+                    LimitToList = NotDefault
+                    RowSourceTypeInt =1
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =3180
+                    Top =420
+                    Width =2820
+                    Height =330
+                    FontSize =12
+                    TabIndex =2
+                    BorderColor =10921638
+                    Name ="cboEquipmentType"
+                    RowSourceType ="Value List"
+                    RowSource ="\"All Equipment\";\"Customer Equipment\";\"Accessory\";\"Startup Supplies\";\"Cu"
+                        "stomer Spare Supplies\";\"Technician Equipment\""
+                    DefaultValue ="\"All Equipment\""
+                    GridlineColor =10921638
+                    AllowValueListEdits =0
+
+                    ShowOnlyRowSourceValues =255
+                    LayoutCachedLeft =3180
+                    LayoutCachedTop =420
+                    LayoutCachedWidth =6000
+                    LayoutCachedHeight =750
+                    ForeThemeColorIndex =0
+                    ForeTint =75.0
+                    ForeShade =100.0
+                End
+                Begin ComboBox
+                    LimitToList = NotDefault
+                    RowSourceTypeInt =1
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =3180
+                    Top =960
+                    Width =2820
+                    Height =330
+                    FontSize =12
+                    TabIndex =3
+                    BorderColor =10921638
+                    Name ="cboSortBy"
+                    RowSourceType ="Value List"
+                    RowSource ="\"Equipment Description\";\"Customer\";\"Equipment Type\""
+                    DefaultValue ="\"Equipment Description\""
+                    GridlineColor =10921638
+                    AllowValueListEdits =0
+
+                    ShowOnlyRowSourceValues =255
+                    LayoutCachedLeft =3180
+                    LayoutCachedTop =960
+                    LayoutCachedWidth =6000
+                    LayoutCachedHeight =1290
+                    ForeThemeColorIndex =0
+                    ForeTint =75.0
+                    ForeShade =100.0
                 End
             End
         End
@@ -363,38 +359,37 @@ Attribute VB_Exposed = False
 Option Compare Database
 
 Private Sub cmdCancel_Click()
-    DoCmd.Close acForm, "fdlgChangePassword"
+    DoCmd.Close acForm, "fdlgReportSettingsAllocatedEquipment"
     Forms(frmNavigation).SetFocus
 End Sub
 
-Private Sub cmdConfirm_Click()
+Private Sub cmdRun_Click()
     
-    Dim strCorrectCurrentPassword As String
-    Dim strCurrentUser As String
-    Dim changeResult As Boolean
+    Dim strEquipmentType As String
+    Dim strRequestedSort As String
     
-    strCurrentUser = Form_fdlgUserControl.GetCurrentUser()
-    strCorrectCurrentPassword = Form_fdlgUserControl.GetUserPassword(strCurrentUser)
+    Dim strFilter As String
+    Dim strSort As String
     
+    strEquipmentType = cboEquipmentType.Value
+    strRequestedSort = cboSortBy.Value
+    strFilter = ""
+    strSort = ""
     
-    If IsNull(txtNewPass.Value) Or txtNewPass.Value = "" _
-        Or IsNull(txtConfirmPass.Value) Or txtConfirmPass.Value = "" _
-        Or IsNull(txtOldPass.Value) Or txtOldPass.Value = "" Then
-            MsgBox "Please fill in all information to proceed.", vbOKOnly, "Information Missing"
-    ElseIf Not strCorrectCurrentPassword = txtOldPass.Value Then
-        MsgBox "Current password incorrect; please check and try again.", vbOKOnly, "Change Password Failed"
-        txtOldPass.Value = ""
-        txtOldPass.SetFocus
-    ElseIf Not txtNewPass.Value = txtConfirmPass.Value Then
-        MsgBox "New password confirmation does not match. Please try again.", vbOKOnly, "Change Password Failed"
-        txtNewPass.Value = ""
-        txtConfirmPass.Value = ""
-        txtNewPass.SetFocus
-    Else
-        changeResult = Form_fdlgUserControl.SetCurrentUserPassword(txtNewPass.Value)
-        MsgBox "Password changed successfully.", vbOKOnly, "Password Changed"
-        DoCmd.Close acForm, "fdlgChangePassword"
-        Forms(frmNavigation).SetFocus
+    If Not strEquipmentType = "All Equipment" Then
+        strFilter = "[strEquipmentType] = '" & strEquipmentType & "'"
+        strEquipmentType = "All Inventory"
     End If
     
+    If strRequestedSort = "Equipment Description" Then
+        strSort = "strDescription, strCustomer"
+    ElseIf strRequestedSort = "Customer" Then
+        strSort = "strCustomer, strDescription"
+    ElseIf strRequestedSort = "Equipment Type" Then
+        strSort = "strEquipmentType, strDescription, strCustomer"
+    End If
+    
+    DoCmd.OpenReport "rptAllocatedEquipment", acViewPreview, , strFilter, acWindowNormal, strSort
+    DoCmd.Close acForm, "fdlgReportSettingsAllocatedEquipment"
+        
 End Sub

@@ -1,2 +1,5 @@
-﻿CREATE TABLE [tblLabelPrints] 
+﻿CREATE TABLE [tblLabelPrints] (
+  [ID] AUTOINCREMENT CONSTRAINT [PrimaryKey] PRIMARY KEY UNIQUE NOT NULL,
+  [strLabelName] VARCHAR (255),
+  [attLabelFile] VARCHAR 
 )

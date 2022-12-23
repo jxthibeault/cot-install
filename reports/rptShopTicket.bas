@@ -23,6 +23,7 @@ Begin Report
     End
     RecordSource ="tblInstalls"
     Caption ="Print Install Ticket"
+    OnOpen ="[Event Procedure]"
     DatasheetFontName ="Calibri"
     FilterOnLoad =0
     FitToPage =1
@@ -139,7 +140,7 @@ Begin Report
             GridlineShade =65.0
         End
         Begin PageHeader
-            Height =840
+            Height =855
             BackColor =1315470
             Name ="secPageHeader"
             AlternateBackThemeColorIndex =1
@@ -178,10 +179,10 @@ Begin Report
                     IMESentenceMode =3
                     Left =1860
                     Top =180
-                    Width =8820
+                    Width =8040
                     Height =480
                     ColumnWidth =4290
-                    FontSize =18
+                    FontSize =16
                     BorderColor =10921638
                     ForeColor =16777215
                     Name ="txtCustomerHeader"
@@ -191,96 +192,85 @@ Begin Report
 
                     LayoutCachedLeft =1860
                     LayoutCachedTop =180
-                    LayoutCachedWidth =10680
+                    LayoutCachedWidth =9900
                     LayoutCachedHeight =660
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
                 End
                 Begin TextBox
                     Enabled = NotDefault
+                    Locked = NotDefault
                     OldBorderStyle =0
-                    TextAlign =1
+                    TextAlign =3
                     BackStyle =0
                     IMESentenceMode =3
-                    Left =9540
-                    Top =180
-                    Width =1680
+                    Left =6060
+                    Top =60
+                    Width =5280
                     Height =315
                     TabIndex =1
                     BorderColor =10921638
                     ForeColor =16777215
-                    Name ="txtSalesRep"
-                    ControlSource ="strSalesRep"
-                    StatusBarText ="Originating sales rep"
+                    Name ="txtDateStamp"
+                    ControlSource ="=Date()"
+                    Format ="Medium Date"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =9540
-                    LayoutCachedTop =180
-                    LayoutCachedWidth =11220
-                    LayoutCachedHeight =495
-                    ForeThemeColorIndex =-1
-                    ForeTint =100.0
-                End
-                Begin Label
-                    Left =8040
-                    Top =180
-                    Width =1110
-                    Height =315
-                    FontWeight =500
-                    BorderColor =8355711
-                    ForeColor =16777215
-                    Name ="lblSalesRep"
-                    Caption ="Sales Rep:"
-                    GridlineColor =10921638
-                    LayoutCachedLeft =8040
-                    LayoutCachedTop =180
-                    LayoutCachedWidth =9150
-                    LayoutCachedHeight =495
-                    ForeThemeColorIndex =-1
-                    ForeTint =100.0
-                End
-                Begin Label
-                    Left =8040
-                    Top =420
-                    Width =1470
-                    Height =315
-                    FontWeight =500
-                    BorderColor =8355711
-                    ForeColor =16777215
-                    Name ="lblDateReceived"
-                    Caption ="Date Received:"
-                    GridlineColor =10921638
-                    LayoutCachedLeft =8040
-                    LayoutCachedTop =420
-                    LayoutCachedWidth =9510
-                    LayoutCachedHeight =735
+                    LayoutCachedLeft =6060
+                    LayoutCachedTop =60
+                    LayoutCachedWidth =11340
+                    LayoutCachedHeight =375
+                    ColumnStart =1
+                    ColumnEnd =1
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
                 End
                 Begin TextBox
                     Enabled = NotDefault
+                    Locked = NotDefault
                     OldBorderStyle =0
-                    TextAlign =1
+                    TextAlign =3
                     BackStyle =0
                     IMESentenceMode =3
-                    Left =9540
-                    Top =420
-                    Width =1680
-                    Height =315
+                    Left =6060
+                    Top =300
+                    Width =5280
+                    Height =360
                     TabIndex =2
                     BorderColor =10921638
                     ForeColor =16777215
-                    Name ="txtDateReceived"
-                    ControlSource ="dtmDateReceived"
-                    Format ="Short Date"
-                    StatusBarText ="Date installation notice received"
+                    Name ="txtTimeStamp"
+                    ControlSource ="=Time()"
+                    Format ="Long Time"
                     GridlineColor =10921638
-                    ShowDatePicker =1
 
-                    LayoutCachedLeft =9540
-                    LayoutCachedTop =420
-                    LayoutCachedWidth =11220
-                    LayoutCachedHeight =735
+                    LayoutCachedLeft =6060
+                    LayoutCachedTop =300
+                    LayoutCachedWidth =11340
+                    LayoutCachedHeight =660
+                    RowStart =1
+                    RowEnd =1
+                    ColumnStart =1
+                    ColumnEnd =1
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
+                End
+                Begin Label
+                    TextAlign =3
+                    Left =6000
+                    Top =540
+                    Width =5325
+                    Height =315
+                    BorderColor =8355711
+                    ForeColor =16777215
+                    Name ="lblLoggedInAs"
+                    Caption ="Authentication Failed"
+                    GridlineColor =10921638
+                    HorizontalAnchor =1
+                    LayoutCachedLeft =6000
+                    LayoutCachedTop =540
+                    LayoutCachedWidth =11325
+                    LayoutCachedHeight =855
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
                 End
@@ -898,7 +888,6 @@ Begin Report
                 Begin TextBox
                     Enabled = NotDefault
                     OldBorderStyle =0
-                    OverlapFlags =4
                     TextAlign =1
                     BackStyle =0
                     IMESentenceMode =3
@@ -920,7 +909,6 @@ Begin Report
                     LayoutCachedHeight =435
                 End
                 Begin Label
-                    OverlapFlags =4
                     Left =5640
                     Top =120
                     Width =1905
@@ -3546,3 +3534,11 @@ Attribute VB_Creatable = True
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Compare Database
+
+Private Sub Report_Open(Cancel As Integer)
+    Dim strCurrentUser As String
+    
+    ' Look up current user's name from instance variables and set logged-in-as label
+    strCurrentUser = Form_fdlgUserControl.GetCurrentUser()
+    lblLoggedInAs.Caption = strCurrentUser
+End Sub

@@ -1,7 +1,7 @@
 ﻿Operation =1
 Option =0
 Where ="(((tblInstalls.strInstallStatus)=\"Preparation\" Or (tblInstalls.strInstallStatu"
-    "s)=\"Ready for Install\") AND (Not (tblInstalls.dtmInstallScheduled)=\"\"))"
+    "s)=\"Ready for Install\") AND ((tblInstalls.dtmInstallScheduled)<>\"\"))"
 Begin InputTables
     Name ="tblInstalls"
 End
@@ -13,6 +13,7 @@ Begin OutputColumns
     Expression ="tblInstalls.dtmInstallScheduled"
     Expression ="tblInstalls.dtmDepartureTime"
     Expression ="tblInstalls.strDepartureFrom"
+    Expression ="tblInstalls.dtmDeliveryDate"
 End
 Begin OrderBy
     Expression ="tblInstalls.dtmInstallScheduled"
@@ -56,6 +57,10 @@ Begin
         dbText "Name" ="tblInstalls.strCustomer"
         dbLong "AggregateType" ="-1"
     End
+    Begin
+        dbText "Name" ="tblInstalls.dtmDeliveryDate"
+        dbLong "AggregateType" ="-1"
+    End
 End
 Begin
     State =0
@@ -65,8 +70,8 @@ Begin
     Bottom =833
     Left =-1
     Top =-1
-    Right =964
-    Bottom =588
+    Right =956
+    Bottom =571
     Left =0
     Top =288
     ColumnsShown =539

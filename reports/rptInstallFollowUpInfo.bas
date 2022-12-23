@@ -23,6 +23,7 @@ Begin Report
     End
     RecordSource ="tblInstalls"
     Caption ="Follow-Up Info Summary"
+    OnOpen ="[Event Procedure]"
     DatasheetFontName ="Calibri"
     FilterOnLoad =0
     FitToPage =1
@@ -139,7 +140,7 @@ Begin Report
             GridlineShade =65.0
         End
         Begin PageHeader
-            Height =840
+            Height =960
             BackColor =1315470
             Name ="secPageHeader"
             AlternateBackThemeColorIndex =1
@@ -149,19 +150,19 @@ Begin Report
                     TextAlign =1
                     Left =60
                     Top =180
-                    Width =3420
+                    Width =3480
                     Height =480
                     FontSize =18
                     FontWeight =600
                     ForeColor =16777215
                     Name ="lblInstallFor"
-                    Caption ="Install Follow-up For: "
+                    Caption ="Post-Install Summary "
                     FontName ="Calibri Light"
                     GroupTable =1
                     GridlineColor =10921638
                     LayoutCachedLeft =60
                     LayoutCachedTop =180
-                    LayoutCachedWidth =3480
+                    LayoutCachedWidth =3540
                     LayoutCachedHeight =660
                     LayoutGroup =1
                     ThemeFontIndex =0
@@ -173,25 +174,80 @@ Begin Report
                 End
                 Begin TextBox
                     Enabled = NotDefault
+                    Locked = NotDefault
                     OldBorderStyle =0
+                    OverlapFlags =4
+                    TextAlign =3
                     BackStyle =0
                     IMESentenceMode =3
-                    Left =3480
-                    Top =180
-                    Width =7920
-                    Height =480
-                    FontSize =18
+                    Left =5880
+                    Top =120
+                    Width =5280
+                    Height =315
                     BorderColor =10921638
                     ForeColor =16777215
-                    Name ="txtCustomerHeader"
-                    ControlSource ="strCustomer"
-                    StatusBarText ="Customer name as it appears on legal documents"
+                    Name ="txtDateStamp"
+                    ControlSource ="=Date()"
+                    Format ="Medium Date"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =3480
-                    LayoutCachedTop =180
-                    LayoutCachedWidth =11400
-                    LayoutCachedHeight =660
+                    LayoutCachedLeft =5880
+                    LayoutCachedTop =120
+                    LayoutCachedWidth =11160
+                    LayoutCachedHeight =435
+                    ColumnStart =1
+                    ColumnEnd =1
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
+                End
+                Begin TextBox
+                    Enabled = NotDefault
+                    Locked = NotDefault
+                    OldBorderStyle =0
+                    OverlapFlags =4
+                    TextAlign =3
+                    BackStyle =0
+                    IMESentenceMode =3
+                    Left =5880
+                    Top =360
+                    Width =5280
+                    Height =360
+                    TabIndex =1
+                    BorderColor =10921638
+                    ForeColor =16777215
+                    Name ="txtTimeStamp"
+                    ControlSource ="=Time()"
+                    Format ="Long Time"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =5880
+                    LayoutCachedTop =360
+                    LayoutCachedWidth =11160
+                    LayoutCachedHeight =720
+                    RowStart =1
+                    RowEnd =1
+                    ColumnStart =1
+                    ColumnEnd =1
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
+                End
+                Begin Label
+                    OverlapFlags =4
+                    TextAlign =3
+                    Left =5820
+                    Top =600
+                    Width =5325
+                    Height =315
+                    BorderColor =8355711
+                    ForeColor =16777215
+                    Name ="lblLoggedInAs"
+                    Caption ="Authentication Failed"
+                    GridlineColor =10921638
+                    HorizontalAnchor =1
+                    LayoutCachedLeft =5820
+                    LayoutCachedTop =600
+                    LayoutCachedWidth =11145
+                    LayoutCachedHeight =915
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
                 End
@@ -3286,3 +3342,11 @@ Attribute VB_Creatable = True
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Compare Database
+
+Private Sub Report_Open(Cancel As Integer)
+    Dim strCurrentUser As String
+    
+    ' Look up current user's name from instance variables and set logged-in-as label
+    strCurrentUser = Form_fdlgUserControl.GetCurrentUser()
+    lblLoggedInAs.Caption = strCurrentUser
+End Sub

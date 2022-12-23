@@ -16,14 +16,15 @@ Begin Report
     GridY =24
     Width =11520
     DatasheetFontHeight =11
-    ItemSuffix =100
-    Left =5040
+    ItemSuffix =106
+    Left =5565
     Top =2790
     RecSrcDt = Begin
         0xe5f8c920ddebe540
     End
     RecordSource ="qryScheduledInstalls"
     Caption ="Print Report"
+    OnOpen ="[Event Procedure]"
     DatasheetFontName ="Calibri"
     FilterOnLoad =0
     FitToPage =1
@@ -174,69 +175,6 @@ Begin Report
             AlternateBackThemeColorIndex =1
             AlternateBackShade =95.0
             Begin
-                Begin TextBox
-                    Enabled = NotDefault
-                    Locked = NotDefault
-                    OldBorderStyle =0
-                    TextAlign =3
-                    BackStyle =0
-                    IMESentenceMode =3
-                    Left =5865
-                    Top =60
-                    Width =5280
-                    Height =315
-                    BorderColor =10921638
-                    ForeColor =16777215
-                    Name ="txtDatestamp"
-                    ControlSource ="=Date()"
-                    Format ="Medium Date"
-                    GroupTable =3
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =5865
-                    LayoutCachedTop =60
-                    LayoutCachedWidth =11145
-                    LayoutCachedHeight =375
-                    ColumnStart =1
-                    ColumnEnd =1
-                    LayoutGroup =1
-                    ForeThemeColorIndex =-1
-                    ForeTint =100.0
-                    GroupTable =3
-                End
-                Begin TextBox
-                    Enabled = NotDefault
-                    Locked = NotDefault
-                    OldBorderStyle =0
-                    TextAlign =3
-                    BackStyle =0
-                    IMESentenceMode =3
-                    Left =5865
-                    Top =435
-                    Width =5280
-                    Height =360
-                    TabIndex =1
-                    BorderColor =10921638
-                    ForeColor =16777215
-                    Name ="txtTimestamp"
-                    ControlSource ="=Time()"
-                    Format ="Long Time"
-                    GroupTable =3
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =5865
-                    LayoutCachedTop =435
-                    LayoutCachedWidth =11145
-                    LayoutCachedHeight =795
-                    RowStart =1
-                    RowEnd =1
-                    ColumnStart =1
-                    ColumnEnd =1
-                    LayoutGroup =1
-                    ForeThemeColorIndex =-1
-                    ForeTint =100.0
-                    GroupTable =3
-                End
                 Begin Label
                     TextAlign =1
                     Left =285
@@ -247,7 +185,7 @@ Begin Report
                     FontWeight =600
                     ForeColor =16777215
                     Name ="lblReportHeader"
-                    Caption ="Upcoming Installation Schedule\015\012by Date"
+                    Caption ="Scheduled Installations"
                     FontName ="Calibri Light"
                     GroupTable =3
                     GridlineColor =10921638
@@ -263,6 +201,82 @@ Begin Report
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
                     GroupTable =3
+                End
+                Begin TextBox
+                    Enabled = NotDefault
+                    Locked = NotDefault
+                    OldBorderStyle =0
+                    TextAlign =3
+                    BackStyle =0
+                    IMESentenceMode =3
+                    Left =5880
+                    Top =60
+                    Width =5280
+                    Height =315
+                    BorderColor =10921638
+                    ForeColor =16777215
+                    Name ="txtDateStamp"
+                    ControlSource ="=Date()"
+                    Format ="Medium Date"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =5880
+                    LayoutCachedTop =60
+                    LayoutCachedWidth =11160
+                    LayoutCachedHeight =375
+                    ColumnStart =1
+                    ColumnEnd =1
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
+                End
+                Begin TextBox
+                    Enabled = NotDefault
+                    Locked = NotDefault
+                    OldBorderStyle =0
+                    TextAlign =3
+                    BackStyle =0
+                    IMESentenceMode =3
+                    Left =5880
+                    Top =300
+                    Width =5280
+                    Height =360
+                    TabIndex =1
+                    BorderColor =10921638
+                    ForeColor =16777215
+                    Name ="txtTimeStamp"
+                    ControlSource ="=Time()"
+                    Format ="Long Time"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =5880
+                    LayoutCachedTop =300
+                    LayoutCachedWidth =11160
+                    LayoutCachedHeight =660
+                    RowStart =1
+                    RowEnd =1
+                    ColumnStart =1
+                    ColumnEnd =1
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
+                End
+                Begin Label
+                    TextAlign =3
+                    Left =5820
+                    Top =540
+                    Width =5325
+                    Height =315
+                    BorderColor =8355711
+                    ForeColor =16777215
+                    Name ="lblLoggedInAs"
+                    Caption ="Authentication Failed"
+                    GridlineColor =10921638
+                    HorizontalAnchor =1
+                    LayoutCachedLeft =5820
+                    LayoutCachedTop =540
+                    LayoutCachedWidth =11145
+                    LayoutCachedHeight =855
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
                 End
             End
         End
@@ -294,9 +308,9 @@ Begin Report
                 End
                 Begin Label
                     TextAlign =2
-                    Left =3420
+                    Left =3600
                     Top =60
-                    Width =1380
+                    Width =1980
                     Height =300
                     FontSize =10
                     FontWeight =500
@@ -304,64 +318,46 @@ Begin Report
                     Name ="lblCity"
                     Caption ="City"
                     GridlineColor =10921638
-                    LayoutCachedLeft =3420
+                    LayoutCachedLeft =3600
                     LayoutCachedTop =60
-                    LayoutCachedWidth =4800
+                    LayoutCachedWidth =5580
                     LayoutCachedHeight =360
                     ForeTint =100.0
                 End
                 Begin Label
                     TextAlign =2
-                    Left =5340
+                    Left =8400
                     Top =60
-                    Width =1200
-                    Height =300
+                    Width =2040
+                    Height =285
                     FontSize =10
                     FontWeight =500
                     BorderColor =8355711
                     Name ="lblInstallTime"
-                    Caption ="Install Time"
+                    Caption ="Install Scheduled"
                     GridlineColor =10921638
-                    LayoutCachedLeft =5340
+                    LayoutCachedLeft =8400
                     LayoutCachedTop =60
-                    LayoutCachedWidth =6540
-                    LayoutCachedHeight =360
-                    ForeTint =100.0
-                End
-                Begin Label
-                    TextAlign =1
-                    Left =6900
-                    Top =60
-                    Width =1200
-                    Height =300
-                    FontSize =10
-                    FontWeight =500
-                    BorderColor =8355711
-                    Name ="lblEnrouteBy"
-                    Caption ="Enroute by"
-                    GridlineColor =10921638
-                    LayoutCachedLeft =6900
-                    LayoutCachedTop =60
-                    LayoutCachedWidth =8100
-                    LayoutCachedHeight =360
+                    LayoutCachedWidth =10440
+                    LayoutCachedHeight =345
                     ForeTint =100.0
                 End
                 Begin Label
                     TextAlign =2
-                    Left =7860
+                    Left =5940
                     Top =60
-                    Width =3480
-                    Height =300
+                    Width =2160
+                    Height =285
                     FontSize =10
                     FontWeight =500
                     BorderColor =8355711
-                    Name ="lblOrigin"
-                    Caption ="Origin"
+                    Name ="lblDeliveryScheduled"
+                    Caption ="Delivery Scheduled"
                     GridlineColor =10921638
-                    LayoutCachedLeft =7860
+                    LayoutCachedLeft =5940
                     LayoutCachedTop =60
-                    LayoutCachedWidth =11340
-                    LayoutCachedHeight =360
+                    LayoutCachedWidth =8100
+                    LayoutCachedHeight =345
                     ForeTint =100.0
                 End
             End
@@ -403,7 +399,7 @@ Begin Report
                     OldBorderStyle =0
                     BackStyle =0
                     IMESentenceMode =3
-                    Left =3180
+                    Left =3600
                     Top =60
                     Width =1620
                     Height =315
@@ -416,30 +412,7 @@ Begin Report
                     StatusBarText ="Install address city"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =3180
-                    LayoutCachedTop =60
-                    LayoutCachedWidth =4800
-                    LayoutCachedHeight =375
-                End
-                Begin TextBox
-                    Enabled = NotDefault
-                    OldBorderStyle =0
-                    BackStyle =0
-                    IMESentenceMode =3
-                    Left =4560
-                    Top =60
-                    Width =660
-                    Height =315
-                    FontSize =10
-                    TabIndex =5
-                    BorderColor =10921638
-                    ForeColor =4210752
-                    Name ="txtAddressState"
-                    ControlSource ="strAddressState"
-                    StatusBarText ="Install address state"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =4560
+                    LayoutCachedLeft =3600
                     LayoutCachedTop =60
                     LayoutCachedWidth =5220
                     LayoutCachedHeight =375
@@ -451,7 +424,31 @@ Begin Report
                     IMESentenceMode =3
                     Left =4980
                     Top =60
-                    Width =1920
+                    Width =660
+                    Height =315
+                    FontSize =10
+                    TabIndex =3
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="txtAddressState"
+                    ControlSource ="strAddressState"
+                    StatusBarText ="Install address state"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =4980
+                    LayoutCachedTop =60
+                    LayoutCachedWidth =5640
+                    LayoutCachedHeight =375
+                End
+                Begin TextBox
+                    Enabled = NotDefault
+                    OldBorderStyle =0
+                    TextAlign =2
+                    BackStyle =0
+                    IMESentenceMode =3
+                    Left =8400
+                    Top =60
+                    Width =2040
                     Height =315
                     FontSize =10
                     TabIndex =2
@@ -462,55 +459,33 @@ Begin Report
                     StatusBarText ="Scheduled date of installation"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =4980
+                    LayoutCachedLeft =8400
                     LayoutCachedTop =60
-                    LayoutCachedWidth =6900
+                    LayoutCachedWidth =10440
                     LayoutCachedHeight =375
                 End
                 Begin TextBox
                     Enabled = NotDefault
                     OldBorderStyle =0
+                    TextAlign =2
                     BackStyle =0
                     IMESentenceMode =3
-                    Left =6900
+                    Left =5940
                     Top =60
-                    Width =900
-                    Height =315
-                    FontSize =10
-                    TabIndex =3
-                    BorderColor =10921638
-                    ForeColor =4210752
-                    Name ="txtDepartureTime"
-                    ControlSource ="dtmDepartureTime"
-                    StatusBarText ="Recommended departure time enroute to install"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =6900
-                    LayoutCachedTop =60
-                    LayoutCachedWidth =7800
-                    LayoutCachedHeight =375
-                End
-                Begin TextBox
-                    Enabled = NotDefault
-                    OldBorderStyle =0
-                    BackStyle =0
-                    IMESentenceMode =3
-                    Left =7800
-                    Top =60
-                    Width =3600
+                    Width =2160
                     Height =315
                     FontSize =10
                     TabIndex =4
                     BorderColor =10921638
                     ForeColor =4210752
-                    Name ="txtDepartureFrom"
-                    ControlSource ="strDepartureFrom"
-                    StatusBarText ="Location of departure for install"
+                    Name ="txtDeliveryScheduled"
+                    ControlSource ="dtmDeliveryDate"
+                    StatusBarText ="Scheduled date of delivery"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =7800
+                    LayoutCachedLeft =5940
                     LayoutCachedTop =60
-                    LayoutCachedWidth =11400
+                    LayoutCachedWidth =8100
                     LayoutCachedHeight =375
                 End
             End
@@ -3126,3 +3101,20 @@ Begin Report
         End
     End
 End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database
+
+Private Sub Report_Open(Cancel As Integer)
+    Me.OrderBy = Me.OpenArgs
+    Me.OrderByOn = True
+
+    Dim strCurrentUser As String
+    
+    ' Look up current user's name from instance variables and set logged-in-as label
+    strCurrentUser = Form_fdlgUserControl.GetCurrentUser()
+    lblLoggedInAs.Caption = strCurrentUser
+End Sub

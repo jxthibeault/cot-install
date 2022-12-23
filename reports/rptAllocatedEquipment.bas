@@ -30,6 +30,7 @@ Begin Report
         "n\" Or (tblInstalls.strInstallStatus)=\"Ready for Install\" Or (tblInstalls.strI"
         "nstallStatus)=\"Ready for Install\")); "
     Caption ="Print Report"
+    OnOpen ="[Event Procedure]"
     DatasheetFontName ="Calibri"
     FilterOnLoad =0
     FitToPage =1
@@ -200,7 +201,6 @@ Begin Report
                     Enabled = NotDefault
                     Locked = NotDefault
                     OldBorderStyle =0
-                    OverlapFlags =4
                     TextAlign =3
                     BackStyle =0
                     IMESentenceMode =3
@@ -237,7 +237,7 @@ Begin Report
                     FontWeight =600
                     ForeColor =16777215
                     Name ="lblReportTitle"
-                    Caption ="All Inventory Allocated for Pending Installs by Customer"
+                    Caption ="Inventory Allocated for Pending Installs"
                     FontName ="Calibri Light"
                     GridlineColor =10921638
                     LayoutCachedLeft =285
@@ -248,6 +248,25 @@ Begin Report
                     ThemeFontIndex =0
                     BorderThemeColorIndex =2
                     BorderTint =100.0
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
+                End
+                Begin Label
+                    TextAlign =3
+                    Left =5820
+                    Top =540
+                    Width =5325
+                    Height =315
+                    BorderColor =8355711
+                    ForeColor =16777215
+                    Name ="lblLoggedInAs"
+                    Caption ="Authentication Failed"
+                    GridlineColor =10921638
+                    HorizontalAnchor =1
+                    LayoutCachedLeft =5820
+                    LayoutCachedTop =540
+                    LayoutCachedWidth =11145
+                    LayoutCachedHeight =855
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
                 End
@@ -3056,3 +3075,14 @@ Attribute VB_Creatable = True
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Compare Database
+
+Private Sub Report_Open(Cancel As Integer)
+    Me.OrderBy = Me.OpenArgs
+    Me.OrderByOn = True
+    
+    Dim strCurrentUser As String
+    
+    ' Look up current user's name from instance variables and set logged-in-as label
+    strCurrentUser = Form_fdlgUserControl.GetCurrentUser()
+    lblLoggedInAs.Caption = strCurrentUser
+End Sub
