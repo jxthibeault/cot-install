@@ -4,10 +4,10 @@
     "Description": "Linked Table"
   },
   "Items": {
-    "Name": "tblInstalls",
+    "Name": "tblUsers4",
     "Connect": ";DATABASE=rel:Backend\\IDBE01.accdb",
-    "SourceTableName": "tblInstalls",
+    "SourceTableName": "tblUsers",
     "Attributes": 1073741824,
-    "PrimaryKey": "[lngID]"
+    "PrimaryKey": "[ID]"
   }
 }

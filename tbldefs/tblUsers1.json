@@ -4,8 +4,8 @@
     "Description": "Linked Table"
   },
   "Items": {
-    "Name": "tblUsers",
-    "Connect": ";DATABASE=rel:Backend\\IDBE01.accdb",
+    "Name": "tblUsers1",
+    "Connect": "MS Access;PWD=Thepassword2;DATABASE=rel:Backend\\IDBE01.accdb",
     "SourceTableName": "tblUsers",
     "Attributes": 1073741824,
     "PrimaryKey": "[ID]"

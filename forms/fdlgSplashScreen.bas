@@ -24,10 +24,10 @@ Begin Form
     Width =8100
     DatasheetFontHeight =11
     ItemSuffix =15
-    Left =7815
-    Top =3540
-    Right =16995
-    Bottom =10320
+    Left =10350
+    Top =3735
+    Right =18450
+    Bottom =7980
     TimerInterval =900
     RecSrcDt = Begin
         0x7c26ac2350ede540
@@ -2757,8 +2757,21 @@ Option Compare Database
 
 Private Sub Form_Load()
 
+    Dim strBEPath As String
+    Dim strIconPath As String
+    
+    strBEDataPath = CurrentProject.Path & "\Backend\IDBE01.accdb"
+    strIconPath = CurrentProject.Path & "\Backend\AppIcon.ico"
+    
+    CurrentDb.Properties("AppIcon").Value = strIconPath
     DoCmd.ShowToolbar "Ribbon", acToolbarNo
-
+    
+    Application.RefreshTitleBar
+    
+    DoCmd.TransferDatabase acLink, "Microsoft Access", strBEDataPath, acTable, "tblInstallEquipment", "tblInstallEquipment"
+    DoCmd.TransferDatabase acLink, "Microsoft Access", strBEDataPath, acTable, "tblInstalls", "tblInstalls"
+    DoCmd.TransferDatabase acLink, "Microsoft Access", strBEDataPath, acTable, "tblUsers", "tblUsers"
+    
 End Sub
 
 Private Sub Form_Timer()

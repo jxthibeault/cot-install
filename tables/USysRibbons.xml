@@ -1,6 +1,6 @@
 ﻿<dataroot xmlns:od="urn:schemas-microsoft-com:officedata">
 <USysRibbons>
-<RibbonName>HiddenRbn</RibbonName>
+<RibbonName>HiddenRbn2</RibbonName>
 <RibbonXml>&amp;lt;CustomUI xmlns=&amp;quot;http://schemas.microsoft.com/office/2006/01/CustomUI&amp;quot;&amp;gt; &amp;lt;ribbon startFromScratch=&amp;quot;true&amp;quot;/&amp;gt;&amp;lt;/CustomUI&amp;gt;</RibbonXml>
 </USysRibbons>
 </dataroot>

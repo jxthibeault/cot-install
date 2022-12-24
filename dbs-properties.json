@@ -37,11 +37,11 @@
       "Type": 4
     },
     "AppIcon": {
-      "Value": "C:\\Users\\Connected Office\\Downloads\\COT Logo1.ico",
+      "Value": "rel:Backend\\AppIcon.ico",
       "Type": 10
     },
     "AppTitle": {
-      "Value": "Install Dashboard",
+      "Value": "Portland",
       "Type": 10
     },
     "Auto Compact": {
@@ -69,7 +69,7 @@
       "Type": 4
     },
     "CustomRibbonID": {
-      "Value": "HiddenRbn",
+      "Value": "HiddenRbn2",
       "Type": 10
     },
     "DesignMasterID": {
@@ -201,7 +201,7 @@
       "Type": 4
     },
     "UseAppIconForFrmRpt": {
-      "Value": false,
+      "Value": true,
       "Type": 1
     },
     "UseMDIMode": {

@@ -4,8 +4,8 @@
     "Description": "Linked Table"
   },
   "Items": {
-    "Name": "tblInstalls",
-    "Connect": ";DATABASE=rel:Backend\\IDBE01.accdb",
+    "Name": "tblInstalls1",
+    "Connect": "MS Access;PWD=Thepassword2;DATABASE=rel:Backend\\IDBE01.accdb",
     "SourceTableName": "tblInstalls",
     "Attributes": 1073741824,
     "PrimaryKey": "[lngID]"

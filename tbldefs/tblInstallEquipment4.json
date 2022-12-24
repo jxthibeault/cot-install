@@ -4,9 +4,9 @@
     "Description": "Linked Table"
   },
   "Items": {
-    "Name": "tblInstalls",
+    "Name": "tblInstallEquipment4",
     "Connect": ";DATABASE=rel:Backend\\IDBE01.accdb",
-    "SourceTableName": "tblInstalls",
+    "SourceTableName": "tblInstallEquipment",
     "Attributes": 1073741824,
     "PrimaryKey": "[lngID]"
   }

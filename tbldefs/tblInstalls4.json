@@ -4,7 +4,7 @@
     "Description": "Linked Table"
   },
   "Items": {
-    "Name": "tblInstalls",
+    "Name": "tblInstalls4",
     "Connect": ";DATABASE=rel:Backend\\IDBE01.accdb",
     "SourceTableName": "tblInstalls",
     "Attributes": 1073741824,
