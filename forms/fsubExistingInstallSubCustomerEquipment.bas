@@ -15,10 +15,10 @@ Begin Form
     DatasheetGridlinesBehavior =3
     GridX =24
     GridY =24
-    Width =10800
+    Width =11339
     DatasheetFontHeight =11
     ItemSuffix =30
-    Right =17295
+    Right =15735
     Bottom =11730
     OrderBy ="lngID"
     RecSrcDt = Begin
@@ -208,7 +208,7 @@ Begin Form
                 Begin Label
                     OverlapFlags =85
                     TextAlign =2
-                    Left =8520
+                    Left =8760
                     Top =360
                     Width =795
                     Height =240
@@ -217,9 +217,9 @@ Begin Form
                     Name ="lblInStock"
                     Caption ="In Stock"
                     GridlineColor =10921638
-                    LayoutCachedLeft =8520
+                    LayoutCachedLeft =8760
                     LayoutCachedTop =360
-                    LayoutCachedWidth =9315
+                    LayoutCachedWidth =9555
                     LayoutCachedHeight =600
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
@@ -227,7 +227,7 @@ Begin Form
                 Begin Label
                     OverlapFlags =85
                     TextAlign =2
-                    Left =9360
+                    Left =9600
                     Top =360
                     Width =645
                     Height =240
@@ -236,9 +236,9 @@ Begin Form
                     Name ="lblReady"
                     Caption ="Ready"
                     GridlineColor =10921638
-                    LayoutCachedLeft =9360
+                    LayoutCachedLeft =9600
                     LayoutCachedTop =360
-                    LayoutCachedWidth =10005
+                    LayoutCachedWidth =10245
                     LayoutCachedHeight =600
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
@@ -269,7 +269,7 @@ Begin Form
                     TextAlign =2
                     Left =6660
                     Top =360
-                    Width =1800
+                    Width =1980
                     Height =240
                     BorderColor =8355711
                     ForeColor =16777215
@@ -278,7 +278,7 @@ Begin Form
                     GridlineColor =10921638
                     LayoutCachedLeft =6660
                     LayoutCachedTop =360
-                    LayoutCachedWidth =8460
+                    LayoutCachedWidth =8640
                     LayoutCachedHeight =600
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
@@ -286,7 +286,7 @@ Begin Form
                 Begin Label
                     OverlapFlags =85
                     TextAlign =2
-                    Left =10080
+                    Left =10320
                     Top =360
                     Width =645
                     Height =240
@@ -295,9 +295,9 @@ Begin Form
                     Name ="lblTag"
                     Caption ="Tag"
                     GridlineColor =10921638
-                    LayoutCachedLeft =10080
+                    LayoutCachedLeft =10320
                     LayoutCachedTop =360
-                    LayoutCachedWidth =10725
+                    LayoutCachedWidth =10965
                     LayoutCachedHeight =600
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
@@ -416,7 +416,7 @@ Begin Form
                 End
                 Begin CheckBox
                     OverlapFlags =85
-                    Left =8820
+                    Left =9060
                     Top =120
                     TabIndex =4
                     BorderColor =10921638
@@ -425,14 +425,14 @@ Begin Form
                     StatusBarText ="Equipment in stock"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =8820
+                    LayoutCachedLeft =9060
                     LayoutCachedTop =120
-                    LayoutCachedWidth =9080
+                    LayoutCachedWidth =9320
                     LayoutCachedHeight =360
                 End
                 Begin CheckBox
                     OverlapFlags =85
-                    Left =9600
+                    Left =9840
                     Top =120
                     TabIndex =5
                     BorderColor =10921638
@@ -441,9 +441,9 @@ Begin Form
                     StatusBarText ="Equipment ready for install"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =9600
+                    LayoutCachedLeft =9840
                     LayoutCachedTop =120
-                    LayoutCachedWidth =9860
+                    LayoutCachedWidth =10100
                     LayoutCachedHeight =360
                 End
                 Begin TextBox
@@ -454,7 +454,7 @@ Begin Form
                     IMESentenceMode =3
                     Left =6660
                     Top =60
-                    Width =1800
+                    Width =1980
                     Height =300
                     FontSize =10
                     TabIndex =6
@@ -467,12 +467,12 @@ Begin Form
 
                     LayoutCachedLeft =6660
                     LayoutCachedTop =60
-                    LayoutCachedWidth =8460
+                    LayoutCachedWidth =8640
                     LayoutCachedHeight =360
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =10080
+                    Left =10320
                     Top =60
                     Width =660
                     Height =300
@@ -484,9 +484,9 @@ Begin Form
                     GridlineColor =10921638
                     HorizontalAnchor =1
 
-                    LayoutCachedLeft =10080
+                    LayoutCachedLeft =10320
                     LayoutCachedTop =60
-                    LayoutCachedWidth =10740
+                    LayoutCachedWidth =10980
                     LayoutCachedHeight =360
                     Gradient =0
                     BackThemeColorIndex =5

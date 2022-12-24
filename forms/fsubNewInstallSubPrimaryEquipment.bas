@@ -12,13 +12,13 @@ Begin Form
     DatasheetGridlinesBehavior =3
     GridX =24
     GridY =24
-    Width =10800
+    Width =11339
     DatasheetFontHeight =11
     ItemSuffix =29
-    Left =2880
-    Top =3720
-    Right =16170
-    Bottom =9825
+    Left =825
+    Top =375
+    Right =13680
+    Bottom =6480
     RecSrcDt = Begin
         0xdf0e36618eeee540
     End
@@ -187,7 +187,7 @@ Begin Form
                 Begin Label
                     OverlapFlags =85
                     TextAlign =2
-                    Left =9000
+                    Left =9420
                     Top =360
                     Width =795
                     Height =240
@@ -197,9 +197,9 @@ Begin Form
                     Caption ="In Stock"
                     GridlineColor =10921638
                     HorizontalAnchor =1
-                    LayoutCachedLeft =9000
+                    LayoutCachedLeft =9420
                     LayoutCachedTop =360
-                    LayoutCachedWidth =9795
+                    LayoutCachedWidth =10215
                     LayoutCachedHeight =600
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
@@ -207,7 +207,7 @@ Begin Form
                 Begin Label
                     OverlapFlags =85
                     TextAlign =2
-                    Left =9900
+                    Left =10320
                     Top =360
                     Width =645
                     Height =240
@@ -217,9 +217,9 @@ Begin Form
                     Caption ="Ready"
                     GridlineColor =10921638
                     HorizontalAnchor =1
-                    LayoutCachedLeft =9900
+                    LayoutCachedLeft =10320
                     LayoutCachedTop =360
-                    LayoutCachedWidth =10545
+                    LayoutCachedWidth =10965
                     LayoutCachedHeight =600
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
@@ -250,7 +250,7 @@ Begin Form
                     TextAlign =2
                     Left =7080
                     Top =360
-                    Width =1800
+                    Width =2160
                     Height =240
                     BorderColor =8355711
                     ForeColor =16777215
@@ -259,7 +259,7 @@ Begin Form
                     GridlineColor =10921638
                     LayoutCachedLeft =7080
                     LayoutCachedTop =360
-                    LayoutCachedWidth =8880
+                    LayoutCachedWidth =9240
                     LayoutCachedHeight =600
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
@@ -377,7 +377,7 @@ Begin Form
                 End
                 Begin CheckBox
                     OverlapFlags =85
-                    Left =9300
+                    Left =9720
                     Top =120
                     TabIndex =4
                     BorderColor =10921638
@@ -387,14 +387,14 @@ Begin Form
                     GridlineColor =10921638
                     HorizontalAnchor =1
 
-                    LayoutCachedLeft =9300
+                    LayoutCachedLeft =9720
                     LayoutCachedTop =120
-                    LayoutCachedWidth =9560
+                    LayoutCachedWidth =9980
                     LayoutCachedHeight =360
                 End
                 Begin CheckBox
                     OverlapFlags =85
-                    Left =10080
+                    Left =10500
                     Top =120
                     TabIndex =5
                     BorderColor =10921638
@@ -404,9 +404,9 @@ Begin Form
                     GridlineColor =10921638
                     HorizontalAnchor =1
 
-                    LayoutCachedLeft =10080
+                    LayoutCachedLeft =10500
                     LayoutCachedTop =120
-                    LayoutCachedWidth =10340
+                    LayoutCachedWidth =10760
                     LayoutCachedHeight =360
                 End
                 Begin ListBox
@@ -468,7 +468,7 @@ Begin Form
                     IMESentenceMode =3
                     Left =7080
                     Top =60
-                    Width =1800
+                    Width =2160
                     Height =300
                     FontSize =10
                     TabIndex =8
@@ -481,7 +481,7 @@ Begin Form
 
                     LayoutCachedLeft =7080
                     LayoutCachedTop =60
-                    LayoutCachedWidth =8880
+                    LayoutCachedWidth =9240
                     LayoutCachedHeight =360
                 End
             End

@@ -14,19 +14,18 @@ Begin Report
     GridY =24
     Width =11399
     DatasheetFontHeight =11
-    ItemSuffix =33
+    ItemSuffix =34
     Left =2055
     Top =2415
-    OrderBy ="[strEQID]"
     RecSrcDt = Begin
-        0xd277cb5d9febe540
+        0xf828e71cedeee540
     End
-    RecordSource ="SELECT [qryEquipTypeCustomerEquipment].[lngID], [qryEquipTypeCustomerEquipment]."
-        "[strDescription], [qryEquipTypeCustomerEquipment].[strSerialNumber], [qryEquipTy"
-        "peCustomerEquipment].[strEQID], [qryEquipTypeCustomerEquipment].[intMeterMono], "
-        "[qryEquipTypeCustomerEquipment].[intMeterColor], [qryEquipTypeCustomerEquipment]"
-        ".[ysnInStock], [qryEquipTypeCustomerEquipment].[ysnReadyForInstall], [qryEquipTy"
-        "peCustomerEquipment].[intInstall] FROM qryEquipTypeCustomerEquipment; "
+    RecordSource ="SELECT qryEquipTypeCustomerEquipment.lngID, qryEquipTypeCustomerEquipment.strDes"
+        "cription, qryEquipTypeCustomerEquipment.strSerialNumber, qryEquipTypeCustomerEqu"
+        "ipment.strEQID, qryEquipTypeCustomerEquipment.intMeterMono, qryEquipTypeCustomer"
+        "Equipment.intMeterColor, qryEquipTypeCustomerEquipment.ysnInStock, qryEquipTypeC"
+        "ustomerEquipment.ysnReadyForInstall, qryEquipTypeCustomerEquipment.intInstall, q"
+        "ryEquipTypeCustomerEquipment.strLocation FROM qryEquipTypeCustomerEquipment; "
     Caption ="subrptCustomerEquipment"
     DatasheetFontName ="Calibri"
     FilterOnLoad =0
@@ -121,7 +120,6 @@ Begin Report
             AlternateBackShade =95.0
             Begin
                 Begin Label
-                    OverlapFlags =4
                     TextAlign =1
                     Left =120
                     Top =60
@@ -209,21 +207,6 @@ Begin Report
                     LayoutCachedHeight =420
                 End
                 Begin Rectangle
-                    Left =1320
-                    Top =480
-                    Width =4800
-                    Height =360
-                    BorderColor =-2147483617
-                    Name ="shpLocationBox"
-                    GridlineColor =10921638
-                    LayoutCachedLeft =1320
-                    LayoutCachedTop =480
-                    LayoutCachedWidth =6120
-                    LayoutCachedHeight =840
-                    BorderThemeColorIndex =-1
-                    BorderShade =100.0
-                End
-                Begin Rectangle
                     Left =7920
                     Top =480
                     Width =3420
@@ -239,7 +222,6 @@ Begin Report
                     BorderShade =100.0
                 End
                 Begin Rectangle
-                    OverlapFlags =12
                     Left =6120
                     Top =480
                     Width =1800
@@ -257,7 +239,6 @@ Begin Report
                     BorderShade =100.0
                 End
                 Begin Rectangle
-                    OverlapFlags =12
                     Left =60
                     Top =480
                     Width =1260
@@ -310,6 +291,31 @@ Begin Report
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
                 End
+                Begin TextBox
+                    Enabled = NotDefault
+                    OverlapFlags =4
+                    TextAlign =1
+                    IMESentenceMode =3
+                    Left =1320
+                    Top =480
+                    Width =4800
+                    Height =360
+                    TabIndex =2
+                    LeftMargin =43
+                    TopMargin =29
+                    ForeColor =4210752
+                    Name ="txtLocation"
+                    ControlSource ="strLocation"
+                    StatusBarText ="Equipment location"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =1320
+                    LayoutCachedTop =480
+                    LayoutCachedWidth =6120
+                    LayoutCachedHeight =840
+                    BorderThemeColorIndex =0
+                    BorderShade =100.0
+                End
             End
         End
         Begin PageFooter
@@ -328,7 +334,6 @@ Begin Report
             BackThemeColorIndex =1
             Begin
                 Begin Rectangle
-                    OverlapFlags =12
                     Left =60
                     Top =120
                     Width =11280

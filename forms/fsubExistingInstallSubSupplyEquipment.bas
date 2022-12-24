@@ -17,10 +17,9 @@ Begin Form
     Width =4860
     DatasheetFontHeight =11
     ItemSuffix =12
-    Left =15210
-    Top =4605
-    Right =20055
-    Bottom =11610
+    Top =390
+    Right =14370
+    Bottom =11730
     RecSrcDt = Begin
         0x06e3e1f29debe540
     End
@@ -219,10 +218,11 @@ Begin Form
                     LayoutCachedHeight =359
                 End
                 Begin TextBox
-                    Locked = NotDefault
+                    Enabled = NotDefault
                     OldBorderStyle =0
                     OverlapFlags =85
                     TextAlign =2
+                    BackStyle =0
                     IMESentenceMode =3
                     Left =240
                     Top =60
@@ -243,7 +243,7 @@ Begin Form
                 End
                 Begin CheckBox
                     OverlapFlags =85
-                    Left =4020
+                    Left =4080
                     Top =120
                     TabIndex =2
                     BorderColor =10921638
@@ -252,9 +252,9 @@ Begin Form
                     StatusBarText ="Equipment in stock"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =4020
+                    LayoutCachedLeft =4080
                     LayoutCachedTop =120
-                    LayoutCachedWidth =4280
+                    LayoutCachedWidth =4340
                     LayoutCachedHeight =360
                 End
             End

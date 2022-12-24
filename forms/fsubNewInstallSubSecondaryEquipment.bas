@@ -12,13 +12,13 @@ Begin Form
     DatasheetGridlinesBehavior =3
     GridX =24
     GridY =24
-    Width =10800
+    Width =11339
     DatasheetFontHeight =11
     ItemSuffix =33
-    Left =2880
-    Top =5520
-    Right =13590
-    Bottom =12270
+    Left =-300
+    Top =1530
+    Right =13110
+    Bottom =7995
     RecSrcDt = Begin
         0x3547a5ba79ece540
     End
@@ -224,7 +224,7 @@ Begin Form
                 Begin Label
                     OverlapFlags =85
                     TextAlign =1
-                    Left =8400
+                    Left =9360
                     Top =360
                     Width =900
                     Height =240
@@ -234,9 +234,9 @@ Begin Form
                     Caption ="In Stock"
                     GridlineColor =10921638
                     HorizontalAnchor =1
-                    LayoutCachedLeft =8400
+                    LayoutCachedLeft =9360
                     LayoutCachedTop =360
-                    LayoutCachedWidth =9300
+                    LayoutCachedWidth =10260
                     LayoutCachedHeight =600
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
@@ -244,7 +244,7 @@ Begin Form
                 Begin Label
                     OverlapFlags =85
                     TextAlign =1
-                    Left =9420
+                    Left =10380
                     Top =360
                     Width =600
                     Height =240
@@ -254,9 +254,9 @@ Begin Form
                     Caption ="Ready"
                     GridlineColor =10921638
                     HorizontalAnchor =1
-                    LayoutCachedLeft =9420
+                    LayoutCachedLeft =10380
                     LayoutCachedTop =360
-                    LayoutCachedWidth =10020
+                    LayoutCachedWidth =10980
                     LayoutCachedHeight =600
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
@@ -358,8 +358,8 @@ Begin Form
                     LayoutCachedHeight =375
                 End
                 Begin CheckBox
-                    OverlapFlags =93
-                    Left =8640
+                    OverlapFlags =85
+                    Left =9600
                     Top =120
                     TabIndex =5
                     BorderColor =10921638
@@ -370,14 +370,14 @@ Begin Form
                     GridlineColor =10921638
                     HorizontalAnchor =1
 
-                    LayoutCachedLeft =8640
+                    LayoutCachedLeft =9600
                     LayoutCachedTop =120
-                    LayoutCachedWidth =8900
+                    LayoutCachedWidth =9860
                     LayoutCachedHeight =360
                 End
                 Begin CheckBox
                     OverlapFlags =85
-                    Left =9600
+                    Left =10560
                     Top =120
                     TabIndex =6
                     BorderColor =10921638
@@ -387,9 +387,9 @@ Begin Form
                     GridlineColor =10921638
                     HorizontalAnchor =1
 
-                    LayoutCachedLeft =9600
+                    LayoutCachedLeft =10560
                     LayoutCachedTop =120
-                    LayoutCachedWidth =9860
+                    LayoutCachedWidth =10820
                     LayoutCachedHeight =360
                 End
                 Begin ListBox

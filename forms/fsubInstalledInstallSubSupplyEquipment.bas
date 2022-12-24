@@ -14,7 +14,7 @@ Begin Form
     DatasheetGridlinesBehavior =3
     GridX =24
     GridY =24
-    Width =4860
+    Width =5639
     DatasheetFontHeight =11
     ItemSuffix =12
     Top =390
