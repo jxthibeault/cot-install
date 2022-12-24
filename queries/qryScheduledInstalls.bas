@@ -4,6 +4,7 @@ Where ="(((tblInstalls.strInstallStatus)=\"Preparation\" Or (tblInstalls.strInst
     "s)=\"Ready for Install\") AND ((tblInstalls.dtmInstallScheduled)<>\"\"))"
 Begin InputTables
     Name ="tblInstalls"
+    Name ="tblInstallEquipment"
 End
 Begin OutputColumns
     Expression ="tblInstalls.strCustomer"
@@ -14,6 +15,15 @@ Begin OutputColumns
     Expression ="tblInstalls.dtmDepartureTime"
     Expression ="tblInstalls.strDepartureFrom"
     Expression ="tblInstalls.dtmDeliveryDate"
+    Expression ="tblInstallEquipment.strDescription"
+    Expression ="tblInstallEquipment.strEQID"
+    Expression ="tblInstallEquipment.strEquipmentType"
+End
+Begin Joins
+    LeftTable ="tblInstalls"
+    RightTable ="tblInstallEquipment"
+    Expression ="tblInstalls.lngID = tblInstallEquipment.intInstall"
+    Flag =1
 End
 Begin OrderBy
     Expression ="tblInstalls.dtmInstallScheduled"
@@ -61,6 +71,18 @@ Begin
         dbText "Name" ="tblInstalls.dtmDeliveryDate"
         dbLong "AggregateType" ="-1"
     End
+    Begin
+        dbText "Name" ="tblInstallEquipment.strDescription"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblInstallEquipment.strEQID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblInstallEquipment.strEquipmentType"
+        dbLong "AggregateType" ="-1"
+    End
 End
 Begin
     State =0
@@ -71,7 +93,7 @@ Begin
     Left =-1
     Top =-1
     Right =956
-    Bottom =571
+    Bottom =554
     Left =0
     Top =288
     ColumnsShown =539
@@ -82,6 +104,15 @@ Begin
         Bottom =156
         Top =0
         Name ="tblInstalls"
+        Name =""
+    End
+    Begin
+        Left =240
+        Top =12
+        Right =384
+        Bottom =370
+        Top =0
+        Name ="tblInstallEquipment"
         Name =""
     End
 End

@@ -11,7 +11,6 @@ Begin Form
     AllowDeletions = NotDefault
     DividingLines = NotDefault
     AllowAdditions = NotDefault
-    OrderByOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
     ScrollBars =0
@@ -32,6 +31,7 @@ Begin Form
     End
     Caption ="Change Password"
     DatasheetFontName ="Calibri"
+    OnLoad ="[Event Procedure]"
     Moveable =0
     FilterOnLoad =0
     ShowPageMargins =0
@@ -395,6 +395,17 @@ Private Sub cmdConfirm_Click()
         MsgBox "Password changed successfully.", vbOKOnly, "Password Changed"
         DoCmd.Close acForm, "fdlgChangePassword"
         Forms(frmNavigation).SetFocus
+    End If
+    
+End Sub
+
+Private Sub Form_Load()
+
+    Dim strCurrentUser As String
+    strCurrentUser = Form_fdlgUserControl.GetCurrentUser()
+    
+    If strCurrentUser = "setup" Then
+        MsgBox "The setup account password cannot be reset by an administrator if lost. Be sure to note setup password whenever it is changed!", vbExclamation, "Warning"
     End If
     
 End Sub

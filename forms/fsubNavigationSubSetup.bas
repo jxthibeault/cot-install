@@ -14,10 +14,10 @@ Begin Form
     Width =16344
     DatasheetFontHeight =11
     ItemSuffix =5
-    Left =585
-    Top =3585
-    Right =17715
-    Bottom =11175
+    Left =540
+    Top =150
+    Right =20910
+    Bottom =10185
     RecSrcDt = Begin
         0x326b8b37a1ebe540
     End
@@ -168,6 +168,38 @@ Begin Form
                     LayoutCachedTop =780
                     LayoutCachedWidth =11700
                     LayoutCachedHeight =1200
+                    Gradient =0
+                    BackColor =-2147483607
+                    BackThemeColorIndex =-1
+                    BackTint =100.0
+                    BorderColor =14461583
+                    HoverColor =15189940
+                    PressedColor =9917743
+                    HoverForeColor =4210752
+                    PressedForeColor =4210752
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =2
+                    WebImagePaddingRight =1
+                    WebImagePaddingBottom =1
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =4680
+                    Top =1440
+                    Width =7020
+                    Height =420
+                    TabIndex =1
+                    ForeColor =4210752
+                    Name ="cmdUserControl"
+                    Caption ="User Control"
+                    OnClick ="[Event Procedure]"
+                    GridlineColor =10921638
+                    HorizontalAnchor =2
+
+                    LayoutCachedLeft =4680
+                    LayoutCachedTop =1440
+                    LayoutCachedWidth =11700
+                    LayoutCachedHeight =1860
                     Gradient =0
                     BackColor =-2147483607
                     BackThemeColorIndex =-1

@@ -18,11 +18,11 @@ Begin Form
     Width =12900
     DatasheetFontHeight =11
     ItemSuffix =48
-    Left =5040
-    Top =3045
-    Right =20430
-    Bottom =14430
-    Filter ="NOT strUsername = '!@#'"
+    Left =7695
+    Top =2445
+    Right =20850
+    Bottom =13500
+    Filter ="NOT strUsername = \"setup\""
     RecSrcDt = Begin
         0x949f7bd153ece540
     End
@@ -67,6 +67,32 @@ Begin Form
             BorderShade =65.0
             GridlineThemeColorIndex =1
             GridlineShade =65.0
+        End
+        Begin CommandButton
+            FontSize =11
+            FontWeight =400
+            FontName ="Calibri"
+            ForeThemeColorIndex =0
+            ForeTint =75.0
+            GridlineThemeColorIndex =1
+            GridlineShade =65.0
+            UseTheme =1
+            Shape =1
+            Gradient =12
+            BackThemeColorIndex =4
+            BackTint =60.0
+            BorderLineStyle =0
+            BorderThemeColorIndex =4
+            BorderTint =60.0
+            ThemeFontIndex =1
+            HoverThemeColorIndex =4
+            HoverTint =40.0
+            PressedThemeColorIndex =4
+            PressedShade =75.0
+            HoverForeThemeColorIndex =0
+            HoverForeTint =75.0
+            PressedForeThemeColorIndex =0
+            PressedForeTint =75.0
         End
         Begin TextBox
             AddColon = NotDefault
@@ -413,15 +439,16 @@ Begin Form
             End
         End
         Begin FormFooter
-            Height =540
+            Height =1200
             Name ="secFormFooter"
             AlternateBackThemeColorIndex =1
             AlternateBackShade =95.0
             BackThemeColorIndex =1
             Begin
                 Begin Image
-                    Left =10860
-                    Width =1920
+                    Left =10740
+                    Top =540
+                    Width =1980
                     Height =540
                     BackColor =1315470
                     BorderColor =10921638
@@ -2973,10 +3000,43 @@ Begin Form
                         0x6082
                     End
 
-                    LayoutCachedLeft =10860
-                    LayoutCachedWidth =12780
-                    LayoutCachedHeight =540
+                    LayoutCachedLeft =10740
+                    LayoutCachedTop =540
+                    LayoutCachedWidth =12720
+                    LayoutCachedHeight =1080
+                    TabIndex =1
                     BackThemeColorIndex =-1
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =10140
+                    Top =60
+                    Width =2580
+                    Height =420
+                    ForeColor =4210752
+                    Name ="cmdSaveAndClose"
+                    Caption ="Save and Close"
+                    OnClick ="[Event Procedure]"
+                    GridlineColor =10921638
+                    HorizontalAnchor =1
+
+                    LayoutCachedLeft =10140
+                    LayoutCachedTop =60
+                    LayoutCachedWidth =12720
+                    LayoutCachedHeight =480
+                    Gradient =0
+                    BackColor =-2147483607
+                    BackThemeColorIndex =-1
+                    BackTint =100.0
+                    BorderColor =14461583
+                    HoverColor =15189940
+                    PressedColor =9917743
+                    HoverForeColor =4210752
+                    PressedForeColor =4210752
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =2
+                    WebImagePaddingRight =1
+                    WebImagePaddingBottom =1
                 End
             End
         End
@@ -3111,3 +3171,9 @@ Private Function GetUserInfo(strUsernameInput, strRequestedField) As String
     GetUserInfo = DLookup("[" & strRequestedField & "]", "tblUsers", "[strUsername] = '" & strUsernameInput & "'")
 
 End Function
+
+Private Sub cmdSaveAndClose_Click()
+
+    DoCmd.Close
+    
+End Sub
