@@ -2754,20 +2754,38 @@ Attribute VB_Creatable = True
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Compare Database
+ 
+'                                       ### IMPORTANT ###
+' This form's Form_Load() function contains CRITICAL application start-up instructions including
+' dynamic linking of linked datasources that allows for universal deployment. Be VERY careful and make backups
+' whenever making any changes to the Form_Load() function!!!
 
 Private Sub Form_Load()
+
+    ' ### READ NOTICE AT TOP OF THIS MODULE BEFORE MODIFYING THIS FUNCTION ###
 
     Dim strBEPath As String
     Dim strIconPath As String
     
+    ' The \Backend folder should be deployed alongside the app with all resources referenced here
     strBEDataPath = CurrentProject.Path & "\Backend\IDBE01.accdb"
     strIconPath = CurrentProject.Path & "\Backend\AppIcon.ico"
     
+    ' Sets the application icon for dynamic app deployment and removes visible Access toolbars
     CurrentDb.Properties("AppIcon").Value = strIconPath
     DoCmd.ShowToolbar "Ribbon", acToolbarNo
-    
     Application.RefreshTitleBar
     
+    ' ### NOTE ON ADDING LINKED TABLES IN DEVELOPMENT ###
+    ' All linked tables must be listed in both the DeleteObject and TransferDatabase codeblocks below for dynamic
+    ' re-linking to work as intended. Follow below syntax, subtituing table name only.
+    
+    ' "Delete" the previous table links to avoid issue where multiple instances of the same link are created and application performance decreases significantly
+    DoCmd.DeleteObject acTable, "tblInstallEquipment"
+    DoCmd.DeleteObject acTable, "tblInstalls"
+    DoCmd.DeleteObject acTable, "tblUsers"
+    
+    ' Add the tables with the current application path for dynamic re-linking
     DoCmd.TransferDatabase acLink, "Microsoft Access", strBEDataPath, acTable, "tblInstallEquipment", "tblInstallEquipment"
     DoCmd.TransferDatabase acLink, "Microsoft Access", strBEDataPath, acTable, "tblInstalls", "tblInstalls"
     DoCmd.TransferDatabase acLink, "Microsoft Access", strBEDataPath, acTable, "tblUsers", "tblUsers"
