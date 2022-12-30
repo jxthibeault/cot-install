@@ -12,6 +12,7 @@ Begin Form
     RecordLocks =2
     PictureAlignment =2
     DatasheetGridlinesBehavior =3
+    Cycle =2
     GridX =24
     GridY =24
     Width =22980
@@ -19,7 +20,7 @@ Begin Form
     ItemSuffix =78
     Left =6645
     Top =2565
-    Right =22260
+    Right =21300
     Bottom =14175
     RecSrcDt = Begin
         0x07c86f6233eee540

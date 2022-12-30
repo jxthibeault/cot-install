@@ -3563,16 +3563,23 @@ End Sub
 
 Private Sub Form_Load()
 
+    DoCmd.Maximize
+
     DoCmd.OpenForm "fsysDetectIdleTime", acNormal, , , , acHidden
     
-    Dim varCurrentVersion As Variant
+    Dim varCurrentVerMajor As Variant
+    Dim varCurrentVerMinor As Variant
+    Dim varCurrentVerPatch As Variant
     Dim strCurrentUser As String
     Dim strUserLevel As String
     Dim strUserTitle As String
     
     ' Look up current app version number from instance variables and set version label
-    varCurrentVersion = DLookup("[strValue]", "zstlkpInstanceVariables", "[strKey] = 'appVersion'")
-    lblVersion.Caption = "version " & varCurrentVersion
+    varCurrentVerMajor = DLookup("[strValue]", "zstlkpInstanceVariables", "[strKey] = 'FrontendVersionMajor'")
+    varCurrentVerMinor = DLookup("[strValue]", "zstlkpInstanceVariables", "[strKey] = 'FrontendVersionMinor'")
+    varCurrentVerPatch = DLookup("[strValue]", "zstlkpInstanceVariables", "[strKey] = 'FrontendVersionPatch'")
+    lblVersion.Caption = "version " & varCurrentVerMajor _
+        & "." & varCurrentVerMinor & "." & varCurrentVerPatch
     
     ' Look up current user's name from instance variables and set logged-in-as label
     strCurrentUser = Form_fdlgUserControl.GetCurrentUser()

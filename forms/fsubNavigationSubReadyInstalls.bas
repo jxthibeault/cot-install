@@ -18,10 +18,10 @@ Begin Form
     Width =16344
     DatasheetFontHeight =11
     ItemSuffix =121
-    Left =-105
-    Top =-120
-    Right =19605
-    Bottom =9405
+    Left =420
+    Top =480
+    Right =16155
+    Bottom =10005
     OrderBy ="dtmInstallScheduled, dtmDateReceived, strCustomer"
     RecSrcDt = Begin
         0x3d57a9c5d9ebe540
@@ -160,7 +160,7 @@ Begin Form
                     OverlapFlags =85
                     TextAlign =1
                     Left =60
-                    Top =690
+                    Top =720
                     Width =4256
                     Height =360
                     FontSize =12
@@ -176,18 +176,18 @@ Begin Form
                     GridlineColor =10921638
                     HorizontalAnchor =2
                     LayoutCachedLeft =60
-                    LayoutCachedTop =690
+                    LayoutCachedTop =720
                     LayoutCachedWidth =4316
-                    LayoutCachedHeight =1050
+                    LayoutCachedHeight =1080
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
                 End
                 Begin Label
                     OverlapFlags =85
                     TextAlign =2
-                    Left =6480
-                    Top =690
-                    Width =1976
+                    Left =6180
+                    Top =720
+                    Width =1736
                     Height =360
                     FontSize =12
                     FontWeight =500
@@ -201,10 +201,10 @@ Begin Form
                     Caption ="Ship Date"
                     GridlineColor =10921638
                     HorizontalAnchor =1
-                    LayoutCachedLeft =6480
-                    LayoutCachedTop =690
-                    LayoutCachedWidth =8456
-                    LayoutCachedHeight =1050
+                    LayoutCachedLeft =6180
+                    LayoutCachedTop =720
+                    LayoutCachedWidth =7916
+                    LayoutCachedHeight =1080
                     ColumnStart =2
                     ColumnEnd =2
                     ForeThemeColorIndex =-1
@@ -214,8 +214,8 @@ Begin Form
                     OverlapFlags =85
                     TextAlign =2
                     Left =4380
-                    Top =690
-                    Width =2036
+                    Top =720
+                    Width =1736
                     Height =360
                     FontSize =12
                     FontWeight =500
@@ -230,9 +230,9 @@ Begin Form
                     GridlineColor =10921638
                     HorizontalAnchor =1
                     LayoutCachedLeft =4380
-                    LayoutCachedTop =690
-                    LayoutCachedWidth =6416
-                    LayoutCachedHeight =1050
+                    LayoutCachedTop =720
+                    LayoutCachedWidth =6116
+                    LayoutCachedHeight =1080
                     ColumnStart =1
                     ColumnEnd =1
                     ForeThemeColorIndex =-1
@@ -265,9 +265,9 @@ Begin Form
                 Begin Label
                     OverlapFlags =85
                     TextAlign =2
-                    Left =8520
+                    Left =7980
                     Top =720
-                    Width =2040
+                    Width =2580
                     Height =345
                     FontSize =12
                     FontWeight =500
@@ -277,7 +277,7 @@ Begin Form
                     Caption ="Install Date"
                     GridlineColor =10921638
                     HorizontalAnchor =1
-                    LayoutCachedLeft =8520
+                    LayoutCachedLeft =7980
                     LayoutCachedTop =720
                     LayoutCachedWidth =10560
                     LayoutCachedHeight =1065
@@ -340,9 +340,9 @@ Begin Form
                     TextAlign =2
                     BackStyle =0
                     IMESentenceMode =3
-                    Left =6480
+                    Left =6180
                     Top =180
-                    Width =1976
+                    Width =1736
                     Height =315
                     FontSize =12
                     TabIndex =4
@@ -358,9 +358,9 @@ Begin Form
                     GridlineColor =10921638
                     HorizontalAnchor =1
 
-                    LayoutCachedLeft =6480
+                    LayoutCachedLeft =6180
                     LayoutCachedTop =180
-                    LayoutCachedWidth =8456
+                    LayoutCachedWidth =7916
                     LayoutCachedHeight =495
                     RowStart =1
                     RowEnd =1
@@ -376,7 +376,7 @@ Begin Form
                     IMESentenceMode =3
                     Left =4380
                     Top =180
-                    Width =2036
+                    Width =1736
                     Height =315
                     FontSize =12
                     TabIndex =3
@@ -395,7 +395,7 @@ Begin Form
 
                     LayoutCachedLeft =4380
                     LayoutCachedTop =180
-                    LayoutCachedWidth =6416
+                    LayoutCachedWidth =6116
                     LayoutCachedHeight =495
                     RowStart =1
                     RowEnd =1
@@ -409,9 +409,9 @@ Begin Form
                     TextAlign =2
                     BackStyle =0
                     IMESentenceMode =3
-                    Left =8520
+                    Left =7980
                     Top =180
-                    Width =2036
+                    Width =2576
                     Height =315
                     FontSize =12
                     TabIndex =5
@@ -423,7 +423,7 @@ Begin Form
                     GridlineColor =10921638
                     HorizontalAnchor =1
 
-                    LayoutCachedLeft =8520
+                    LayoutCachedLeft =7980
                     LayoutCachedTop =180
                     LayoutCachedWidth =10556
                     LayoutCachedHeight =495

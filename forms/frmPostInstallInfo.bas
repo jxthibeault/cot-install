@@ -13,6 +13,7 @@ Begin Form
     RecordLocks =2
     PictureAlignment =2
     DatasheetGridlinesBehavior =3
+    Cycle =2
     GridX =24
     GridY =24
     Width =12240

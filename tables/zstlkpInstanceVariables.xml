@@ -1,9 +1,5 @@
 ﻿<dataroot xmlns:od="urn:schemas-microsoft-com:officedata">
 <zstlkpInstanceVariables>
-<strKey>appVersion</strKey>
-<strValue>1.3.7</strValue>
-</zstlkpInstanceVariables>
-<zstlkpInstanceVariables>
 <strKey>FrontendVersionMajor</strKey>
 <strValue>1</strValue>
 </zstlkpInstanceVariables>
@@ -13,6 +9,6 @@
 </zstlkpInstanceVariables>
 <zstlkpInstanceVariables>
 <strKey>FrontendVersionPatch</strKey>
-<strValue>7</strValue>
+<strValue>8</strValue>
 </zstlkpInstanceVariables>
 </dataroot>

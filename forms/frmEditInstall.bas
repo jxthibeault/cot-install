@@ -13,15 +13,16 @@ Begin Form
     RecordLocks =2
     PictureAlignment =2
     DatasheetGridlinesBehavior =3
+    Cycle =2
     GridX =24
     GridY =24
     Width =22980
     DatasheetFontHeight =11
     ItemSuffix =85
-    Left =5265
-    Top =2325
-    Right =21045
-    Bottom =13155
+    Left =5565
+    Top =2445
+    Right =21345
+    Bottom =13275
     RecSrcDt = Begin
         0xd2f02c8c79ece540
     End
