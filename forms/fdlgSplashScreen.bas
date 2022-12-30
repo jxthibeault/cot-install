@@ -2812,6 +2812,8 @@ Private Sub Form_Load()
     ' Backend update script; supports auto-updates from 1.3.7 forward
     ' List in chronological order for proper update processing
     bRunUpdates = False
+    On Error Resume Next
+    
     If intBEVersionMajor < intFEVersionMajor Or _
         (intBEVersionMajor = intFEVersionMajor And intBEVersionMinor < intFEVersionMinor) Or _
         (intBEVersionMajor = intFEVersionMajor And intBEVersionMinor = intFEVersionMinor And intBEVersionPatch < intFEVersionPatch) Then
@@ -2824,15 +2826,18 @@ Private Sub Form_Load()
             End If
     End If
     
+    ' Updates in v1.3.9 (covers all previous versions, cannot be run on backends >= 1.3.9
     If bRunUpdates And intBEVersionMajor <= 1 And intBEVersionMinor <= 3 And intBEVersionPatch < 9 Then
-    
         Set dbBackendDB = DBEngine.Workspaces(0).OpenDatabase(strBEDataPath)
         strSQL = "CREATE TABLE tblConnections (strHostname CHAR PRIMARY KEY, strUser CHAR);"
         dbBackendDB.Execute strSQL
-        
         Set dbBackendDB = CurrentDb
-        
-        UpdateBackendSchemaVersion 1, 3, 9, intBEVersionMajor, intBEVersionMinor, intBEVersionPatch
+    End If
+    
+    ' After all updates complete, update the backend version tag to match current frontend version
+    If bRunUpdates Then
+        UpdateBackendSchemaVersion intFEVersionMajor, intFEVersionMinor, intFEVersionPatch, _
+                                   intBEVersionMajor, intBEVersionMinor, intBEVersionPatch
     End If
     
     ' END backend updates section

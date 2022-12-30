@@ -3049,6 +3049,13 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Compare Database
 
+Private Function GetHostname() As String
+    
+    ' Uses environment variable, not being deployed in an environment where this is a security concern
+    GetHostname = Environ$("computername")
+
+End Function
+
 Public Function GetUserDisplayName(strUsername As String) As String
 
     Dim strDisplayName As String
@@ -3083,7 +3090,7 @@ Public Function GetCurrentUser() As String
 
     Dim strCurrentUser As String
 
-    strCurrentUser = DLookup("[strValue]", "zstlkpInstanceVariables", "[strKey] = 'currentUser'")
+    strCurrentUser = DLookup("[strUser]", "tblConnections", "[strHostname] = '" & GetHostname() & "'")
     
     GetCurrentUser = strCurrentUser
 
@@ -3140,16 +3147,16 @@ Public Function LoginCurrentInstance(strUsername As String, strPasswordEntered A
     
     If strCorrectPassword = strPasswordEntered Then
             
-        ' Cleanup in case currentUser record already exists locally
+        ' Cleanup in case someone was previously logged in and had a dirty disconnect
         ' Disable warnings, as DoCmd.RunSQL asks user for confirmation before executing
         DoCmd.SetWarnings False
     
         ' Sets the "currentUser" instance variable to null by deleting the related record
-        strSQL = "Delete * From [zstlkpInstanceVariables] WHERE [strKey]='currentUser'"
+        strSQL = "Delete * From [tblConnections] WHERE [strHostname] = '" & GetHostname() & "'"
         DoCmd.RunSQL strSQL
         
         ' Set "currentUser" instance variable to the user we just validated
-        strSQL = "INSERT INTO [zstlkpInstanceVariables] (strKey, strValue) VALUES ('currentUser', '" & strUsername & "');"
+        strSQL = "INSERT INTO [tblConnections] (strHostname, strUser) VALUES ('" & GetHostname() & "', '" & strUsername & "');"
         DoCmd.RunSQL strSQL
     
         ' Re-enable warnings (in effect, return to default setting)

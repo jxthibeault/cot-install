@@ -20,7 +20,7 @@ Begin Form
     Left =2715
     Top =600
     Right =15735
-    Bottom =11025
+    Bottom =9285
     RecSrcDt = Begin
         0xd5e2a17c9eebe540
     End
@@ -3514,8 +3514,8 @@ Private Sub cmdLogout_Click()
     ' Disable warnings, as DoCmd.RunSQL asks user for confirmation before executing
     DoCmd.SetWarnings False
     
-    ' On closing the form, sets the "currentUser" instance variable to null to effectively log user out
-    strSQL = "Delete * From [zstlkpInstanceVariables] WHERE [strKey]='currentUser'"
+    ' On closing the form, remove this connection from open connections list
+    strSQL = "Delete * From [tblConnections] WHERE [strHostname] = '" & GetHostname() & "'"
     DoCmd.RunSQL strSQL
     
     ' Re-enable warnings (in effect, return to default setting)

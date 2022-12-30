@@ -55,7 +55,7 @@ Sub Form_Timer()
 
     ' IDLEMINUTES determines how much idle time to wait for before
     ' running the IdleTimeDetected subroutine.
-    Const IDLEMINUTES = 25
+    Const IDLEMINUTES = 15
 
     Static PrevControlName As String
     Static PrevFormName As String
@@ -118,8 +118,8 @@ Sub IdleTimeDetected(ExpiredMinutes)
     ' Disable warnings, as DoCmd.RunSQL asks user for confirmation before executing
     DoCmd.SetWarnings False
     
-    ' On closing the form, sets the "currentUser" instance variable to null to effectively log user out
-    strSQL = "Delete * From [zstlkpInstanceVariables] WHERE [strKey]='currentUser'"
+    ' On closing the form, remove this connection from connections list
+    strSQL = "Delete * From [tblConnections] WHERE [strHostname] = '" & GetHostname() & "'"
     DoCmd.RunSQL strSQL
     
     ' Re-enable warnings (in effect, return to default setting)
