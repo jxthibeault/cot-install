@@ -24,10 +24,10 @@ Begin Form
     Width =8100
     DatasheetFontHeight =11
     ItemSuffix =15
-    Left =-31171
-    Top =4560
-    Right =-23071
-    Bottom =8805
+    Left =10350
+    Top =3735
+    Right =18450
+    Bottom =7980
     TimerInterval =900
     RecSrcDt = Begin
         0x7c26ac2350ede540
@@ -2775,6 +2775,7 @@ Private Sub Form_Load()
     Dim strSQL As String
     Dim bRunUpdates As Boolean
     Dim intUpdate As Integer
+    Dim dbBackendDB As DAO.Database
     
     ' The \Backend folder should be deployed alongside the app with all resources referenced here
     strBEDataPath = CurrentProject.Path & "\Backend\IDBE01.accdb"
@@ -2784,22 +2785,23 @@ Private Sub Form_Load()
     CurrentDb.Properties("AppIcon").Value = strIconPath
     DoCmd.ShowToolbar "Ribbon", acToolbarNo
     Application.RefreshTitleBar
+        
+    DoCmd.DeleteObject acTable, "tblSchema"
+    DoCmd.TransferDatabase acLink, "Microsoft Access", strBEDataPath, acTable, "tblSchema", "tblSchema"
     
     ' ### NOTE ON ADDING LINKED TABLES IN DEVELOPMENT ###
     ' All linked tables must be listed in both the DeleteObject and TransferDatabase codeblocks below for dynamic
     ' re-linking to work as intended. Follow below syntax, subtituing table name only.
-    
+         
     ' "Delete" the previous table links to avoid issue where multiple instances of the same link are created and application performance decreases significantly
-    DoCmd.DeleteObject acTable, "tblInstallEquipment"
-    DoCmd.DeleteObject acTable, "tblInstalls"
-    DoCmd.DeleteObject acTable, "tblUsers"
-    DoCmd.DeleteObject acTable, "tblSchema"
+    BreakLinkIfExists "tblInstallEquipment"
+    BreakLinkIfExists "tblInstalls"
+    BreakLinkIfExists "tblUsers"
     
     ' Add the tables with the current application path for dynamic re-linking
     DoCmd.TransferDatabase acLink, "Microsoft Access", strBEDataPath, acTable, "tblInstallEquipment", "tblInstallEquipment"
     DoCmd.TransferDatabase acLink, "Microsoft Access", strBEDataPath, acTable, "tblInstalls", "tblInstalls"
     DoCmd.TransferDatabase acLink, "Microsoft Access", strBEDataPath, acTable, "tblUsers", "tblUsers"
-    DoCmd.TransferDatabase acLink, "Microsoft Access", strBEDataPath, acTable, "tblSchema", "tblSchema"
     
     ' ### NOTE ON CHANGING BACKEND STRUCTURE ###
     ' Whenever making a change to backend structure, add changes to this script to ensure end users' backends can be updated automatically from previous versions
@@ -2821,27 +2823,76 @@ Private Sub Form_Load()
     End If
     
     
-    ' Example update for reference; in this hypothetical example, backend changes were implemented in 1.3.7 affecting 1.3.x
+    ' Backend update script; supports auto-updates from 1.3.7 forward
     ' List in chronological order for proper update processing
     bRunUpdates = False
+    On Error Resume Next
+    
     If intBEVersionMajor < intFEVersionMajor Or _
         (intBEVersionMajor = intFEVersionMajor And intBEVersionMinor < intFEVersionMinor) Or _
         (intBEVersionMajor = intFEVersionMajor And intBEVersionMinor = intFEVersionMinor And intBEVersionPatch < intFEVersionPatch) Then
-            intUpdate = MsgBox("A schema update is available for the backend database. Run update now?", vbInformation + vbYesNo + vbDefaultButton1, "Update Available")
+            intUpdate = MsgBox("A schema update is required for the backend database. Run update now?", vbInformation + vbYesNo + vbDefaultButton1, "Update Available")
             If intUpdate = vbYes Then
                 bRunUpdates = True
+            Else
+                MsgBox "Backend schema must be updated to continue. Application will now close.", vbCritical + vbOKOnly, "Update Failed"
+                Application.Quit acQuitSaveAll
             End If
     End If
     
-    If bRunUpdates And intBEVersionMajor = 1 And intBEVersionMinor = 3 And intBEVersionPatch < 7 Then
-    
-        ' Make changes here and commit them to strBEDataPath
-        
-        UpdateBackendSchemaVersion 1, 3, 7, intBEVersionMajor, intBEVersionMinor, intBEVersionPatch
+    ' Updates in v1.3.9 (covers all previous versions, cannot be run on backends >= 1.3.9
+    If bRunUpdates And intBEVersionMajor <= 1 And intBEVersionMinor <= 3 And intBEVersionPatch < 9 Then
+        Set dbBackendDB = DBEngine.Workspaces(0).OpenDatabase(strBEDataPath)
+        strSQL = "CREATE TABLE tblConnections (strHostname CHAR PRIMARY KEY, strUser CHAR);"
+        dbBackendDB.Execute strSQL
+        Set dbBackendDB = CurrentDb
     End If
+    
+    BreakLinkIfExists "tblConnections"
+    DoCmd.TransferDatabase acLink, "Microsoft Access", strBEDataPath, acTable, "tblConnections", "tblConnections"
+    
+    ' Updates in v1.3.10 -- hash all passwords previously stored as plain text
+    If bRunUpdates And intBEVersionMajor <= 1 And intBEVersionMinor <= 3 And intBEVersionPatch < 10 Then
+        Dim rs As DAO.Recordset
+        Dim strOldPass As String
         
+        Set rs = CurrentDb.OpenRecordset("SELECT * FROM tblUsers")
+        
+        If Not rs.EOF Then
+            rs.MoveFirst
+            Do Until rs.EOF = True
+                strOldPass = rs.Fields("strPassword").Value
+                rs.Edit
+                rs!strPassword = Form_fdlgUserControl.GenerateHash(strOldPass)
+                rs.Update
+                rs.MoveNext
+            Loop
+        End If
+        
+        rs.Close
+        Set rs = Nothing
+    End If
+    
+    ' After all updates complete, update the backend version tag to match current frontend version
+    If bRunUpdates Then
+        UpdateBackendSchemaVersion intFEVersionMajor, intFEVersionMinor, intFEVersionPatch, _
+                                   intBEVersionMajor, intBEVersionMinor, intBEVersionPatch
+    End If
+    
+    ' END backend updates section
+    
+
     
 End Sub
+
+Private Function BreakLinkIfExists(TableName As String)
+
+    On Error Resume Next
+        If IsObject(CurrentDb.TableDefs(TableName)) Then
+            DoCmd.DeleteObject acTable, TableName
+        End If
+
+End Function
 
 Private Function UpdateBackendSchemaVersion(BEMajor As Integer, BEMinor As Integer, BEPatch As Integer, BEMajorOld As Integer, BEMinorOld As Integer, BEPatchOld As Integer)
 

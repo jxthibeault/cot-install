@@ -18,6 +18,7 @@ Begin Form
     RecSrcDt = Begin
         0xebeaa2e0d7eee540
     End
+    OnClose ="[Event Procedure]"
     DatasheetFontName ="Calibri"
     OnTimer ="[Event Procedure]"
     AllowDatasheetView =0
@@ -51,11 +52,29 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Compare Database
 
+Private Sub Form_Close()
+
+    ' If the application is "dirty" closed for any reason, close this session at the backend
+
+    Dim strSQL As String
+
+    ' Disable warnings, as DoCmd.RunSQL asks user for confirmation before executing
+    DoCmd.SetWarnings False
+    
+    ' On closing the form, remove this connection from open connections list
+    strSQL = "Delete * From [tblConnections] WHERE [strHostname] = '" & Form_fdlgUserControl.GetHostname() & "'"
+    DoCmd.RunSQL strSQL
+    
+    ' Re-enable warnings (in effect, return to default setting)
+    DoCmd.SetWarnings True
+
+End Sub
+
 Sub Form_Timer()
 
     ' IDLEMINUTES determines how much idle time to wait for before
     ' running the IdleTimeDetected subroutine.
-    Const IDLEMINUTES = 25
+    Const IDLEMINUTES = 15
 
     Static PrevControlName As String
     Static PrevFormName As String
@@ -118,8 +137,8 @@ Sub IdleTimeDetected(ExpiredMinutes)
     ' Disable warnings, as DoCmd.RunSQL asks user for confirmation before executing
     DoCmd.SetWarnings False
     
-    ' On closing the form, sets the "currentUser" instance variable to null to effectively log user out
-    strSQL = "Delete * From [zstlkpInstanceVariables] WHERE [strKey]='currentUser'"
+    ' On closing the form, remove this connection from connections list
+    strSQL = "Delete * From [tblConnections] WHERE [strHostname] = '" & Form_fdlgUserControl.GetHostname() & "'"
     DoCmd.RunSQL strSQL
     
     ' Re-enable warnings (in effect, return to default setting)
