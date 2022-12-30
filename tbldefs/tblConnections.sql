@@ -1,0 +1,4 @@
+﻿CREATE TABLE [tblConnections] (
+  [strHostname] VARCHAR (255) CONSTRAINT [Index_172B0DF8_57B9_4A4C] PRIMARY KEY UNIQUE NOT NULL,
+  [strUser] VARCHAR (255)
+)

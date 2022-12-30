@@ -1,0 +1,13 @@
+﻿{
+  "Info": {
+    "Class": "clsDbTableDef",
+    "Description": "Linked Table"
+  },
+  "Items": {
+    "Name": "tblConnections",
+    "Connect": ";DATABASE=rel:Backend\\IDBE01.accdb",
+    "SourceTableName": "tblConnections",
+    "Attributes": 1073741824,
+    "PrimaryKey": "[strHostname]"
+  }
+}
