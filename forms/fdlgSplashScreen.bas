@@ -25,9 +25,9 @@ Begin Form
     DatasheetFontHeight =11
     ItemSuffix =15
     Left =10350
-    Top =5580
+    Top =3735
     Right =18450
-    Bottom =9825
+    Bottom =7980
     TimerInterval =900
     RecSrcDt = Begin
         0x7c26ac2350ede540
@@ -2861,9 +2861,9 @@ Private Sub Form_Load()
         If Not rs.EOF Then
             rs.MoveFirst
             Do Until rs.EOF = True
-                strOldPass = rs!strPassword
+                strOldPass = rs.Fields("strPassword").Value
                 rs.Edit
-                rs!strPassword = Form_fdlgUserControl.GenerateHash(strOldPass, Form_fdlgUserControl.GenerateSalt())
+                rs!strPassword = Form_fdlgUserControl.GenerateHash(strOldPass)
                 rs.Update
                 rs.MoveNext
             Loop

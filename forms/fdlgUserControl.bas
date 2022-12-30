@@ -6404,32 +6404,11 @@ Private Function ConvToHexString(vIn As Variant) As Variant
 
 End Function
 
-Public Function GenerateSalt() As String
 
-    Dim strPool As String
-    Dim strSalt As String
-    Dim lngI As Long
-    
-    strPool = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    strSalt = ""
-    
-    Randomize
-    For lngI = 1 To 7
-        strSalt = strSalt & Mid$(strPool, Int(Rnd() * Len(strPool) + 1), 1)
-    Next
-    
-    GenerateSalt = strSalt
-
-End Function
-
-Public Function GenerateHash(strPassword As String, strSalt As String) As String
+Public Function GenerateHash(strPassword As String) As String
 
     Dim strHash As String
-    
-    strPassword = strPassword & strSalt
     strHash = SHA256(strPassword)
-    strHash = strHash & strSalt
-    
     GenerateHash = strHash
 
 End Function
@@ -6482,7 +6461,7 @@ Public Function GetCurrentUser() As String
 
 End Function
 
-Public Function SetCurrentUserPassword(strPassword) As Boolean
+Public Function SetCurrentUserPassword(strPassword As String) As Boolean
 
     Dim strCurrentUser As String
     Dim strCorrectCurrentPassword As String
@@ -6492,6 +6471,8 @@ Public Function SetCurrentUserPassword(strPassword) As Boolean
     
     ' Disable warnings, as DoCmd.RunSQL asks user for confirmation before executing
     DoCmd.SetWarnings False
+    
+    strPassword = GenerateHash(strPassword)
     
     strSQL = "UPDATE [tblUsers] SET strPassword = '" & strPassword & "' WHERE [strUsername] = '" & strCurrentUser & "'"
     DoCmd.RunSQL strSQL
@@ -6523,15 +6504,22 @@ End Function
 
 Public Function LoginCurrentInstance(strUsername As String, strPasswordEntered As String) As Boolean
 
-    Dim strCorrectPassword As String
+    Dim strCorrectHash As String
+    Dim strEnteredHash As String
     Dim strSQL As String
     
     ' False by default
     LoginCurrentInstance = False
     
-    strCorrectPassword = GetUserPassword(strUsername)
+    If Not UserExists(strUsername) Then
+        LoginCurrentInstance = False
+        GoTo FunctionEnd
+    End If
     
-    If strCorrectPassword = strPasswordEntered Then
+    strCorrectHash = GetUserPassword(strUsername)
+    strEnteredHash = GenerateHash(strPasswordEntered)
+    
+    If strCorrectHash = strEnteredHash Then
             
         ' Cleanup in case someone was previously logged in and had a dirty disconnect
         ' Disable warnings, as DoCmd.RunSQL asks user for confirmation before executing
@@ -6552,6 +6540,8 @@ Public Function LoginCurrentInstance(strUsername As String, strPasswordEntered A
     Else
         LoginCurrentInstance = False
     End If
+    
+FunctionEnd:
 
 End Function
 
