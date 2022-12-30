@@ -24,10 +24,10 @@ Begin Form
     Width =8100
     DatasheetFontHeight =11
     ItemSuffix =15
-    Left =10350
-    Top =3735
-    Right =18450
-    Bottom =7980
+    Left =-31171
+    Top =4560
+    Right =-23071
+    Bottom =8805
     TimerInterval =900
     RecSrcDt = Begin
         0x7c26ac2350ede540
@@ -2754,24 +2754,122 @@ Attribute VB_Creatable = True
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Compare Database
+ 
+'                                       ### IMPORTANT ###
+' This form's Form_Load() function contains CRITICAL application start-up instructions including
+' dynamic linking of linked datasources that allows for universal deployment. Be VERY careful and make backups
+' whenever making any changes to the Form_Load() function!!!
 
 Private Sub Form_Load()
 
+    ' ### READ NOTICE AT TOP OF THIS MODULE BEFORE MODIFYING THIS FUNCTION ###
+
     Dim strBEPath As String
     Dim strIconPath As String
+    Dim intBEVersionMajor As Integer
+    Dim intBEVersionMinor As Integer
+    Dim intBEVersionPatch As Integer
+    Dim intFEVersionMajor As Integer
+    Dim intFEVersionMinor As Integer
+    Dim intFEVersionPatch As Integer
+    Dim strSQL As String
+    Dim bRunUpdates As Boolean
+    Dim intUpdate As Integer
     
+    ' The \Backend folder should be deployed alongside the app with all resources referenced here
     strBEDataPath = CurrentProject.Path & "\Backend\IDBE01.accdb"
     strIconPath = CurrentProject.Path & "\Backend\AppIcon.ico"
     
+    ' Sets the application icon for dynamic app deployment and removes visible Access toolbars
     CurrentDb.Properties("AppIcon").Value = strIconPath
     DoCmd.ShowToolbar "Ribbon", acToolbarNo
-    
     Application.RefreshTitleBar
     
+    ' ### NOTE ON ADDING LINKED TABLES IN DEVELOPMENT ###
+    ' All linked tables must be listed in both the DeleteObject and TransferDatabase codeblocks below for dynamic
+    ' re-linking to work as intended. Follow below syntax, subtituing table name only.
+    
+    ' "Delete" the previous table links to avoid issue where multiple instances of the same link are created and application performance decreases significantly
+    DoCmd.DeleteObject acTable, "tblInstallEquipment"
+    DoCmd.DeleteObject acTable, "tblInstalls"
+    DoCmd.DeleteObject acTable, "tblUsers"
+    DoCmd.DeleteObject acTable, "tblSchema"
+    
+    ' Add the tables with the current application path for dynamic re-linking
     DoCmd.TransferDatabase acLink, "Microsoft Access", strBEDataPath, acTable, "tblInstallEquipment", "tblInstallEquipment"
     DoCmd.TransferDatabase acLink, "Microsoft Access", strBEDataPath, acTable, "tblInstalls", "tblInstalls"
     DoCmd.TransferDatabase acLink, "Microsoft Access", strBEDataPath, acTable, "tblUsers", "tblUsers"
+    DoCmd.TransferDatabase acLink, "Microsoft Access", strBEDataPath, acTable, "tblSchema", "tblSchema"
     
+    ' ### NOTE ON CHANGING BACKEND STRUCTURE ###
+    ' Whenever making a change to backend structure, add changes to this script to ensure end users' backends can be updated automatically from previous versions
+    intBEVersionMajor = CInt(DLookup("[strValue]", "tblSchema", "[strKey] = 'BackendVersionMajor'"))
+    intBEVersionMinor = CInt(DLookup("[strValue]", "tblSchema", "[strKey] = 'BackendVersionMinor'"))
+    intBEVersionPatch = CInt(DLookup("[strValue]", "tblSchema", "[strKey] = 'BackendVersionPatch'"))
+    
+    intFEVersionMajor = CInt(DLookup("[strValue]", "zstlkpInstanceVariables", "[strKey] = 'FrontendVersionMajor'"))
+    intFEVersionMinor = CInt(DLookup("[strValue]", "zstlkpInstanceVariables", "[strKey] = 'FrontendVersionMinor'"))
+    intFEVersionPatch = CInt(DLookup("[strValue]", "zstlkpInstanceVariables", "[strKey] = 'FrontendVersionPatch'"))
+    
+    ' Checks if backend schema is newer than this frontend supports; if so, notify end user and quit to avoid data corruption.
+    If intBEVersionMajor > intFEVersionMajor Then
+        VersionMismatchQuit intBEVersionMajor, intBEVersionMinor, intBEVersionPatch, intFEVersionMajor, intFEVersionMinor, intFEVersionPatch
+    ElseIf intBEVersionMinor > intFEVersionMinor Then
+        VersionMismatchQuit intBEVersionMajor, intBEVersionMinor, intBEVersionPatch, intFEVersionMajor, intFEVersionMinor, intFEVersionPatch
+    ElseIf intBEVersionPatch > intFEVersionPatch Then
+        VersionMismatchQuit intBEVersionMajor, intBEVersionMinor, intBEVersionPatch, intFEVersionMajor, intFEVersionMinor, intFEVersionPatch
+    End If
+    
+    
+    ' Example update for reference; in this hypothetical example, backend changes were implemented in 1.3.7 affecting 1.3.x
+    ' List in chronological order for proper update processing
+    bRunUpdates = False
+    If intBEVersionMajor < intFEVersionMajor Or _
+        (intBEVersionMajor = intFEVersionMajor And intBEVersionMinor < intFEVersionMinor) Or _
+        (intBEVersionMajor = intFEVersionMajor And intBEVersionMinor = intFEVersionMinor And intBEVersionPatch < intFEVersionPatch) Then
+            intUpdate = MsgBox("A schema update is available for the backend database. Run update now?", vbInformation + vbYesNo + vbDefaultButton1, "Update Available")
+            If intUpdate = vbYes Then
+                bRunUpdates = True
+            End If
+    End If
+    
+    If bRunUpdates And intBEVersionMajor = 1 And intBEVersionMinor = 3 And intBEVersionPatch < 7 Then
+    
+        ' Make changes here and commit them to strBEDataPath
+        
+        UpdateBackendSchemaVersion 1, 3, 7, intBEVersionMajor, intBEVersionMinor, intBEVersionPatch
+    End If
+        
+    
+End Sub
+
+Private Function UpdateBackendSchemaVersion(BEMajor As Integer, BEMinor As Integer, BEPatch As Integer, BEMajorOld As Integer, BEMinorOld As Integer, BEPatchOld As Integer)
+
+    ' Disable warnings, as DoCmd.RunSQL asks user for confirmation before executing
+    DoCmd.SetWarnings False
+    strSQL = "UPDATE [tblSchema] SET strValue = '" & BEMajor & "' WHERE [strKey] = 'BackendVersionMajor'"
+    DoCmd.RunSQL strSQL
+    strSQL = "UPDATE [tblSchema] SET strValue = '" & BEMinor & "' WHERE [strKey] = 'BackendVersionMinor'"
+    DoCmd.RunSQL strSQL
+    strSQL = "UPDATE [tblSchema] SET strValue = '" & BEPatch & "' WHERE [strKey] = 'BackendVersionPatch'"
+    DoCmd.RunSQL strSQL
+    
+    ' Re-enable warnings (in effect, return to default setting)
+    DoCmd.SetWarnings True
+    
+    MsgBox "Updated backend to version " & BEMajor & "." & BEMinor & "." & BEPatch & " successfully. (Updated from version " _
+        & BEMajorOld & "." & BEMinorOld & "." & BEPatchOld & ")", vbInformation, "Schema Update Successful"
+
+End Function
+
+Private Sub VersionMismatchQuit(BEMajor As Integer, BEMinor As Integer, BEPatch As Integer, FEMajor As Integer, FEMinor As Integer, FEPatch As Integer)
+
+    MsgBox "Backend version (" & BEMajor & "." & BEMinor & "." _
+            & BEPatch & ") is a newer version than the frontend (" & FEMajor _
+            & "." & FEMinor & "." & FEPatch & "). Please update frontend to latest version and re-launch application.", _
+            vbCritical, "Backend Version Mismatch"
+    Application.Quit acQuitSaveAll
+
 End Sub
 
 Private Sub Form_Timer()
