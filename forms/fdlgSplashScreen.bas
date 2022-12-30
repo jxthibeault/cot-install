@@ -24,9 +24,9 @@ Begin Form
     Width =8100
     DatasheetFontHeight =11
     ItemSuffix =15
-    Left =14640
+    Left =-31171
     Top =4560
-    Right =22740
+    Right =-23071
     Bottom =8805
     TimerInterval =900
     RecSrcDt = Begin
@@ -2772,6 +2772,9 @@ Private Sub Form_Load()
     Dim intFEVersionMajor As Integer
     Dim intFEVersionMinor As Integer
     Dim intFEVersionPatch As Integer
+    Dim strSQL As String
+    Dim bRunUpdates As Boolean
+    Dim intUpdate As Integer
     
     ' The \Backend folder should be deployed alongside the app with all resources referenced here
     strBEDataPath = CurrentProject.Path & "\Backend\IDBE01.accdb"
@@ -2800,7 +2803,6 @@ Private Sub Form_Load()
     
     ' ### NOTE ON CHANGING BACKEND STRUCTURE ###
     ' Whenever making a change to backend structure, add changes to this script to ensure end users' backends can be updated automatically from previous versions
-    ' Also check if existing backend is a newer version than this app, and if so don't allow it to be used
     intBEVersionMajor = CInt(DLookup("[strValue]", "tblSchema", "[strKey] = 'BackendVersionMajor'"))
     intBEVersionMinor = CInt(DLookup("[strValue]", "tblSchema", "[strKey] = 'BackendVersionMinor'"))
     intBEVersionPatch = CInt(DLookup("[strValue]", "tblSchema", "[strKey] = 'BackendVersionPatch'"))
@@ -2809,6 +2811,7 @@ Private Sub Form_Load()
     intFEVersionMinor = CInt(DLookup("[strValue]", "zstlkpInstanceVariables", "[strKey] = 'FrontendVersionMinor'"))
     intFEVersionPatch = CInt(DLookup("[strValue]", "zstlkpInstanceVariables", "[strKey] = 'FrontendVersionPatch'"))
     
+    ' Checks if backend schema is newer than this frontend supports; if so, notify end user and quit to avoid data corruption.
     If intBEVersionMajor > intFEVersionMajor Then
         VersionMismatchQuit intBEVersionMajor, intBEVersionMinor, intBEVersionPatch, intFEVersionMajor, intFEVersionMinor, intFEVersionPatch
     ElseIf intBEVersionMinor > intFEVersionMinor Then
@@ -2816,9 +2819,48 @@ Private Sub Form_Load()
     ElseIf intBEVersionPatch > intFEVersionPatch Then
         VersionMismatchQuit intBEVersionMajor, intBEVersionMinor, intBEVersionPatch, intFEVersionMajor, intFEVersionMinor, intFEVersionPatch
     End If
+    
+    
+    ' Example update for reference; in this hypothetical example, backend changes were implemented in 1.3.7 affecting 1.3.x
+    ' List in chronological order for proper update processing
+    bRunUpdates = False
+    If intBEVersionMajor < intFEVersionMajor Or _
+        (intBEVersionMajor = intFEVersionMajor And intBEVersionMinor < intFEVersionMinor) Or _
+        (intBEVersionMajor = intFEVersionMajor And intBEVersionMinor = intFEVersionMinor And intBEVersionPatch < intFEVersionPatch) Then
+            intUpdate = MsgBox("A schema update is available for the backend database. Run update now?", vbInformation + vbYesNo + vbDefaultButton1, "Update Available")
+            If intUpdate = vbYes Then
+                bRunUpdates = True
+            End If
+    End If
+    
+    If bRunUpdates And intBEVersionMajor = 1 And intBEVersionMinor = 3 And intBEVersionPatch < 7 Then
+    
+        ' Make changes here and commit them to strBEDataPath
+        
+        UpdateBackendSchemaVersion 1, 3, 7, intBEVersionMajor, intBEVersionMinor, intBEVersionPatch
+    End If
         
     
 End Sub
+
+Private Function UpdateBackendSchemaVersion(BEMajor As Integer, BEMinor As Integer, BEPatch As Integer, BEMajorOld As Integer, BEMinorOld As Integer, BEPatchOld As Integer)
+
+    ' Disable warnings, as DoCmd.RunSQL asks user for confirmation before executing
+    DoCmd.SetWarnings False
+    strSQL = "UPDATE [tblSchema] SET strValue = '" & BEMajor & "' WHERE [strKey] = 'BackendVersionMajor'"
+    DoCmd.RunSQL strSQL
+    strSQL = "UPDATE [tblSchema] SET strValue = '" & BEMinor & "' WHERE [strKey] = 'BackendVersionMinor'"
+    DoCmd.RunSQL strSQL
+    strSQL = "UPDATE [tblSchema] SET strValue = '" & BEPatch & "' WHERE [strKey] = 'BackendVersionPatch'"
+    DoCmd.RunSQL strSQL
+    
+    ' Re-enable warnings (in effect, return to default setting)
+    DoCmd.SetWarnings True
+    
+    MsgBox "Updated backend to version " & BEMajor & "." & BEMinor & "." & BEPatch & " successfully. (Updated from version " _
+        & BEMajorOld & "." & BEMinorOld & "." & BEPatchOld & ")", vbInformation, "Schema Update Successful"
+
+End Function
 
 Private Sub VersionMismatchQuit(BEMajor As Integer, BEMinor As Integer, BEPatch As Integer, FEMajor As Integer, FEMinor As Integer, FEPatch As Integer)
 
