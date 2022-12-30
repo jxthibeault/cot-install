@@ -1,0 +1,13 @@
+﻿{
+  "Info": {
+    "Class": "clsDbTableDef",
+    "Description": "Linked Table"
+  },
+  "Items": {
+    "Name": "tblSchema",
+    "Connect": ";DATABASE=rel:Backend\\IDBE01.accdb",
+    "SourceTableName": "tblSchema",
+    "Attributes": 1073741824,
+    "PrimaryKey": "[strKey]"
+  }
+}

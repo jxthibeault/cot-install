@@ -1,0 +1,4 @@
+﻿CREATE TABLE [tblSchema] (
+  [strKey] VARCHAR (255) CONSTRAINT [PrimaryKey] PRIMARY KEY UNIQUE NOT NULL,
+  [strValue] VARCHAR (255)
+)

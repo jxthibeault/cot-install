@@ -24,10 +24,10 @@ Begin Form
     Width =8100
     DatasheetFontHeight =11
     ItemSuffix =15
-    Left =10350
-    Top =3735
-    Right =18450
-    Bottom =7980
+    Left =14640
+    Top =4560
+    Right =22740
+    Bottom =8805
     TimerInterval =900
     RecSrcDt = Begin
         0x7c26ac2350ede540
@@ -2766,6 +2766,12 @@ Private Sub Form_Load()
 
     Dim strBEPath As String
     Dim strIconPath As String
+    Dim intBEVersionMajor As Integer
+    Dim intBEVersionMinor As Integer
+    Dim intBEVersionPatch As Integer
+    Dim intFEVersionMajor As Integer
+    Dim intFEVersionMinor As Integer
+    Dim intFEVersionPatch As Integer
     
     ' The \Backend folder should be deployed alongside the app with all resources referenced here
     strBEDataPath = CurrentProject.Path & "\Backend\IDBE01.accdb"
@@ -2784,12 +2790,44 @@ Private Sub Form_Load()
     DoCmd.DeleteObject acTable, "tblInstallEquipment"
     DoCmd.DeleteObject acTable, "tblInstalls"
     DoCmd.DeleteObject acTable, "tblUsers"
+    DoCmd.DeleteObject acTable, "tblSchema"
     
     ' Add the tables with the current application path for dynamic re-linking
     DoCmd.TransferDatabase acLink, "Microsoft Access", strBEDataPath, acTable, "tblInstallEquipment", "tblInstallEquipment"
     DoCmd.TransferDatabase acLink, "Microsoft Access", strBEDataPath, acTable, "tblInstalls", "tblInstalls"
     DoCmd.TransferDatabase acLink, "Microsoft Access", strBEDataPath, acTable, "tblUsers", "tblUsers"
+    DoCmd.TransferDatabase acLink, "Microsoft Access", strBEDataPath, acTable, "tblSchema", "tblSchema"
     
+    ' ### NOTE ON CHANGING BACKEND STRUCTURE ###
+    ' Whenever making a change to backend structure, add changes to this script to ensure end users' backends can be updated automatically from previous versions
+    ' Also check if existing backend is a newer version than this app, and if so don't allow it to be used
+    intBEVersionMajor = CInt(DLookup("[strValue]", "tblSchema", "[strKey] = 'BackendVersionMajor'"))
+    intBEVersionMinor = CInt(DLookup("[strValue]", "tblSchema", "[strKey] = 'BackendVersionMinor'"))
+    intBEVersionPatch = CInt(DLookup("[strValue]", "tblSchema", "[strKey] = 'BackendVersionPatch'"))
+    
+    intFEVersionMajor = CInt(DLookup("[strValue]", "zstlkpInstanceVariables", "[strKey] = 'FrontendVersionMajor'"))
+    intFEVersionMinor = CInt(DLookup("[strValue]", "zstlkpInstanceVariables", "[strKey] = 'FrontendVersionMinor'"))
+    intFEVersionPatch = CInt(DLookup("[strValue]", "zstlkpInstanceVariables", "[strKey] = 'FrontendVersionPatch'"))
+    
+    If intBEVersionMajor > intFEVersionMajor Then
+        VersionMismatchQuit intBEVersionMajor, intBEVersionMinor, intBEVersionPatch, intFEVersionMajor, intFEVersionMinor, intFEVersionPatch
+    ElseIf intBEVersionMinor > intFEVersionMinor Then
+        VersionMismatchQuit intBEVersionMajor, intBEVersionMinor, intBEVersionPatch, intFEVersionMajor, intFEVersionMinor, intFEVersionPatch
+    ElseIf intBEVersionPatch > intFEVersionPatch Then
+        VersionMismatchQuit intBEVersionMajor, intBEVersionMinor, intBEVersionPatch, intFEVersionMajor, intFEVersionMinor, intFEVersionPatch
+    End If
+        
+    
+End Sub
+
+Private Sub VersionMismatchQuit(BEMajor As Integer, BEMinor As Integer, BEPatch As Integer, FEMajor As Integer, FEMinor As Integer, FEPatch As Integer)
+
+    MsgBox "Backend version (" & BEMajor & "." & BEMinor & "." _
+            & BEPatch & ") is a newer version than the frontend (" & FEMajor _
+            & "." & FEMinor & "." & FEPatch & "). Please update frontend to latest version and re-launch application.", _
+            vbCritical, "Backend Version Mismatch"
+    Application.Quit acQuitSaveAll
+
 End Sub
 
 Private Sub Form_Timer()
