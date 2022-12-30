@@ -138,7 +138,7 @@ Sub IdleTimeDetected(ExpiredMinutes)
     DoCmd.SetWarnings False
     
     ' On closing the form, remove this connection from connections list
-    strSQL = "Delete * From [tblConnections] WHERE [strHostname] = '" & GetHostname() & "'"
+    strSQL = "Delete * From [tblConnections] WHERE [strHostname] = '" & Form_fdlgUserControl.GetHostname() & "'"
     DoCmd.RunSQL strSQL
     
     ' Re-enable warnings (in effect, return to default setting)

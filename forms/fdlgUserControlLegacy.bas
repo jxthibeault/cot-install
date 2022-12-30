@@ -2,46 +2,40 @@
 VersionRequired =20
 Begin Form
     PopUp = NotDefault
-    Modal = NotDefault
     RecordSelectors = NotDefault
     MaxButton = NotDefault
-    MinButton = NotDefault
-    ControlBox = NotDefault
     AutoCenter = NotDefault
     NavigationButtons = NotDefault
-    AllowDeletions = NotDefault
-    CloseButton = NotDefault
     DividingLines = NotDefault
-    AllowAdditions = NotDefault
+    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
-    DefaultView =0
-    ScrollBars =0
-    BorderStyle =0
+    ScrollBars =2
+    BorderStyle =1
     PictureAlignment =2
     DatasheetGridlinesBehavior =3
     GridX =24
     GridY =24
-    Width =8100
+    Width =12900
     DatasheetFontHeight =11
-    ItemSuffix =15
-    Left =10350
-    Top =5580
-    Right =18450
-    Bottom =9825
-    TimerInterval =900
+    ItemSuffix =48
+    Left =5565
+    Top =2445
+    Right =18720
+    Bottom =13500
+    Filter ="NOT strUsername = \"setup\""
     RecSrcDt = Begin
-        0x7c26ac2350ede540
+        0x949f7bd153ece540
     End
-    Caption ="Loading"
+    RecordSource ="tblUsers"
+    Caption ="User Control"
     DatasheetFontName ="Calibri"
-    OnTimer ="[Event Procedure]"
-    OnLoad ="[Event Procedure]"
-    Moveable =0
-    FilterOnLoad =0
+    AllowFormView =0
+    FilterOnLoad =255
     ShowPageMargins =0
     DisplayOnSharePointSite =1
     DatasheetAlternateBackColor =15921906
     DatasheetGridlinesColor12 =0
+    FitToScreen =1
     DatasheetBackThemeColorIndex =1
     BorderThemeColorIndex =3
     ThemeFontIndex =1
@@ -117,9 +111,14 @@ Begin Form
             GridlineThemeColorIndex =1
             GridlineShade =65.0
         End
-        Begin UnboundObjectFrame
-            SpecialEffect =2
-            OldBorderStyle =1
+        Begin ComboBox
+            AddColon = NotDefault
+            BorderLineStyle =0
+            LabelX =-1800
+            FontSize =11
+            FontName ="Calibri"
+            AllowValueListEdits =1
+            InheritValueList =1
             ThemeFontIndex =1
             BackThemeColorIndex =1
             BorderThemeColorIndex =1
@@ -135,51 +134,324 @@ Begin Form
             GridlineShade =65.0
         End
         Begin FormHeader
-            Visible = NotDefault
-            Height =0
+            Height =744
             BackColor =1315470
             Name ="secFormHeader"
             AlternateBackThemeColorIndex =1
             AlternateBackShade =95.0
-        End
-        Begin Section
-            CanGrow = NotDefault
-            Height =4260
-            BackColor =1315470
-            Name ="secFormDetail"
-            AlternateBackThemeColorIndex =1
             Begin
                 Begin Label
-                    OverlapFlags =85
-                    TextAlign =2
-                    Top =2940
-                    Width =8100
-                    Height =900
-                    FontSize =18
-                    FontWeight =800
-                    BorderColor =8355711
-                    ForeColor =16777215
-                    Name ="lblNowLoading"
-                    Caption ="Opening connection..."
+                    OverlapFlags =93
+                    TextAlign =1
+                    Left =60
+                    Top =60
+                    Width =6870
+                    Height =480
+                    FontSize =16
+                    FontWeight =500
+                    Name ="lblFormTitle"
+                    Caption ="User Control"
                     FontName ="Verdana"
+                    GroupTable =2
                     GridlineColor =10921638
-                    LayoutCachedTop =2940
-                    LayoutCachedWidth =8100
-                    LayoutCachedHeight =3840
+                    LayoutCachedLeft =60
+                    LayoutCachedTop =60
+                    LayoutCachedWidth =6930
+                    LayoutCachedHeight =540
+                    LayoutGroup =1
                     ThemeFontIndex =-1
-                    ForeThemeColorIndex =-1
+                    BorderThemeColorIndex =2
+                    BorderTint =100.0
+                    ForeThemeColorIndex =1
                     ForeTint =100.0
+                    GroupTable =2
                 End
+                Begin Label
+                    OverlapFlags =215
+                    TextAlign =1
+                    Left =30
+                    Top =420
+                    Width =2430
+                    Height =302
+                    FontWeight =500
+                    LeftMargin =44
+                    TopMargin =22
+                    RightMargin =44
+                    BottomMargin =22
+                    BorderColor =8355711
+                    Name ="lblCustomer"
+                    Caption ="Username"
+                    GroupTable =3
+                    GridlineColor =10921638
+                    LayoutCachedLeft =30
+                    LayoutCachedTop =420
+                    LayoutCachedWidth =2460
+                    LayoutCachedHeight =722
+                    LayoutGroup =2
+                    ThemeFontIndex =-1
+                    ForeThemeColorIndex =1
+                    ForeTint =100.0
+                    GroupTable =3
+                End
+                Begin Label
+                    OverlapFlags =215
+                    TextAlign =1
+                    Left =2520
+                    Top =420
+                    Width =2460
+                    Height =302
+                    FontWeight =500
+                    LeftMargin =44
+                    TopMargin =22
+                    RightMargin =44
+                    BottomMargin =22
+                    BorderColor =8355711
+                    Name ="lblDisplayName"
+                    Caption ="Display Name"
+                    GroupTable =3
+                    GridlineColor =10921638
+                    LayoutCachedLeft =2520
+                    LayoutCachedTop =420
+                    LayoutCachedWidth =4980
+                    LayoutCachedHeight =722
+                    ColumnStart =1
+                    ColumnEnd =1
+                    LayoutGroup =2
+                    ThemeFontIndex =-1
+                    ForeThemeColorIndex =1
+                    ForeTint =100.0
+                    GroupTable =3
+                End
+                Begin Label
+                    OverlapFlags =85
+                    TextAlign =1
+                    Left =7860
+                    Top =420
+                    Width =2220
+                    Height =302
+                    FontWeight =500
+                    LeftMargin =44
+                    TopMargin =22
+                    RightMargin =44
+                    BottomMargin =22
+                    BorderColor =8355711
+                    Name ="lblPermissionLevel"
+                    Caption ="Permission Level"
+                    GroupTable =5
+                    GridlineColor =10921638
+                    LayoutCachedLeft =7860
+                    LayoutCachedTop =420
+                    LayoutCachedWidth =10080
+                    LayoutCachedHeight =722
+                    LayoutGroup =3
+                    ThemeFontIndex =-1
+                    ForeThemeColorIndex =1
+                    ForeTint =100.0
+                    GroupTable =5
+                End
+                Begin Label
+                    OverlapFlags =85
+                    TextAlign =1
+                    Left =10140
+                    Top =420
+                    Width =2640
+                    Height =302
+                    FontWeight =500
+                    LeftMargin =44
+                    TopMargin =22
+                    RightMargin =44
+                    BottomMargin =22
+                    BorderColor =8355711
+                    Name ="lblPassword"
+                    Caption ="Change Password"
+                    GroupTable =6
+                    GridlineColor =10921638
+                    LayoutCachedLeft =10140
+                    LayoutCachedTop =420
+                    LayoutCachedWidth =12780
+                    LayoutCachedHeight =722
+                    LayoutGroup =4
+                    ForeThemeColorIndex =1
+                    ForeTint =100.0
+                    GroupTable =6
+                End
+                Begin Label
+                    OverlapFlags =215
+                    TextAlign =1
+                    Left =5160
+                    Top =420
+                    Width =2580
+                    Height =300
+                    FontWeight =500
+                    LeftMargin =44
+                    TopMargin =22
+                    RightMargin =44
+                    BottomMargin =22
+                    BorderColor =8355711
+                    Name ="lblTitle"
+                    Caption ="Title"
+                    GroupTable =7
+                    GridlineColor =10921638
+                    LayoutCachedLeft =5160
+                    LayoutCachedTop =420
+                    LayoutCachedWidth =7740
+                    LayoutCachedHeight =720
+                    LayoutGroup =5
+                    ThemeFontIndex =-1
+                    ForeThemeColorIndex =1
+                    ForeTint =100.0
+                    GroupTable =7
+                End
+            End
+        End
+        Begin Section
+            Height =480
+            Name ="secFormDetail"
+            AlternateBackThemeColorIndex =1
+            AlternateBackShade =95.0
+            BackThemeColorIndex =1
+            Begin
+                Begin TextBox
+                    Visible = NotDefault
+                    OverlapFlags =93
+                    IMESentenceMode =3
+                    Left =2040
+                    Top =60
+                    Height =315
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="txtUserID"
+                    ControlSource ="ID"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =2040
+                    LayoutCachedTop =60
+                    LayoutCachedWidth =3480
+                    LayoutCachedHeight =375
+                End
+                Begin TextBox
+                    OverlapFlags =247
+                    IMESentenceMode =3
+                    Left =60
+                    Top =60
+                    Width =2340
+                    Height =315
+                    TabIndex =1
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="txtUsername"
+                    ControlSource ="strUsername"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =60
+                    LayoutCachedTop =60
+                    LayoutCachedWidth =2400
+                    LayoutCachedHeight =375
+                    ThemeFontIndex =-1
+                End
+                Begin TextBox
+                    OverlapFlags =247
+                    IMESentenceMode =3
+                    Left =2520
+                    Top =60
+                    Width =2460
+                    Height =315
+                    TabIndex =2
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="txtDisplayName"
+                    ControlSource ="strDisplayName"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =2520
+                    LayoutCachedTop =60
+                    LayoutCachedWidth =4980
+                    LayoutCachedHeight =375
+                    ThemeFontIndex =-1
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =10140
+                    Top =60
+                    Width =2640
+                    Height =315
+                    TabIndex =4
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="txtPassword"
+                    ControlSource ="strPassword"
+                    InputMask ="Password"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =10140
+                    LayoutCachedTop =60
+                    LayoutCachedWidth =12780
+                    LayoutCachedHeight =375
+                End
+                Begin ComboBox
+                    LimitToList = NotDefault
+                    RowSourceTypeInt =1
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =7860
+                    Top =60
+                    Width =2220
+                    Height =315
+                    TabIndex =3
+                    BorderColor =10921638
+                    Name ="cboAccountType"
+                    ControlSource ="strAccountType"
+                    RowSourceType ="Value List"
+                    RowSource ="\"Technician\";\"Administrator\""
+                    GridlineColor =10921638
+                    AllowValueListEdits =0
+
+                    LayoutCachedLeft =7860
+                    LayoutCachedTop =60
+                    LayoutCachedWidth =10080
+                    LayoutCachedHeight =375
+                    ThemeFontIndex =-1
+                    ForeThemeColorIndex =0
+                    ForeTint =75.0
+                    ForeShade =100.0
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =5160
+                    Top =60
+                    Width =2580
+                    Height =315
+                    TabIndex =5
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="txtTitle"
+                    ControlSource ="strTitle"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =5160
+                    LayoutCachedTop =60
+                    LayoutCachedWidth =7740
+                    LayoutCachedHeight =375
+                    ThemeFontIndex =-1
+                End
+            End
+        End
+        Begin FormFooter
+            Height =1200
+            Name ="secFormFooter"
+            AlternateBackThemeColorIndex =1
+            AlternateBackShade =95.0
+            BackThemeColorIndex =1
+            Begin
                 Begin Image
-                    SpecialEffect =4
-                    OldBorderStyle =1
-                    BorderWidth =3
-                    Left =600
+                    Left =10740
                     Top =540
-                    Width =6900
-                    Height =1920
+                    Width =1980
+                    Height =540
                     BackColor =1315470
-                    BorderColor =0
+                    BorderColor =10921638
                     Name ="imgCOTLogo"
                     Picture ="COT logo with motto.png"
                     GridlineColor =10921638
@@ -2728,23 +3000,45 @@ Begin Form
                         0x6082
                     End
 
-                    LayoutCachedLeft =600
+                    LayoutCachedLeft =10740
                     LayoutCachedTop =540
-                    LayoutCachedWidth =7500
-                    LayoutCachedHeight =2460
+                    LayoutCachedWidth =12720
+                    LayoutCachedHeight =1080
+                    TabIndex =1
                     BackThemeColorIndex =-1
-                    BorderThemeColorIndex =-1
-                    BorderShade =100.0
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =10140
+                    Top =60
+                    Width =2580
+                    Height =420
+                    ForeColor =4210752
+                    Name ="cmdSaveAndClose"
+                    Caption ="Save and Close"
+                    OnClick ="[Event Procedure]"
+                    GridlineColor =10921638
+                    HorizontalAnchor =1
+
+                    LayoutCachedLeft =10140
+                    LayoutCachedTop =60
+                    LayoutCachedWidth =12720
+                    LayoutCachedHeight =480
+                    Gradient =0
+                    BackColor =-2147483607
+                    BackThemeColorIndex =-1
+                    BackTint =100.0
+                    BorderColor =14461583
+                    HoverColor =15189940
+                    PressedColor =9917743
+                    HoverForeColor =4210752
+                    PressedForeColor =4210752
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =2
+                    WebImagePaddingRight =1
+                    WebImagePaddingBottom =1
                 End
             End
-        End
-        Begin FormFooter
-            Visible = NotDefault
-            Height =0
-            Name ="secFormFooter"
-            AlternateBackThemeColorIndex =1
-            AlternateBackShade =95.0
-            BackThemeColorIndex =1
         End
     End
 End
@@ -2754,178 +3048,139 @@ Attribute VB_Creatable = True
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Compare Database
- 
-'                                       ### IMPORTANT ###
-' This form's Form_Load() function contains CRITICAL application start-up instructions including
-' dynamic linking of linked datasources that allows for universal deployment. Be VERY careful and make backups
-' whenever making any changes to the Form_Load() function!!!
 
-Private Sub Form_Load()
-
-    ' ### READ NOTICE AT TOP OF THIS MODULE BEFORE MODIFYING THIS FUNCTION ###
-
-    Dim strBEPath As String
-    Dim strIconPath As String
-    Dim intBEVersionMajor As Integer
-    Dim intBEVersionMinor As Integer
-    Dim intBEVersionPatch As Integer
-    Dim intFEVersionMajor As Integer
-    Dim intFEVersionMinor As Integer
-    Dim intFEVersionPatch As Integer
-    Dim strSQL As String
-    Dim bRunUpdates As Boolean
-    Dim intUpdate As Integer
-    Dim dbBackendDB As DAO.Database
+Public Function GetHostname() As String
     
-    ' The \Backend folder should be deployed alongside the app with all resources referenced here
-    strBEDataPath = CurrentProject.Path & "\Backend\IDBE01.accdb"
-    strIconPath = CurrentProject.Path & "\Backend\AppIcon.ico"
-    
-    ' Sets the application icon for dynamic app deployment and removes visible Access toolbars
-    CurrentDb.Properties("AppIcon").Value = strIconPath
-    DoCmd.ShowToolbar "Ribbon", acToolbarNo
-    Application.RefreshTitleBar
-        
-    DoCmd.DeleteObject acTable, "tblSchema"
-    DoCmd.TransferDatabase acLink, "Microsoft Access", strBEDataPath, acTable, "tblSchema", "tblSchema"
-    
-    ' ### NOTE ON ADDING LINKED TABLES IN DEVELOPMENT ###
-    ' All linked tables must be listed in both the DeleteObject and TransferDatabase codeblocks below for dynamic
-    ' re-linking to work as intended. Follow below syntax, subtituing table name only.
-         
-    ' "Delete" the previous table links to avoid issue where multiple instances of the same link are created and application performance decreases significantly
-    BreakLinkIfExists "tblInstallEquipment"
-    BreakLinkIfExists "tblInstalls"
-    BreakLinkIfExists "tblUsers"
-    
-    ' Add the tables with the current application path for dynamic re-linking
-    DoCmd.TransferDatabase acLink, "Microsoft Access", strBEDataPath, acTable, "tblInstallEquipment", "tblInstallEquipment"
-    DoCmd.TransferDatabase acLink, "Microsoft Access", strBEDataPath, acTable, "tblInstalls", "tblInstalls"
-    DoCmd.TransferDatabase acLink, "Microsoft Access", strBEDataPath, acTable, "tblUsers", "tblUsers"
-    
-    ' ### NOTE ON CHANGING BACKEND STRUCTURE ###
-    ' Whenever making a change to backend structure, add changes to this script to ensure end users' backends can be updated automatically from previous versions
-    intBEVersionMajor = CInt(DLookup("[strValue]", "tblSchema", "[strKey] = 'BackendVersionMajor'"))
-    intBEVersionMinor = CInt(DLookup("[strValue]", "tblSchema", "[strKey] = 'BackendVersionMinor'"))
-    intBEVersionPatch = CInt(DLookup("[strValue]", "tblSchema", "[strKey] = 'BackendVersionPatch'"))
-    
-    intFEVersionMajor = CInt(DLookup("[strValue]", "zstlkpInstanceVariables", "[strKey] = 'FrontendVersionMajor'"))
-    intFEVersionMinor = CInt(DLookup("[strValue]", "zstlkpInstanceVariables", "[strKey] = 'FrontendVersionMinor'"))
-    intFEVersionPatch = CInt(DLookup("[strValue]", "zstlkpInstanceVariables", "[strKey] = 'FrontendVersionPatch'"))
-    
-    ' Checks if backend schema is newer than this frontend supports; if so, notify end user and quit to avoid data corruption.
-    If intBEVersionMajor > intFEVersionMajor Then
-        VersionMismatchQuit intBEVersionMajor, intBEVersionMinor, intBEVersionPatch, intFEVersionMajor, intFEVersionMinor, intFEVersionPatch
-    ElseIf intBEVersionMinor > intFEVersionMinor Then
-        VersionMismatchQuit intBEVersionMajor, intBEVersionMinor, intBEVersionPatch, intFEVersionMajor, intFEVersionMinor, intFEVersionPatch
-    ElseIf intBEVersionPatch > intFEVersionPatch Then
-        VersionMismatchQuit intBEVersionMajor, intBEVersionMinor, intBEVersionPatch, intFEVersionMajor, intFEVersionMinor, intFEVersionPatch
-    End If
-    
-    
-    ' Backend update script; supports auto-updates from 1.3.7 forward
-    ' List in chronological order for proper update processing
-    bRunUpdates = False
-    On Error Resume Next
-    
-    If intBEVersionMajor < intFEVersionMajor Or _
-        (intBEVersionMajor = intFEVersionMajor And intBEVersionMinor < intFEVersionMinor) Or _
-        (intBEVersionMajor = intFEVersionMajor And intBEVersionMinor = intFEVersionMinor And intBEVersionPatch < intFEVersionPatch) Then
-            intUpdate = MsgBox("A schema update is required for the backend database. Run update now?", vbInformation + vbYesNo + vbDefaultButton1, "Update Available")
-            If intUpdate = vbYes Then
-                bRunUpdates = True
-            Else
-                MsgBox "Backend schema must be updated to continue. Application will now close.", vbCritical + vbOKOnly, "Update Failed"
-                Application.Quit acQuitSaveAll
-            End If
-    End If
-    
-    ' Updates in v1.3.9 (covers all previous versions, cannot be run on backends >= 1.3.9
-    If bRunUpdates And intBEVersionMajor <= 1 And intBEVersionMinor <= 3 And intBEVersionPatch < 9 Then
-        Set dbBackendDB = DBEngine.Workspaces(0).OpenDatabase(strBEDataPath)
-        strSQL = "CREATE TABLE tblConnections (strHostname CHAR PRIMARY KEY, strUser CHAR);"
-        dbBackendDB.Execute strSQL
-        Set dbBackendDB = CurrentDb
-    End If
-    
-    BreakLinkIfExists "tblConnections"
-    DoCmd.TransferDatabase acLink, "Microsoft Access", strBEDataPath, acTable, "tblConnections", "tblConnections"
-    
-    ' Updates in v1.3.10 -- hash all passwords previously stored as plain text
-    If bRunUpdates And intBEVersionMajor <= 1 And intBEVersionMinor <= 3 And intBEVersionPatch < 10 Then
-        Dim rs As DAO.Recordset
-        Dim strOldPass As String
-        
-        Set rs = CurrentDb.OpenRecordset("SELECT * FROM tblUsers")
-        
-        If Not rs.EOF Then
-            rs.MoveFirst
-            Do Until rs.EOF = True
-                strOldPass = rs!strPassword
-                rs.Edit
-                rs!strPassword = Form_fdlgUserControl.GenerateHash(strOldPass, Form_fdlgUserControl.GenerateSalt())
-                rs.Update
-                rs.MoveNext
-            Loop
-        End If
-        
-        rs.Close
-        Set rs = Nothing
-    End If
-    
-    ' After all updates complete, update the backend version tag to match current frontend version
-    If bRunUpdates Then
-        UpdateBackendSchemaVersion intFEVersionMajor, intFEVersionMinor, intFEVersionPatch, _
-                                   intBEVersionMajor, intBEVersionMinor, intBEVersionPatch
-    End If
-    
-    ' END backend updates section
-    
-
-    
-End Sub
-
-Private Function BreakLinkIfExists(TableName As String)
-
-    On Error Resume Next
-        If IsObject(CurrentDb.TableDefs(TableName)) Then
-            DoCmd.DeleteObject acTable, TableName
-        End If
+    ' Uses environment variable, not being deployed in an environment where this is a security concern
+    GetHostname = Environ$("computername")
 
 End Function
 
-Private Function UpdateBackendSchemaVersion(BEMajor As Integer, BEMinor As Integer, BEPatch As Integer, BEMajorOld As Integer, BEMinorOld As Integer, BEPatchOld As Integer)
+Public Function GetUserDisplayName(strUsername As String) As String
 
+    Dim strDisplayName As String
+    
+    strDisplayName = GetUserInfo(strUsername, "strDisplayName")
+    
+    ' Handle the passed argument not being a valid user
+    If Not UserExists(strUsername) Then
+        strDisplayName = "Invalid User"
+    End If
+    
+    GetUserDisplayName = strDisplayName
+
+End Function
+
+Public Function UserExists(strUsername As String) As Boolean
+
+    Dim strAccountType As String
+    
+    strAccountType = GetUserInfo(strUsername, "strAccountType")
+    
+    ' If no account type was returned, user is invalid
+    If strAccountType = Null Then
+        UserExists = False
+    Else
+        UserExists = True
+    End If
+
+End Function
+
+Public Function GetCurrentUser() As String
+
+    Dim strCurrentUser As String
+
+    strCurrentUser = DLookup("[strUser]", "tblConnections", "[strHostname] = '" & GetHostname() & "'")
+    
+    GetCurrentUser = strCurrentUser
+
+End Function
+
+Public Function SetCurrentUserPassword(strPassword) As Boolean
+
+    Dim strCurrentUser As String
+    Dim strCorrectCurrentPassword As String
+    Dim strSQL As String
+    
+    strCurrentUser = GetCurrentUser()
+    
     ' Disable warnings, as DoCmd.RunSQL asks user for confirmation before executing
     DoCmd.SetWarnings False
-    strSQL = "UPDATE [tblSchema] SET strValue = '" & BEMajor & "' WHERE [strKey] = 'BackendVersionMajor'"
-    DoCmd.RunSQL strSQL
-    strSQL = "UPDATE [tblSchema] SET strValue = '" & BEMinor & "' WHERE [strKey] = 'BackendVersionMinor'"
-    DoCmd.RunSQL strSQL
-    strSQL = "UPDATE [tblSchema] SET strValue = '" & BEPatch & "' WHERE [strKey] = 'BackendVersionPatch'"
+    
+    strSQL = "UPDATE [tblUsers] SET strPassword = '" & strPassword & "' WHERE [strUsername] = '" & strCurrentUser & "'"
     DoCmd.RunSQL strSQL
     
     ' Re-enable warnings (in effect, return to default setting)
     DoCmd.SetWarnings True
     
-    MsgBox "Updated backend to version " & BEMajor & "." & BEMinor & "." & BEPatch & " successfully. (Updated from version " _
-        & BEMajorOld & "." & BEMinorOld & "." & BEPatchOld & ")", vbInformation, "Schema Update Successful"
+    SetCurrentUserPassword = True
 
 End Function
 
-Private Sub VersionMismatchQuit(BEMajor As Integer, BEMinor As Integer, BEPatch As Integer, FEMajor As Integer, FEMinor As Integer, FEPatch As Integer)
+Public Function GetUserAccountType(strUsername As String) As String
 
-    MsgBox "Backend version (" & BEMajor & "." & BEMinor & "." _
-            & BEPatch & ") is a newer version than the frontend (" & FEMajor _
-            & "." & FEMinor & "." & FEPatch & "). Please update frontend to latest version and re-launch application.", _
-            vbCritical, "Backend Version Mismatch"
-    Application.Quit acQuitSaveAll
+    GetUserAccountType = GetUserInfo(strUsername, "strAccountType")
 
-End Sub
+End Function
 
-Private Sub Form_Timer()
+Public Function GetUserTitle(strUsername As String) As String
 
-    DoCmd.Close acForm, "fdlgSplashScreen"
-    DoCmd.OpenForm "fdlgLogIn", acNormal, , , , acDialog
+    GetUserTitle = GetUserInfo(strUsername, "strTitle")
 
+End Function
+
+Public Function GetUserPassword(strUsername As String) As String
+
+    GetUserPassword = GetUserInfo(strUsername, "strPassword")
+
+End Function
+
+Public Function LoginCurrentInstance(strUsername As String, strPasswordEntered As String) As Boolean
+
+    Dim strCorrectPassword As String
+    Dim strSQL As String
+    
+    ' False by default
+    LoginCurrentInstance = False
+    
+    strCorrectPassword = GetUserPassword(strUsername)
+    
+    If strCorrectPassword = strPasswordEntered Then
+            
+        ' Cleanup in case someone was previously logged in and had a dirty disconnect
+        ' Disable warnings, as DoCmd.RunSQL asks user for confirmation before executing
+        DoCmd.SetWarnings False
+    
+        ' Sets the "currentUser" instance variable to null by deleting the related record
+        strSQL = "Delete * From [tblConnections] WHERE [strHostname] = '" & GetHostname() & "'"
+        DoCmd.RunSQL strSQL
+        
+        ' Set "currentUser" instance variable to the user we just validated
+        strSQL = "INSERT INTO [tblConnections] (strHostname, strUser) VALUES ('" & GetHostname() & "', '" & strUsername & "');"
+        DoCmd.RunSQL strSQL
+    
+        ' Re-enable warnings (in effect, return to default setting)
+        DoCmd.SetWarnings True
+        
+        LoginCurrentInstance = True
+    Else
+        LoginCurrentInstance = False
+    End If
+
+End Function
+
+
+Private Function GetUserInfo(strUsernameInput, strRequestedField) As String
+
+    Dim strReturnedValue As String
+    
+    ' Look up and return requested info
+    GetUserInfo = DLookup("[" & strRequestedField & "]", "tblUsers", "[strUsername] = '" & strUsernameInput & "'")
+
+End Function
+
+Private Sub cmdSaveAndClose_Click()
+
+    DoCmd.Close
+    
 End Sub
