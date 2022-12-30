@@ -18,9 +18,10 @@ Begin Form
     DatasheetFontHeight =11
     ItemSuffix =41
     Left =2715
-    Top =600
-    Right =15735
-    Bottom =9285
+    Top =1290
+    Right =20355
+    Bottom =11715
+    TimerInterval =10000
     RecSrcDt = Begin
         0xd5e2a17c9eebe540
     End
@@ -2844,7 +2845,6 @@ Begin Form
                     GroupTable =2
                     Begin
                         Begin NavigationButton
-                            Visible = NotDefault
                             OverlapFlags =119
                             Left =180
                             Top =660
@@ -2896,7 +2896,6 @@ Begin Form
                             Overlaps =1
                         End
                         Begin NavigationButton
-                            Visible = NotDefault
                             OverlapFlags =119
                             Left =2190
                             Top =660
@@ -2951,7 +2950,6 @@ Begin Form
                             Overlaps =1
                         End
                         Begin NavigationButton
-                            Visible = NotDefault
                             OverlapFlags =119
                             Left =4065
                             Top =660
@@ -3006,7 +3004,6 @@ Begin Form
                             Overlaps =1
                         End
                         Begin NavigationButton
-                            Visible = NotDefault
                             OverlapFlags =119
                             Left =5970
                             Top =660
@@ -3061,7 +3058,6 @@ Begin Form
                             Overlaps =1
                         End
                         Begin NavigationButton
-                            Visible = NotDefault
                             OverlapFlags =119
                             Left =7785
                             Top =660
@@ -3116,7 +3112,6 @@ Begin Form
                             Overlaps =1
                         End
                         Begin NavigationButton
-                            Visible = NotDefault
                             OverlapFlags =119
                             Left =9450
                             Top =660
@@ -3171,7 +3166,6 @@ Begin Form
                             Overlaps =1
                         End
                         Begin NavigationButton
-                            Visible = NotDefault
                             OverlapFlags =119
                             Left =11055
                             Top =660
@@ -3362,7 +3356,7 @@ Begin Form
                     FontWeight =800
                     BorderColor =8355711
                     Name ="lblLoggedInAs"
-                    Caption ="Authentication Failed"
+                    Caption ="Logged in as Josh Thibeault"
                     GridlineColor =10921638
                     HorizontalAnchor =1
                     LayoutCachedLeft =10020
@@ -3382,7 +3376,7 @@ Begin Form
                     FontSize =10
                     BorderColor =8355711
                     Name ="lblTitle"
-                    Caption ="Authentication Failed"
+                    Caption ="Installation Manager"
                     GridlineColor =10921638
                     HorizontalAnchor =1
                     LayoutCachedLeft =10020
@@ -3444,7 +3438,7 @@ Begin Form
                     BorderColor =8355711
                     ForeColor =16777215
                     Name ="lblVersion"
-                    Caption ="version 1.3.2"
+                    Caption ="version 1.3.9"
                     FontName ="Verdana"
                     GridlineColor =10921638
                     HorizontalAnchor =1
@@ -3515,7 +3509,7 @@ Private Sub cmdLogout_Click()
     DoCmd.SetWarnings False
     
     ' On closing the form, remove this connection from open connections list
-    strSQL = "Delete * From [tblConnections] WHERE [strHostname] = '" & GetHostname() & "'"
+    strSQL = "Delete * From [tblConnections] WHERE [strHostname] = '" & Form_fdlgUserControl.GetHostname() & "'"
     DoCmd.RunSQL strSQL
     
     ' Re-enable warnings (in effect, return to default setting)

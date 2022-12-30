@@ -18,9 +18,9 @@ Begin Form
     Width =12900
     DatasheetFontHeight =11
     ItemSuffix =48
-    Left =7695
+    Left =5565
     Top =2445
-    Right =20850
+    Right =18720
     Bottom =13500
     Filter ="NOT strUsername = \"setup\""
     RecSrcDt = Begin
@@ -3049,7 +3049,7 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Compare Database
 
-Private Function GetHostname() As String
+Public Function GetHostname() As String
     
     ' Uses environment variable, not being deployed in an environment where this is a security concern
     GetHostname = Environ$("computername")
