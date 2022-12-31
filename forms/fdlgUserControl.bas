@@ -1,6 +1,7 @@
 ﻿Version =20
 VersionRequired =20
 Begin Form
+    AllowFilters = NotDefault
     PopUp = NotDefault
     RecordSelectors = NotDefault
     MaxButton = NotDefault
@@ -14,7 +15,7 @@ Begin Form
     AllowEdits = NotDefault
     AllowDesignChanges = NotDefault
     ScrollBars =2
-    ViewsAllowed =1
+    ViewsAllowed =2
     PictureAlignment =2
     DatasheetGridlinesBehavior =3
     PictureType =2
@@ -30,13 +31,17 @@ Begin Form
     Filter ="NOT strUsername = \"setup\""
     OrderBy ="strDisplayName"
     RecSrcDt = Begin
-        0x07bf4912d4efe540
+        0x76999b1cd5efe540
     End
     RecordSource ="tblUsers"
     Caption ="User Accounts"
     DatasheetFontName ="Calibri"
-    AllowDatasheetView =0
+    AllowFormView =0
+    FetchDefaults =0
+    SplitFormDatasheet =1
+    FetchDefaults =0
     FilterOnLoad =255
+    SplitFormDatasheet =1
     ShowPageMargins =0
     DisplayOnSharePointSite =1
     DatasheetAlternateBackColor =15921906
@@ -47,6 +52,7 @@ Begin Form
     ForeThemeColorIndex =0
     AlternateBackThemeColorIndex =1
     AlternateBackShade =95.0
+    WaitForPostProcessing =255
     Begin
         Begin Label
             BackStyle =0
@@ -6417,9 +6423,31 @@ Public Function GetUserTitle(strUsername As String) As String
 
 End Function
 
+Public Function GetUserID(strUsername As String) As String
+
+    GetUserID = GetUserInfo(strUsername, "ID")
+
+End Function
+
 Public Function GetUserPassword(strUsername As String) As String
 
     GetUserPassword = GetUserInfo(strUsername, "strPassword")
+
+End Function
+
+Public Function DeleteAccount(strUsername As String)
+
+    Dim strSQL As String
+    
+    DoCmd.SetWarnings False
+    
+    strSQL = "DELETE * FROM [tblUsers] WHERE [strUsername] = '" & strUsername & "'"
+    DoCmd.RunSQL strSQL
+    
+    strSQL = "Delete * From [tblConnections] WHERE [strUser] = '" & strUsername & "'"
+    DoCmd.RunSQL strSQL
+    
+    DoCmd.SetWarnings True
 
 End Function
 

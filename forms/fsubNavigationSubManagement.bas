@@ -17,10 +17,10 @@ Begin Form
     Width =16344
     DatasheetFontHeight =11
     ItemSuffix =6
-    Left =3360
-    Top =1200
-    Right =15735
-    Bottom =9825
+    Left =180
+    Top =1860
+    Right =23145
+    Bottom =12075
     RecSrcDt = Begin
         0x326b8b37a1ebe540
     End
@@ -245,6 +245,6 @@ End Sub
 
 Private Sub cmdUserControl_Click()
 
-    DoCmd.OpenForm "fdlgUserControl", acNormal, , , acFormEdit, acWindowNormal
+    DoCmd.OpenForm "fdlgUserControl", acNormal, , , acFormReadOnly, acWindowNormal
 
 End Sub

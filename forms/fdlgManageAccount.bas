@@ -20,17 +20,19 @@ Begin Form
     GridY =24
     Width =7140
     DatasheetFontHeight =11
-    ItemSuffix =24
-    Left =6375
-    Top =2955
-    Right =15405
-    Bottom =9210
+    ItemSuffix =26
+    Left =7005
+    Top =3630
+    Right =14145
+    Bottom =8835
+    Filter ="[ID]=1"
     RecSrcDt = Begin
         0x121fd9b9d3efe540
     End
     RecordSource ="tblUsers"
     Caption ="Manage Account"
     DatasheetFontName ="Calibri"
+    OnLoad ="[Event Procedure]"
     FilterOnLoad =0
     ShowPageMargins =0
     DisplayOnSharePointSite =1
@@ -179,7 +181,7 @@ Begin Form
         End
         Begin Section
             CanGrow = NotDefault
-            Height =4020
+            Height =4560
             Name ="secFormDetail"
             AlternateBackThemeColorIndex =1
             BackThemeColorIndex =1
@@ -225,7 +227,7 @@ Begin Form
                     Default = NotDefault
                     OverlapFlags =85
                     Left =2640
-                    Top =3240
+                    Top =3780
                     Width =1920
                     Height =420
                     TabIndex =4
@@ -236,9 +238,9 @@ Begin Form
                     GridlineColor =10921638
 
                     LayoutCachedLeft =2640
-                    LayoutCachedTop =3240
+                    LayoutCachedTop =3780
                     LayoutCachedWidth =4560
-                    LayoutCachedHeight =3660
+                    LayoutCachedHeight =4200
                     Gradient =0
                     BackColor =-2147483607
                     BackThemeColorIndex =-1
@@ -422,6 +424,58 @@ Begin Form
                     WebImagePaddingTop =2
                     WebImagePaddingRight =1
                     WebImagePaddingBottom =1
+                    Overlaps =1
+                End
+                Begin Label
+                    OverlapFlags =85
+                    Left =1200
+                    Top =3180
+                    Width =1920
+                    Height =360
+                    FontSize =12
+                    BorderColor =8355711
+                    Name ="lblDeleteUser"
+                    Caption ="Delete Account"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =1200
+                    LayoutCachedTop =3180
+                    LayoutCachedWidth =3120
+                    LayoutCachedHeight =3540
+                    ForeTint =100.0
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =3240
+                    Top =3180
+                    Width =2700
+                    Height =314
+                    FontSize =12
+                    TabIndex =6
+                    Name ="cmdDeleteAccount"
+                    Caption ="Delete Account"
+                    OnClick ="[Event Procedure]"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =3240
+                    LayoutCachedTop =3180
+                    LayoutCachedWidth =5940
+                    LayoutCachedHeight =3494
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
+                    Gradient =0
+                    BackColor =10856415
+                    BackThemeColorIndex =-1
+                    BackTint =100.0
+                    BorderColor =14461583
+                    HoverColor =15189940
+                    PressedColor =9917743
+                    HoverForeColor =4210752
+                    PressedForeColor =4210752
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =2
+                    WebImagePaddingRight =1
+                    WebImagePaddingBottom =1
+                    Overlaps =1
                 End
             End
         End
@@ -446,10 +500,31 @@ Private Sub cmdConfirm_Click()
     
     MsgBox "Account updated successfully", vbOKOnly, "Account Updated"
     DoCmd.Close acForm, "fdlgManageAccount"
-    Forms(frmUserControl).SetFocus
+    Forms(fdlgUserControl).SetFocus
     
 End Sub
     
+Private Sub cmdDeleteAccount_Click()
+
+    Dim msgResult As Integer
+
+    msgResult = MsgBox("Are you sure you want to delete the user account belonging to " & txtDisplayName.Value & "?", vbCritical + vbYesNo, "Account Deletion")
+    
+    If msgResult = vbYes Then
+        msgResult = MsgBox("You are about to permanently delete a user account! Please confirm deletion of this account.", vbExclamation + vbOKCancel, "Account Deletion")
+        If msgResult = vbOK Then
+            MsgBox "User account has been deleted. All sessions open under " _
+                    & txtUsername.Value & " have been disconnected.", vbInformation + vbOKOnly, "Account Deletion"
+            Form_fdlgUserControl.DeleteAccount txtUsername.Value
+            DoCmd.Close acForm, "fdlgManageAccount"
+            DoCmd.Close acForm, "fdlgUserControl"
+            DoCmd.OpenForm "fdlgUserControl", acNormal, , , acFormReadOnly, acWindowNormal
+            Forms(fdlgUserControl).SetFocus
+        End If
+    End If
+
+End Sub
+
 Private Sub cmdResetPassword_Click()
 
     Dim msgResult As Integer
@@ -459,8 +534,20 @@ Private Sub cmdResetPassword_Click()
     If msgResult = vbYes Then
         changeResult = Form_fdlgUserControl.SetUserPassword(txtUsername.Value, "Thepassword1")
         MsgBox "Password has been reset to the default (Thepassword1).", vbOKOnly, "Password Reset"
+    End If
+
+End Sub
+
+Private Sub Form_Load()
+
+    If [ID] = CInt(Form_fdlgUserControl.GetUserID(Form_fdlgUserControl.GetCurrentUser())) Then
+        cmdDeleteAccount.Enabled = False
+        cmdResetPassword.Enabled = False
+        cboAccountType.Enabled = False
     Else
-        MsgBox "Password reset cancelled. Password has not been changed.", vbOKOnly, "Password Reset"
+        cmdDeleteAccount.Enabled = True
+        cmdResetPassword.Enabled = True
+        cboAccountType.Enabled = True
     End If
 
 End Sub
