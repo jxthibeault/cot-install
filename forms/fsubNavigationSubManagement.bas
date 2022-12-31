@@ -17,9 +17,10 @@ Begin Form
     Width =16344
     DatasheetFontHeight =11
     ItemSuffix =6
-    Top =1230
-    Right =12600
-    Bottom =9075
+    Left =3360
+    Top =1200
+    Right =15735
+    Bottom =9825
     RecSrcDt = Begin
         0x326b8b37a1ebe540
     End
@@ -185,6 +186,38 @@ Begin Form
                     WebImagePaddingRight =1
                     WebImagePaddingBottom =1
                 End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =4800
+                    Top =1440
+                    Width =7020
+                    Height =420
+                    TabIndex =1
+                    ForeColor =4210752
+                    Name ="cmdUserControl"
+                    Caption ="User Accounts"
+                    OnClick ="[Event Procedure]"
+                    GridlineColor =10921638
+                    HorizontalAnchor =2
+
+                    LayoutCachedLeft =4800
+                    LayoutCachedTop =1440
+                    LayoutCachedWidth =11820
+                    LayoutCachedHeight =1860
+                    Gradient =0
+                    BackColor =-2147483607
+                    BackThemeColorIndex =-1
+                    BackTint =100.0
+                    BorderColor =14461583
+                    HoverColor =15189940
+                    PressedColor =9917743
+                    HoverForeColor =4210752
+                    PressedForeColor =4210752
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =2
+                    WebImagePaddingRight =1
+                    WebImagePaddingBottom =1
+                End
             End
         End
         Begin FormFooter
@@ -208,4 +241,10 @@ Private Sub cmdCreateNewInstall_Click()
 
     DoCmd.OpenForm "frmNewInstall", acNormal, , , acFormAdd, acWindowNormal
     
+End Sub
+
+Private Sub cmdUserControl_Click()
+
+    DoCmd.OpenForm "fdlgUserControl", acNormal, , , acFormEdit, acWindowNormal
+
 End Sub

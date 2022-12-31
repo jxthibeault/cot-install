@@ -2,10 +2,8 @@
 VersionRequired =20
 Begin Form
     PopUp = NotDefault
-    Modal = NotDefault
     RecordSelectors = NotDefault
     MaxButton = NotDefault
-    MinButton = NotDefault
     AutoCenter = NotDefault
     NavigationButtons = NotDefault
     AllowDeletions = NotDefault
@@ -17,22 +15,22 @@ Begin Form
     BorderStyle =3
     PictureAlignment =2
     DatasheetGridlinesBehavior =3
+    Cycle =1
     GridX =24
     GridY =24
     Width =7140
     DatasheetFontHeight =11
-    ItemSuffix =19
-    Left =10710
-    Top =3780
-    Right =17850
-    Bottom =7305
+    ItemSuffix =24
+    Left =6375
+    Top =2955
+    Right =15405
+    Bottom =9210
     RecSrcDt = Begin
-        0xa8d51ba6cceee540
+        0x121fd9b9d3efe540
     End
-    Caption ="Change Password"
+    RecordSource ="tblUsers"
+    Caption ="Manage Account"
     DatasheetFontName ="Calibri"
-    OnLoad ="[Event Procedure]"
-    Moveable =0
     FilterOnLoad =0
     ShowPageMargins =0
     DisplayOnSharePointSite =1
@@ -114,6 +112,23 @@ Begin Form
             GridlineThemeColorIndex =1
             GridlineShade =65.0
         End
+        Begin ComboBox
+            AddColon = NotDefault
+            BorderLineStyle =0
+            LabelX =-1800
+            FontSize =11
+            FontName ="Calibri"
+            AllowValueListEdits =1
+            InheritValueList =1
+            ThemeFontIndex =1
+            BackThemeColorIndex =1
+            BorderThemeColorIndex =1
+            BorderShade =65.0
+            ForeThemeColorIndex =2
+            ForeShade =50.0
+            GridlineThemeColorIndex =1
+            GridlineShade =65.0
+        End
         Begin UnboundObjectFrame
             SpecialEffect =2
             OldBorderStyle =1
@@ -144,7 +159,7 @@ Begin Form
                     FontWeight =500
                     ForeColor =16777215
                     Name ="lblFormTitle"
-                    Caption ="Change Password"
+                    Caption ="Manage Account"
                     FontName ="Verdana"
                     GroupTable =1
                     GridlineColor =10921638
@@ -164,66 +179,66 @@ Begin Form
         End
         Begin Section
             CanGrow = NotDefault
-            Height =2880
+            Height =4020
             Name ="secFormDetail"
             AlternateBackThemeColorIndex =1
             BackThemeColorIndex =1
             Begin
                 Begin Label
                     OverlapFlags =85
-                    Left =1260
-                    Top =420
+                    Left =1200
+                    Top =360
                     Width =1920
                     Height =360
                     FontSize =12
                     BorderColor =8355711
-                    Name ="lblOldPass"
-                    Caption ="Current Password"
+                    Name ="lblUsername"
+                    Caption ="Username"
                     GridlineColor =10921638
-                    LayoutCachedLeft =1260
-                    LayoutCachedTop =420
-                    LayoutCachedWidth =3180
-                    LayoutCachedHeight =780
+                    LayoutCachedLeft =1200
+                    LayoutCachedTop =360
+                    LayoutCachedWidth =3120
+                    LayoutCachedHeight =720
                     ForeTint =100.0
                 End
                 Begin TextBox
                     OverlapFlags =85
                     IMESentenceMode =3
-                    Left =3300
-                    Top =1500
-                    Width =2580
+                    Left =3240
+                    Top =1320
+                    Width =2700
                     Height =315
                     FontSize =12
-                    TabIndex =2
+                    TabIndex =1
                     BorderColor =10921638
                     ForeColor =4210752
-                    Name ="txtConfirmPass"
-                    InputMask ="Password"
+                    Name ="txtTitle"
+                    ControlSource ="strTitle"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =3300
-                    LayoutCachedTop =1500
-                    LayoutCachedWidth =5880
-                    LayoutCachedHeight =1815
+                    LayoutCachedLeft =3240
+                    LayoutCachedTop =1320
+                    LayoutCachedWidth =5940
+                    LayoutCachedHeight =1635
                 End
                 Begin CommandButton
                     Default = NotDefault
                     OverlapFlags =85
-                    Left =1440
-                    Top =2100
+                    Left =2640
+                    Top =3240
                     Width =1920
                     Height =420
-                    TabIndex =3
+                    TabIndex =4
                     ForeColor =4210752
                     Name ="cmdConfirm"
                     Caption ="Confirm"
                     OnClick ="[Event Procedure]"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =1440
-                    LayoutCachedTop =2100
-                    LayoutCachedWidth =3360
-                    LayoutCachedHeight =2520
+                    LayoutCachedLeft =2640
+                    LayoutCachedTop =3240
+                    LayoutCachedWidth =4560
+                    LayoutCachedHeight =3660
                     Gradient =0
                     BackColor =-2147483607
                     BackThemeColorIndex =-1
@@ -237,102 +252,167 @@ Begin Form
                     WebImagePaddingTop =2
                     WebImagePaddingRight =1
                     WebImagePaddingBottom =1
+                    Overlaps =1
                 End
                 Begin TextBox
                     OverlapFlags =85
                     IMESentenceMode =3
-                    Left =3300
-                    Top =960
-                    Width =2580
+                    Left =3240
+                    Top =840
+                    Width =2700
                     Height =315
                     FontSize =12
-                    TabIndex =1
                     BorderColor =10921638
                     ForeColor =4210752
-                    Name ="txtNewPass"
-                    InputMask ="Password"
+                    Name ="txtDisplayName"
+                    ControlSource ="strDisplayName"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =3300
-                    LayoutCachedTop =960
-                    LayoutCachedWidth =5880
-                    LayoutCachedHeight =1275
+                    LayoutCachedLeft =3240
+                    LayoutCachedTop =840
+                    LayoutCachedWidth =5940
+                    LayoutCachedHeight =1155
                 End
                 Begin TextBox
+                    Enabled = NotDefault
                     OverlapFlags =85
                     IMESentenceMode =3
-                    Left =3300
-                    Top =420
-                    Width =2580
+                    Left =3240
+                    Top =360
+                    Width =2700
                     Height =315
                     FontSize =12
+                    TabIndex =5
                     BorderColor =10921638
                     ForeColor =4210752
-                    Name ="txtOldPass"
-                    InputMask ="Password"
+                    Name ="txtUsername"
+                    ControlSource ="strUsername"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =3300
-                    LayoutCachedTop =420
-                    LayoutCachedWidth =5880
-                    LayoutCachedHeight =735
+                    LayoutCachedLeft =3240
+                    LayoutCachedTop =360
+                    LayoutCachedWidth =5940
+                    LayoutCachedHeight =675
                 End
                 Begin Label
                     OverlapFlags =85
-                    Left =1260
-                    Top =960
+                    Left =1200
+                    Top =840
                     Width =1920
                     Height =360
                     FontSize =12
                     BorderColor =8355711
-                    Name ="lblNewPass"
-                    Caption ="New Password"
+                    Name ="lblDisplayName"
+                    Caption ="Display Name"
                     GridlineColor =10921638
-                    LayoutCachedLeft =1260
-                    LayoutCachedTop =960
-                    LayoutCachedWidth =3180
-                    LayoutCachedHeight =1320
+                    LayoutCachedLeft =1200
+                    LayoutCachedTop =840
+                    LayoutCachedWidth =3120
+                    LayoutCachedHeight =1200
                     ForeTint =100.0
                 End
                 Begin Label
                     OverlapFlags =85
-                    Left =1260
-                    Top =1500
+                    Left =1200
+                    Top =1320
                     Width =1920
                     Height =360
                     FontSize =12
                     BorderColor =8355711
-                    Name ="lblConfirmPass"
-                    Caption ="Confirm Password"
+                    Name ="lblTitle"
+                    Caption ="Job Title"
                     GridlineColor =10921638
-                    LayoutCachedLeft =1260
-                    LayoutCachedTop =1500
-                    LayoutCachedWidth =3180
-                    LayoutCachedHeight =1860
+                    LayoutCachedLeft =1200
+                    LayoutCachedTop =1320
+                    LayoutCachedWidth =3120
+                    LayoutCachedHeight =1680
+                    ForeTint =100.0
+                End
+                Begin Label
+                    OverlapFlags =85
+                    Left =1200
+                    Top =2220
+                    Width =1920
+                    Height =360
+                    FontSize =12
+                    BorderColor =8355711
+                    Name ="lblAccountType"
+                    Caption ="Account Type"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =1200
+                    LayoutCachedTop =2220
+                    LayoutCachedWidth =3120
+                    LayoutCachedHeight =2580
+                    ForeTint =100.0
+                End
+                Begin ComboBox
+                    LimitToList = NotDefault
+                    RowSourceTypeInt =1
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =3240
+                    Top =2220
+                    Width =2700
+                    Height =330
+                    FontSize =12
+                    TabIndex =2
+                    BorderColor =10921638
+                    Name ="cboAccountType"
+                    ControlSource ="strAccountType"
+                    RowSourceType ="Value List"
+                    RowSource ="\"Administrator\";\"Technician\""
+                    DefaultValue ="\"Technician\""
+                    GridlineColor =10921638
+                    AllowValueListEdits =0
+
+                    ShowOnlyRowSourceValues =255
+                    LayoutCachedLeft =3240
+                    LayoutCachedTop =2220
+                    LayoutCachedWidth =5940
+                    LayoutCachedHeight =2550
+                    ForeThemeColorIndex =0
+                    ForeTint =75.0
+                    ForeShade =100.0
+                End
+                Begin Label
+                    OverlapFlags =85
+                    Left =1200
+                    Top =2700
+                    Width =1920
+                    Height =360
+                    FontSize =12
+                    BorderColor =8355711
+                    Name ="lblResetPassword"
+                    Caption ="Reset Password"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =1200
+                    LayoutCachedTop =2700
+                    LayoutCachedWidth =3120
+                    LayoutCachedHeight =3060
                     ForeTint =100.0
                 End
                 Begin CommandButton
-                    Cancel = NotDefault
                     OverlapFlags =85
-                    Left =3840
-                    Top =2100
-                    Width =1920
-                    Height =420
-                    TabIndex =4
-                    ForeColor =4210752
-                    Name ="cmdCancel"
-                    Caption ="Cancel"
+                    Left =3240
+                    Top =2700
+                    Width =2700
+                    Height =314
+                    FontSize =12
+                    TabIndex =3
+                    Name ="cmdResetPassword"
+                    Caption ="Reset to Default"
                     OnClick ="[Event Procedure]"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =3840
-                    LayoutCachedTop =2100
-                    LayoutCachedWidth =5760
-                    LayoutCachedHeight =2520
+                    LayoutCachedLeft =3240
+                    LayoutCachedTop =2700
+                    LayoutCachedWidth =5940
+                    LayoutCachedHeight =3014
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
                     Gradient =0
-                    BackColor =-2147483607
-                    BackThemeColorIndex =-1
-                    BackTint =100.0
+                    BackThemeColorIndex =7
+                    BackTint =40.0
                     BorderColor =14461583
                     HoverColor =15189940
                     PressedColor =9917743
@@ -362,51 +442,25 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Compare Database
 
-Private Sub cmdCancel_Click()
-    DoCmd.Close acForm, "fdlgChangePassword"
-    Forms(frmNavigation).SetFocus
-End Sub
-
 Private Sub cmdConfirm_Click()
     
-    Dim strCorrectCurrentPassword As String
-    Dim strCurrentUser As String
-    Dim strEnteredHash As String
-    Dim changeResult As Boolean
-    
-    strCurrentUser = Form_fdlgUserControl.GetCurrentUser()
-    strCorrectCurrentPassword = Form_fdlgUserControl.GetUserPassword(strCurrentUser)
-    strEnteredHash = Form_fdlgUserControl.GenerateHash(txtOldPass.Value)
-    
-    If IsNull(txtNewPass.Value) Or txtNewPass.Value = "" _
-        Or IsNull(txtConfirmPass.Value) Or txtConfirmPass.Value = "" _
-        Or IsNull(txtOldPass.Value) Or txtOldPass.Value = "" Then
-            MsgBox "Please fill in all information to proceed.", vbOKOnly, "Information Missing"
-    ElseIf Not strCorrectCurrentPassword = strEnteredHash Then
-        MsgBox "Current password incorrect; please check and try again.", vbOKOnly, "Change Password Failed"
-        txtOldPass.Value = ""
-        txtOldPass.SetFocus
-    ElseIf Not txtNewPass.Value = txtConfirmPass.Value Then
-        MsgBox "New password confirmation does not match. Please try again.", vbOKOnly, "Change Password Failed"
-        txtNewPass.Value = ""
-        txtConfirmPass.Value = ""
-        txtNewPass.SetFocus
-    Else
-        changeResult = Form_fdlgUserControl.SetCurrentUserPassword(txtNewPass.Value)
-        MsgBox "Password changed successfully.", vbOKOnly, "Password Changed"
-        DoCmd.Close acForm, "fdlgChangePassword"
-        Forms(frmNavigation).SetFocus
-    End If
+    MsgBox "Account updated successfully", vbOKOnly, "Account Updated"
+    DoCmd.Close acForm, "fdlgManageAccount"
+    Forms(frmUserControl).SetFocus
     
 End Sub
-
-Private Sub Form_Load()
-
-    Dim strCurrentUser As String
-    strCurrentUser = Form_fdlgUserControl.GetCurrentUser()
     
-    If strCurrentUser = "setup" Then
-        MsgBox "The setup account password cannot be reset by an administrator if lost. Be sure to note setup password whenever it is changed!", vbExclamation, "Warning"
+Private Sub cmdResetPassword_Click()
+
+    Dim msgResult As Integer
+    
+    msgResult = MsgBox("Reset " & txtDisplayName.Value & "'s password to default?", vbExclamation + vbYesNo, "Reset Password")
+
+    If msgResult = vbYes Then
+        changeResult = Form_fdlgUserControl.SetUserPassword(txtUsername.Value, "Thepassword1")
+        MsgBox "Password has been reset to the default (Thepassword1).", vbOKOnly, "Password Reset"
+    Else
+        MsgBox "Password reset cancelled. Password has not been changed.", vbOKOnly, "Password Reset"
     End If
-    
+
 End Sub

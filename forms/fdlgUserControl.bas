@@ -30,7 +30,7 @@ Begin Form
     Filter ="NOT strUsername = \"setup\""
     OrderBy ="strDisplayName"
     RecSrcDt = Begin
-        0x949f7bd153ece540
+        0x07bf4912d4efe540
     End
     RecordSource ="tblUsers"
     Caption ="User Accounts"
@@ -3634,6 +3634,7 @@ Begin Form
                     ForeColor =4210752
                     Name ="cmdManageAccount"
                     Caption ="Manage Account"
+                    OnClick ="[Event Procedure]"
                     GridlineColor =10921638
                     HorizontalAnchor =1
 
@@ -6377,23 +6378,30 @@ End Function
 Public Function SetCurrentUserPassword(strPassword As String) As Boolean
 
     Dim strCurrentUser As String
-    Dim strCorrectCurrentPassword As String
-    Dim strSQL As String
     
     strCurrentUser = GetCurrentUser()
+    
+    SetCurrentUserPassword = SetUserPassword(strCurrentUser, strPassword)
+
+End Function
+
+Public Function SetUserPassword(strUsername As String, strPassword As String) As Boolean
+
+    Dim strCorrectCurrentPassword As String
+    Dim strSQL As String
     
     ' Disable warnings, as DoCmd.RunSQL asks user for confirmation before executing
     DoCmd.SetWarnings False
     
     strPassword = GenerateHash(strPassword)
     
-    strSQL = "UPDATE [tblUsers] SET strPassword = '" & strPassword & "' WHERE [strUsername] = '" & strCurrentUser & "'"
+    strSQL = "UPDATE [tblUsers] SET strPassword = '" & strPassword & "' WHERE [strUsername] = '" & strUsername & "'"
     DoCmd.RunSQL strSQL
     
     ' Re-enable warnings (in effect, return to default setting)
     DoCmd.SetWarnings True
     
-    SetCurrentUserPassword = True
+    SetUserPassword = True
 
 End Function
 
@@ -6472,4 +6480,10 @@ Private Sub cmdSaveAndClose_Click()
 
     DoCmd.Close
     
+End Sub
+
+Private Sub cmdManageAccount_Click()
+
+    DoCmd.OpenForm "fdlgManageAccount", acNormal, "", "[ID]=" & txtUserID.Value, , acNormal
+
 End Sub
