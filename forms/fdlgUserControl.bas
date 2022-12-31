@@ -1,47 +1,58 @@
 ﻿Version =20
 VersionRequired =20
 Begin Form
+    AllowFilters = NotDefault
     PopUp = NotDefault
     RecordSelectors = NotDefault
     MaxButton = NotDefault
     AutoCenter = NotDefault
     NavigationButtons = NotDefault
+    AllowDeletions = NotDefault
     DividingLines = NotDefault
+    AllowAdditions = NotDefault
     FilterOn = NotDefault
+    OrderByOn = NotDefault
+    AllowEdits = NotDefault
     AllowDesignChanges = NotDefault
     ScrollBars =2
-    BorderStyle =1
+    ViewsAllowed =2
     PictureAlignment =2
     DatasheetGridlinesBehavior =3
+    PictureType =2
     GridX =24
     GridY =24
-    Width =12900
+    Width =8160
     DatasheetFontHeight =11
-    ItemSuffix =52
-    Left =5565
-    Top =2445
-    Right =18720
-    Bottom =13500
+    ItemSuffix =58
+    Left =10035
+    Top =1350
+    Right =18450
+    Bottom =12135
     Filter ="NOT strUsername = \"setup\""
+    OrderBy ="strDisplayName"
     RecSrcDt = Begin
-        0x949f7bd153ece540
+        0x76999b1cd5efe540
     End
     RecordSource ="tblUsers"
-    Caption ="User Control"
+    Caption ="User Accounts"
     DatasheetFontName ="Calibri"
     AllowFormView =0
+    FetchDefaults =0
+    SplitFormDatasheet =1
+    FetchDefaults =0
     FilterOnLoad =255
+    SplitFormDatasheet =1
     ShowPageMargins =0
     DisplayOnSharePointSite =1
     DatasheetAlternateBackColor =15921906
     DatasheetGridlinesColor12 =0
-    FitToScreen =1
     DatasheetBackThemeColorIndex =1
     BorderThemeColorIndex =3
     ThemeFontIndex =1
     ForeThemeColorIndex =0
     AlternateBackThemeColorIndex =1
     AlternateBackShade =95.0
+    WaitForPostProcessing =255
     Begin
         Begin Label
             BackStyle =0
@@ -134,29 +145,29 @@ Begin Form
             GridlineShade =65.0
         End
         Begin FormHeader
-            Height =744
+            Height =660
             BackColor =1315470
             Name ="secFormHeader"
             AlternateBackThemeColorIndex =1
             AlternateBackShade =95.0
             Begin
                 Begin Label
-                    OverlapFlags =93
+                    OverlapFlags =85
                     TextAlign =1
-                    Left =60
-                    Top =60
+                    Left =180
+                    Top =120
                     Width =6870
-                    Height =480
+                    Height =420
                     FontSize =16
                     FontWeight =500
                     Name ="lblFormTitle"
-                    Caption ="User Control"
+                    Caption ="User Accounts"
                     FontName ="Verdana"
                     GroupTable =2
                     GridlineColor =10921638
-                    LayoutCachedLeft =60
-                    LayoutCachedTop =60
-                    LayoutCachedWidth =6930
+                    LayoutCachedLeft =180
+                    LayoutCachedTop =120
+                    LayoutCachedWidth =7050
                     LayoutCachedHeight =540
                     LayoutGroup =1
                     ThemeFontIndex =-1
@@ -166,93 +177,11 @@ Begin Form
                     ForeTint =100.0
                     GroupTable =2
                 End
-                Begin Label
-                    OverlapFlags =215
-                    TextAlign =1
-                    Left =480
-                    Top =420
-                    Width =2430
-                    Height =302
-                    FontWeight =500
-                    LeftMargin =44
-                    TopMargin =22
-                    RightMargin =44
-                    BottomMargin =22
-                    BorderColor =8355711
-                    Name ="lblCustomer"
-                    Caption ="Username"
-                    GroupTable =3
-                    GridlineColor =10921638
-                    LayoutCachedLeft =480
-                    LayoutCachedTop =420
-                    LayoutCachedWidth =2910
-                    LayoutCachedHeight =722
-                    LayoutGroup =2
-                    ThemeFontIndex =-1
-                    ForeThemeColorIndex =1
-                    ForeTint =100.0
-                    GroupTable =3
-                End
-                Begin Label
-                    OverlapFlags =215
-                    TextAlign =1
-                    Left =2970
-                    Top =420
-                    Width =2460
-                    Height =302
-                    FontWeight =500
-                    LeftMargin =44
-                    TopMargin =22
-                    RightMargin =44
-                    BottomMargin =22
-                    BorderColor =8355711
-                    Name ="lblDisplayName"
-                    Caption ="Display Name"
-                    GroupTable =3
-                    GridlineColor =10921638
-                    LayoutCachedLeft =2970
-                    LayoutCachedTop =420
-                    LayoutCachedWidth =5430
-                    LayoutCachedHeight =722
-                    ColumnStart =1
-                    ColumnEnd =1
-                    LayoutGroup =2
-                    ThemeFontIndex =-1
-                    ForeThemeColorIndex =1
-                    ForeTint =100.0
-                    GroupTable =3
-                End
-                Begin Label
-                    OverlapFlags =85
-                    TextAlign =1
-                    Left =7860
-                    Top =420
-                    Width =2220
-                    Height =302
-                    FontWeight =500
-                    LeftMargin =44
-                    TopMargin =22
-                    RightMargin =44
-                    BottomMargin =22
-                    BorderColor =8355711
-                    Name ="lblPermissionLevel"
-                    Caption ="Permission Level"
-                    GroupTable =5
-                    GridlineColor =10921638
-                    LayoutCachedLeft =7860
-                    LayoutCachedTop =420
-                    LayoutCachedWidth =10080
-                    LayoutCachedHeight =722
-                    LayoutGroup =3
-                    ThemeFontIndex =-1
-                    ForeThemeColorIndex =1
-                    ForeTint =100.0
-                    GroupTable =5
-                End
             End
         End
         Begin Section
-            Height =540
+            CanGrow = NotDefault
+            Height =660
             Name ="secFormDetail"
             AlternateBackThemeColorIndex =1
             AlternateBackShade =95.0
@@ -262,7 +191,7 @@ Begin Form
                     Visible = NotDefault
                     OverlapFlags =93
                     IMESentenceMode =3
-                    Left =2490
+                    Left =4920
                     Top =120
                     Height =315
                     BorderColor =10921638
@@ -271,86 +200,48 @@ Begin Form
                     ControlSource ="ID"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =2490
+                    LayoutCachedLeft =4920
                     LayoutCachedTop =120
-                    LayoutCachedWidth =3930
+                    LayoutCachedWidth =6360
                     LayoutCachedHeight =435
                 End
                 Begin TextBox
-                    OverlapFlags =247
+                    Enabled = NotDefault
+                    Locked = NotDefault
+                    CanGrow = NotDefault
+                    OldBorderStyle =0
+                    OverlapFlags =255
+                    TextAlign =1
+                    BackStyle =0
                     IMESentenceMode =3
-                    Left =510
-                    Top =120
-                    Width =2340
-                    Height =315
+                    Left =600
+                    Top =86
+                    Width =5160
+                    Height =300
+                    FontSize =12
+                    FontWeight =700
                     TabIndex =1
                     BorderColor =10921638
-                    ForeColor =4210752
-                    Name ="txtUsername"
-                    ControlSource ="strUsername"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =510
-                    LayoutCachedTop =120
-                    LayoutCachedWidth =2850
-                    LayoutCachedHeight =435
-                    ThemeFontIndex =-1
-                End
-                Begin TextBox
-                    OverlapFlags =247
-                    IMESentenceMode =3
-                    Left =2970
-                    Top =120
-                    Width =2460
-                    Height =315
-                    TabIndex =2
-                    BorderColor =10921638
-                    ForeColor =4210752
                     Name ="txtDisplayName"
                     ControlSource ="strDisplayName"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =2970
-                    LayoutCachedTop =120
-                    LayoutCachedWidth =5430
-                    LayoutCachedHeight =435
+                    LayoutCachedLeft =600
+                    LayoutCachedTop =86
+                    LayoutCachedWidth =5760
+                    LayoutCachedHeight =386
                     ThemeFontIndex =-1
-                End
-                Begin ComboBox
-                    LimitToList = NotDefault
-                    RowSourceTypeInt =1
-                    OverlapFlags =85
-                    IMESentenceMode =3
-                    Left =7860
-                    Top =120
-                    Width =2220
-                    Height =315
-                    TabIndex =3
-                    BorderColor =10921638
-                    Name ="cboAccountType"
-                    ControlSource ="strAccountType"
-                    RowSourceType ="Value List"
-                    RowSource ="\"Technician\";\"Administrator\""
-                    GridlineColor =10921638
-                    AllowValueListEdits =0
-
-                    LayoutCachedLeft =7860
-                    LayoutCachedTop =120
-                    LayoutCachedWidth =10080
-                    LayoutCachedHeight =435
-                    ThemeFontIndex =-1
-                    ForeThemeColorIndex =0
-                    ForeTint =75.0
-                    ForeShade =100.0
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
                 End
                 Begin Image
                     SizeMode =1
-                    Left =120
-                    Top =120
+                    Left =180
+                    Top =180
                     Width =314
                     Height =314
                     BorderColor =10921638
-                    Name ="Image51"
+                    Name ="imgUser"
                     Picture ="circled-user-icon-user-pro-icon-11553397069rpnu1bqqup.png"
                     GridlineColor =10921638
                     ImageData = Begin
@@ -3733,24 +3624,83 @@ Begin Form
                         0x669f7194c7dbd1790000000049454e44ae426082
                     End
 
-                    LayoutCachedLeft =120
-                    LayoutCachedTop =120
-                    LayoutCachedWidth =434
-                    LayoutCachedHeight =434
+                    LayoutCachedLeft =180
+                    LayoutCachedTop =180
+                    LayoutCachedWidth =494
+                    LayoutCachedHeight =494
                     TabIndex =4
+                End
+                Begin CommandButton
+                    OverlapFlags =247
+                    Left =5890
+                    Top =150
+                    Width =2093
+                    Height =359
+                    TabIndex =2
+                    ForeColor =4210752
+                    Name ="cmdManageAccount"
+                    Caption ="Manage Account"
+                    OnClick ="[Event Procedure]"
+                    GridlineColor =10921638
+                    HorizontalAnchor =1
+
+                    LayoutCachedLeft =5890
+                    LayoutCachedTop =150
+                    LayoutCachedWidth =7983
+                    LayoutCachedHeight =509
+                    Gradient =0
+                    BackColor =15983578
+                    BackTint =20.0
+                    BorderColor =14461583
+                    HoverColor =15189940
+                    PressedColor =9917743
+                    HoverForeColor =4210752
+                    PressedForeColor =4210752
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =2
+                    WebImagePaddingRight =1
+                    WebImagePaddingBottom =1
+                    Overlaps =1
+                End
+                Begin TextBox
+                    Enabled = NotDefault
+                    Locked = NotDefault
+                    CanGrow = NotDefault
+                    FontItalic = NotDefault
+                    OldBorderStyle =0
+                    OverlapFlags =247
+                    TextAlign =1
+                    BackStyle =0
+                    IMESentenceMode =3
+                    Left =600
+                    Top =331
+                    Width =5160
+                    FontSize =9
+                    TabIndex =3
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="txtAccountType"
+                    ControlSource ="strAccountType"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =600
+                    LayoutCachedTop =331
+                    LayoutCachedWidth =5760
+                    LayoutCachedHeight =571
+                    ThemeFontIndex =-1
                 End
             End
         End
         Begin FormFooter
-            Height =1200
+            Height =900
             Name ="secFormFooter"
             AlternateBackThemeColorIndex =1
             AlternateBackShade =95.0
             BackThemeColorIndex =1
             Begin
                 Begin Image
-                    Left =10740
-                    Top =540
+                    Left =6060
+                    Top =360
                     Width =1980
                     Height =540
                     BackColor =1315470
@@ -3758,6 +3708,8 @@ Begin Form
                     Name ="imgCOTLogo"
                     Picture ="COT logo with motto.png"
                     GridlineColor =10921638
+                    HorizontalAnchor =1
+                    VerticalAnchor =1
                     ImageData = Begin
                         0x89504e470d0a1a0a0000000d4948445200000672000001c20806000000dbd557 ,
                         0xff000000017352474200aece1ce90000000467414d410000b18f0bfc61050000 ,
@@ -6303,34 +6255,34 @@ Begin Form
                         0x6082
                     End
 
-                    LayoutCachedLeft =10740
-                    LayoutCachedTop =540
-                    LayoutCachedWidth =12720
-                    LayoutCachedHeight =1080
+                    LayoutCachedLeft =6060
+                    LayoutCachedTop =360
+                    LayoutCachedWidth =8040
+                    LayoutCachedHeight =900
                     TabIndex =1
                     BackThemeColorIndex =-1
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =10140
-                    Top =60
-                    Width =2580
-                    Height =420
+                    Left =2913
+                    Top =150
+                    Width =2333
+                    Height =359
                     ForeColor =4210752
-                    Name ="cmdSaveAndClose"
-                    Caption ="Close"
+                    Name ="cmdCreateAccount"
+                    Caption ="Create New Account"
                     OnClick ="[Event Procedure]"
                     GridlineColor =10921638
-                    HorizontalAnchor =1
+                    HorizontalAnchor =2
+                    VerticalAnchor =1
 
-                    LayoutCachedLeft =10140
-                    LayoutCachedTop =60
-                    LayoutCachedWidth =12720
-                    LayoutCachedHeight =480
+                    LayoutCachedLeft =2913
+                    LayoutCachedTop =150
+                    LayoutCachedWidth =5246
+                    LayoutCachedHeight =509
                     Gradient =0
-                    BackColor =-2147483607
-                    BackThemeColorIndex =-1
-                    BackTint =100.0
+                    BackThemeColorIndex =9
+                    BackTint =20.0
                     BorderColor =14461583
                     HoverColor =15189940
                     PressedColor =9917743
@@ -6438,16 +6390,7 @@ End Function
 
 Public Function UserExists(strUsername As String) As Boolean
 
-    Dim strAccountType As String
-    
-    strAccountType = GetUserInfo(strUsername, "strAccountType")
-    
-    ' If no account type was returned, user is invalid
-    If strAccountType = Null Then
-        UserExists = False
-    Else
-        UserExists = True
-    End If
+    UserExists = Not IsNull(DLookup("[strUsername]", "tblUsers", "[strUsername] = '" & strUsername & "'"))
 
 End Function
 
@@ -6464,23 +6407,30 @@ End Function
 Public Function SetCurrentUserPassword(strPassword As String) As Boolean
 
     Dim strCurrentUser As String
-    Dim strCorrectCurrentPassword As String
-    Dim strSQL As String
     
     strCurrentUser = GetCurrentUser()
+    
+    SetCurrentUserPassword = SetUserPassword(strCurrentUser, strPassword)
+
+End Function
+
+Public Function SetUserPassword(strUsername As String, strPassword As String) As Boolean
+
+    Dim strCorrectCurrentPassword As String
+    Dim strSQL As String
     
     ' Disable warnings, as DoCmd.RunSQL asks user for confirmation before executing
     DoCmd.SetWarnings False
     
     strPassword = GenerateHash(strPassword)
     
-    strSQL = "UPDATE [tblUsers] SET strPassword = '" & strPassword & "' WHERE [strUsername] = '" & strCurrentUser & "'"
+    strSQL = "UPDATE [tblUsers] SET strPassword = '" & strPassword & "' WHERE [strUsername] = '" & strUsername & "'"
     DoCmd.RunSQL strSQL
     
     ' Re-enable warnings (in effect, return to default setting)
     DoCmd.SetWarnings True
     
-    SetCurrentUserPassword = True
+    SetUserPassword = True
 
 End Function
 
@@ -6496,9 +6446,47 @@ Public Function GetUserTitle(strUsername As String) As String
 
 End Function
 
+Public Function GetUserID(strUsername As String) As String
+
+    GetUserID = GetUserInfo(strUsername, "ID")
+
+End Function
+
 Public Function GetUserPassword(strUsername As String) As String
 
     GetUserPassword = GetUserInfo(strUsername, "strPassword")
+
+End Function
+
+Public Function DeleteAccount(strUsername As String)
+
+    Dim strSQL As String
+    
+    DoCmd.SetWarnings False
+    
+    strSQL = "DELETE * FROM [tblUsers] WHERE [strUsername] = '" & strUsername & "'"
+    DoCmd.RunSQL strSQL
+    
+    strSQL = "Delete * From [tblConnections] WHERE [strUser] = '" & strUsername & "'"
+    DoCmd.RunSQL strSQL
+    
+    DoCmd.SetWarnings True
+
+End Function
+
+Public Function CreateUser(strUsername As String, strDisplayName As String, strTitle As String, strAccountType As String)
+
+    DoCmd.SetWarnings False
+    
+    strSQL = "INSERT INTO tblUsers (strUsername, strDisplayName, strPassword, strAccountType, strTitle) VALUES ('" _
+            & strUsername & "', '" _
+            & strDisplayName & "', '" _
+            & GenerateHash("Thepassword1") & "', '" _
+            & strAccountType & "', '" _
+            & strTitle & "');"
+    DoCmd.RunSQL strSQL
+    
+    DoCmd.SetWarnings True
 
 End Function
 
@@ -6548,6 +6536,8 @@ End Function
 
 Private Function GetUserInfo(strUsernameInput, strRequestedField) As String
 
+    On Error Resume Next
+
     Dim strReturnedValue As String
     
     ' Look up and return requested info
@@ -6559,4 +6549,16 @@ Private Sub cmdSaveAndClose_Click()
 
     DoCmd.Close
     
+End Sub
+
+Private Sub cmdCreateAccount_Click()
+
+    DoCmd.OpenForm "fdlgCreateAccount", acNormal, , , acFormAdd
+
+End Sub
+
+Private Sub cmdManageAccount_Click()
+
+    DoCmd.OpenForm "fdlgManageAccount", acNormal, "", "[ID]=" & txtUserID.Value, , acNormal
+
 End Sub

@@ -14,10 +14,10 @@ Begin Form
     Width =16344
     DatasheetFontHeight =11
     ItemSuffix =5
-    Left =540
-    Top =150
-    Right =20910
-    Bottom =10185
+    Left =-2205
+    Top =615
+    Right =13890
+    Bottom =8985
     RecSrcDt = Begin
         0x326b8b37a1ebe540
     End
@@ -191,7 +191,7 @@ Begin Form
                     TabIndex =1
                     ForeColor =4210752
                     Name ="cmdUserControl"
-                    Caption ="User Control"
+                    Caption ="User Accounts"
                     OnClick ="[Event Procedure]"
                     GridlineColor =10921638
                     HorizontalAnchor =2
