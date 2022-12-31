@@ -1,7 +1,6 @@
 # cot-install
 
 ![GitHub release (latest SemVer including pre-releases)](https://img.shields.io/github/v/release/jxthibeault/cot-install?include_prereleases&label=RELEASE&style=for-the-badge)
-![GitHub commits since latest release (by SemVer including pre-releases)](https://img.shields.io/github/commits-since/jxthibeault/cot-install/latest/staging?include_prereleases&label=UPDATES%20IN%20NEXT%20RELEASE&style=for-the-badge)
 
 ![Lines of code](https://img.shields.io/tokei/lines/github/jxthibeault/cot-install?label=LINES%20OF%20CODE&style=for-the-badge)
 ![GitHub last commit](https://img.shields.io/github/last-commit/jxthibeault/cot-install?style=for-the-badge)
