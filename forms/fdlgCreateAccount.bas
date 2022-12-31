@@ -8,9 +8,10 @@ Begin Form
     NavigationButtons = NotDefault
     AllowDeletions = NotDefault
     DividingLines = NotDefault
-    AllowAdditions = NotDefault
+    DataEntry = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
+    AllowUpdating =2
     ScrollBars =0
     BorderStyle =3
     PictureAlignment =2
@@ -20,19 +21,16 @@ Begin Form
     GridY =24
     Width =7140
     DatasheetFontHeight =11
-    ItemSuffix =26
-    Left =7005
-    Top =3630
-    Right =14145
-    Bottom =8835
-    Filter ="[ID]=1"
+    ItemSuffix =27
+    Left =10710
+    Top =3225
+    Right =17850
+    Bottom =8430
     RecSrcDt = Begin
-        0x121fd9b9d3efe540
+        0x0841aa0ad6efe540
     End
-    RecordSource ="tblUsers"
     Caption ="Manage Account"
     DatasheetFontName ="Calibri"
-    OnLoad ="[Event Procedure]"
     FilterOnLoad =0
     ShowPageMargins =0
     DisplayOnSharePointSite =1
@@ -161,7 +159,7 @@ Begin Form
                     FontWeight =500
                     ForeColor =16777215
                     Name ="lblFormTitle"
-                    Caption ="Manage Account"
+                    Caption ="Create New Account"
                     FontName ="Verdana"
                     GroupTable =1
                     GridlineColor =10921638
@@ -211,11 +209,10 @@ Begin Form
                     Width =2700
                     Height =315
                     FontSize =12
-                    TabIndex =1
+                    TabIndex =2
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="txtTitle"
-                    ControlSource ="strTitle"
                     GridlineColor =10921638
 
                     LayoutCachedLeft =3240
@@ -226,7 +223,7 @@ Begin Form
                 Begin CommandButton
                     Default = NotDefault
                     OverlapFlags =85
-                    Left =2640
+                    Left =1500
                     Top =3780
                     Width =1920
                     Height =420
@@ -237,9 +234,9 @@ Begin Form
                     OnClick ="[Event Procedure]"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =2640
+                    LayoutCachedLeft =1500
                     LayoutCachedTop =3780
-                    LayoutCachedWidth =4560
+                    LayoutCachedWidth =3420
                     LayoutCachedHeight =4200
                     Gradient =0
                     BackColor =-2147483607
@@ -264,10 +261,10 @@ Begin Form
                     Width =2700
                     Height =315
                     FontSize =12
+                    TabIndex =1
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="txtDisplayName"
-                    ControlSource ="strDisplayName"
                     GridlineColor =10921638
 
                     LayoutCachedLeft =3240
@@ -276,7 +273,6 @@ Begin Form
                     LayoutCachedHeight =1155
                 End
                 Begin TextBox
-                    Enabled = NotDefault
                     OverlapFlags =85
                     IMESentenceMode =3
                     Left =3240
@@ -284,11 +280,9 @@ Begin Form
                     Width =2700
                     Height =315
                     FontSize =12
-                    TabIndex =5
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="txtUsername"
-                    ControlSource ="strUsername"
                     GridlineColor =10921638
 
                     LayoutCachedLeft =3240
@@ -357,10 +351,9 @@ Begin Form
                     Width =2700
                     Height =330
                     FontSize =12
-                    TabIndex =2
+                    TabIndex =3
                     BorderColor =10921638
                     Name ="cboAccountType"
-                    ControlSource ="strAccountType"
                     RowSourceType ="Value List"
                     RowSource ="\"Administrator\";\"Technician\""
                     DefaultValue ="\"Technician\""
@@ -378,92 +371,42 @@ Begin Form
                 End
                 Begin Label
                     OverlapFlags =85
-                    Left =1200
+                    TextAlign =2
+                    Left =1373
                     Top =2700
-                    Width =1920
-                    Height =360
-                    FontSize =12
+                    Width =4395
+                    Height =585
+                    FontWeight =600
                     BorderColor =8355711
                     Name ="lblResetPassword"
-                    Caption ="Reset Password"
+                    Caption ="Account will be created with the default\015\012password."
                     GridlineColor =10921638
-                    LayoutCachedLeft =1200
+                    LayoutCachedLeft =1373
                     LayoutCachedTop =2700
-                    LayoutCachedWidth =3120
-                    LayoutCachedHeight =3060
+                    LayoutCachedWidth =5768
+                    LayoutCachedHeight =3285
                     ForeTint =100.0
                 End
                 Begin CommandButton
+                    Cancel = NotDefault
                     OverlapFlags =85
-                    Left =3240
-                    Top =2700
-                    Width =2700
-                    Height =314
-                    FontSize =12
-                    TabIndex =3
-                    Name ="cmdResetPassword"
-                    Caption ="Reset to Default"
-                    OnClick ="[Event Procedure]"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =3240
-                    LayoutCachedTop =2700
-                    LayoutCachedWidth =5940
-                    LayoutCachedHeight =3014
-                    ForeThemeColorIndex =-1
-                    ForeTint =100.0
-                    Gradient =0
-                    BackThemeColorIndex =7
-                    BackTint =40.0
-                    BorderColor =14461583
-                    HoverColor =15189940
-                    PressedColor =9917743
-                    HoverForeColor =4210752
-                    PressedForeColor =4210752
-                    WebImagePaddingLeft =2
-                    WebImagePaddingTop =2
-                    WebImagePaddingRight =1
-                    WebImagePaddingBottom =1
-                    Overlaps =1
-                End
-                Begin Label
-                    OverlapFlags =85
-                    Left =1200
-                    Top =3180
+                    Left =3780
+                    Top =3780
                     Width =1920
-                    Height =360
-                    FontSize =12
-                    BorderColor =8355711
-                    Name ="lblDeleteUser"
-                    Caption ="Delete Account"
-                    GridlineColor =10921638
-                    LayoutCachedLeft =1200
-                    LayoutCachedTop =3180
-                    LayoutCachedWidth =3120
-                    LayoutCachedHeight =3540
-                    ForeTint =100.0
-                End
-                Begin CommandButton
-                    OverlapFlags =85
-                    Left =3240
-                    Top =3180
-                    Width =2700
-                    Height =314
-                    FontSize =12
-                    TabIndex =6
-                    Name ="cmdDeleteAccount"
-                    Caption ="Delete Account"
+                    Height =420
+                    TabIndex =5
+                    ForeColor =4210752
+                    Name ="cmdCancel"
+                    Caption ="Cancel"
                     OnClick ="[Event Procedure]"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =3240
-                    LayoutCachedTop =3180
-                    LayoutCachedWidth =5940
-                    LayoutCachedHeight =3494
-                    ForeThemeColorIndex =-1
-                    ForeTint =100.0
+                    LayoutCachedLeft =3780
+                    LayoutCachedTop =3780
+                    LayoutCachedWidth =5700
+                    LayoutCachedHeight =4200
                     Gradient =0
-                    BackColor =10856415
+                    BackColor =-2147483607
                     BackThemeColorIndex =-1
                     BackTint =100.0
                     BorderColor =14461583
@@ -475,7 +418,6 @@ Begin Form
                     WebImagePaddingTop =2
                     WebImagePaddingRight =1
                     WebImagePaddingBottom =1
-                    Overlaps =1
                 End
             End
         End
@@ -496,57 +438,35 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Compare Database
 
+Private Sub cmdCancel_Click()
+
+    Dim intMessageResult As Integer
+    
+    intMessageResult = MsgBox("Cancel new account creation?", vbExclamation + vbYesNo, "User Account Creation")
+    If intMessageResult = vbYes Then
+        DoCmd.Close acForm, "fdlgCreateAccount"
+        Forms(fdlgUserControl).SetFocus
+    End If
+
+End Sub
+
 Private Sub cmdConfirm_Click()
     
-    MsgBox "Account updated successfully.", vbInformation + vbOKOnly, "Account Updated"
-    DoCmd.Close acForm, "fdlgManageAccount"
-    Forms(fdlgUserControl).SetFocus
-    
-End Sub
-    
-Private Sub cmdDeleteAccount_Click()
-
-    Dim msgResult As Integer
-
-    msgResult = MsgBox("Are you sure you want to delete the user account belonging to " & txtDisplayName.Value & "?", vbCritical + vbYesNo, "Account Deletion")
-    
-    If msgResult = vbYes Then
-        msgResult = MsgBox("You are about to permanently delete a user account! Please confirm deletion of this account.", vbExclamation + vbOKCancel, "Account Deletion")
-        If msgResult = vbOK Then
-            MsgBox "User account has been deleted. All sessions open under the deleted account have been disconnected.", vbInformation + vbOKOnly, "Account Deletion"
-            Form_fdlgUserControl.DeleteAccount txtUsername.Value
-            DoCmd.Close acForm, "fdlgManageAccount"
-            DoCmd.Close acForm, "fdlgUserControl"
-            DoCmd.OpenForm "fdlgUserControl", acNormal, , , acFormReadOnly, acWindowNormal
-            Forms(fdlgUserControl).SetFocus
-        End If
-    End If
-
-End Sub
-
-Private Sub cmdResetPassword_Click()
-
-    Dim msgResult As Integer
-    
-    msgResult = MsgBox("Reset " & txtDisplayName.Value & "'s password to default?", vbExclamation + vbYesNo, "Reset Password")
-
-    If msgResult = vbYes Then
-        changeResult = Form_fdlgUserControl.SetUserPassword(txtUsername.Value, "Thepassword1")
-        MsgBox "Password has been reset to the default (Thepassword1).", vbOKOnly, "Password Reset"
-    End If
-
-End Sub
-
-Private Sub Form_Load()
-
-    If [ID] = CInt(Form_fdlgUserControl.GetUserID(Form_fdlgUserControl.GetCurrentUser())) Then
-        cmdDeleteAccount.Enabled = False
-        cmdResetPassword.Enabled = False
-        cboAccountType.Enabled = False
+    If Form_fdlgUserControl.UserExists(txtUsername.Value) Then
+        MsgBox "Username already exists, please select a different username.", vbExclamation + vbOKOnly, "User Account Creation"
+        txtUsername.SetFocus
+    ElseIf InStr(txtUsername.Value, " ") > 0 Then
+        MsgBox "Username cannot contain spaces!", vbExclamation + vbOKOnly, "User Account Creation"
+        txtUsername.SetFocus
     Else
-        cmdDeleteAccount.Enabled = True
-        cmdResetPassword.Enabled = True
-        cboAccountType.Enabled = True
+        Form_fdlgUserControl.CreateUser txtUsername.Value, txtDisplayName.Value, _
+                txtTitle.Value, cboAccountType.Value
+        MsgBox "Account created successfully!", vbInformation + vbOKOnly, "Account Created"
+        
+        DoCmd.Close acForm, "fdlgCreateAccount"
+        DoCmd.Close acForm, "fdlgUserControl"
+        DoCmd.OpenForm "fdlgUserControl", acNormal, , , acFormReadOnly, acWindowNormal
+        Forms(fdlgUserControl).SetFocus
     End If
-
+    
 End Sub

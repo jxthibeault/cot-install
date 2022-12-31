@@ -23,11 +23,11 @@ Begin Form
     GridY =24
     Width =8160
     DatasheetFontHeight =11
-    ItemSuffix =57
-    Left =5565
-    Top =2445
-    Right =15165
-    Bottom =13470
+    ItemSuffix =58
+    Left =10035
+    Top =1350
+    Right =18450
+    Bottom =12135
     Filter ="NOT strUsername = \"setup\""
     OrderBy ="strDisplayName"
     RecSrcDt = Begin
@@ -3692,7 +3692,7 @@ Begin Form
             End
         End
         Begin FormFooter
-            Height =660
+            Height =900
             Name ="secFormFooter"
             AlternateBackThemeColorIndex =1
             AlternateBackShade =95.0
@@ -3700,7 +3700,7 @@ Begin Form
             Begin
                 Begin Image
                     Left =6060
-                    Top =60
+                    Top =360
                     Width =1980
                     Height =540
                     BackColor =1315470
@@ -6256,10 +6256,42 @@ Begin Form
                     End
 
                     LayoutCachedLeft =6060
-                    LayoutCachedTop =60
+                    LayoutCachedTop =360
                     LayoutCachedWidth =8040
-                    LayoutCachedHeight =600
+                    LayoutCachedHeight =900
+                    TabIndex =1
                     BackThemeColorIndex =-1
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =2913
+                    Top =150
+                    Width =2333
+                    Height =359
+                    ForeColor =4210752
+                    Name ="cmdCreateAccount"
+                    Caption ="Create New Account"
+                    OnClick ="[Event Procedure]"
+                    GridlineColor =10921638
+                    HorizontalAnchor =2
+                    VerticalAnchor =1
+
+                    LayoutCachedLeft =2913
+                    LayoutCachedTop =150
+                    LayoutCachedWidth =5246
+                    LayoutCachedHeight =509
+                    Gradient =0
+                    BackThemeColorIndex =9
+                    BackTint =20.0
+                    BorderColor =14461583
+                    HoverColor =15189940
+                    PressedColor =9917743
+                    HoverForeColor =4210752
+                    PressedForeColor =4210752
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =2
+                    WebImagePaddingRight =1
+                    WebImagePaddingBottom =1
                 End
             End
         End
@@ -6358,16 +6390,7 @@ End Function
 
 Public Function UserExists(strUsername As String) As Boolean
 
-    Dim strAccountType As String
-    
-    strAccountType = GetUserInfo(strUsername, "strAccountType")
-    
-    ' If no account type was returned, user is invalid
-    If strAccountType = Null Then
-        UserExists = False
-    Else
-        UserExists = True
-    End If
+    UserExists = Not IsNull(DLookup("[strUsername]", "tblUsers", "[strUsername] = '" & strUsername & "'"))
 
 End Function
 
@@ -6451,6 +6474,22 @@ Public Function DeleteAccount(strUsername As String)
 
 End Function
 
+Public Function CreateUser(strUsername As String, strDisplayName As String, strTitle As String, strAccountType As String)
+
+    DoCmd.SetWarnings False
+    
+    strSQL = "INSERT INTO tblUsers (strUsername, strDisplayName, strPassword, strAccountType, strTitle) VALUES ('" _
+            & strUsername & "', '" _
+            & strDisplayName & "', '" _
+            & GenerateHash("Thepassword1") & "', '" _
+            & strAccountType & "', '" _
+            & strTitle & "');"
+    DoCmd.RunSQL strSQL
+    
+    DoCmd.SetWarnings True
+
+End Function
+
 Public Function LoginCurrentInstance(strUsername As String, strPasswordEntered As String) As Boolean
 
     Dim strCorrectHash As String
@@ -6497,6 +6536,8 @@ End Function
 
 Private Function GetUserInfo(strUsernameInput, strRequestedField) As String
 
+    On Error Resume Next
+
     Dim strReturnedValue As String
     
     ' Look up and return requested info
@@ -6508,6 +6549,12 @@ Private Sub cmdSaveAndClose_Click()
 
     DoCmd.Close
     
+End Sub
+
+Private Sub cmdCreateAccount_Click()
+
+    DoCmd.OpenForm "fdlgCreateAccount", acNormal, , , acFormAdd
+
 End Sub
 
 Private Sub cmdManageAccount_Click()
