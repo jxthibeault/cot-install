@@ -186,9 +186,9 @@ Begin Form
                 Begin Label
                     OverlapFlags =85
                     TextAlign =2
-                    Left =10440
+                    Left =10800
                     Top =690
-                    Width =2025
+                    Width =1740
                     Height =360
                     FontSize =12
                     FontWeight =500
@@ -202,9 +202,9 @@ Begin Form
                     Caption ="Sales Rep"
                     GroupTable =1
                     GridlineColor =10921638
-                    LayoutCachedLeft =10440
+                    LayoutCachedLeft =10800
                     LayoutCachedTop =690
-                    LayoutCachedWidth =12465
+                    LayoutCachedWidth =12540
                     LayoutCachedHeight =1050
                     ColumnStart =4
                     ColumnEnd =4
@@ -248,7 +248,7 @@ Begin Form
                     TextAlign =2
                     Left =6480
                     Top =690
-                    Width =1616
+                    Width =1736
                     Height =360
                     FontSize =12
                     FontWeight =500
@@ -264,7 +264,7 @@ Begin Form
                     GridlineColor =10921638
                     LayoutCachedLeft =6480
                     LayoutCachedTop =690
-                    LayoutCachedWidth =8096
+                    LayoutCachedWidth =8216
                     LayoutCachedHeight =1050
                     ColumnStart =2
                     ColumnEnd =2
@@ -303,9 +303,9 @@ Begin Form
                 Begin Label
                     OverlapFlags =85
                     TextAlign =2
-                    Left =8160
+                    Left =8280
                     Top =690
-                    Width =2216
+                    Width =2460
                     Height =360
                     FontSize =12
                     FontWeight =500
@@ -315,9 +315,9 @@ Begin Form
                     Caption ="Install Scheduled"
                     GroupTable =1
                     GridlineColor =10921638
-                    LayoutCachedLeft =8160
+                    LayoutCachedLeft =8280
                     LayoutCachedTop =690
-                    LayoutCachedWidth =10376
+                    LayoutCachedWidth =10740
                     LayoutCachedHeight =1050
                     ColumnStart =3
                     ColumnEnd =3
@@ -327,16 +327,16 @@ Begin Form
                     GroupTable =1
                 End
                 Begin EmptyCell
-                    Left =12525
+                    Left =12600
                     Top =690
                     Width =135
                     Height =360
                     Name ="EmptyCell99"
                     GroupTable =1
                     GridlineColor =10921638
-                    LayoutCachedLeft =12525
+                    LayoutCachedLeft =12600
                     LayoutCachedTop =690
-                    LayoutCachedWidth =12660
+                    LayoutCachedWidth =12735
                     LayoutCachedHeight =1050
                     ColumnStart =5
                     ColumnEnd =5
@@ -399,9 +399,9 @@ Begin Form
                     TextAlign =2
                     BackStyle =0
                     IMESentenceMode =3
-                    Left =10440
+                    Left =10800
                     Top =180
-                    Width =2025
+                    Width =1740
                     Height =315
                     FontSize =12
                     TabIndex =4
@@ -417,9 +417,9 @@ Begin Form
                     GroupTable =1
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =10440
+                    LayoutCachedLeft =10800
                     LayoutCachedTop =180
-                    LayoutCachedWidth =12465
+                    LayoutCachedWidth =12540
                     LayoutCachedHeight =495
                     RowStart =1
                     RowEnd =1
@@ -437,7 +437,7 @@ Begin Form
                     IMESentenceMode =3
                     Left =6480
                     Top =180
-                    Width =1616
+                    Width =1736
                     Height =315
                     FontSize =12
                     TabIndex =2
@@ -456,7 +456,7 @@ Begin Form
 
                     LayoutCachedLeft =6480
                     LayoutCachedTop =180
-                    LayoutCachedWidth =8096
+                    LayoutCachedWidth =8216
                     LayoutCachedHeight =495
                     RowStart =1
                     RowEnd =1
@@ -503,9 +503,9 @@ Begin Form
                     TextAlign =2
                     BackStyle =0
                     IMESentenceMode =3
-                    Left =8160
+                    Left =8280
                     Top =180
-                    Width =2216
+                    Width =2460
                     Height =315
                     FontSize =12
                     TabIndex =3
@@ -517,9 +517,9 @@ Begin Form
                     GroupTable =1
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =8160
+                    LayoutCachedLeft =8280
                     LayoutCachedTop =180
-                    LayoutCachedWidth =10376
+                    LayoutCachedWidth =10740
                     LayoutCachedHeight =495
                     RowStart =1
                     RowEnd =1
@@ -533,7 +533,7 @@ Begin Form
                     Enabled = NotDefault
                     OverlapFlags =93
                     IMESentenceMode =3
-                    Left =12525
+                    Left =12600
                     Top =180
                     Width =135
                     Height =315
@@ -546,9 +546,9 @@ Begin Form
                     GroupTable =1
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =12525
+                    LayoutCachedLeft =12600
                     LayoutCachedTop =180
-                    LayoutCachedWidth =12660
+                    LayoutCachedWidth =12735
                     LayoutCachedHeight =495
                     RowStart =1
                     RowEnd =1
