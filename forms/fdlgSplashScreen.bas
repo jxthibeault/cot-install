@@ -24,18 +24,17 @@ Begin Form
     Width =8100
     DatasheetFontHeight =11
     ItemSuffix =15
-    Left =10350
-    Top =3735
-    Right =18450
-    Bottom =7980
+    Left =5565
+    Top =3720
+    Right =13665
+    Bottom =7965
     TimerInterval =900
     RecSrcDt = Begin
         0x7c26ac2350ede540
     End
     Caption ="Loading"
+    OnOpen ="[Event Procedure]"
     DatasheetFontName ="Calibri"
-    OnTimer ="[Event Procedure]"
-    OnLoad ="[Event Procedure]"
     Moveable =0
     FilterOnLoad =0
     ShowPageMargins =0
@@ -160,7 +159,7 @@ Begin Form
                     BorderColor =8355711
                     ForeColor =16777215
                     Name ="lblNowLoading"
-                    Caption ="Opening connection..."
+                    Caption ="Loading..."
                     FontName ="Verdana"
                     GridlineColor =10921638
                     LayoutCachedTop =2940
@@ -2755,177 +2754,290 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Compare Database
  
-'                                       ### IMPORTANT ###
-' This form's Form_Load() function contains CRITICAL application start-up instructions including
-' dynamic linking of linked datasources that allows for universal deployment. Be VERY careful and make backups
-' whenever making any changes to the Form_Load() function!!!
+Private Const strcFormNameLogin = "fdlgLogIn"
+Private Const strcFormNameSplash = "fdlgSplashScreen"
+Private Const strcTableNameBackendSchema = "tblSchema"
+Private Const strcTableNameFrontendSchema = "zstlkpInstanceVariables"
 
-Private Sub Form_Load()
+Private Sub Form_Open(Cancel As Integer)
 
-    ' ### READ NOTICE AT TOP OF THIS MODULE BEFORE MODIFYING THIS FUNCTION ###
+    Dim strBackendRootPath As String        ' Path to the root directory of backend
+    Dim strBackendDataPath As String        ' Path to backend datbase relative to backend root
 
-    Dim strBEPath As String
-    Dim strIconPath As String
-    Dim intBEVersionMajor As Integer
-    Dim intBEVersionMinor As Integer
-    Dim intBEVersionPatch As Integer
-    Dim intFEVersionMajor As Integer
-    Dim intFEVersionMinor As Integer
-    Dim intFEVersionPatch As Integer
-    Dim strSQL As String
-    Dim bRunUpdates As Boolean
-    Dim intUpdate As Integer
-    Dim dbBackendDB As DAO.Database
+    strBackendRootPath = CurrentProject.Path & "\Backend"
+    strBackendDataPath = "\IDBE01.accdb"
     
-    ' The \Backend folder should be deployed alongside the app with all resources referenced here
-    strBEDataPath = CurrentProject.Path & "\Backend\IDBE01.accdb"
-    strIconPath = CurrentProject.Path & "\Backend\AppIcon.ico"
+    lblNowLoading.Caption = "Initializing application..."
+    InitializeApp strBackendRootPath
     
-    ' Sets the application icon for dynamic app deployment and removes visible Access toolbars
-    CurrentDb.Properties("AppIcon").Value = strIconPath
+    lblNowLoading.Caption = "Loading schema table..."
+    LinkTable strBackendRootPath, "tblSchema"
+    
+    lblNowLoading.Caption = "Applying updates..."
+    If IsBackendOutdated(GetBackendVersion, GetFrontendVersion) Then
+        UpdateBackend GetBackendVersion, GetFrontendVersion, strBackendRootPath & strBackendDataPath
+    End If
+    
+    lblNowLoading.Caption = "Connecting to database..."
+    LinkTable strBackendRootPath, "tblConnections"
+    LinkTable strBackendRootPath, "tblInstallEquipment"
+    LinkTable strBackendRootPath, "tblInstalls"
+    LinkTable strBackendRootPath, "tblUsers"
+    
+    lblNowLoading.Caption = "Startup complete!"
+    DoCmd.Close acForm, strcFormNameSplash
+    DoCmd.OpenForm strcFormNameLogin, acNormal, , , , acDialog
+    
+Exit_Sub:
+    Exit Sub
+    
+End Sub
+
+Private Sub CheckBackendIsntFuture(BackendVersion As Variant, FrontendVersion As Variant)
+                
+    If BackendVersion(0) > FrontendVersion(0) Then
+        GoTo BackendNewerThanFront
+    ElseIf BackendVersion(1) > FrontendVersion(1) Then
+        GoTo BackendNewerThanFront
+    ElseIf BackendVersion(2) > FrontendVersion(2) Then
+        GoTo BackendNewerThanFront
+    End If
+    
+Exit_Sub:
+    Exit Sub
+    
+BackendNewerThanFront:
+    ErrorMessage True, "Backend version is newer than latest version supported by frontend."
+    Resume Exit_Sub
+
+End Sub
+
+Private Sub ErrorMessage(CloseApp As Boolean, ErrorMessage As String)
+
+    ErrorMessage = ErrorMessage & vbCrLf & "Error " & Err.Number & ": " & Err.Description
+
+    If Not CloseApp Then
+        MsgBox ErrorMessage, vbCritical + vbOKOnly, "Error"
+        Err.Clear
+    Else
+        MsgBox ErrorMessage & " Application will now quit.", vbCritical + vbOKOnly, "Error"
+        Err.Clear
+        Application.Quit
+    End If
+
+End Sub
+
+Private Function GetBackendVersion() As Variant
+
+    Dim intBackendVersion(3) As Integer     ' Backend version stored as (major, minor, patch)
+
+    On Error GoTo Error_SchemaTableNotLoaded
+    intBackendVersion(0) = CInt(DLookup("[strValue]", strcTableNameBackendSchema, _
+                                "[strKey] = 'BackendVersionMajor'"))
+    intBackendVersion(1) = CInt(DLookup("[strValue]", strcTableNameBackendSchema, _
+                                "[strKey] = 'BackendVersionMinor'"))
+    intBackendVersion(2) = CInt(DLookup("[strValue]", strcTableNameBackendSchema, _
+                                "[strKey] = 'BackendVersionPatch'"))
+    
+Exit_Function:
+    On Error Resume Next
+    GetBackendVersion = intBackendVersion
+    Exit Function
+                                
+Error_SchemaTableNotLoaded:
+    ErrorMessage True, "Could not load backend schema."
+    Resume Exit_Function
+    
+End Function
+
+Private Function GetFrontendVersion() As Variant
+
+    Dim intFrontendVersion(3) As Integer    ' Frontend version stored as (major, minor, patch)
+
+    ' Load the frontend version
+    On Error GoTo Error_FrontendTableError
+    intFrontendVersion(0) = CInt(DLookup("[strValue]", strcTableNameFrontendSchema, _
+                                "[strKey] = 'FrontendVersionMajor'"))
+    intFrontendVersion(1) = CInt(DLookup("[strValue]", strcTableNameFrontendSchema, _
+                                "[strKey] = 'FrontendVersionMinor'"))
+    intFrontendVersion(2) = CInt(DLookup("[strValue]", strcTableNameFrontendSchema, _
+                                "[strKey] = 'FrontendVersionPatch'"))
+                                
+Exit_Function:
+    On Error Resume Next
+    GetFrontendVersion = intFrontendVersion
+    Exit Function
+
+Error_FrontendTableError:
+    ErrorMessage True, "Encountered error while accessing internal table."
+    Resume Exit_Function
+
+End Function
+
+Private Sub InitializeApp(BackendRootPath As String)
+
+    Dim strAppIconPath As String        ' Path to app icon relative to backend root
+    
+    strAppIconPath = "\AppIcon.ico"
+    
+    CurrentDb.Properties("AppIcon").Value = BackendRootPath & strAppIconPath
     DoCmd.ShowToolbar "Ribbon", acToolbarNo
     Application.RefreshTitleBar
-        
-    DoCmd.DeleteObject acTable, "tblSchema"
-    DoCmd.TransferDatabase acLink, "Microsoft Access", strBEDataPath, acTable, "tblSchema", "tblSchema"
     
-    ' ### NOTE ON ADDING LINKED TABLES IN DEVELOPMENT ###
-    ' All linked tables must be listed in both the DeleteObject and TransferDatabase codeblocks below for dynamic
-    ' re-linking to work as intended. Follow below syntax, subtituing table name only.
-         
-    ' "Delete" the previous table links to avoid issue where multiple instances of the same link are created and application performance decreases significantly
-    BreakLinkIfExists "tblInstallEquipment"
-    BreakLinkIfExists "tblInstalls"
-    BreakLinkIfExists "tblUsers"
+Exit_Sub:
+    Exit Sub
+
+End Sub
+
+Private Function IsBackendOutdated(BackendVersion As Variant, FrontendVersion As Variant)
+
+    Dim bBackendOutOfDate As Boolean        ' Stores return value for this function
     
-    ' Add the tables with the current application path for dynamic re-linking
-    DoCmd.TransferDatabase acLink, "Microsoft Access", strBEDataPath, acTable, "tblInstallEquipment", "tblInstallEquipment"
-    DoCmd.TransferDatabase acLink, "Microsoft Access", strBEDataPath, acTable, "tblInstalls", "tblInstalls"
-    DoCmd.TransferDatabase acLink, "Microsoft Access", strBEDataPath, acTable, "tblUsers", "tblUsers"
+    bBackendOutOfDate = False
     
-    ' ### NOTE ON CHANGING BACKEND STRUCTURE ###
-    ' Whenever making a change to backend structure, add changes to this script to ensure end users' backends can be updated automatically from previous versions
-    intBEVersionMajor = CInt(DLookup("[strValue]", "tblSchema", "[strKey] = 'BackendVersionMajor'"))
-    intBEVersionMinor = CInt(DLookup("[strValue]", "tblSchema", "[strKey] = 'BackendVersionMinor'"))
-    intBEVersionPatch = CInt(DLookup("[strValue]", "tblSchema", "[strKey] = 'BackendVersionPatch'"))
-    
-    intFEVersionMajor = CInt(DLookup("[strValue]", "zstlkpInstanceVariables", "[strKey] = 'FrontendVersionMajor'"))
-    intFEVersionMinor = CInt(DLookup("[strValue]", "zstlkpInstanceVariables", "[strKey] = 'FrontendVersionMinor'"))
-    intFEVersionPatch = CInt(DLookup("[strValue]", "zstlkpInstanceVariables", "[strKey] = 'FrontendVersionPatch'"))
-    
-    ' Checks if backend schema is newer than this frontend supports; if so, notify end user and quit to avoid data corruption.
-    If intBEVersionMajor > intFEVersionMajor Then
-        VersionMismatchQuit intBEVersionMajor, intBEVersionMinor, intBEVersionPatch, intFEVersionMajor, intFEVersionMinor, intFEVersionPatch
-    ElseIf intBEVersionMinor > intFEVersionMinor Then
-        VersionMismatchQuit intBEVersionMajor, intBEVersionMinor, intBEVersionPatch, intFEVersionMajor, intFEVersionMinor, intFEVersionPatch
-    ElseIf intBEVersionPatch > intFEVersionPatch Then
-        VersionMismatchQuit intBEVersionMajor, intBEVersionMinor, intBEVersionPatch, intFEVersionMajor, intFEVersionMinor, intFEVersionPatch
+    If (BackendVersion(0) < FrontendVersion(0)) Or _
+        (BackendVersion(0) = FrontendVersion(0) And BackendVersion(1) < FrontendVersion(1)) Or _
+        (BackendVersion(0) = FrontendVersion(0) And BackendVersion(1) = FrontendVersion(1) And _
+            BackendVersion(2) < FrontendVersion(2)) Then
+        bBackendOutOfDate = True
     End If
-    
-    
-    ' Backend update script; supports auto-updates from 1.3.7 forward
-    ' List in chronological order for proper update processing
-    bRunUpdates = False
+
+Exit_Function:
     On Error Resume Next
+    IsBackendOutdated = bBackendOutOfDate
+    Exit Function
+
+End Function
+
+Private Sub LinkTable(BackendRootPath As String, TableName As String)
+
+    Dim strDataPath As String           ' Path to backend datbase relative to backend root
     
-    If intBEVersionMajor < intFEVersionMajor Or _
-        (intBEVersionMajor = intFEVersionMajor And intBEVersionMinor < intFEVersionMinor) Or _
-        (intBEVersionMajor = intFEVersionMajor And intBEVersionMinor = intFEVersionMinor And intBEVersionPatch < intFEVersionPatch) Then
-            intUpdate = MsgBox("A schema update is required for the backend database. Run update now?", vbInformation + vbYesNo + vbDefaultButton1, "Update Available")
-            If intUpdate = vbYes Then
-                bRunUpdates = True
-            Else
-                MsgBox "Backend schema must be updated to continue. Application will now close.", vbCritical + vbOKOnly, "Update Failed"
-                Application.Quit acQuitSaveAll
-            End If
+    strDataPath = "\IDBE01.accdb"
+    
+    On Error Resume Next
+    If IsObject(CurrentDb.TableDefs(TableName)) Then
+        DoCmd.DeleteObject acTable, TableName
     End If
     
-    ' Updates in v1.3.9 (covers all previous versions, cannot be run on backends >= 1.3.9
-    If bRunUpdates And intBEVersionMajor <= 1 And intBEVersionMinor <= 3 And intBEVersionPatch < 9 Then
-        Set dbBackendDB = DBEngine.Workspaces(0).OpenDatabase(strBEDataPath)
-        strSQL = "CREATE TABLE tblConnections (strHostname CHAR PRIMARY KEY, strUser CHAR);"
-        dbBackendDB.Execute strSQL
-        Set dbBackendDB = CurrentDb
+    On Error GoTo Error_TableLinkingFailed
+    DoCmd.TransferDatabase acLink, "Microsoft Access", _
+                            BackendRootPath & strDataPath, _
+                            acTable, TableName, TableName
+                            
+Exit_Sub:
+    Exit Sub
+    
+Error_TableLinkingFailed:
+    ErrorMessage True, "Could not link to table " & TableName & "."
+    Resume Exit_Sub
+
+End Sub
+
+Private Sub RunSQLStatement(SQLStatement As String)
+
+    ' SetWarnings needs to be disabled before running SQL, or user must manually verify every SQL statement
+
+    DoCmd.SetWarnings False
+    DoCmd.RunSQL SQLStatement
+    DoCmd.SetWarnings True
+
+End Sub
+
+Private Sub UpdateBackend(BackendVersion As Variant, FrontendVersion As Variant, BackendPath As String)
+
+    Dim intMsgBoxResult As Integer          ' Stores the result of MsgBox objects
+    Dim strSQLCommand As String             ' Stores next SQL command to be executed
+    Dim dbBackendDatabase As DAO.Database   ' Represents backend database as a DAO object
+    
+    Dim rsUsersRecordset As DAO.Recordset   ' Update 1.3.10 Stores RecordSet of all users for update
+    Dim strUnhashedPassword As String       ' Update 1.3.10 Stores old, unhashed password for hashing
+    
+    On Error GoTo Error_UpdateError
+    
+    Set dbBackendDatabase = CurrentDb()
+    intMsgBoxResult = MsgBox("An update is required for the backend database. Run update now?", _
+                            vbInformation + vbYesNo + vbDefaultButton1, "Update Available")
+      
+    If intMsgBoxResult = vbNo Then
+        GoTo Interrupt_UpdateRefused
     End If
     
-    BreakLinkIfExists "tblConnections"
-    DoCmd.TransferDatabase acLink, "Microsoft Access", strBEDataPath, acTable, "tblConnections", "tblConnections"
+    ' Backend updates v1.3.9
+    ' Creates tblConnections table
+    ' This is the first auto-update built and hits ALL versions < 1.3.9
+    If BackendVersion(0) <= 1 And BackendVersion(1) <= 3 And BackendVersion(2) < 9 Then
+        DoCmd.SetWarnings False
+        
+        Set dbBackendDatabase = DBEngine.Workspaces(0).OpenDatabase(BackendPath)
+        strSQLCommand = "CREATE TABLE tblConnections (strHostname CHAR PRIMARY KEY, strUser CHAR);"
+        dbBackendDatabase.Execute strSQLCommand
+        dbBackendDatabase.Close
+        Set dbBackendDatabase = CurrentDb()
+        
+        DoCmd.SetWarnings True
+    End If
     
-    ' Updates in v1.3.10 -- hash all passwords previously stored as plain text
-    If bRunUpdates And intBEVersionMajor <= 1 And intBEVersionMinor <= 3 And intBEVersionPatch < 10 Then
-        Dim rs As DAO.Recordset
-        Dim strOldPass As String
+    ' Backend updates v1.3.10
+    ' Hashes all passwords previously stored as plaintext
+    If BackendVersion(0) = 1 And BackendVersion(1) = 3 And BackendVersion(2) < 10 Then
+        Set rsUsersRecordset = dbBackendDatabase.OpenRecordset("SELECT * FROM tblUsers")
         
-        Set rs = CurrentDb.OpenRecordset("SELECT * FROM tblUsers")
-        
-        If Not rs.EOF Then
-            rs.MoveFirst
-            Do Until rs.EOF = True
-                strOldPass = rs.Fields("strPassword").Value
-                rs.Edit
-                rs!strPassword = Form_fdlgUserControl.GenerateHash(strOldPass)
-                rs.Update
-                rs.MoveNext
+        If Not rsUsersRecordset.EOF Then
+            rsUsersRecordset.MoveFirst
+            Do Until rsUsersRecordset.EOF
+                strUnhashedPassword = rsUsersRecordset.Fields("strPassword").Value
+                rsUsersRecordset.Edit
+                rsUsersRecordset.Fields("strPassword").Value = Form_fdlgUserControl.GenerateHash(strUnhashedPassword)
+                rsUsersRecordset.Update
+                rsUsersRecordset.MoveNext
             Loop
         End If
         
-        rs.Close
-        Set rs = Nothing
+        rsUsersRecordset.Close
     End If
     
-    ' After all updates complete, update the backend version tag to match current frontend version
-    If bRunUpdates Then
-        UpdateBackendSchemaVersion intFEVersionMajor, intFEVersionMinor, intFEVersionPatch, _
-                                   intBEVersionMajor, intBEVersionMinor, intBEVersionPatch
-    End If
+    ' Once all updates are applied, update backend version
+    UpdateBackendSchemaVersion BackendVersion, FrontendVersion
     
-    ' END backend updates section
-    
-
-    
-End Sub
-
-Private Function BreakLinkIfExists(TableName As String)
-
+Exit_Sub:
     On Error Resume Next
-        If IsObject(CurrentDb.TableDefs(TableName)) Then
-            DoCmd.DeleteObject acTable, TableName
-        End If
-
-End Function
-
-Private Function UpdateBackendSchemaVersion(BEMajor As Integer, BEMinor As Integer, BEPatch As Integer, BEMajorOld As Integer, BEMinorOld As Integer, BEPatchOld As Integer)
-
-    ' Disable warnings, as DoCmd.RunSQL asks user for confirmation before executing
-    DoCmd.SetWarnings False
-    strSQL = "UPDATE [tblSchema] SET strValue = '" & BEMajor & "' WHERE [strKey] = 'BackendVersionMajor'"
-    DoCmd.RunSQL strSQL
-    strSQL = "UPDATE [tblSchema] SET strValue = '" & BEMinor & "' WHERE [strKey] = 'BackendVersionMinor'"
-    DoCmd.RunSQL strSQL
-    strSQL = "UPDATE [tblSchema] SET strValue = '" & BEPatch & "' WHERE [strKey] = 'BackendVersionPatch'"
-    DoCmd.RunSQL strSQL
+    dbBackendDatabase.Close
+    Exit Sub
     
-    ' Re-enable warnings (in effect, return to default setting)
+Interrupt_UpdateRefused:
+    ErrorMessage True, "Backend must be updated to continue."
+    Resume Exit_Sub
+    
+Error_UpdateError:
+    ErrorMessage True, "Error while applying updates to backend."
+    Resume Exit_Sub
+
+End Sub
+
+Private Function UpdateBackendSchemaVersion(BackendVersionOld As Variant, BackendVersionNew As Variant)
+
+    Dim strSQLCommand As String        ' Stores the SQL command to be executed next
+
+    On Error GoTo Error_SQL
+    RunSQLStatement "UPDATE [" & strcTableNameBackendSchema & "] SET strValue = '" & BackendVersionNew(0) _
+                    & "' WHERE [strKey] = 'BackendVersionMajor'"
+    RunSQLStatement "UPDATE [" & strcTableNameBackendSchema & "] SET strValue = '" & BackendVersionNew(1) _
+                    & "' WHERE [strKey] = 'BackendVersionMinor'"
+    RunSQLStatement "UPDATE [" & strcTableNameBackendSchema & "] SET strValue = '" & BackendVersionNew(2) _
+                    & "' WHERE [strKey] = 'BackendVersionPatch'"
+    
+    MsgBox "Updated backend to version " & BackendVersionNew(0) & "." & BackendVersionNew(1) _
+            & "." & BackendVersionNew(2) & " successfully. (Updated from version " _
+            & BackendVersionOld(0) & "." & BackendVersionOld(1) & "." & BackendVersionOld(2) _
+            & ")", vbInformation, "Schema Update Successful"
+        
+Exit_Function:
+    Exit Function
+        
+Error_SQL:
+    ErrorMessage False, "Backend schema version tag could not be updated, notify an administrator."
     DoCmd.SetWarnings True
-    
-    MsgBox "Updated backend to version " & BEMajor & "." & BEMinor & "." & BEPatch & " successfully. (Updated from version " _
-        & BEMajorOld & "." & BEMinorOld & "." & BEPatchOld & ")", vbInformation, "Schema Update Successful"
+    Resume Exit_Function
 
 End Function
-
-Private Sub VersionMismatchQuit(BEMajor As Integer, BEMinor As Integer, BEPatch As Integer, FEMajor As Integer, FEMinor As Integer, FEPatch As Integer)
-
-    MsgBox "Backend version (" & BEMajor & "." & BEMinor & "." _
-            & BEPatch & ") is a newer version than the frontend (" & FEMajor _
-            & "." & FEMinor & "." & FEPatch & "). Please update frontend to latest version and re-launch application.", _
-            vbCritical, "Backend Version Mismatch"
-    Application.Quit acQuitSaveAll
-
-End Sub
-
-Private Sub Form_Timer()
-
-    DoCmd.Close acForm, "fdlgSplashScreen"
-    DoCmd.OpenForm "fdlgLogIn", acNormal, , , , acDialog
-
-End Sub
