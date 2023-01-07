@@ -6,7 +6,7 @@
   "Items": {
     "Name": "InstallsDatabaseFrontend",
     "Description": "",
-    "FileName": "Install Dashboard_dev.accdb",
+    "FileName": "Install Dashboard_dev_ui-overhaul.accdb",
     "HelpFile": "",
     "HelpContextId": 0,
     "ConditionalCompilationArguments": "",

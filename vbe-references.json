@@ -15,6 +15,14 @@
     "Office": {
       "GUID": "{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}",
       "Version": "2.8"
+    },
+    "MSComctlLib": {
+      "GUID": "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}",
+      "Version": "2.2"
+    },
+    "MSExchangeLib": {
+      "GUID": "{0AF7F3BE-8EA9-4816-889E-3ED22871FE05}",
+      "Version": "1.0"
     }
   }
 }
